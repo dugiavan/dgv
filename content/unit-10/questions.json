@@ -1,0 +1,38 @@
+[
+  {
+    "id": "u10q1",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "question": "They ___ for two hours before it started to rain.",
+    "options": [
+      "played",
+      "had played",
+      "had been playing",
+      "were playing"
+    ],
+    "answer": "had been playing",
+    "explanation": "Hành động chơi bóng xảy ra liên tục suốt 2 tiếng trước khi trời mưa 'started', nên chia quá khứ hoàn thành tiếp diễn 'had been playing'."
+  },
+  {
+    "id": "u10q2",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "question": "The driver was exhausted because he ___ all night.",
+    "options": [
+      "drove",
+      "had driven",
+      "had been driving",
+      "was driving"
+    ],
+    "answer": "had been driving",
+    "explanation": "Việc lái xe diễn ra liên tục cả đêm trước thời điểm bị kiệt sức 'was exhausted' ở quá khứ, chia quá khứ hoàn thành tiếp diễn 'had been driving'."
+  },
+  {
+    "id": "u10q3",
+    "type": "fill_blank",
+    "difficulty": "hard",
+    "question": "When she arrived, they ___ (wait) for her for over an hour.",
+    "answer": "had been waiting",
+    "explanation": "Hành động chờ đợi diễn ra liên tục hơn 1 tiếng trước khi cô ấy đến 'arrived', chia ở quá khứ hoàn thành tiếp diễn: 'had been waiting'."
+  }
+]

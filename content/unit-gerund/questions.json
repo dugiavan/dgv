@@ -1,0 +1,239 @@
+[
+  {
+    "id": "u_gerund_q1",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "question": "I enjoy ___ books in my free time.",
+    "options": [
+      "to read",
+      "read",
+      "reading",
+      "reads"
+    ],
+    "answer": "reading",
+    "explanation": "Động từ 'enjoy' yêu cầu động từ theo sau nó ở dạng V-ing (Gerund)."
+  },
+  {
+    "id": "u_gerund_q24",
+    "type": "fill_blank",
+    "difficulty": "easy",
+    "script": "Do you fancy ___ (go) out for a coffee after work?",
+    "question": "Do you fancy ___ (go) out for a coffee after work?",
+    "options": [],
+    "answer": "going",
+    "explanation": "Động từ 'fancy' đòi hỏi động từ đi liền sau phải thêm đuôi -ing."
+  },
+  {
+    "id": "u_gerund_q25",
+    "type": "fill_blank",
+    "difficulty": "easy",
+    "script": "We should avoid ___ (travel) during peak hours to save time.",
+    "question": "We should avoid ___ (travel) during peak hours to save time.",
+    "options": [],
+    "answer": "traveling",
+    "explanation": "Theo quy tắc ngữ pháp, sau 'avoid' là động từ thêm -ing (traveling hoặc travelling đều đúng)."
+  },
+  {
+    "id": "u_gerund_q26",
+    "type": "fill_blank",
+    "difficulty": "easy",
+    "script": "I am used to ___ (get) up early in the morning.",
+    "question": "I am used to ___ (get) up early in the morning.",
+    "options": [],
+    "answer": "getting",
+    "explanation": "Cấu trúc 'be used to + V-ing' dùng để nói về việc đã quen với hành động nào đó (gấp đôi phụ âm t)."
+  },
+  {
+    "id": "u_gerund_q27",
+    "type": "fill_blank",
+    "difficulty": "easy",
+    "script": "He finally gave up ___ (try) to fix the broken computer himself.",
+    "question": "He finally gave up ___ (try) to fix the broken computer himself.",
+    "options": [],
+    "answer": "trying",
+    "explanation": "Sau cụm động từ 'give up', ta dùng động từ ở dạng V-ing."
+  },
+  {
+    "id": "u_gerund_q28",
+    "type": "fill_blank",
+    "difficulty": "easy",
+    "script": "He improved his vocabulary by ___ (read) English comic books.",
+    "question": "He improved his vocabulary by ___ (read) English comic books.",
+    "options": [],
+    "answer": "reading",
+    "explanation": "Dùng V-ing (reading) sau giới từ 'by' để chỉ cách thức thực hiện hành động."
+  },
+  {
+    "id": "u_gerund_q29",
+    "type": "fill_blank",
+    "difficulty": "easy",
+    "script": "Are you interested in ___ (join) our photography club?",
+    "question": "Are you interested in ___ (join) our photography club?",
+    "options": [],
+    "answer": "joining",
+    "explanation": "Cấu trúc 'interested in' luôn đi cùng một danh động từ (V-ing)."
+  },
+  {
+    "id": "u_gerund_q30",
+    "type": "fill_blank",
+    "difficulty": "easy",
+    "script": "My grandmother is fond of ___ (garden) on weekends.",
+    "question": "My grandmother is fond of ___ (garden) on weekends.",
+    "options": [],
+    "answer": "gardening",
+    "explanation": "Sau cụm từ 'fond of' (thích), động từ đi kèm phải thêm đuôi -ing."
+  },
+  {
+    "id": "u_gerund_q2",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "question": "He avoided ___ her questions about the incident.",
+    "options": [
+      "to answer",
+      "answer",
+      "answering",
+      "answered"
+    ],
+    "answer": "answering",
+    "explanation": "Động từ 'avoid' (tránh né) bắt buộc đi kèm với danh động từ V-ing (answering)."
+  },
+  {
+    "id": "u_gerund_q31",
+    "type": "fill_blank",
+    "difficulty": "medium",
+    "script": "She suggested ___ (take) a taxi because it was raining heavily.",
+    "question": "She suggested ___ (take) a taxi because it was raining heavily.",
+    "options": [],
+    "answer": "taking",
+    "explanation": "Động từ 'suggest' yêu cầu một động từ hành động theo sau ở dạng Gerund (V-ing)."
+  },
+  {
+    "id": "u_gerund_q32",
+    "type": "fill_blank",
+    "difficulty": "medium",
+    "script": "The students are looking forward to ___ (hear) the exam results.",
+    "question": "The students are looking forward to ___ (hear) the exam results.",
+    "options": [],
+    "answer": "hearing",
+    "explanation": "Cụm 'look forward to' đi với V-ing, mang nghĩa háo hức, mong đợi điều gì."
+  },
+  {
+    "id": "u_gerund_q33",
+    "type": "fill_blank",
+    "difficulty": "medium",
+    "script": "They spent the whole afternoon ___ (play) board games.",
+    "question": "They spent the whole afternoon ___ (play) board games.",
+    "options": [],
+    "answer": "playing",
+    "explanation": "Cấu trúc: spend + khoảng thời gian (the whole afternoon) + V-ing."
+  },
+  {
+    "id": "u_gerund_q34",
+    "type": "fill_blank",
+    "difficulty": "medium",
+    "script": "She cleared the debt by ___ (work) two part-time jobs.",
+    "question": "She cleared the debt by ___ (work) two part-time jobs.",
+    "options": [],
+    "answer": "working",
+    "explanation": "Động từ đứng ngay sau giới từ chỉ phương thức 'by' phải chia ở dạng V-ing."
+  },
+  {
+    "id": "u_gerund_q35",
+    "type": "fill_blank",
+    "difficulty": "medium",
+    "script": "The doctor suggested ___ (exercise) for 30 minutes every day.",
+    "question": "The doctor suggested ___ (exercise) for 30 minutes every day.",
+    "options": [],
+    "answer": "exercising",
+    "explanation": "Động từ 'suggest' đi trực tiếp với danh động từ V-ing (bỏ đuôi 'e' trước khi thêm -ing)."
+  },
+  {
+    "id": "u_gerund_q36",
+    "type": "fill_blank",
+    "difficulty": "medium",
+    "script": "Please avoid ___ (make) noise while the baby is sleeping.",
+    "question": "Please avoid ___ (make) noise while the baby is sleeping.",
+    "options": [],
+    "answer": "making",
+    "explanation": "Động từ 'avoid' yêu cầu động từ đi kèm ở dạng V-ing (make biến đổi thành making)."
+  },
+  {
+    "id": "u_gerund_q37",
+    "type": "fill_blank",
+    "difficulty": "medium",
+    "script": "He spent all his savings ___ (buy) a new motorbike.",
+    "question": "He spent all his savings ___ (buy) a new motorbike.",
+    "options": [],
+    "answer": "buying",
+    "explanation": "Cấu trúc: spend + tiền bạc/thời gian (all his savings) + V-ing."
+  },
+  {
+    "id": "u_gerund_q38",
+    "type": "fill_blank",
+    "difficulty": "medium",
+    "script": "He managed to lose weight by ___ (swim) every morning.",
+    "question": "He managed to lose weight by ___ (swim) every morning.",
+    "options": [],
+    "answer": "swimming",
+    "explanation": "Sau giới từ 'by', động từ 'swim' phải chuyển sang dạng V-ing (gấp đôi phụ âm m thành swimming)."
+  },
+  {
+    "id": "u_gerund_q3",
+    "type": "fill_blank",
+    "difficulty": "hard",
+    "script": "It is no use trying to convince him; he never changes his mind.",
+    "question": "It is no use ___ (try) to convince him; he never changes his mind.",
+    "answer": "trying",
+    "explanation": "Cấu trúc 'It is no use + V-ing' dùng để diễn tả ý nghĩa: Vô ích/Không có tác dụng gì khi cố gắng làm việc gì."
+  },
+  {
+    "id": "u_gerund_q39",
+    "type": "fill_blank",
+    "difficulty": "hard",
+    "script": "Without a helmet, you are at risk of ___ (get) a severe head injury.",
+    "question": "Without a helmet, you are at risk of ___ (get) a severe head injury.",
+    "options": [],
+    "answer": "getting",
+    "explanation": "Từ cần điền đứng sau giới từ 'of' trong cụm 'at risk of', do đó phải ở dạng V-ing."
+  },
+  {
+    "id": "u_gerund_q40",
+    "type": "fill_blank",
+    "difficulty": "hard",
+    "script": "I don't fancy ___ (cook) a big meal when I am tired.",
+    "question": "I don't fancy ___ (cook) a big meal when I am tired.",
+    "options": [],
+    "answer": "cooking",
+    "explanation": "Động từ 'fancy' nhận một V-ing (cooking) làm tân ngữ trực tiếp."
+  },
+  {
+    "id": "u_gerund_q41",
+    "type": "fill_blank",
+    "difficulty": "hard",
+    "script": "We are looking forward to ___ (meet) the new manager tomorrow.",
+    "question": "We are looking forward to ___ (meet) the new manager tomorrow.",
+    "options": [],
+    "answer": "meeting",
+    "explanation": "Sau cấu trúc 'look forward to', động từ luôn ở dạng V-ing."
+  },
+  {
+    "id": "u_gerund_q42",
+    "type": "fill_blank",
+    "difficulty": "hard",
+    "script": "Unvaccinated children are at risk of ___ (catch) the virus.",
+    "question": "Unvaccinated children are at risk of ___ (catch) the virus.",
+    "options": [],
+    "answer": "catching",
+    "explanation": "Đằng sau cụm từ 'at risk of' bắt buộc phải dùng động từ ở dạng V-ing."
+  },
+  {
+    "id": "u_gerund_q43",
+    "type": "fill_blank",
+    "difficulty": "hard",
+    "script": "She is not fond of ___ (listen) to loud rock music.",
+    "question": "She is not fond of ___ (listen) to loud rock music.",
+    "options": [],
+    "answer": "listening",
+    "explanation": "Sau cụm tính từ đi liền giới từ 'fond of', ta dùng danh động từ V-ing."
+  }
+]

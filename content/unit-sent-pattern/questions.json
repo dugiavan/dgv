@@ -1,0 +1,29 @@
+[
+  {
+    "id": "u_sp_q1",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "question": "The sentence \"The weather is very good\" follows the pattern:",
+    "options": ["S + V", "S + V + O", "S + V + Complement", "S + V + O + Adverbial"],
+    "answer": "S + V + Complement",
+    "explanation": "is = linking verb; very good = complement mô tả chủ ngữ."
+  },
+  {
+    "id": "u_sp_q2",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "question": "She gave me a book. This is mainly:",
+    "options": ["S + V", "S + V + O", "S + V + O (indirect) + O (direct)", "S + V + Complement"],
+    "answer": "S + V + O (indirect) + O (direct)",
+    "explanation": "give + người nhận (me) + vật (a book) = hai tân ngữ."
+  },
+  {
+    "id": "u_sp_q3",
+    "type": "fill_blank",
+    "difficulty": "hard",
+    "script": "They elected him President.",
+    "question": "They elected him ___. (pattern: S + V + O + Complement)",
+    "answer": "President",
+    "explanation": "President bổ nghĩa cho tân ngữ him → S + V + O + Complement."
+  }
+]

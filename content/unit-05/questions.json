@@ -1,0 +1,38 @@
+[
+  {
+    "id": "u05q1",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "question": "I ___ this movie three times already.",
+    "options": [
+      "saw",
+      "have seen",
+      "has seen",
+      "see"
+    ],
+    "answer": "have seen",
+    "explanation": "Từ 'three times already' chỉ số lần trải nghiệm kéo dài đến hiện tại. Chủ ngữ 'I' đi với 'have seen'."
+  },
+  {
+    "id": "u05q2",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "question": "She ___ in this city since 2018.",
+    "options": [
+      "lived",
+      "has lived",
+      "have lived",
+      "lives"
+    ],
+    "answer": "has lived",
+    "explanation": "Dấu hiệu 'since 2018' (từ năm 2018) chỉ hành động kéo dài từ quá khứ đến nay. Chủ ngữ 'She' đi với 'has lived'."
+  },
+  {
+    "id": "u05q3",
+    "type": "fill_blank",
+    "difficulty": "hard",
+    "question": "It is the first time I ___ (ever / eat) sushi.",
+    "answer": "have ever eaten",
+    "explanation": "Cấu trúc 'It is the first/second... time + S + present perfect' (đây là lần đầu tiên làm gì). Chia động từ thành 'have ever eaten'."
+  }
+]

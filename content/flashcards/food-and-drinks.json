@@ -1,0 +1,362 @@
+[
+    {
+        "english": "appetizer",
+        "phonetic": "/ˈæpɪtaɪzər/",
+        "vietnamese": "món khai vị",
+        "type": "vocabulary"
+    },
+    {
+        "english": "main course",
+        "phonetic": "/meɪn kɔːrs/",
+        "vietnamese": "món chính",
+        "type": "vocabulary"
+    },
+    {
+        "english": "dessert",
+        "phonetic": "/dɪˈzɜːrt/",
+        "vietnamese": "món tráng miệng",
+        "type": "vocabulary"
+    },
+    {
+        "english": "beverage",
+        "phonetic": "/ˈbevərɪdʒ/",
+        "vietnamese": "đồ uống / thức uống",
+        "type": "vocabulary"
+    },
+    {
+        "english": "seafood",
+        "phonetic": "/ˈsiːfuːd/",
+        "vietnamese": "hải sản",
+        "type": "vocabulary"
+    },
+    {
+        "english": "ingredient",
+        "phonetic": "/ɪnˈɡriːdiənt/",
+        "vietnamese": "nguyên liệu",
+        "type": "vocabulary"
+    },
+    {
+        "english": "recipe",
+        "phonetic": "/ˈresəpi/",
+        "vietnamese": "công thức nấu ăn",
+        "type": "vocabulary"
+    },
+    {
+        "english": "menu",
+        "phonetic": "/ˈmenjuː/",
+        "vietnamese": "thực đơn",
+        "type": "vocabulary"
+    },
+    {
+        "english": "soft drink",
+        "phonetic": "/ˌsɔːft ˈdrɪŋk/",
+        "vietnamese": "nước ngọt / nước giải khát",
+        "type": "vocabulary"
+    },
+    {
+        "english": "smoothie",
+        "phonetic": "/ˈsmuːði/",
+        "vietnamese": "sinh tố",
+        "type": "vocabulary"
+    },
+    {
+        "english": "cocktail",
+        "phonetic": "/ˈkɑːkteɪl/",
+        "vietnamese": "rượu cocktail",
+        "type": "vocabulary"
+    },
+    {
+        "english": "soup",
+        "phonetic": "/suːp/",
+        "vietnamese": "món súp / canh",
+        "type": "vocabulary"
+    },
+    {
+        "english": "salad",
+        "phonetic": "/ˈsæləd/",
+        "vietnamese": "món sa-lát",
+        "type": "vocabulary"
+    },
+    {
+        "english": "steak",
+        "phonetic": "/steɪk/",
+        "vietnamese": "bít tết",
+        "type": "vocabulary"
+    },
+    {
+        "english": "noodle",
+        "phonetic": "/ˈnuːdl/",
+        "vietnamese": "mì / bún / phở",
+        "type": "vocabulary"
+    },
+    {
+        "english": "vegetarian",
+        "phonetic": "/ˌvedʒəˈteriən/",
+        "vietnamese": "món ăn chay / người ăn chay",
+        "type": "vocabulary"
+    },
+    {
+        "english": "buffet",
+        "phonetic": "/bəˈfeɪ/",
+        "vietnamese": "tiệc đứng / tiệc buffet",
+        "type": "vocabulary"
+    },
+    {
+        "english": "waiter",
+        "phonetic": "/ˈweɪtər/",
+        "vietnamese": "bồi bàn nam",
+        "type": "vocabulary"
+    },
+    {
+        "english": "waitress",
+        "phonetic": "/ˈweɪtrəs/",
+        "vietnamese": "bồi bàn nữ",
+        "type": "vocabulary"
+    },
+    {
+        "english": "bill",
+        "phonetic": "/bɪl/",
+        "vietnamese": "hóa đơn thanh toán",
+        "type": "vocabulary"
+    },
+    {
+        "english": "fast food",
+        "phonetic": "/ˌfæst ˈfuːd/",
+        "vietnamese": "thức ăn nhanh",
+        "type": "vocabulary"
+    },
+    {
+        "english": "dairy product",
+        "phonetic": "/ˈderi ˈprɑːdʌkt/",
+        "vietnamese": "sản phẩm từ sữa",
+        "type": "vocabulary"
+    },
+    {
+        "english": "bakery",
+        "phonetic": "/ˈbeɪkəri/",
+        "vietnamese": "tiệm bánh / đồ bánh ngọt",
+        "type": "vocabulary"
+    },
+    {
+        "english": "cereal",
+        "phonetic": "/ˈsɪriəl/",
+        "vietnamese": "ngũ cốc",
+        "type": "vocabulary"
+    },
+    {
+        "english": "snack",
+        "phonetic": "/snæk/",
+        "vietnamese": "đồ ăn vặt / món ăn nhẹ",
+        "type": "vocabulary"
+    },
+    {
+        "english": "condiment",
+        "phonetic": "/ˈkɑːndɪmənt/",
+        "vietnamese": "gia vị (nước chấm, sốt kèm thêm)",
+        "type": "vocabulary"
+    },
+    {
+        "english": "spice",
+        "phonetic": "/spaɪs/",
+        "vietnamese": "gia vị (hương liệu khô như tiêu, ớt, quế)",
+        "type": "vocabulary"
+    },
+    {
+        "english": "sauce",
+        "phonetic": "/sɔːs/",
+        "vietnamese": "nước sốt",
+        "type": "vocabulary"
+    },
+    {
+        "english": "dressing",
+        "phonetic": "/ˈdresɪŋ/",
+        "vietnamese": "nước sốt trộn sa-lát",
+        "type": "vocabulary"
+    },
+    {
+        "english": "broth",
+        "phonetic": "/brɔːθ/",
+        "vietnamese": "nước dùng / nước lèo",
+        "type": "vocabulary"
+    },
+    {
+        "english": "mineral water",
+        "phonetic": "/ˈmɪnərəl ˈwɔːtər/",
+        "vietnamese": "nước khoáng",
+        "type": "vocabulary"
+    },
+    {
+        "english": "sparkling water",
+        "phonetic": "/ˈspɑːrklɪŋ ˈwɔːtər/",
+        "vietnamese": "nước có ga / soda",
+        "type": "vocabulary"
+    },
+    {
+        "english": "herbal tea",
+        "phonetic": "/ˈhɜːrbl tiː/",
+        "vietnamese": "trà thảo mộc",
+        "type": "vocabulary"
+    },
+    {
+        "english": "milkshake",
+        "phonetic": "/ˈmɪlkʃeɪk/",
+        "vietnamese": "sữa lắc",
+        "type": "vocabulary"
+    },
+    {
+        "english": "liquor",
+        "phonetic": "/ˈlɪkər/",
+        "vietnamese": "rượu mạnh",
+        "type": "vocabulary"
+    },
+    {
+        "english": "grilled",
+        "phonetic": "/ɡrɪld/",
+        "vietnamese": "nướng (bằng vỉ)",
+        "type": "vocabulary"
+    },
+    {
+        "english": "roasted",
+        "phonetic": "/ˈrəʊstɪd/",
+        "vietnamese": "quay / nướng (trong lò)",
+        "type": "vocabulary"
+    },
+    {
+        "english": "steamed",
+        "phonetic": "/stiːmd/",
+        "vietnamese": "hấp",
+        "type": "vocabulary"
+    },
+    {
+        "english": "fried",
+        "phonetic": "/fraɪd/",
+        "vietnamese": "chiên / rán",
+        "type": "vocabulary"
+    },
+    {
+        "english": "stir-fried",
+        "phonetic": "/stɜːr fraɪd/",
+        "vietnamese": "xào",
+        "type": "vocabulary"
+    },
+    {
+        "english": "stewed",
+        "phonetic": "/stjuːd/",
+        "vietnamese": "hầm / ninh",
+        "type": "vocabulary"
+    },
+    {
+        "english": "boiled",
+        "phonetic": "/bɔɪld/",
+        "vietnamese": "luộc",
+        "type": "vocabulary"
+    },
+    {
+        "english": "raw",
+        "phonetic": "/rɔː/",
+        "vietnamese": "sống / chưa chế biến",
+        "type": "vocabulary"
+    },
+    {
+        "english": "well-done",
+        "phonetic": "/ˌwel ˈdʌn/",
+        "vietnamese": "chín kỹ",
+        "type": "vocabulary"
+    },
+    {
+        "english": "medium",
+        "phonetic": "/ˈmiːdiəm/",
+        "vietnamese": "chín vừa",
+        "type": "vocabulary"
+    },
+    {
+        "english": "rare",
+        "phonetic": "/rer/",
+        "vietnamese": "tái",
+        "type": "vocabulary"
+    },
+    {
+        "english": "delicious",
+        "phonetic": "/dɪˈlɪʃəs/",
+        "vietnamese": "ngon miệng",
+        "type": "vocabulary"
+    },
+    {
+        "english": "savory",
+        "phonetic": "/ˈseɪvəri/",
+        "vietnamese": "đậm đà / có vị mặn",
+        "type": "vocabulary"
+    },
+    {
+        "english": "bitter",
+        "phonetic": "/ˈbɪtər/",
+        "vietnamese": "đắng",
+        "type": "vocabulary"
+    },
+    {
+        "english": "sour",
+        "phonetic": "/ˈsaʊər/",
+        "vietnamese": "chua",
+        "type": "vocabulary"
+    },
+    {
+        "english": "spicy",
+        "phonetic": "/ˈspaɪsi/",
+        "vietnamese": "cay",
+        "type": "vocabulary"
+    },
+    {
+        "english": "bland",
+        "phonetic": "/blænd/",
+        "vietnamese": "nhạt nhẽo / không có vị",
+        "type": "vocabulary"
+    },
+    {
+        "english": "chef",
+        "phonetic": "/ʃef/",
+        "vietnamese": "đầu bếp trưởng",
+        "type": "vocabulary"
+    },
+    {
+        "english": "customer",
+        "phonetic": "/ˈkʌstəmər/",
+        "vietnamese": "khách hàng",
+        "type": "vocabulary"
+    },
+    {
+        "english": "reservation",
+        "phonetic": "/ˌrezərˈveɪʃn/",
+        "vietnamese": "sự đặt bàn trước",
+        "type": "vocabulary"
+    },
+    {
+        "english": "cutlery",
+        "phonetic": "/ˈkʌtləri/",
+        "vietnamese": "bộ dụng cụ ăn (dao, muỗng, nĩa)",
+        "type": "vocabulary"
+    },
+    {
+        "english": "napkin",
+        "phonetic": "/ˈnæpkɪn/",
+        "vietnamese": "khăn ăn",
+        "type": "vocabulary"
+    },
+    {
+        "english": "leftovers",
+        "phonetic": "/ˈleftəʊvərz/",
+        "vietnamese": "thức ăn thừa",
+        "type": "vocabulary"
+    },
+    {
+        "english": "combo meal",
+        "phonetic": "/ˈkɑːmbəʊ miːl/",
+        "vietnamese": "suất ăn theo combo",
+        "type": "vocabulary"
+    },
+    {
+        "english": "specialty",
+        "phonetic": "/ˈspeʃəlti/",
+        "vietnamese": "món đặc sản",
+        "type": "vocabulary"
+    }
+]

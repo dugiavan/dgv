@@ -1,0 +1,29 @@
+[
+  {
+    "id": "u_c3_q1",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "question": "If she ___ earlier, she would have caught the train.",
+    "options": ["left", "had left", "has left", "would leave"],
+    "answer": "had left",
+    "explanation": "Loại 3: If + Past Perfect (had left), would have + V3/ed."
+  },
+  {
+    "id": "u_c3_q2",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "question": "If we had booked in advance, we ___ a better room.",
+    "options": ["got", "would get", "would have got", "have got"],
+    "answer": "would have got",
+    "explanation": "Loại 3: mệnh đề chính dùng would have + V3/ed (would have got)."
+  },
+  {
+    "id": "u_c3_q3",
+    "type": "fill_blank",
+    "difficulty": "hard",
+    "script": "If they had studied harder last semester, they would have passed the exam.",
+    "question": "If they ___ (study) harder last semester, they would have passed the exam.",
+    "answer": "had studied",
+    "explanation": "Loại 3: If + had studied (Past Perfect), would have passed."
+  }
+]

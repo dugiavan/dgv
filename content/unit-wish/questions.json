@@ -1,0 +1,39 @@
+[
+  {
+    "id": "u_wish_q1",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "question": "I wish I ___ more free time now.",
+    "options": [
+      "have",
+      "had",
+      "will have",
+      "am having"
+    ],
+    "answer": "had",
+    "explanation": "Câu ước ở hiện tại diễn tả mong muốn trái với thực tế hiện tại, động từ lùi về thì Quá khứ đơn (had)."
+  },
+  {
+    "id": "u_wish_q2",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "question": "She wishes she ___ attend the party tonight, but she has to work.",
+    "options": [
+      "can",
+      "could",
+      "will",
+      "would"
+    ],
+    "answer": "could",
+    "explanation": "Câu ước ở tương lai hoặc khả năng ở hiện tại/tương lai: dùng 'could + V-inf' để chỉ khả năng có thể làm được điều gì đó trái với thực tế."
+  },
+  {
+    "id": "u_wish_q3",
+    "type": "fill_blank",
+    "difficulty": "hard",
+    "script": "They wish they had bought that house last year before prices went up.",
+    "question": "They wish they ___ (buy) that house last year before prices went up.",
+    "answer": "had bought",
+    "explanation": "Câu ước ở quá khứ (vì có trạng từ 'last year'): động từ lùi về thì Quá khứ hoàn thành (had bought)."
+  }
+]

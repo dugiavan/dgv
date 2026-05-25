@@ -1,0 +1,29 @@
+[
+  {
+    "id": "u_em_q1",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "question": "It was Tim ___ ran into the office.",
+    "options": ["which", "who", "whom", "whose"],
+    "answer": "who",
+    "explanation": "Cleft sentence: It was + focus + who/that…"
+  },
+  {
+    "id": "u_em_q2",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "question": "Never ___ such a beautiful sunset.",
+    "options": ["I have seen", "have I seen", "I saw", "did I saw"],
+    "answer": "have I seen",
+    "explanation": "Sau Never đảo ngữ: have + S + V3/ed."
+  },
+  {
+    "id": "u_em_q3",
+    "type": "fill_blank",
+    "difficulty": "hard",
+    "script": "Had I known about the meeting, I would have attended.",
+    "question": "___ I known about the meeting, I would have attended.",
+    "answer": "Had",
+    "explanation": "Điều kiện loại 3 bỏ If: Had + S + past participle."
+  }
+]

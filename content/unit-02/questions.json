@@ -1,0 +1,1202 @@
+[
+  {
+    "id": "u02e01",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "What does I posted the letter yesterday mean?",
+    "question": "Câu \"I posted the letter yesterday.\" có nghĩa là gì?",
+    "options": [
+      "Tôi gửi thư vào hôm qua",
+      "Tôi đã gửi thư vào hôm qua",
+      "Tôi sẽ gửi thư vào hôm qua",
+      "Tôi đang gửi thư vào hôm qua"
+    ],
+    "answer": "Tôi đã gửi thư vào hôm qua",
+    "explanation": "\"I posted the letter yesterday.\" dùng Quá khứ đơn (posted). yesterday. Hành động đã kết thúc trong quá khứ."
+  },
+  {
+    "id": "u02e02",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "What does She passed her exam last year mean?",
+    "question": "Câu \"She passed her exam last year.\" có nghĩa là gì?",
+    "options": [
+      "Cô ấy đỗ kỳ thi năm ngoái",
+      "Cô ấy đã đỗ kỳ thi năm ngoái",
+      "Cô ấy sẽ đỗ kỳ thi năm ngoái",
+      "Cô ấy đang đỗ kỳ thi năm ngoái"
+    ],
+    "answer": "Cô ấy đã đỗ kỳ thi năm ngoái",
+    "explanation": "\"She passed her exam last year.\" dùng Quá khứ đơn (passed). last year. Hành động đã kết thúc trong quá khứ."
+  },
+  {
+    "id": "u02e03",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "What does They played soccer last Sunday mean?",
+    "question": "Câu \"They played soccer last Sunday.\" có nghĩa là gì?",
+    "options": [
+      "Họ chơi bóng đá Chủ Nhật trước",
+      "Họ đã chơi bóng đá Chủ Nhật trước",
+      "Họ sẽ chơi bóng đá Chủ Nhật trước",
+      "Họ đang chơi bóng đá Chủ Nhật trước"
+    ],
+    "answer": "Họ đã chơi bóng đá Chủ Nhật trước",
+    "explanation": "\"They played soccer last Sunday.\" dùng Quá khứ đơn (played). last Sunday. Hành động đã kết thúc trong quá khứ."
+  },
+  {
+    "id": "u02e04",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "What does We walked to school this morning mean?",
+    "question": "Câu \"We walked to school this morning.\" có nghĩa là gì?",
+    "options": [
+      "Chúng tôi đi bộ đến trường sáng nay",
+      "Chúng tôi đã đi bộ đến trường sáng nay",
+      "Chúng tôi sẽ đi bộ đến trường sáng nay",
+      "Chúng tôi đang đi bộ đến trường sáng nay"
+    ],
+    "answer": "Chúng tôi đã đi bộ đến trường sáng nay",
+    "explanation": "\"We walked to school this morning.\" dùng Quá khứ đơn (walked). this morning (đã qua). Hành động đã kết thúc trong quá khứ."
+  },
+  {
+    "id": "u02e05",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "What does He bought a new car a few days ago mean?",
+    "question": "Câu \"He bought a new car a few days ago.\" có nghĩa là gì?",
+    "options": [
+      "Anh ấy mua xe mới vài ngày trước",
+      "Anh ấy đã mua xe mới vài ngày trước",
+      "Anh ấy sẽ mua xe mới vài ngày trước",
+      "Anh ấy đang mua xe mới vài ngày trước"
+    ],
+    "answer": "Anh ấy đã mua xe mới vài ngày trước",
+    "explanation": "\"He bought a new car a few days ago.\" dùng Quá khứ đơn (bought). a few days ago. Hành động đã kết thúc trong quá khứ."
+  },
+  {
+    "id": "u02e06",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "What does We went to the cinema last night mean?",
+    "question": "Câu \"We went to the cinema last night.\" có nghĩa là gì?",
+    "options": [
+      "Chúng tôi đi xem phim tối qua",
+      "Chúng tôi đã đi xem phim tối qua",
+      "Chúng tôi sẽ đi xem phim tối qua",
+      "Chúng tôi đang đi xem phim tối qua"
+    ],
+    "answer": "Chúng tôi đã đi xem phim tối qua",
+    "explanation": "\"We went to the cinema last night.\" dùng Quá khứ đơn (went). last night. Hành động đã kết thúc trong quá khứ."
+  },
+  {
+    "id": "u02e07",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "What does She ate an apple after lunch mean?",
+    "question": "Câu \"She ate an apple after lunch.\" có nghĩa là gì?",
+    "options": [
+      "Cô ấy ăn một quả táo sau bữa trưa",
+      "Cô ấy đã ăn một quả táo sau bữa trưa",
+      "Cô ấy sẽ ăn một quả táo sau bữa trưa",
+      "Cô ấy đang ăn một quả táo sau bữa trưa"
+    ],
+    "answer": "Cô ấy đã ăn một quả táo sau bữa trưa",
+    "explanation": "\"She ate an apple after lunch.\" dùng Quá khứ đơn (ate). after lunch (đã xong). Hành động đã kết thúc trong quá khứ."
+  },
+  {
+    "id": "u02e08",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "What does I put my keys on the table mean?",
+    "question": "Câu \"I put my keys on the table.\" có nghĩa là gì?",
+    "options": [
+      "Tôi để chìa khóa trên bàn",
+      "Tôi đã để chìa khóa trên bàn",
+      "Tôi sẽ để chìa khóa trên bàn",
+      "Tôi đang để chìa khóa trên bàn"
+    ],
+    "answer": "Tôi đã để chìa khóa trên bàn",
+    "explanation": "\"I put my keys on the table.\" dùng Quá khứ đơn (put). V2 = put. Hành động đã kết thúc trong quá khứ."
+  },
+  {
+    "id": "u02e09",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "What does They built a sandcastle on the beach mean?",
+    "question": "Câu \"They built a sandcastle on the beach.\" có nghĩa là gì?",
+    "options": [
+      "Họ xây lâu đài cát trên bãi biển",
+      "Họ đã xây lâu đài cát trên bãi biển",
+      "Họ sẽ xây lâu đài cát trên bãi biển",
+      "Họ đang xây lâu đài cát trên bãi biển"
+    ],
+    "answer": "Họ đã xây lâu đài cát trên bãi biển",
+    "explanation": "\"They built a sandcastle on the beach.\" dùng Quá khứ đơn (built). irregular. Hành động đã kết thúc trong quá khứ."
+  },
+  {
+    "id": "u02e10",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "What does I did not watch TV yesterday mean?",
+    "question": "Câu \"I did not watch TV yesterday.\" có nghĩa là gì?",
+    "options": [
+      "Tôi không xem TV hôm qua",
+      "Tôi đã không xem TV hôm qua",
+      "Tôi sẽ không xem TV hôm qua",
+      "Tôi không đang xem TV hôm qua"
+    ],
+    "answer": "Tôi đã không xem TV hôm qua",
+    "explanation": "\"I did not watch TV yesterday.\" dùng Quá khứ đơn (did not watch). didn't + V. Hành động đã kết thúc trong quá khứ."
+  },
+  {
+    "id": "u02e11",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "What does She was very tired last night mean?",
+    "question": "Câu \"She was very tired last night.\" có nghĩa là gì?",
+    "options": [
+      "Cô ấy rất mệt tối qua",
+      "Cô ấy đã rất mệt tối qua",
+      "Cô ấy sẽ rất mệt tối qua",
+      "Cô ấy đang rất mệt tối qua"
+    ],
+    "answer": "Cô ấy rất mệt tối qua",
+    "explanation": "\"She was very tired last night.\" dùng Quá khứ đơn (was). be → was. Hành động đã kết thúc trong quá khứ."
+  },
+  {
+    "id": "u02e12",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "What does We were at home all day yesterday mean?",
+    "question": "Câu \"We were at home all day yesterday.\" có nghĩa là gì?",
+    "options": [
+      "Chúng tôi ở nhà cả ngày hôm qua",
+      "Chúng tôi đã ở nhà cả ngày hôm qua",
+      "Chúng tôi sẽ ở nhà cả ngày hôm qua",
+      "Chúng tôi đang ở nhà cả ngày hôm qua"
+    ],
+    "answer": "Chúng tôi ở nhà cả ngày hôm qua",
+    "explanation": "\"We were at home all day yesterday.\" dùng Quá khứ đơn (were). we → were. Hành động đã kết thúc trong quá khứ."
+  },
+  {
+    "id": "u02e13",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "What does Did you finish your homework mean?",
+    "question": "Câu \"Did you finish your homework?\" có nghĩa là gì?",
+    "options": [
+      "Bạn làm xong bài tập về nhà chưa?",
+      "Bạn đã làm xong bài tập về nhà chưa?",
+      "Bạn sẽ làm xong bài tập về nhà chưa?",
+      "Bạn có đang làm bài tập về nhà không?"
+    ],
+    "answer": "Bạn đã làm xong bài tập về nhà chưa?",
+    "explanation": "\"Did you finish your homework?\" dùng Quá khứ đơn (Did). Did + S + V. Hành động đã kết thúc trong quá khứ."
+  },
+  {
+    "id": "u02e14",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "What does He saw a beautiful bird in the garden mean?",
+    "question": "Câu \"He saw a beautiful bird in the garden.\" có nghĩa là gì?",
+    "options": [
+      "Anh ấy nhìn thấy một con chim đẹp trong vườn",
+      "Anh ấy đã nhìn thấy một con chim đẹp trong vườn",
+      "Anh ấy sẽ nhìn thấy một con chim đẹp trong vườn",
+      "Anh ấy đang nhìn thấy một con chim đẹp trong vườn"
+    ],
+    "answer": "Anh ấy đã nhìn thấy một con chim đẹp trong vườn",
+    "explanation": "\"He saw a beautiful bird in the garden.\" dùng Quá khứ đơn (saw). see → saw. Hành động đã kết thúc trong quá khứ."
+  },
+  {
+    "id": "u02e15",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "What does They met their friends at the cafe mean?",
+    "question": "Câu \"They met their friends at the cafe.\" có nghĩa là gì?",
+    "options": [
+      "Họ gặp bạn bè ở quán cà phê",
+      "Họ đã gặp bạn bè ở quán cà phê",
+      "Họ sẽ gặp bạn bè ở quán cà phê",
+      "Họ đang gặp bạn bè ở quán cà phê"
+    ],
+    "answer": "Họ đã gặp bạn bè ở quán cà phê",
+    "explanation": "\"They met their friends at the cafe.\" dùng Quá khứ đơn (met). meet → met. Hành động đã kết thúc trong quá khứ."
+  },
+  {
+    "id": "u02e16",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "What does I wrote an email to my teacher mean?",
+    "question": "Câu \"I wrote an email to my teacher.\" có nghĩa là gì?",
+    "options": [
+      "Tôi viết email cho thầy/cô",
+      "Tôi đã viết email cho thầy/cô",
+      "Tôi sẽ viết email cho thầy/cô",
+      "Tôi đang viết email cho thầy/cô"
+    ],
+    "answer": "Tôi đã viết email cho thầy/cô",
+    "explanation": "\"I wrote an email to my teacher.\" dùng Quá khứ đơn (wrote). write → wrote. Hành động đã kết thúc trong quá khứ."
+  },
+  {
+    "id": "u02e17",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "What does She drank two glasses of water mean?",
+    "question": "Câu \"She drank two glasses of water.\" có nghĩa là gì?",
+    "options": [
+      "Cô ấy uống hai ly nước",
+      "Cô ấy đã uống hai ly nước",
+      "Cô ấy sẽ uống hai ly nước",
+      "Cô ấy đang uống hai ly nước"
+    ],
+    "answer": "Cô ấy đã uống hai ly nước",
+    "explanation": "\"She drank two glasses of water.\" dùng Quá khứ đơn (drank). drink → drank. Hành động đã kết thúc trong quá khứ."
+  },
+  {
+    "id": "u02e18",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "What does The concert started on time mean?",
+    "question": "Câu \"The concert started on time.\" có nghĩa là gì?",
+    "options": [
+      "Buổi hòa nhạc bắt đầu đúng giờ",
+      "Buổi hòa nhạc đã bắt đầu đúng giờ",
+      "Buổi hòa nhạc sẽ bắt đầu đúng giờ",
+      "Buổi hòa nhạc đang bắt đầu đúng giờ"
+    ],
+    "answer": "Buổi hòa nhạc đã bắt đầu đúng giờ",
+    "explanation": "\"The concert started on time.\" dùng Quá khứ đơn (started). -ed regular. Hành động đã kết thúc trong quá khứ."
+  },
+  {
+    "id": "u02e19",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "What does It rained heavily yesterday mean?",
+    "question": "Câu \"It rained heavily yesterday.\" có nghĩa là gì?",
+    "options": [
+      "Hôm qua trời mưa rất to",
+      "Hôm qua trời đã mưa rất to",
+      "Ngày mai trời mưa rất to",
+      "Hôm qua trời đang mưa rất to"
+    ],
+    "answer": "Hôm qua trời mưa rất to",
+    "explanation": "\"It rained heavily yesterday.\" dùng Quá khứ đơn (rained). yesterday. Hành động đã kết thúc trong quá khứ."
+  },
+  {
+    "id": "u02e20",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "What does We stayed at a hotel last week mean?",
+    "question": "Câu \"We stayed at a hotel last week.\" có nghĩa là gì?",
+    "options": [
+      "Chúng tôi ở khách sạn tuần trước",
+      "Chúng tôi đã ở khách sạn tuần trước",
+      "Chúng tôi sẽ ở khách sạn tuần trước",
+      "Chúng tôi đang ở khách sạn tuần trước"
+    ],
+    "answer": "Chúng tôi đã ở khách sạn tuần trước",
+    "explanation": "\"We stayed at a hotel last week.\" dùng Quá khứ đơn (stayed). last week. Hành động đã kết thúc trong quá khứ."
+  },
+  {
+    "id": "u02e21",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "Translate this sentence into English.",
+    "question": "Dịch câu \"Tôi đã dọn phòng hôm qua\" sang tiếng Anh.",
+    "options": [
+      "I clean my room yesterday",
+      "I cleaned my room yesterday",
+      "I am cleaning my room yesterday",
+      "I will clean my room yesterday"
+    ],
+    "answer": "I cleaned my room yesterday",
+    "explanation": "Câu đúng: \"I cleaned my room yesterday\". Động từ chính ở Quá khứ đơn: cleaned."
+  },
+  {
+    "id": "u02e22",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "Translate this sentence into English.",
+    "question": "Dịch câu \"Cô ấy đã mở cửa sổ sáng nay\" sang tiếng Anh.",
+    "options": [
+      "She open the window this morning",
+      "She opened the window this morning",
+      "She opens the window this morning",
+      "She is open the window this morning"
+    ],
+    "answer": "She opened the window this morning",
+    "explanation": "Câu đúng: \"She opened the window this morning\". Động từ chính ở Quá khứ đơn: opened."
+  },
+  {
+    "id": "u02e23",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "Translate this sentence into English.",
+    "question": "Dịch câu \"Họ đã chơi game tối qua\" sang tiếng Anh.",
+    "options": [
+      "They play games last night",
+      "They played games last night",
+      "They playing games last night",
+      "They have played games last night"
+    ],
+    "answer": "They played games last night",
+    "explanation": "Câu đúng: \"They played games last night\". Động từ chính ở Quá khứ đơn: played."
+  },
+  {
+    "id": "u02e24",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "Translate this sentence into English.",
+    "question": "Dịch câu \"Anh ấy đã đến trường muộn\" sang tiếng Anh.",
+    "options": [
+      "He come to school late",
+      "He came to school late",
+      "He comes to school late",
+      "He is come to school late"
+    ],
+    "answer": "He came to school late",
+    "explanation": "Câu đúng: \"He came to school late\". Động từ chính ở Quá khứ đơn: came."
+  },
+  {
+    "id": "u02e25",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "Translate this sentence into English.",
+    "question": "Dịch câu \"Chúng tôi đã ăn pizza tuần trước\" sang tiếng Anh.",
+    "options": [
+      "We eat pizza last week",
+      "We ate pizza last week",
+      "We are eat pizza last week",
+      "We have ate pizza last week"
+    ],
+    "answer": "We ate pizza last week",
+    "explanation": "Câu đúng: \"We ate pizza last week\". Động từ chính ở Quá khứ đơn: ate."
+  },
+  {
+    "id": "u02e26",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "Translate this sentence into English.",
+    "question": "Dịch câu \"Bạn đã gọi điện cho tôi chưa?\" sang tiếng Anh.",
+    "options": [
+      "Do you call me?",
+      "Did you call me?",
+      "Are you call me?",
+      "Have you call me?"
+    ],
+    "answer": "Did you call me?",
+    "explanation": "Câu đúng: \"Did you call me?\". Động từ chính ở Quá khứ đơn: Did you call."
+  },
+  {
+    "id": "u02e27",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "Translate this sentence into English.",
+    "question": "Dịch câu \"Tôi đã không đi học hôm qua\" sang tiếng Anh.",
+    "options": [
+      "I do not go to school yesterday",
+      "I did not go to school yesterday",
+      "I not go to school yesterday",
+      "I am not go to school yesterday"
+    ],
+    "answer": "I did not go to school yesterday",
+    "explanation": "Câu đúng: \"I did not go to school yesterday\". Động từ chính ở Quá khứ đơn: did not go."
+  },
+  {
+    "id": "u02e28",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "Translate this sentence into English.",
+    "question": "Dịch câu \"Cô ấy đã không thích bài đó\" sang tiếng Anh.",
+    "options": [
+      "She does not like that song",
+      "She did not like that song",
+      "She not liked that song",
+      "She is not like that song"
+    ],
+    "answer": "She did not like that song",
+    "explanation": "Câu đúng: \"She did not like that song\". Động từ chính ở Quá khứ đơn: did not like."
+  },
+  {
+    "id": "u02e29",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "Translate this sentence into English.",
+    "question": "Dịch câu \"Họ đã sống ở London năm ngoái\" sang tiếng Anh.",
+    "options": [
+      "They live in London last year",
+      "They lived in London last year",
+      "They are live in London last year",
+      "They have lived in London last year"
+    ],
+    "answer": "They lived in London last year",
+    "explanation": "Câu đúng: \"They lived in London last year\". Động từ chính ở Quá khứ đơn: lived."
+  },
+  {
+    "id": "u02e30",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "Translate this sentence into English.",
+    "question": "Dịch câu \"Tôi đã tìm thấy cuốn sách của mình\" sang tiếng Anh.",
+    "options": [
+      "I find my book",
+      "I founded my book",
+      "I have found my book",
+      "I am finding my book"
+    ],
+    "answer": "I found my book",
+    "explanation": "Câu đúng: \"I found my book\". Động từ chính ở Quá khứ đơn: found."
+  },
+  {
+    "id": "u02e31",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "Translate this sentence into English.",
+    "question": "Dịch câu \"Anh ấy đã quên mang ô\" sang tiếng Anh.",
+    "options": [
+      "He forget to bring his umbrella",
+      "He forgot to bring his umbrella",
+      "He forgets to bring his umbrella",
+      "He is forgot to bring his umbrella"
+    ],
+    "answer": "He forgot to bring his umbrella",
+    "explanation": "Câu đúng: \"He forgot to bring his umbrella\". Động từ chính ở Quá khứ đơn: forgot."
+  },
+  {
+    "id": "u02e32",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "Translate this sentence into English.",
+    "question": "Dịch câu \"Chúng tôi đã học bài cả buổi chiều\" sang tiếng Anh.",
+    "options": [
+      "We study all afternoon",
+      "We studied all afternoon",
+      "We studying all afternoon",
+      "We have study all afternoon"
+    ],
+    "answer": "We studied all afternoon",
+    "explanation": "Câu đúng: \"We studied all afternoon\". Động từ chính ở Quá khứ đơn: studied."
+  },
+  {
+    "id": "u02e33",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "Translate this sentence into English.",
+    "question": "Dịch câu \"Cô ấy đã nấu cơm cho gia đình\" sang tiếng Anh.",
+    "options": [
+      "She cook rice for her family",
+      "She cooked rice for her family",
+      "She cooks rice for her family",
+      "She is cook rice for her family"
+    ],
+    "answer": "She cooked rice for her family",
+    "explanation": "Câu đúng: \"She cooked rice for her family\". Động từ chính ở Quá khứ đơn: cooked."
+  },
+  {
+    "id": "u02e34",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "Translate this sentence into English.",
+    "question": "Dịch câu \"Tôi đã nghe nhạc trong phòng\" sang tiếng Anh.",
+    "options": [
+      "I listen to music in my room",
+      "I listened to music in my room",
+      "I listening to music in my room",
+      "I am listen to music in my room"
+    ],
+    "answer": "I listened to music in my room",
+    "explanation": "Câu đúng: \"I listened to music in my room\". Động từ chính ở Quá khứ đơn: listened."
+  },
+  {
+    "id": "u02e35",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "Translate this sentence into English.",
+    "question": "Dịch câu \"Họ đã thắng trận đấu\" sang tiếng Anh.",
+    "options": [
+      "They win the match",
+      "They won the match",
+      "They winning the match",
+      "They have win the match"
+    ],
+    "answer": "They won the match",
+    "explanation": "Câu đúng: \"They won the match\". Động từ chính ở Quá khứ đơn: won."
+  },
+  {
+    "id": "u02e36",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "Translate this sentence into English.",
+    "question": "Dịch câu \"Anh ấy đã trả tiền cho bữa ăn\" sang tiếng Anh.",
+    "options": [
+      "He pay for the meal",
+      "He paid for the meal",
+      "He pays for the meal",
+      "He is pay for the meal"
+    ],
+    "answer": "He paid for the meal",
+    "explanation": "Câu đúng: \"He paid for the meal\". Động từ chính ở Quá khứ đơn: paid."
+  },
+  {
+    "id": "u02e37",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "Translate this sentence into English.",
+    "question": "Dịch câu \"Tôi đã đọc truyện trước khi ngủ\" sang tiếng Anh.",
+    "options": [
+      "I read a story before bed",
+      "I reads a story before bed",
+      "I am read a story before bed",
+      "I reading a story before bed"
+    ],
+    "answer": "I read a story before bed",
+    "explanation": "Câu đúng: \"I read a story before bed\". Động từ chính ở Quá khứ đơn: read (/red/)."
+  },
+  {
+    "id": "u02e38",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "Translate this sentence into English.",
+    "question": "Dịch câu \"Cô ấy đã nói lời cảm ơn\" sang tiếng Anh.",
+    "options": [
+      "She say thank you",
+      "She said thank you",
+      "She says thank you",
+      "She is say thank you"
+    ],
+    "answer": "She said thank you",
+    "explanation": "Câu đúng: \"She said thank you\". Động từ chính ở Quá khứ đơn: said."
+  },
+  {
+    "id": "u02e39",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "Translate this sentence into English.",
+    "question": "Dịch câu \"Chúng tôi đã đi du lịch vào mùa hè\" sang tiếng Anh.",
+    "options": [
+      "We travel in summer",
+      "We travelled in summer",
+      "We travelling in summer",
+      "We have travel in summer"
+    ],
+    "answer": "We travelled in summer",
+    "explanation": "Câu đúng: \"We travelled in summer\". Động từ chính ở Quá khứ đơn: travelled."
+  },
+  {
+    "id": "u02e40",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "Translate this sentence into English.",
+    "question": "Dịch câu \"Bạn đã làm gì cuối tuần trước?\" sang tiếng Anh.",
+    "options": [
+      "What do you do last weekend?",
+      "What did you do last weekend?",
+      "What you did last weekend?",
+      "What are you do last weekend?"
+    ],
+    "answer": "What did you do last weekend?",
+    "explanation": "Câu đúng: \"What did you do last weekend?\". Động từ chính ở Quá khứ đơn: What did you do."
+  },
+  {
+    "id": "u02m01",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "script": "Choose the correct verb form. I posted the letter yesterday.",
+    "question": "Chọn động từ đúng cho câu sau: \"I ___ the letter yesterday.\"",
+    "options": [
+      "post",
+      "posted",
+      "posting",
+      "posts"
+    ],
+    "answer": "posted",
+    "explanation": "Dấu hiệu/thì: yesterday. Quá khứ đơn → 'posted'. (regular -ed)"
+  },
+  {
+    "id": "u02m02",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "script": "Choose the correct verb form. Emma passed her exam last year.",
+    "question": "Chọn động từ đúng cho câu sau: \"Emma ___ her exam last year.\"",
+    "options": [
+      "pass",
+      "passed",
+      "passing",
+      "passes"
+    ],
+    "answer": "passed",
+    "explanation": "Dấu hiệu/thì: last year. Quá khứ đơn → 'passed'. (regular -ed)"
+  },
+  {
+    "id": "u02m03",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "script": "Choose the correct verb form. They played soccer in the park last Sunday.",
+    "question": "Chọn động từ đúng cho câu sau: \"They ___ soccer in the park last Sunday.\"",
+    "options": [
+      "play",
+      "played",
+      "playing",
+      "plays"
+    ],
+    "answer": "played",
+    "explanation": "Dấu hiệu/thì: last Sunday. Quá khứ đơn → 'played'. (regular -ed)"
+  },
+  {
+    "id": "u02m04",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "script": "Choose the correct verb form. He bought a new car a few days ago.",
+    "question": "Chọn động từ đúng cho câu sau: \"He ___ a new car a few days ago.\"",
+    "options": [
+      "buy",
+      "bought",
+      "buys",
+      "buying"
+    ],
+    "answer": "bought",
+    "explanation": "Dấu hiệu/thì: a few days ago. Quá khứ đơn → 'bought'. (buy → bought)"
+  },
+  {
+    "id": "u02m05",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "script": "Choose the correct verb form. We went to the cinema last night.",
+    "question": "Chọn động từ đúng cho câu sau: \"We ___ to the cinema last night.\"",
+    "options": [
+      "go",
+      "went",
+      "going",
+      "goes"
+    ],
+    "answer": "went",
+    "explanation": "Dấu hiệu/thì: last night. Quá khứ đơn → 'went'. (go → went)"
+  },
+  {
+    "id": "u02m06",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "script": "Choose the correct verb form. She ate an apple after lunch.",
+    "question": "Chọn động từ đúng cho câu sau: \"She ___ an apple after lunch.\"",
+    "options": [
+      "eat",
+      "eating",
+      "ate",
+      "eats"
+    ],
+    "answer": "ate",
+    "explanation": "Dấu hiệu/thì: after lunch. Quá khứ đơn → 'ate'. (eat → ate)"
+  },
+  {
+    "id": "u02m07",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "script": "Choose the correct verb form. I put my keys on the table.",
+    "question": "Chọn động từ đúng cho câu sau: \"I ___ my keys on the table.\"",
+    "options": [
+      "put",
+      "putted",
+      "putting",
+      "puts"
+    ],
+    "answer": "put",
+    "explanation": "Dấu hiệu/thì: V1=V2=put. Quá khứ đơn → 'put'. (irregular same form)"
+  },
+  {
+    "id": "u02m08",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "script": "Choose the correct verb form. They built a big sandcastle on the beach.",
+    "question": "Chọn động từ đúng cho câu sau: \"They ___ a big sandcastle on the beach.\"",
+    "options": [
+      "build",
+      "built",
+      "building",
+      "builds"
+    ],
+    "answer": "built",
+    "explanation": "Dấu hiệu/thì: past event. Quá khứ đơn → 'built'. (build → built)"
+  },
+  {
+    "id": "u02m09",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "script": "Choose the correct verb form. The concert started on time last night.",
+    "question": "Chọn động từ đúng cho câu sau: \"The concert ___ on time last night.\"",
+    "options": [
+      "start",
+      "started",
+      "starting",
+      "starts"
+    ],
+    "answer": "started",
+    "explanation": "Dấu hiệu/thì: last night. Quá khứ đơn → 'started'. (regular -ed)"
+  },
+  {
+    "id": "u02m10",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "script": "Choose the correct verb form. It rained heavily all day yesterday.",
+    "question": "Chọn động từ đúng cho câu sau: \"It ___ heavily all day yesterday.\"",
+    "options": [
+      "rain",
+      "rained",
+      "raining",
+      "rains"
+    ],
+    "answer": "rained",
+    "explanation": "Dấu hiệu/thì: yesterday. Quá khứ đơn → 'rained'. (regular -ed)"
+  },
+  {
+    "id": "u02m11",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "script": "Choose the correct verb form. She opened the windows because it was hot.",
+    "question": "Chọn động từ đúng cho câu sau: \"She ___ the windows because it was hot.\"",
+    "options": [
+      "open",
+      "opened",
+      "opens",
+      "opening"
+    ],
+    "answer": "opened",
+    "explanation": "Dấu hiệu/thì: was = past. Quá khứ đơn → 'opened'. (regular -ed)"
+  },
+  {
+    "id": "u02m12",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "script": "Choose the correct verb form. We stayed at a hotel last week.",
+    "question": "Chọn động từ đúng cho câu sau: \"We ___ at a hotel last week.\"",
+    "options": [
+      "stay",
+      "stayed",
+      "staying",
+      "stays"
+    ],
+    "answer": "stayed",
+    "explanation": "Dấu hiệu/thì: last week. Quá khứ đơn → 'stayed'. (regular -ed)"
+  },
+  {
+    "id": "u02m13",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "script": "Choose the correct verb form. He watched TV yesterday evening.",
+    "question": "Chọn động từ đúng cho câu sau: \"He ___ TV yesterday evening.\"",
+    "options": [
+      "watch",
+      "watched",
+      "watches",
+      "watching"
+    ],
+    "answer": "watched",
+    "explanation": "Dấu hiệu/thì: yesterday. Quá khứ đơn → 'watched'. (regular -ed)"
+  },
+  {
+    "id": "u02m14",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "script": "Choose the correct verb form. They met their friends at the mall.",
+    "question": "Chọn động từ đúng cho câu sau: \"They ___ their friends at the mall.\"",
+    "options": [
+      "meet",
+      "met",
+      "meeting",
+      "meets"
+    ],
+    "answer": "met",
+    "explanation": "Dấu hiệu/thì: past. Quá khứ đơn → 'met'. (meet → met)"
+  },
+  {
+    "id": "u02m15",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "script": "Choose the correct verb form. I wrote an email to my teacher.",
+    "question": "Chọn động từ đúng cho câu sau: \"I ___ an email to my teacher.\"",
+    "options": [
+      "write",
+      "wrote",
+      "writing",
+      "writes"
+    ],
+    "answer": "wrote",
+    "explanation": "Dấu hiệu/thì: past. Quá khứ đơn → 'wrote'. (write → wrote)"
+  },
+  {
+    "id": "u02m16",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "script": "Choose the correct verb form. She drank two glasses of water.",
+    "question": "Chọn động từ đúng cho câu sau: \"She ___ two glasses of water.\"",
+    "options": [
+      "drink",
+      "drank",
+      "drinks",
+      "drinking"
+    ],
+    "answer": "drank",
+    "explanation": "Dấu hiệu/thì: past. Quá khứ đơn → 'drank'. (drink → drank)"
+  },
+  {
+    "id": "u02m17",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "script": "Choose the correct verb form. He saw a beautiful bird in the garden.",
+    "question": "Chọn động từ đúng cho câu sau: \"He ___ a beautiful bird in the garden.\"",
+    "options": [
+      "see",
+      "saw",
+      "sees",
+      "seeing"
+    ],
+    "answer": "saw",
+    "explanation": "Dấu hiệu/thì: past. Quá khứ đơn → 'saw'. (see → saw)"
+  },
+  {
+    "id": "u02m18",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "script": "Choose the correct verb form. We cleaned our house yesterday.",
+    "question": "Chọn động từ đúng cho câu sau: \"We ___ our house yesterday.\"",
+    "options": [
+      "clean",
+      "cleaned",
+      "cleans",
+      "cleaning"
+    ],
+    "answer": "cleaned",
+    "explanation": "Dấu hiệu/thì: yesterday. Quá khứ đơn → 'cleaned'. (regular -ed)"
+  },
+  {
+    "id": "u02m19",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "script": "Choose the correct verb form. The children swam in the pool for an hour.",
+    "question": "Chọn động từ đúng cho câu sau: \"The children ___ in the pool for an hour.\"",
+    "options": [
+      "swim",
+      "swam",
+      "swims",
+      "swimming"
+    ],
+    "answer": "swam",
+    "explanation": "Dấu hiệu/thì: past. Quá khứ đơn → 'swam'. (swim → swam)"
+  },
+  {
+    "id": "u02m20",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "script": "Choose the correct verb form. My brother rode his bike to school.",
+    "question": "Chọn động từ đúng cho câu sau: \"My brother ___ his bike to school.\"",
+    "options": [
+      "ride",
+      "rode",
+      "rides",
+      "riding"
+    ],
+    "answer": "rode",
+    "explanation": "Dấu hiệu/thì: past. Quá khứ đơn → 'rode'. (ride → rode)"
+  },
+  {
+    "id": "u02m21",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "script": "Choose the correct verb form. She was very happy about the result.",
+    "question": "Chọn động từ đúng cho câu sau: \"She ___ very happy about the result.\"",
+    "options": [
+      "is",
+      "was",
+      "were",
+      "be"
+    ],
+    "answer": "was",
+    "explanation": "Dấu hiệu/thì: she + past. Quá khứ đơn → 'was'. (be → was)"
+  },
+  {
+    "id": "u02m22",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "script": "Choose the correct verb form. They were at the party until midnight.",
+    "question": "Chọn động từ đúng cho câu sau: \"They ___ at the party until midnight.\"",
+    "options": [
+      "is",
+      "are",
+      "was",
+      "were"
+    ],
+    "answer": "were",
+    "explanation": "Dấu hiệu/thì: they. Quá khứ đơn → 'were'. (be → were)"
+  },
+  {
+    "id": "u02m23",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "script": "Choose the correct verb form. Did you finish your homework last night?",
+    "question": "Chọn động từ đúng cho câu sau: \"___ you finish your homework last night?\"",
+    "options": [
+      "Do",
+      "Did",
+      "Are",
+      "Were"
+    ],
+    "answer": "Did",
+    "explanation": "Dấu hiệu/thì: question. Quá khứ đơn → 'Did'. (Did + S + V)"
+  },
+  {
+    "id": "u02m24",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "script": "Choose the correct verb form. He did not like the movie.",
+    "question": "Chọn động từ đúng cho câu sau: \"He ___ not like the movie.\"",
+    "options": [
+      "do",
+      "does",
+      "did",
+      "was"
+    ],
+    "answer": "did",
+    "explanation": "Dấu hiệu/thì: negative past. Quá khứ đơn → 'did'. (did not + V)"
+  },
+  {
+    "id": "u02m25",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "script": "Choose the correct verb form. Why did she leave early?",
+    "question": "Chọn động từ đúng cho câu sau: \"Why ___ she leave early?\"",
+    "options": [
+      "do",
+      "does",
+      "did",
+      "was"
+    ],
+    "answer": "did",
+    "explanation": "Dấu hiệu/thì: Wh- question. Quá khứ đơn → 'did'. (did + S + V)"
+  },
+  {
+    "id": "u02m26",
+    "type": "fill_blank",
+    "difficulty": "medium",
+    "script": "Complete the sentence with the correct past form of the verb in brackets.",
+    "question": "Chia động từ trong ngoặc cho đúng: \"We ___ (clean) our house yesterday.\"",
+    "answer": "cleaned",
+    "explanation": "yesterday. Động từ 'clean' ở Quá khứ đơn: **cleaned**."
+  },
+  {
+    "id": "u02m27",
+    "type": "fill_blank",
+    "difficulty": "medium",
+    "script": "Complete the sentence with the correct past form of the verb in brackets.",
+    "question": "Chia động từ trong ngoặc cho đúng: \"The concert ___ (start) on time last night.\"",
+    "answer": "started",
+    "explanation": "last night. Động từ 'start' ở Quá khứ đơn: **started**."
+  },
+  {
+    "id": "u02m28",
+    "type": "fill_blank",
+    "difficulty": "medium",
+    "script": "Complete the sentence with the correct past form of the verb in brackets.",
+    "question": "Chia động từ trong ngoặc cho đúng: \"It ___ (rain) heavily all day yesterday.\"",
+    "answer": "rained",
+    "explanation": "yesterday. Động từ 'rain' ở Quá khứ đơn: **rained**."
+  },
+  {
+    "id": "u02m29",
+    "type": "fill_blank",
+    "difficulty": "medium",
+    "script": "Complete the sentence with the correct past form of the verb in brackets.",
+    "question": "Chia động từ trong ngoặc cho đúng: \"They ___ (stay) at a hotel last week.\"",
+    "answer": "stayed",
+    "explanation": "last week. Động từ 'stay' ở Quá khứ đơn: **stayed**."
+  },
+  {
+    "id": "u02m30",
+    "type": "fill_blank",
+    "difficulty": "medium",
+    "script": "Complete the sentence with the correct past form of the verb in brackets.",
+    "question": "Chia động từ trong ngoặc cho đúng: \"She ___ (watch) a film on TV last night.\"",
+    "answer": "watched",
+    "explanation": "last night. Động từ 'watch' ở Quá khứ đơn: **watched**."
+  },
+  {
+    "id": "u02m31",
+    "type": "fill_blank",
+    "difficulty": "medium",
+    "script": "Complete the sentence with the correct past form of the verb in brackets.",
+    "question": "Chia động từ trong ngoặc cho đúng: \"I ___ (walk) to school with my friend this morning.\"",
+    "answer": "walked",
+    "explanation": "this morning (past). Động từ 'walk' ở Quá khứ đơn: **walked**."
+  },
+  {
+    "id": "u02m32",
+    "type": "fill_blank",
+    "difficulty": "medium",
+    "script": "Complete the sentence with the correct past form of the verb in brackets.",
+    "question": "Chia động từ trong ngoặc cho đúng: \"He ___ (open) the door when he heard the bell.\"",
+    "answer": "opened",
+    "explanation": "heard = past. Động từ 'open' ở Quá khứ đơn: **opened**."
+  },
+  {
+    "id": "u02m33",
+    "type": "fill_blank",
+    "difficulty": "medium",
+    "script": "Complete the sentence with the correct past form of the verb in brackets.",
+    "question": "Chia động từ trong ngoặc cho đúng: \"We ___ (enjoy) the party very much.\"",
+    "answer": "enjoyed",
+    "explanation": "past event. Động từ 'enjoy' ở Quá khứ đơn: **enjoyed**."
+  },
+  {
+    "id": "u02m34",
+    "type": "fill_blank",
+    "difficulty": "medium",
+    "script": "Complete the sentence with the correct past form of the verb in brackets.",
+    "question": "Chia động từ trong ngoặc cho đúng: \"They ___ (finish) their project two days ago.\"",
+    "answer": "finished",
+    "explanation": "two days ago. Động từ 'finish' ở Quá khứ đơn: **finished**."
+  },
+  {
+    "id": "u02m35",
+    "type": "fill_blank",
+    "difficulty": "medium",
+    "script": "Complete the sentence with the correct past form of the verb in brackets.",
+    "question": "Chia động từ trong ngoặc cho đúng: \"She ___ (study) English for three hours yesterday.\"",
+    "answer": "studied",
+    "explanation": "y + i + ed. Động từ 'study' ở Quá khứ đơn: **studied**."
+  },
+  {
+    "id": "u02m36",
+    "type": "fill_blank",
+    "difficulty": "medium",
+    "script": "Complete the sentence with the correct past form of the verb in brackets.",
+    "question": "Chia động từ trong ngoặc cho đúng: \"He ___ (go) to the library after school.\"",
+    "answer": "went",
+    "explanation": "go → went. Động từ 'go' ở Quá khứ đơn: **went**."
+  },
+  {
+    "id": "u02m37",
+    "type": "fill_blank",
+    "difficulty": "medium",
+    "script": "Complete the sentence with the correct past form of the verb in brackets.",
+    "question": "Chia động từ trong ngoặc cho đúng: \"I ___ (buy) a new phone last month.\"",
+    "answer": "bought",
+    "explanation": "last month. Động từ 'buy' ở Quá khứ đơn: **bought**."
+  },
+  {
+    "id": "u02m38",
+    "type": "fill_blank",
+    "difficulty": "medium",
+    "script": "Complete the sentence with the correct past form of the verb in brackets.",
+    "question": "Chia động từ trong ngoặc cho đúng: \"She ___ (eat) breakfast at seven o'clock.\"",
+    "answer": "ate",
+    "explanation": "eat → ate. Động từ 'eat' ở Quá khứ đơn: **ate**."
+  },
+  {
+    "id": "u02m39",
+    "type": "fill_blank",
+    "difficulty": "medium",
+    "script": "Complete the sentence with the correct past form of the verb in brackets.",
+    "question": "Chia động từ trong ngoặc cho đúng: \"They ___ (build) a tree house in the garden.\"",
+    "answer": "built",
+    "explanation": "build → built. Động từ 'build' ở Quá khứ đơn: **built**."
+  },
+  {
+    "id": "u02m40",
+    "type": "fill_blank",
+    "difficulty": "medium",
+    "script": "Complete the sentence with the correct past form of the verb in brackets.",
+    "question": "Chia động từ trong ngoặc cho đúng: \"He ___ (write) three pages for his essay.\"",
+    "answer": "wrote",
+    "explanation": "write → wrote. Động từ 'write' ở Quá khứ đơn: **wrote**."
+  },
+  {
+    "id": "u02m41",
+    "type": "fill_blank",
+    "difficulty": "medium",
+    "script": "Complete the sentence with the correct past form of the verb in brackets.",
+    "question": "Chia động từ trong ngoặc cho đúng: \"We ___ (meet) our new teacher on Monday.\"",
+    "answer": "met",
+    "explanation": "meet → met. Động từ 'meet' ở Quá khứ đơn: **met**."
+  },
+  {
+    "id": "u02m42",
+    "type": "fill_blank",
+    "difficulty": "medium",
+    "script": "Complete the sentence with the correct past form of the verb in brackets.",
+    "question": "Chia động từ trong ngoặc cho đúng: \"She ___ (drink) some tea before class.\"",
+    "answer": "drank",
+    "explanation": "drink → drank. Động từ 'drink' ở Quá khứ đơn: **drank**."
+  },
+  {
+    "id": "u02m43",
+    "type": "fill_blank",
+    "difficulty": "medium",
+    "script": "Complete the sentence with the correct past form of the verb in brackets.",
+    "question": "Chia động từ trong ngoặc cho đúng: \"I ___ (see) your brother at the supermarket.\"",
+    "answer": "saw",
+    "explanation": "see → saw. Động từ 'see' ở Quá khứ đơn: **saw**."
+  },
+  {
+    "id": "u02m44",
+    "type": "fill_blank",
+    "difficulty": "medium",
+    "script": "Complete the sentence with the correct past form of the verb in brackets.",
+    "question": "Chia động từ trong ngoặc cho đúng: \"They ___ (win) the football match last week.\"",
+    "answer": "won",
+    "explanation": "win → won. Động từ 'win' ở Quá khứ đơn: **won**."
+  },
+  {
+    "id": "u02m45",
+    "type": "fill_blank",
+    "difficulty": "medium",
+    "script": "Complete the sentence with the correct past form of the verb in brackets.",
+    "question": "Chia động từ trong ngoặc cho đúng: \"He ___ (pay) for the tickets online.\"",
+    "answer": "paid",
+    "explanation": "pay → paid. Động từ 'pay' ở Quá khứ đơn: **paid**."
+  },
+  {
+    "id": "u02m46",
+    "type": "fill_blank",
+    "difficulty": "medium",
+    "script": "Complete the sentence with the correct past form of the verb in brackets.",
+    "question": "Chia động từ trong ngoặc cho đúng: \"She ___ (make) a birthday card for her friend.\"",
+    "answer": "made",
+    "explanation": "make → made. Động từ 'make' ở Quá khứ đơn: **made**."
+  },
+  {
+    "id": "u02m47",
+    "type": "fill_blank",
+    "difficulty": "medium",
+    "script": "Complete the sentence with the correct past form of the verb in brackets.",
+    "question": "Chia động từ trong ngoặc cho đúng: \"We ___ (not find) the keys anywhere.\"",
+    "answer": "didn't find",
+    "explanation": "negative. Động từ 'find' ở Quá khứ đơn: **didn't find**."
+  },
+  {
+    "id": "u02m48",
+    "type": "fill_blank",
+    "difficulty": "medium",
+    "script": "Complete the sentence with the correct past form of the verb in brackets.",
+    "question": "Chia động từ trong ngoặc cho đúng: \"He ___ (not go) to the party because he was ill.\"",
+    "answer": "didn't go",
+    "explanation": "didn't + V. Động từ 'go' ở Quá khứ đơn: **didn't go**."
+  },
+  {
+    "id": "u02m49",
+    "type": "fill_blank",
+    "difficulty": "medium",
+    "script": "Complete the sentence with the correct past form of the verb in brackets.",
+    "question": "Chia động từ trong ngoặc cho đúng: \"___ (be) you at home yesterday evening?\"",
+    "answer": "Were",
+    "explanation": "you → were. Động từ 'be' ở Quá khứ đơn: **Were**."
+  },
+  {
+    "id": "u02m50",
+    "type": "fill_blank",
+    "difficulty": "medium",
+    "script": "Complete the sentence with the correct past form of the verb in brackets.",
+    "question": "Chia động từ trong ngoặc cho đúng: \"The shop ___ (close) early because of the storm.\"",
+    "answer": "closed",
+    "explanation": "regular -ed. Động từ 'close' ở Quá khứ đơn: **closed**."
+  }
+]

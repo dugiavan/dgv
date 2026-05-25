@@ -1,0 +1,29 @@
+[
+  {
+    "id": "u_adv_q1",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "question": "I will call you ___ I get home.",
+    "options": ["because", "when", "although", "so that"],
+    "answer": "when",
+    "explanation": "Mệnh đề chỉ thời gian → when."
+  },
+  {
+    "id": "u_adv_q2",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "question": "___ she was tired, she finished the report.",
+    "options": ["Because", "Although", "So that", "If"],
+    "answer": "Although",
+    "explanation": "Tương phản: mệc dù vậy → although / though."
+  },
+  {
+    "id": "u_adv_q3",
+    "type": "fill_blank",
+    "difficulty": "hard",
+    "script": "He spoke quietly so that nobody would hear him.",
+    "question": "He spoke quietly ___ that nobody would hear him.",
+    "answer": "so",
+    "explanation": "Mục đích/kết quả: so that + clause."
+  }
+]

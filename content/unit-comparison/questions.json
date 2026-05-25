@@ -1,0 +1,272 @@
+[
+  {
+    "id": "u_cmp_e01",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "question": "My sister is ___ tall ___ me.",
+    "options": ["as / as", "more / than", "the / than", "so / that"],
+    "answer": "as / as",
+    "explanation": "So sánh bằng: as + adj + as."
+  },
+  {
+    "id": "u_cmp_e02",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "question": "This box is ___ than that one.",
+    "options": ["big", "bigger", "biggest", "more big"],
+    "answer": "bigger",
+    "explanation": "Tính từ ngắn 1 âm tiết: big → bigger + than."
+  },
+  {
+    "id": "u_cmp_e03",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "question": "She is ___ than she was last year.",
+    "options": ["happy", "happier", "happiest", "more happy"],
+    "answer": "happier",
+    "explanation": "Tính từ tận cùng -y: happy → happier."
+  },
+  {
+    "id": "u_cmp_e04",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "question": "This exercise is ___ than the last one.",
+    "options": ["difficult", "more difficult", "difficulter", "most difficult"],
+    "answer": "more difficult",
+    "explanation": "Tính từ dài (2+ âm tiết): more + adj + than."
+  },
+  {
+    "id": "u_cmp_e05",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "question": "Today I feel ___ than yesterday.",
+    "options": ["good", "better", "best", "more good"],
+    "answer": "better",
+    "explanation": "Good → better (bất quy tắc)."
+  },
+  {
+    "id": "u_cmp_e06",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "question": "He is the ___ student in our class.",
+    "options": ["tall", "taller", "tallest", "most tall"],
+    "answer": "tallest",
+    "explanation": "So sánh nhất từ ngắn: the + tallest."
+  },
+  {
+    "id": "u_cmp_e07",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "question": "It was the ___ film I have ever seen.",
+    "options": ["good", "better", "best", "most good"],
+    "answer": "best",
+    "explanation": "Good → best (so sánh nhất)."
+  },
+  {
+    "id": "u_cmp_e08",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "question": "Your coffee is not ___ good ___ mine.",
+    "options": ["as / as", "so / than", "more / than", "the / of"],
+    "answer": "as / as",
+    "explanation": "So sánh bằng phủ định: not as/so + adj + as."
+  },
+  {
+    "id": "u_cmp_e09",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "question": "She runs ___ than her brother.",
+    "options": ["fast", "faster", "fastest", "more fastly"],
+    "answer": "faster",
+    "explanation": "Trạng từ fast giống tính từ ngắn: fast → faster."
+  },
+  {
+    "id": "u_cmp_e10",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "question": "This is the ___ building in the city.",
+    "options": ["high", "higher", "highest", "most high"],
+    "answer": "highest",
+    "explanation": "High → higher / highest (từ ngắn)."
+  },
+  {
+    "id": "u_cmp_m01",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "question": "The weather is getting ___ and ___.",
+    "options": ["cold and cold", "colder and colder", "more cold and more cold", "the coldest and coldest"],
+    "answer": "colder and colder",
+    "explanation": "So sánh lũy tiến: adj-er and adj-er."
+  },
+  {
+    "id": "u_cmp_m02",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "question": "I don't have ___ money ___ you.",
+    "options": ["as much / as", "as many / as", "more much / than", "so many / than"],
+    "answer": "as much / as",
+    "explanation": "Money không đếm được → as much money as."
+  },
+  {
+    "id": "u_cmp_m03",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "question": "There are ___ students in Class A than in Class B.",
+    "options": ["less", "fewer", "few", "little"],
+    "answer": "fewer",
+    "explanation": "Students đếm được số nhiều → fewer (không dùng less)."
+  },
+  {
+    "id": "u_cmp_m04",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "question": "She is the best player ___ the team.",
+    "options": ["of", "in", "on", "at"],
+    "answer": "in",
+    "explanation": "Superlative + in + nhóm/tổ chức (the team)."
+  },
+  {
+    "id": "u_cmp_m05",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "question": "This is ___ expensive than I expected.",
+    "options": ["much", "very", "many", "more much"],
+    "answer": "much",
+    "explanation": "Much/far/a lot + comparative: much more expensive."
+  },
+  {
+    "id": "u_cmp_m06",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "question": "His idea is ___ than mine.",
+    "options": ["worse", "worst", "badder", "more bad"],
+    "answer": "worse",
+    "explanation": "Bad → worse (bất quy tắc)."
+  },
+  {
+    "id": "u_cmp_m07",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "question": "My ___ brother lives in Hanoi. (thứ bậc trong gia đình)",
+    "options": ["older", "elder", "oldest", "more old"],
+    "answer": "elder",
+    "explanation": "Elder/eldest dùng cho thành viên gia đình (thứ bậc)."
+  },
+  {
+    "id": "u_cmp_m08",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "question": "We need ___ instructions before we start. (thông tin thêm)",
+    "options": ["farther", "further", "farthest", "more far"],
+    "answer": "further",
+    "explanation": "Further = thêm nữa (thông tin), không chỉ khoảng cách vật lý."
+  },
+  {
+    "id": "u_cmp_m09",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "question": "She is ___ than she looks.",
+    "options": ["more clever", "cleverer", "most clever", "cleverest"],
+    "answer": "more clever",
+    "explanation": "Clever có thể cleverer hoặc more clever; more clever phổ biến trong văn viết."
+  },
+  {
+    "id": "u_cmp_m10",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "question": "It was the ___ day of the summer.",
+    "options": ["hot", "hotter", "hottest", "most hot"],
+    "answer": "hottest",
+    "explanation": "Superlative + of + mốc thời gian/nhóm."
+  },
+  {
+    "id": "u_cmp_h01",
+    "type": "multiple_choice",
+    "difficulty": "hard",
+    "question": "___ we wait, ___ expensive it becomes.",
+    "options": ["The longer / the more", "Longer / more", "The more long / the most", "More long / most"],
+    "answer": "The longer / the more",
+    "explanation": "Cấu trúc song song: The + comparative…, the + comparative…"
+  },
+  {
+    "id": "u_cmp_h02",
+    "type": "multiple_choice",
+    "difficulty": "hard",
+    "question": "He was more mad ___ brave.",
+    "options": ["than", "as", "from", "to"],
+    "answer": "than",
+    "explanation": "So sánh hai phẩm chất cùng một người: more + adj + than."
+  },
+  {
+    "id": "u_cmp_h03",
+    "type": "multiple_choice",
+    "difficulty": "hard",
+    "question": "She is one of the ___ people I know.",
+    "options": ["kind", "kinder", "kindest", "most kind"],
+    "answer": "kindest",
+    "explanation": "One of the + superlative + danh từ số nhiều."
+  },
+  {
+    "id": "u_cmp_h04",
+    "type": "multiple_choice",
+    "difficulty": "hard",
+    "question": "Which sentence is CORRECT?",
+    "options": ["This is more taller than that.", "This is taller than that.", "This is the most taller.", "This is more tall than that."],
+    "answer": "This is taller than that.",
+    "explanation": "Không dùng double comparative (more + -er)."
+  },
+  {
+    "id": "u_cmp_h05",
+    "type": "multiple_choice",
+    "difficulty": "hard",
+    "question": "Homer was greater than all the ___ Greek poets.",
+    "options": ["other", "another", "others", "else"],
+    "answer": "other",
+    "explanation": "So sánh trong nhóm cần other để không so với chính mình."
+  },
+  {
+    "id": "u_cmp_h06",
+    "type": "multiple_choice",
+    "difficulty": "hard",
+    "question": "We want ___ cheap a flight as possible.",
+    "options": ["as", "so", "more", "the"],
+    "answer": "as",
+    "explanation": "Văn trang trọng: as + adj + a/an + noun + as."
+  },
+  {
+    "id": "u_cmp_h07",
+    "type": "multiple_choice",
+    "difficulty": "hard",
+    "question": "In formal writing: She earns more than ___.",
+    "options": ["me", "I do", "I am", "myself"],
+    "answer": "I do",
+    "explanation": "Văn trang trọng: than + chủ ngữ + trợ động từ (than I do)."
+  },
+  {
+    "id": "u_cmp_h08",
+    "type": "multiple_choice",
+    "difficulty": "hard",
+    "question": "This is ___ the best solution we have.",
+    "options": ["by far", "far", "as far", "so far"],
+    "answer": "by far",
+    "explanation": "By far + superlative = nhấn mạnh mức độ cao nhất."
+  },
+  {
+    "id": "u_cmp_h09",
+    "type": "multiple_choice",
+    "difficulty": "hard",
+    "question": "After years of saving, they are much ___ now.",
+    "options": ["well-off", "better-off", "best-off", "more well-off"],
+    "answer": "better-off",
+    "explanation": "Tính từ ghép well-off → better-off (so sánh hơn)."
+  },
+  {
+    "id": "u_cmp_h10",
+    "type": "fill_blank",
+    "difficulty": "hard",
+    "script": "The more you practice, the more confident you become.",
+    "question": "The more you ___ (practice), the more confident you become.",
+    "answer": "practice",
+    "explanation": "The more + clause (Present Simple), the more + adj: luyện càng nhiều càng tự tin."
+  }
+]

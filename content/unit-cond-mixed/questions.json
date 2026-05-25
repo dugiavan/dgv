@@ -1,0 +1,29 @@
+[
+  {
+    "id": "u_cm_q1",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "question": "If I had taken that job, I ___ richer now.",
+    "options": ["am", "would be", "will be", "would have been"],
+    "answer": "would be",
+    "explanation": "Mixed: If + Past Perfect (quá khứ), kết quả hiện tại would + V-bare (would be)."
+  },
+  {
+    "id": "u_cm_q2",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "question": "If she were better at English, she ___ the interview yesterday.",
+    "options": ["passes", "passed", "would pass", "would have passed"],
+    "answer": "would have passed",
+    "explanation": "Mixed: giả định hiện tại (were), kết quả quá khứ would have + V3/ed."
+  },
+  {
+    "id": "u_cm_q3",
+    "type": "fill_blank",
+    "difficulty": "hard",
+    "script": "If we had left earlier, we would be there by now.",
+    "question": "If we had left earlier, we ___ (be) there by now.",
+    "answer": "would be",
+    "explanation": "Mixed quá khứ → hiện tại: would be (không dùng would have been vì 'by now')."
+  }
+]

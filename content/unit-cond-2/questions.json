@@ -1,0 +1,29 @@
+[
+  {
+    "id": "u_c2_q1",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "question": "If I ___ you, I would accept the job offer.",
+    "options": ["am", "was", "were", "would be"],
+    "answer": "were",
+    "explanation": "Loại 2: If + were (giả định hiện tại), mệnh đề chính would + V-bare."
+  },
+  {
+    "id": "u_c2_q2",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "question": "If he ___ more confident, he would speak in public.",
+    "options": ["is", "was", "were", "will be"],
+    "answer": "were",
+    "explanation": "Loại 2 diễn tả trái với hiện tại: If + were, would + V-bare."
+  },
+  {
+    "id": "u_c2_q3",
+    "type": "fill_blank",
+    "difficulty": "hard",
+    "script": "If we lived near the sea, we would go swimming every day.",
+    "question": "If we lived near the sea, we ___ (go) swimming every day.",
+    "answer": "would go",
+    "explanation": "Loại 2: mệnh đề chính would + V-bare (would go); If + Past Simple (lived)."
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "id": "u12q1",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "question": "By next December, we ___ here for five years.",
+    "options": [
+      "will live",
+      "will have lived",
+      "will have been living",
+      "will be living"
+    ],
+    "answer": "will have been living",
+    "explanation": "Nhấn mạnh khoảng thời gian kéo dài liên tục 'for five years' tính đến một mốc tương lai 'By next December', dùng tương lai hoàn thành tiếp diễn 'will have been living'."
+  },
+  {
+    "id": "u12q2",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "question": "By the time he graduates, he ___ in this university for four years.",
+    "options": [
+      "will study",
+      "will have studied",
+      "will have been studying",
+      "will be studying"
+    ],
+    "answer": "will have been studying",
+    "explanation": "Nhấn mạnh quá trình học liên tục kéo dài 4 năm tính đến thời điểm tốt nghiệp ở tương lai, dùng tương lai hoàn thành tiếp diễn 'will have been studying'."
+  },
+  {
+    "id": "u12q3",
+    "type": "fill_blank",
+    "difficulty": "hard",
+    "question": "By 6 PM, they ___ (work) for eight hours without a break.",
+    "answer": "will have been working",
+    "explanation": "Có dấu hiệu 'By 6 PM' kết hợp khoảng thời gian liên tục 'for eight hours', chia tương lai hoàn thành tiếp diễn: 'will have been working'."
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "id": "u09q1",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "question": "He is very tired because he ___ for five hours.",
+    "options": [
+      "worked",
+      "has worked",
+      "has been working",
+      "works"
+    ],
+    "answer": "has been working",
+    "explanation": "Nhấn mạnh quá trình làm việc liên tục kéo dài 5 tiếng dẫn đến kết quả mệt mỏi ở hiện tại, dùng hiện tại hoàn thành tiếp diễn 'has been working'."
+  },
+  {
+    "id": "u09q2",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "question": "It ___ since morning, and the streets are flooded.",
+    "options": [
+      "rained",
+      "has rained",
+      "has been raining",
+      "is raining"
+    ],
+    "answer": "has been raining",
+    "explanation": "Hành động mưa bắt đầu từ sáng và kéo dài liên tục đến giờ gây ngập lụt, dùng hiện tại hoàn thành tiếp diễn 'has been raining'."
+  },
+  {
+    "id": "u09q3",
+    "type": "fill_blank",
+    "difficulty": "hard",
+    "question": "She is red in the face because she ___ (run) for an hour.",
+    "answer": "has been running",
+    "explanation": "Hành động chạy liên tục trong 1 tiếng để lại kết quả đỏ mặt ở hiện tại, chia ở hiện tại hoàn thành tiếp diễn: 'has been running'."
+  }
+]

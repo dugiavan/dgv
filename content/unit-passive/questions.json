@@ -1,0 +1,29 @@
+[
+  {
+    "id": "u_pv_q1",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "question": "This letter ___ yesterday.",
+    "options": ["sent", "was sent", "is sending", "sends"],
+    "answer": "was sent",
+    "explanation": "Bị động quá khứ: was + V3/ed (was sent)."
+  },
+  {
+    "id": "u_pv_q2",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "question": "English ___ in many countries.",
+    "options": ["speaks", "is spoken", "is speaking", "spoke"],
+    "answer": "is spoken",
+    "explanation": "Bị động hiện tại: is + past participle (is spoken)."
+  },
+  {
+    "id": "u_pv_q3",
+    "type": "fill_blank",
+    "difficulty": "hard",
+    "script": "I had my car repaired last week.",
+    "question": "I had my car ___ (repair) last week.",
+    "answer": "repaired",
+    "explanation": "Causative: have + object + V3/ed (repaired)."
+  }
+]

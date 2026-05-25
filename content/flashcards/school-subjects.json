@@ -1,0 +1,180 @@
+[
+  {
+    "english": "art",
+    "phonetic": "/ɑːrt/",
+    "vietnamese": "môn mĩ thuật",
+    "type": "vocabulary"
+  },
+  {
+    "english": "biology",
+    "phonetic": "/baɪˈɒlədʒi/",
+    "vietnamese": "môn sinh học",
+    "type": "vocabulary"
+  },
+  {
+    "english": "chemistry",
+    "phonetic": "/ˈkemɪstri/",
+    "vietnamese": "môn hóa học",
+    "type": "vocabulary"
+  },
+  {
+    "english": "maths",
+    "phonetic": "/mæθs/",
+    "vietnamese": "môn toán học",
+    "type": "vocabulary"
+  },
+  {
+    "english": "physics",
+    "phonetic": "/ˈfɪzɪks/",
+    "vietnamese": "môn vật lý",
+    "type": "vocabulary"
+  },
+  {
+    "english": "literature",
+    "phonetic": "/ˈlɪtrətʃʊr/",
+    "vietnamese": "môn ngữ văn",
+    "type": "vocabulary"
+  },
+  {
+    "english": "history",
+    "phonetic": "/ˈhɪstəri/",
+    "vietnamese": "môn lịch sử",
+    "type": "vocabulary"
+  },
+  {
+    "english": "geography",
+    "phonetic": "/dʒiˈɒɡrəfi/",
+    "vietnamese": "môn địa lý",
+    "type": "vocabulary"
+  },
+  {
+    "english": "physical education",
+    "phonetic": "/ˌfɪzɪkl edʒuˈkeɪʃn/",
+    "vietnamese": "môn thể dục",
+    "type": "vocabulary"
+  },
+  {
+    "english": "information technology",
+    "phonetic": "/ˌɪnfəmeɪʃn tekˈnɒlədʒi/",
+    "vietnamese": "môn tin học",
+    "type": "vocabulary"
+  },
+  {
+    "english": "music",
+    "phonetic": "/ˈmjuːzɪk/",
+    "vietnamese": "môn âm nhạc",
+    "type": "vocabulary"
+  },
+  {
+    "english": "english",
+    "phonetic": "/ˈɪŋɡlɪʃ/",
+    "vietnamese": "môn tiếng Anh",
+    "type": "vocabulary"
+  },
+  {
+    "english": "civic education",
+    "phonetic": "/ˈsɪvɪk ˌedʒuˈkeɪʃn/",
+    "vietnamese": "môn giáo dục công dân",
+    "type": "vocabulary"
+  },
+  {
+    "english": "science",
+    "phonetic": "/ˈsaɪəns/",
+    "vietnamese": "môn khoa học",
+    "type": "vocabulary"
+  },
+  {
+    "english": "astronomy",
+    "phonetic": "/əˈstrɒnəmi/",
+    "vietnamese": "môn thiên văn học",
+    "type": "vocabulary"
+  },
+  {
+    "english": "philosophy",
+    "phonetic": "/fəˈlɒsəfi/",
+    "vietnamese": "môn triết học",
+    "type": "vocabulary"
+  },
+  {
+    "english": "foreign language",
+    "phonetic": "/ˈfɒrən ˈlæŋɡwɪdʒ/",
+    "vietnamese": "môn ngoại ngữ",
+    "type": "vocabulary"
+  },
+  {
+    "english": "drama",
+    "phonetic": "/ˈdrɑːmə/",
+    "vietnamese": "môn kịch nghệ / kịch nghệ",
+    "type": "vocabulary"
+  },
+  {
+    "english": "national defense education",
+    "phonetic": "/ˈnæʃnəl dɪˈfens ˌedʒuˈkeɪʃn/",
+    "vietnamese": "môn giáo dục quốc phòng",
+    "type": "vocabulary"
+  },
+  {
+    "english": "economics",
+    "phonetic": "/ˌiːkəˈnɒmɪks/",
+    "vietnamese": "môn kinh tế học",
+    "type": "vocabulary"
+  },
+  {
+    "english": "sociology",
+    "phonetic": "/ˌsəʊsiˈɒlədʒi/",
+    "vietnamese": "môn xã hội học",
+    "type": "vocabulary"
+  },
+  {
+    "english": "psychology",
+    "phonetic": "/saɪˈkɒlədʒi/",
+    "vietnamese": "môn tâm lý học",
+    "type": "vocabulary"
+  },
+  {
+    "english": "crafts",
+    "phonetic": "/krɑːfts/",
+    "vietnamese": "môn thủ công",
+    "type": "vocabulary"
+  },
+  {
+    "english": "engineering",
+    "phonetic": "/ˌendʒɪˈnɪərɪŋ/",
+    "vietnamese": "môn kỹ thuật",
+    "type": "vocabulary"
+  },
+  {
+    "english": "business studies",
+    "phonetic": "/ˈbɪznəs ˈstʌdiz/",
+    "vietnamese": "môn kinh doanh học",
+    "type": "vocabulary"
+  },
+  {
+    "english": "accounting",
+    "phonetic": "/əˈkaʊntɪŋ/",
+    "vietnamese": "môn kế toán",
+    "type": "vocabulary"
+  },
+  {
+    "english": "architecture",
+    "phonetic": "/ˈɑːrkɪtektʃər/",
+    "vietnamese": "môn kiến trúc",
+    "type": "vocabulary"
+  },
+  {
+    "english": "photography",
+    "phonetic": "/fəˈtɒɡrəfi/",
+    "vietnamese": "môn nhiếp ảnh",
+    "type": "vocabulary"
+  },
+  {
+    "english": "In crafts class, children learn how to make beautiful paper origami.",
+    "vietnamese": "Trong giờ thủ công, trẻ em được học cách gấp giấy origami rất đẹp.",
+    "type": "example"
+  },
+  {
+    "english": "She decided to major in psychology because she wants to understand human behavior.",
+    "vietnamese": "Cô ấy quyết định chọn chuyên ngành tâm lý học vì muốn thấu hiểu hành vi của con người.",
+    "type": "example"
+  }
+]

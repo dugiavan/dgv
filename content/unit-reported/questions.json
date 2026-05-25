@@ -1,0 +1,29 @@
+[
+  {
+    "id": "u_rp_q1",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "question": "He said, \"I am busy.\" → He said that he ___ busy.",
+    "options": ["is", "was", "has been", "will be"],
+    "answer": "was",
+    "explanation": "Reported speech + said (quá khứ): am → was."
+  },
+  {
+    "id": "u_rp_q2",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "question": "She asked me ___ I could help her.",
+    "options": ["that", "if", "what", "to"],
+    "answer": "if",
+    "explanation": "Câu hỏi Yes/No tường thuật: asked + if/whether."
+  },
+  {
+    "id": "u_rp_q3",
+    "type": "fill_blank",
+    "difficulty": "hard",
+    "script": "The teacher told us to open our books.",
+    "question": "The teacher told us ___ (open) our books.",
+    "answer": "to open",
+    "explanation": "Mệnh lệnh tường thuật: told + O + to + V-bare."
+  }
+]

@@ -1,0 +1,29 @@
+[
+  {
+    "id": "u_st_q1",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "question": "___ to bed! is an example of:",
+    "options": ["a statement", "a question", "an imperative", "an exclamation"],
+    "answer": "an imperative",
+    "explanation": "Go = động từ nguyên mẫu không to, ra lệnh/gợi ý → imperative."
+  },
+  {
+    "id": "u_st_q2",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "question": "You are tired, ___?",
+    "options": ["are you", "you are", "aren't you", "don't you"],
+    "answer": "aren't you",
+    "explanation": "Question tag: khẳng định + aren't you (phủ định ngắn)."
+  },
+  {
+    "id": "u_st_q3",
+    "type": "fill_blank",
+    "difficulty": "hard",
+    "script": "What a wonderful idea!",
+    "question": "___ a wonderful idea! (exclamation with What)",
+    "answer": "What",
+    "explanation": "Câu cảm thán với What + a/an + adj + noun."
+  }
+]

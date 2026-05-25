@@ -1,0 +1,29 @@
+[
+  {
+    "id": "u_sj_q1",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "question": "The doctor recommended that she ___ more rest.",
+    "options": ["takes", "take", "took", "taking"],
+    "answer": "take",
+    "explanation": "Subjunctive sau recommend: that + S + V-bare (take)."
+  },
+  {
+    "id": "u_sj_q2",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "question": "I wish he ___ here now.",
+    "options": ["is", "was", "were", "will be"],
+    "answer": "were",
+    "explanation": "Sau wish: dùng were (subjunctive) trong văn phong chuẩn."
+  },
+  {
+    "id": "u_sj_q3",
+    "type": "fill_blank",
+    "difficulty": "hard",
+    "script": "They insisted that the report be submitted on time.",
+    "question": "They insisted that the report ___ (be) submitted on time.",
+    "answer": "be",
+    "explanation": "Sau insist: that + S + be (V-bare, không dùng is)."
+  }
+]

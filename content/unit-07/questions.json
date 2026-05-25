@@ -1,0 +1,38 @@
+[
+  {
+    "id": "u07q1",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "question": "I think it ___ tomorrow.",
+    "options": [
+      "rains",
+      "will rain",
+      "is going to rain",
+      "rained"
+    ],
+    "answer": "will rain",
+    "explanation": "Có từ nhận biết 'I think' diễn tả một dự đoán chủ quan trong tương lai, dùng tương lai đơn 'will rain'."
+  },
+  {
+    "id": "u07q2",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "question": "Hold on, I ___ you with those heavy bags.",
+    "options": [
+      "help",
+      "will help",
+      "am helping",
+      "helped"
+    ],
+    "answer": "will help",
+    "explanation": "Quyết định tức thời giúp đỡ ngay tại thời điểm nói, chia tương lai đơn 'will help'."
+  },
+  {
+    "id": "u07q3",
+    "type": "fill_blank",
+    "difficulty": "hard",
+    "question": "If she works hard, she ___ (pass) the exam next week.",
+    "answer": "will pass",
+    "explanation": "Trong câu điều kiện loại 1, mệnh đề chính chỉ kết quả ở tương lai chia ở tương lai đơn: 'will pass'."
+  }
+]

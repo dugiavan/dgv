@@ -1,0 +1,39 @@
+[
+  {
+    "id": "u_tov_q1",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "question": "She wants ___ a doctor in the future.",
+    "options": [
+      "become",
+      "becoming",
+      "to become",
+      "becomes"
+    ],
+    "answer": "to become",
+    "explanation": "Động từ 'want' yêu cầu động từ theo sau ở dạng nguyên mẫu có To (To-Infinitive)."
+  },
+  {
+    "id": "u_tov_q2",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "question": "He promised ___ his homework before going out.",
+    "options": [
+      "finish",
+      "to finish",
+      "finishing",
+      "finished"
+    ],
+    "answer": "to finish",
+    "explanation": "Động từ 'promise' (hứa hẹn) bắt buộc đi kèm động từ nguyên mẫu có To (to finish) ở phía sau."
+  },
+  {
+    "id": "u_tov_q3",
+    "type": "fill_blank",
+    "difficulty": "hard",
+    "script": "She was the first student to submit the final essay.",
+    "question": "She was the first student ___ (submit) the final essay.",
+    "answer": "to submit",
+    "explanation": "Sau cụm từ chỉ thứ tự 'the first/second/last + danh từ', ta sử dụng To-Infinitive (to submit) thay cho mệnh đề quan hệ rút gọn."
+  }
+]

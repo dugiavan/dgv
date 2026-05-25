@@ -1,0 +1,38 @@
+[
+  {
+    "id": "u11q1",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "question": "By next month, I ___ my project.",
+    "options": [
+      "will finish",
+      "will have finished",
+      "finished",
+      "have finished"
+    ],
+    "answer": "will have finished",
+    "explanation": "Có dấu hiệu chỉ mốc thời gian tương lai 'By next month', dùng tương lai hoàn thành 'will have finished'."
+  },
+  {
+    "id": "u11q2",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "question": "They ___ in this house for ten years by next Sunday.",
+    "options": [
+      "will live",
+      "will have lived",
+      "have lived",
+      "will be living"
+    ],
+    "answer": "will have lived",
+    "explanation": "Có mốc 'by next Sunday' kết hợp khoảng thời gian 'for ten years' chỉ hành động hoàn thành tính đến mốc đó, dùng tương lai hoàn thành 'will have lived'."
+  },
+  {
+    "id": "u11q3",
+    "type": "fill_blank",
+    "difficulty": "hard",
+    "question": "By the time you return, she ___ (leave) for school.",
+    "answer": "will have left",
+    "explanation": "Hành động hoàn thành trước khi hành động khác xảy ra ở tương lai (By the time S + present simple, S + future perfect): 'will have left' (V3 của leave)."
+  }
+]

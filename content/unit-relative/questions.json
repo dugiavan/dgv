@@ -1,0 +1,29 @@
+[
+  {
+    "id": "u_rl_q1",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "question": "The woman ___ called you is my sister.",
+    "options": ["which", "who", "whose", "whom"],
+    "answer": "who",
+    "explanation": "Chỉ người, làm chủ ngữ trong mệnh đề quan hệ → who."
+  },
+  {
+    "id": "u_rl_q2",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "question": "This is the house ___ roof was damaged.",
+    "options": ["who", "which", "whose", "whom"],
+    "answer": "whose",
+    "explanation": "whose = sở hữu (roof của house)."
+  },
+  {
+    "id": "u_rl_q3",
+    "type": "fill_blank",
+    "difficulty": "hard",
+    "script": "The documents sent yesterday are confidential.",
+    "question": "The documents ___ (send) yesterday are confidential.",
+    "answer": "sent",
+    "explanation": "Mệnh đề quan hệ rút gọn bị động: V3/ed (sent)."
+  }
+]

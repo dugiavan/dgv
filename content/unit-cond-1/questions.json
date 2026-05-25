@@ -1,0 +1,29 @@
+[
+  {
+    "id": "u_c1_q1",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "question": "If it rains, we ___ at home.",
+    "options": ["stay", "will stay", "stayed", "would stay"],
+    "answer": "will stay",
+    "explanation": "Câu điều kiện loại 1: If + hiện tại đơn (rains), mệnh đề chính + will + V-bare (will stay)."
+  },
+  {
+    "id": "u_c1_q2",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "question": "If she ___ harder, she will get a promotion.",
+    "options": ["work", "works", "worked", "will work"],
+    "answer": "works",
+    "explanation": "Mệnh đề If dùng hiện tại đơn (works), không dùng will trong mệnh đề điều kiện."
+  },
+  {
+    "id": "u_c1_q3",
+    "type": "fill_blank",
+    "difficulty": "hard",
+    "script": "If you call me tonight, I will tell you the details.",
+    "question": "If you call me tonight, I ___ (tell) you the details.",
+    "answer": "will tell",
+    "explanation": "Loại 1: mệnh đề chính dùng will + V-bare (will tell); mệnh đề If dùng hiện tại đơn (call)."
+  }
+]

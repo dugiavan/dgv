@@ -1,0 +1,100 @@
+[
+  {
+    "id": "school-subjects",
+    "title": "School Subjects",
+    "description": "Từ vựng về các môn học trong trường học và câu ví dụ liên quan.",
+    "icon": "📚",
+    "cardCount": 30
+  },
+  {
+    "id": "jobs-and-careers",
+    "title": "Jobs & Careers",
+    "description": "Ngành nghề & công sở — mỗi thẻ có nghĩa tiếng Việt kèm giải thích chi tiết.",
+    "icon": "💼",
+    "cardCount": 45
+  },
+  {
+    "id": "food-and-drinks",
+    "title": "Food & Drinks",
+    "description": "Tên gọi các món ăn, đồ uống và các từ vựng dùng trong nhà hàng.",
+    "icon": "🍕",
+    "cardCount": 60
+  },
+  {
+    "id": "travel-and-tourism",
+    "title": "Travel & Tourism",
+    "description": "Từ vựng hữu ích khi đi du lịch, tại sân bay, khách sạn và hỏi đường.",
+    "icon": "✈️",
+    "cardCount": 30
+  },
+  {
+    "id": "health-and-fitness",
+    "title": "Health & Fitness",
+    "description": "Từ vựng về sức khỏe, các loại bệnh thông thường và chế độ luyện tập thể thao.",
+    "icon": "💪",
+    "cardCount": 30
+  },
+  {
+    "id": "shopping-and-fashion",
+    "title": "Shopping & Fashion",
+    "description": "Từ vựng về trang phục, mua sắm quần áo, giá cả và các phương thức thanh toán.",
+    "icon": "🛍️",
+    "cardCount": 30
+  },
+  {
+    "id": "family-and-relationships",
+    "title": "Family & Relationships",
+    "description": "Tên gọi các thành viên trong gia đình, họ hàng và các mối quan hệ xã hội.",
+    "icon": "👨‍👩‍👧‍👦",
+    "cardCount": 30
+  },
+  {
+    "id": "weather-and-nature",
+    "title": "Weather & Nature",
+    "description": "Từ vựng mô tả các hiện tượng thời tiết, thiên tai và thế giới tự nhiên xung quanh.",
+    "icon": "☀️",
+    "cardCount": 30
+  },
+  {
+    "id": "technology-and-internet",
+    "title": "Technology & Internet",
+    "description": "Các thuật ngữ về thiết bị công nghệ, mạng xã hội, phần mềm và thế giới số.",
+    "icon": "💻",
+    "cardCount": 30
+  },
+  {
+    "id": "animals-and-wildlife",
+    "title": "Animals & Wildlife",
+    "description": "Tên gọi các loài động vật nuôi, động vật hoang dã, côn trùng và sinh vật biển.",
+    "icon": "🦁",
+    "cardCount": 30
+  },
+  {
+    "id": "hobbies-and-leisure",
+    "title": "Hobbies & Leisure",
+    "description": "Từ vựng về các sở thích, hoạt động giải trí và cách tận hưởng thời gian rảnh rỗi.",
+    "icon": "🎨",
+    "cardCount": 30
+  },
+  {
+    "id": "transportation",
+    "title": "Transportation",
+    "description": "Các phương tiện giao thông công cộng, cá nhân và các biển báo giao thông thông dụng.",
+    "icon": "🚗",
+    "cardCount": 30
+  },
+  {
+    "id": "house-and-home",
+    "title": "House & Home",
+    "description": "Từ vựng về các phòng trong nhà, đồ nội thất và các đồ gia dụng quen thuộc.",
+    "icon": "🏠",
+    "cardCount": 30
+  },
+  {
+    "id": "entertainment-and-media",
+    "title": "Entertainment & Media",
+    "description": "Từ vựng về phim ảnh, âm nhạc, sách báo, truyền hình và các sự kiện giải trí.",
+    "icon": "🎬",
+    "cardCount": 30
+  }
+]

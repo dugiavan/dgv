@@ -1,0 +1,8 @@
+{
+  "id": "unit-sent-types",
+  "title": "Sentence Types",
+  "description": "Các loại câu theo mục đích – trần thuật, nghi vấn, mệnh lệnh, cảm thán.",
+  "icon": "💬",
+  "tags": ["grammar", "sentence-types"],
+  "estimatedTime": "10 phút"
+}

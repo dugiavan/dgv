@@ -1,0 +1,38 @@
+[
+  {
+    "id": "u03q1",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "question": "Look! The baby ___.",
+    "options": [
+      "sleeps",
+      "is sleeping",
+      "sleeping",
+      "was sleeping"
+    ],
+    "answer": "is sleeping",
+    "explanation": "Có từ nhận biết 'Look!' chỉ hành động đang xảy ra ngay lúc nói. Chủ ngữ số ít 'The baby' đi với 'is sleeping'."
+  },
+  {
+    "id": "u03q2",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "question": "At the moment, they ___ for their final exams.",
+    "options": [
+      "are studying",
+      "study",
+      "studies",
+      "studying"
+    ],
+    "answer": "are studying",
+    "explanation": "Cụm từ 'At the moment' là dấu hiệu của hiện tại tiếp diễn. Chủ ngữ số nhiều 'they' đi với 'are studying'."
+  },
+  {
+    "id": "u03q3",
+    "type": "fill_blank",
+    "difficulty": "hard",
+    "question": "If it ___ (still / rain) at noon, we won't go out.",
+    "answer": "is still raining",
+    "explanation": "Trong mệnh đề điều kiện If loại 1, để nhấn mạnh hành động đang diễn ra liên tục tại thời điểm tương lai (buổi trưa), ta có thể dùng hiện tại tiếp diễn: 'is still raining'."
+  }
+]

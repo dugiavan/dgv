@@ -1,0 +1,38 @@
+[
+  {
+    "id": "u08q1",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "question": "At this time tomorrow, we ___ on the beach.",
+    "options": [
+      "will lie",
+      "will be lying",
+      "are lying",
+      "lie"
+    ],
+    "answer": "will be lying",
+    "explanation": "Có mốc thời gian cụ thể trong tương lai 'At this time tomorrow' nên dùng tương lai tiếp diễn 'will be lying'."
+  },
+  {
+    "id": "u08q2",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "question": "Don't phone me between 8 and 9 PM. I ___ an exam then.",
+    "options": [
+      "will take",
+      "will be taking",
+      "am taking",
+      "take"
+    ],
+    "answer": "will be taking",
+    "explanation": "Hành động đang diễn ra tại khoảng thời gian xác định ở tương lai (8-9h tối), chia tương lai tiếp diễn 'will be taking'."
+  },
+  {
+    "id": "u08q3",
+    "type": "fill_blank",
+    "difficulty": "hard",
+    "question": "At noon next Sunday, they ___ (fly) to London.",
+    "answer": "will be flying",
+    "explanation": "Mốc thời gian cụ thể trong tương lai 'At noon next Sunday' yêu cầu chia tương lai tiếp diễn: 'will be flying'."
+  }
+]

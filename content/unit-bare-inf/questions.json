@@ -1,0 +1,39 @@
+[
+  {
+    "id": "u_bare_q1",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "question": "My parents let me ___ to the cinema with my friends.",
+    "options": [
+      "go",
+      "to go",
+      "going",
+      "went"
+    ],
+    "answer": "go",
+    "explanation": "Cấu trúc cầu khiến với let: 'let + O + V-inf' (cho phép ai làm gì)."
+  },
+  {
+    "id": "u_bare_q2",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "question": "The sad movie made her ___ during the climax.",
+    "options": [
+      "cry",
+      "to cry",
+      "crying",
+      "cried"
+    ],
+    "answer": "cry",
+    "explanation": "Cấu trúc cầu khiến với make ở dạng chủ động: 'make + O + V-inf' (bắt ai đó làm gì / khiến ai thế nào)."
+  },
+  {
+    "id": "u_bare_q3",
+    "type": "fill_blank",
+    "difficulty": "hard",
+    "script": "I heard him sing a beautiful song in the room yesterday.",
+    "question": "I heard him ___ (sing) a beautiful song in the room yesterday.",
+    "answer": "sing",
+    "explanation": "Động từ chỉ giác quan 'hear + O + V-inf' khi chứng kiến toàn bộ sự việc. Do đó ta điền động từ nguyên thể không To 'sing'."
+  }
+]

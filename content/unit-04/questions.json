@@ -1,0 +1,38 @@
+[
+  {
+    "id": "u04q1",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "question": "At 8 PM yesterday, I ___ my homework.",
+    "options": [
+      "am doing",
+      "was doing",
+      "did",
+      "were doing"
+    ],
+    "answer": "was doing",
+    "explanation": "Thời điểm cụ thể trong quá khứ 'At 8 PM yesterday' yêu cầu chia quá khứ tiếp diễn. Chủ ngữ 'I' đi với 'was doing'."
+  },
+  {
+    "id": "u04q2",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "question": "While my mother was cooking, my father ___ the garden.",
+    "options": [
+      "watered",
+      "is watering",
+      "was watering",
+      "were watering"
+    ],
+    "answer": "was watering",
+    "explanation": "Hai hành động diễn ra song song trong quá khứ (liên kết bởi While). Chủ ngữ 'my father' số ít đi với 'was watering'."
+  },
+  {
+    "id": "u04q3",
+    "type": "fill_blank",
+    "difficulty": "hard",
+    "question": "The phone rang while I ___ (take) a shower.",
+    "answer": "was taking",
+    "explanation": "Hành động đang diễn ra chia ở quá khứ tiếp diễn (was taking), hành động xen vào chia ở quá khứ đơn (rang)."
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "id": "u06q1",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "question": "By the time we arrived, the train ___.",
+    "options": [
+      "left",
+      "has left",
+      "had left",
+      "was leaving"
+    ],
+    "answer": "had left",
+    "explanation": "Hành động tàu rời ga xảy ra trước hành động chúng tôi đến 'arrived' trong quá khứ, nên chia quá khứ hoàn thành 'had left'."
+  },
+  {
+    "id": "u06q2",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "question": "After he ___ his homework, he went to bed.",
+    "options": [
+      "finished",
+      "has finished",
+      "had finished",
+      "was finishing"
+    ],
+    "answer": "had finished",
+    "explanation": "Hành động làm bài tập diễn ra trước hành động đi ngủ 'went to bed', dùng quá khứ hoàn thành 'had finished' sau After."
+  },
+  {
+    "id": "u06q3",
+    "type": "fill_blank",
+    "difficulty": "hard",
+    "question": "She couldn't buy the dress because she ___ (lose) her wallet earlier.",
+    "answer": "had lost",
+    "explanation": "Việc mất ví xảy ra trước việc không mua được váy 'couldn't buy', chia ở quá khứ hoàn thành 'had lost' (V3 của lose)."
+  }
+]

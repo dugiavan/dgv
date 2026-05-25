@@ -1,0 +1,1346 @@
+[
+  {
+    "id": "u01e01",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "What does I like apples mean?",
+    "question": "Câu \"I like apples\" có nghĩa là gì?",
+    "options": [
+      "Tôi đã thích táo",
+      "Tôi thích táo",
+      "Tôi sẽ thích táo",
+      "Tôi đang thích táo"
+    ],
+    "answer": "Tôi thích táo",
+    "explanation": "\"I like apples\" dùng thì Hiện tại đơn với động từ \"like\" (nguyên mẫu) vì chủ ngữ là I. Câu nói về sở thích hiện tại / thói quen chung: tôi thích quả táo."
+  },
+  {
+    "id": "u01e02",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "What does She works in a hospital mean?",
+    "question": "Câu \"She works in a hospital\" có nghĩa là gì?",
+    "options": [
+      "Cô ấy đã làm việc ở bệnh viện",
+      "Cô ấy sẽ làm việc ở bệnh viện",
+      "Cô ấy làm việc ở bệnh viện",
+      "Cô ấy đang làm việc ở bệnh viện"
+    ],
+    "answer": "Cô ấy làm việc ở bệnh viện",
+    "explanation": "\"Works\" là hiện tại đơn ngôi thứ ba (she → thêm -s). Diễn tả nghề nghiệp / nơi làm việc thường xuyên hiện tại, không phải hành động đang diễn ra lúc nói."
+  },
+  {
+    "id": "u01e03",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "What does They live in Hanoi mean?",
+    "question": "Câu \"They live in Hanoi\" có nghĩa là gì?",
+    "options": [
+      "Họ đã sống ở Hà Nội",
+      "Họ sẽ sống ở Hà Nội",
+      "Họ đang sống ở Hà Nội",
+      "Họ sống ở Hà Nội"
+    ],
+    "answer": "Họ sống ở Hà Nội",
+    "explanation": "\"Live\" giữ nguyên mẫu vì chủ ngữ They (số nhiều). Hiện tại đơn diễn tả nơi ở cố định / thói quen sinh hoạt."
+  },
+  {
+    "id": "u01e04",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "What does The sun rises in the east mean?",
+    "question": "Câu \"The sun rises in the east\" có nghĩa là gì?",
+    "options": [
+      "Mặt trời mọc ở phía đông",
+      "Mặt trời đã mọc ở phía đông",
+      "Mặt trời sẽ mọc ở phía đông",
+      "Mặt trời đang mọc ở phía đông"
+    ],
+    "answer": "Mặt trời mọc ở phía đông",
+    "explanation": "\"Rises\" (rise + s) vì the sun là số ít. Đây là sự thật hiển nhiên, quy luật tự nhiên → dùng Hiện tại đơn."
+  },
+  {
+    "id": "u01e05",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "What does I do not drink coffee mean?",
+    "question": "Câu \"I do not drink coffee\" có nghĩa là gì?",
+    "options": [
+      "Tôi đã không uống cà phê",
+      "Tôi sẽ không uống cà phê",
+      "Tôi không uống cà phê",
+      "Tôi không đang uống cà phê"
+    ],
+    "answer": "Tôi không uống cà phê",
+    "explanation": "Phủ định hiện tại đơn với I: do not (don't) + động từ nguyên mẫu \"drink\". Nói về thói quen / lựa chọn hiện tại."
+  },
+  {
+    "id": "u01e06",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "What does He does not like fish mean?",
+    "question": "Câu \"He does not like fish\" có nghĩa là gì?",
+    "options": [
+      "Anh ấy đã không thích cá",
+      "Anh ấy sẽ không thích cá",
+      "Anh ấy không đang thích cá",
+      "Anh ấy không thích cá"
+    ],
+    "answer": "Anh ấy không thích cá",
+    "explanation": "Chủ ngữ He (số ít) → phủ định dùng does not (doesn't) + like (nguyên mẫu). Không dùng don't với he/she/it."
+  },
+  {
+    "id": "u01e07",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "What does Do you speak English mean?",
+    "question": "Câu \"Do you speak English?\" có nghĩa là gì?",
+    "options": [
+      "Bạn đã nói tiếng Anh chưa?",
+      "Bạn có nói tiếng Anh không?",
+      "Bạn sẽ nói tiếng Anh không?",
+      "Bạn đang nói tiếng Anh phải không?"
+    ],
+    "answer": "Bạn có nói tiếng Anh không?",
+    "explanation": "Câu hỏi Yes/No hiện tại đơn: Do + you + động từ nguyên mẫu. Hỏi khả năng / thói quen hiện tại."
+  },
+  {
+    "id": "u01e08",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "What does Does she study every night mean?",
+    "question": "Câu \"Does she study every night?\" có nghĩa là gì?",
+    "options": [
+      "Cô ấy có học mỗi tối không?",
+      "Cô ấy đã học mỗi tối chưa?",
+      "Cô ấy sẽ học mỗi tối không?",
+      "Cô ấy đang học mỗi tối phải không?"
+    ],
+    "answer": "Cô ấy có học mỗi tối không?",
+    "explanation": "She → Does + study (nguyên mẫu). \"Every night\" là dấu hiệu thói quen → hiện tại đơn."
+  },
+  {
+    "id": "u01e09",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "What does Water boils at one hundred degrees Celsius mean?",
+    "question": "Câu \"Water boils at 100°C\" có nghĩa là gì?",
+    "options": [
+      "Nước đã sôi ở 100 độ C",
+      "Nước sẽ sôi ở 100 độ C",
+      "Nước đang sôi ở 100 độ C",
+      "Nước sôi ở 100 độ C"
+    ],
+    "answer": "Nước sôi ở 100 độ C",
+    "explanation": "Water (không đếm được, tính số ít) → boils. Sự thật khoa học cố định → hiện tại đơn."
+  },
+  {
+    "id": "u01e10",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "What does We go to school every day mean?",
+    "question": "Câu \"We go to school every day\" có nghĩa là gì?",
+    "options": [
+      "Chúng tôi đã đi học mỗi ngày",
+      "Chúng tôi sẽ đi học mỗi ngày",
+      "Chúng tôi đi học mỗi ngày",
+      "Chúng tôi đang đi học mỗi ngày"
+    ],
+    "answer": "Chúng tôi đi học mỗi ngày",
+    "explanation": "We → go (không thêm -s). \"Every day\" = thói quen lặp lại → hiện tại đơn."
+  },
+  {
+    "id": "u01e11",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "What does My mother cooks dinner every evening mean?",
+    "question": "Câu \"My mother cooks dinner every evening\" có nghĩa là gì?",
+    "options": [
+      "Mẹ tôi đã nấu bữa tối mỗi tối",
+      "Mẹ tôi nấu bữa tối mỗi tối",
+      "Mẹ tôi sẽ nấu bữa tối mỗi tối",
+      "Mẹ tôi đang nấu bữa tối mỗi tối"
+    ],
+    "answer": "Mẹ tôi nấu bữa tối mỗi tối",
+    "explanation": "My mother (số ít) → cooks. Thói quen hàng ngày → hiện tại đơn."
+  },
+  {
+    "id": "u01e12",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "What does Birds fly in the sky mean?",
+    "question": "Câu \"Birds fly in the sky\" có nghĩa là gì?",
+    "options": [
+      "Chim bay trên bầu trời",
+      "Chim đã bay trên bầu trời",
+      "Chim sẽ bay trên bầu trời",
+      "Chim đang bay trên bầu trời"
+    ],
+    "answer": "Chim bay trên bầu trời",
+    "explanation": "Birds (số nhiều) → fly. Sự thật chung / đặc điểm loài → hiện tại đơn."
+  },
+  {
+    "id": "u01e13",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "What does He has a new bike mean?",
+    "question": "Câu \"He has a new bike\" có nghĩa là gì?",
+    "options": [
+      "Anh ấy đã có một chiếc xe đạp mới",
+      "Anh ấy sẽ có một chiếc xe đạp mới",
+      "Anh ấy có một chiếc xe đạp mới",
+      "Anh ấy đang có một chiếc xe đạp mới"
+    ],
+    "answer": "Anh ấy có một chiếc xe đạp mới",
+    "explanation": "Have → has với he/she/it. Diễn tả sở hữu / trạng thái hiện tại (hiện tại đơn)."
+  },
+  {
+    "id": "u01e14",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "What does They watch TV after dinner mean?",
+    "question": "Câu \"They watch TV after dinner\" có nghĩa là gì?",
+    "options": [
+      "Họ đã xem TV sau bữa tối",
+      "Họ sẽ xem TV sau bữa tối",
+      "Họ đang xem TV sau bữa tối",
+      "Họ xem TV sau bữa tối"
+    ],
+    "answer": "Họ xem TV sau bữa tối",
+    "explanation": "They → watch (nguyên mẫu). Thói quen sau bữa tối → hiện tại đơn."
+  },
+  {
+    "id": "u01e15",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "What does The shop opens at eight AM mean?",
+    "question": "Câu \"The shop opens at 8 a.m.\" có nghĩa là gì?",
+    "options": [
+      "Cửa hàng mở cửa lúc 8 giờ sáng",
+      "Cửa hàng đã mở cửa lúc 8 giờ sáng",
+      "Cửa hàng sẽ mở cửa lúc 8 giờ sáng",
+      "Cửa hàng đang mở cửa lúc 8 giờ sáng"
+    ],
+    "answer": "Cửa hàng mở cửa lúc 8 giờ sáng",
+    "explanation": "Lịch trình cố định (giờ mở cửa) → hiện tại đơn. The shop → opens."
+  },
+  {
+    "id": "u01e16",
+    "type": "fill_blank",
+    "difficulty": "easy",
+    "script": "Translate this sentence into English.",
+    "question": "Dịch câu \"Tôi thích táo\" sang tiếng Anh.",
+    "answer": "I like apples",
+    "explanation": "Chủ ngữ I → động từ like (không thêm -s). \"Táo\" nói chung dùng apples (số nhiều). Cấu trúc: S + V + O."
+  },
+  {
+    "id": "u01e17",
+    "type": "fill_blank",
+    "difficulty": "easy",
+    "script": "Translate this sentence into English.",
+    "question": "Dịch câu \"Anh ấy đi đến trường bằng xe đạp\" sang tiếng Anh.",
+    "answer": "He goes to school by bicycle",
+    "explanation": "He → goes (go + s). \"Bằng xe đạp\" = by bicycle / by bike. Thói quen → hiện tại đơn."
+  },
+  {
+    "id": "u01e18",
+    "type": "fill_blank",
+    "difficulty": "easy",
+    "script": "Translate this sentence into English.",
+    "question": "Dịch câu \"Chúng tôi sống ở Hà Nội\" sang tiếng Anh.",
+    "answer": "We live in Hanoi",
+    "explanation": "We → live (nguyên mẫu). Tên riêng Hanoi viết hoa chữ H. Giới từ in + thành phố."
+  },
+  {
+    "id": "u01e19",
+    "type": "fill_blank",
+    "difficulty": "easy",
+    "script": "Translate this sentence into English.",
+    "question": "Dịch câu \"Mặt trời mọc ở phía đông\" sang tiếng Anh.",
+    "answer": "The sun rises in the east",
+    "explanation": "Sự thật hiển nhiên → hiện tại đơn. The sun → rises. \"Phía đông\" = the east."
+  },
+  {
+    "id": "u01e20",
+    "type": "fill_blank",
+    "difficulty": "easy",
+    "script": "Translate this sentence into English.",
+    "question": "Dịch câu \"Tôi không uống cà phê\" sang tiếng Anh.",
+    "answer": "I don't drink coffee",
+    "explanation": "I → do not / don't + drink. App chấp nhận dạng viết tắt don't hoặc do not (không phân biệt hoa thường)."
+  },
+  {
+    "id": "u01e21",
+    "type": "fill_blank",
+    "difficulty": "easy",
+    "script": "Translate this sentence into English.",
+    "question": "Dịch câu \"Cô ấy không thích cá\" sang tiếng Anh.",
+    "answer": "She doesn't like fish",
+    "explanation": "She → does not / doesn't + like (không thêm -s vào like)."
+  },
+  {
+    "id": "u01e22",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "Translate this sentence into English.",
+    "question": "Dịch câu \"Bạn có nói tiếng Anh không?\" sang tiếng Anh.",
+    "options": [
+      "Are you speak English?",
+      "Do you speak English?",
+      "Do you speaking English?",
+      "Does you speak English?"
+    ],
+    "answer": "Do you speak English?",
+    "explanation": "Câu hỏi Yes/No với you → Do + V nguyên mẫu. Không dùng Are với động từ thường speak."
+  },
+  {
+    "id": "u01e23",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "Translate this sentence into English.",
+    "question": "Dịch câu \"Anh ấy có làm việc ở ngân hàng không?\" sang tiếng Anh.",
+    "options": [
+      "Do he work in a bank?",
+      "Is he work in a bank?",
+      "Does he works in a bank?",
+      "Does he work in a bank?"
+    ],
+    "answer": "Does he work in a bank?",
+    "explanation": "He → Does + work (nguyên mẫu). Sai nếu thêm -s: works."
+  },
+  {
+    "id": "u01e24",
+    "type": "fill_blank",
+    "difficulty": "easy",
+    "script": "Translate this sentence into English.",
+    "question": "Dịch câu \"Mẹ tôi nấu cơm mỗi tối\" sang tiếng Anh.",
+    "answer": "My mother cooks rice every evening",
+    "explanation": "My mother → cooks. \"Mỗi tối\" = every evening."
+  },
+  {
+    "id": "u01e25",
+    "type": "fill_blank",
+    "difficulty": "easy",
+    "script": "Translate this sentence into English.",
+    "question": "Dịch câu \"Họ chơi bóng đá vào cuối tuần\" sang tiếng Anh.",
+    "answer": "They play football at the weekend",
+    "explanation": "They → play. \"Cuối tuần\" = at the weekend (Anh) hoặc on weekends (Mỹ)."
+  },
+  {
+    "id": "u01e26",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "Translate this sentence into English.",
+    "question": "Dịch câu \"Nước sôi ở 100 độ C\" sang tiếng Anh.",
+    "options": [
+      "Water boils at 100 degrees Celsius",
+      "Water is boiling at 100 degrees Celsius",
+      "Water boiled at 100 degrees Celsius",
+      "Water will boil at 100 degrees Celsius"
+    ],
+    "answer": "Water boils at 100 degrees Celsius",
+    "explanation": "Sự thật khoa học → hiện tại đơn boils. Không dùng tiếp diễn is boiling."
+  },
+  {
+    "id": "u01e27",
+    "type": "fill_blank",
+    "difficulty": "easy",
+    "script": "Translate this sentence into English.",
+    "question": "Dịch câu \"Tôi đi làm bằng xe buýt\" sang tiếng Anh.",
+    "answer": "I go to work by bus",
+    "explanation": "I → go. \"Đi làm\" = go to work. \"Bằng xe buýt\" = by bus."
+  },
+  {
+    "id": "u01e28",
+    "type": "fill_blank",
+    "difficulty": "easy",
+    "script": "Translate this sentence into English.",
+    "question": "Dịch câu \"Cô ấy dậy lúc 6 giờ sáng\" sang tiếng Anh.",
+    "answer": "She wakes up at 6 a.m.",
+    "explanation": "She → wakes (wake + s). \"Dậy\" = wake up. 6 a.m. = 6 giờ sáng."
+  },
+  {
+    "id": "u01e29",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "Translate this sentence into English.",
+    "question": "Dịch câu \"Chúng tôi không đi học vào Chủ nhật\" sang tiếng Anh.",
+    "options": [
+      "We does not go to school on Sundays",
+      "We are not go to school on Sundays",
+      "We do not go to school on Sundays",
+      "We do not goes to school on Sundays"
+    ],
+    "answer": "We do not go to school on Sundays",
+    "explanation": "We → do not + go. On Sundays = vào các ngày Chủ nhật."
+  },
+  {
+    "id": "u01e30",
+    "type": "fill_blank",
+    "difficulty": "easy",
+    "script": "Translate this sentence into English.",
+    "question": "Dịch câu \"Cửa hàng đóng cửa lúc 10 giờ tối\" sang tiếng Anh.",
+    "answer": "The shop closes at 10 p.m.",
+    "explanation": "The shop → closes. Lịch trình cố định → hiện tại đơn. 10 p.m. = 10 giờ tối."
+  },
+  {
+    "id": "u01e31",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "What does I read books every night mean?",
+    "question": "Câu \"I read books every night\" có nghĩa là gì?",
+    "options": [
+      "Tôi đã đọc sách mỗi tối",
+      "Tôi đọc sách mỗi tối",
+      "Tôi sẽ đọc sách mỗi tối",
+      "Tôi đang đọc sách mỗi tối"
+    ],
+    "answer": "Tôi đọc sách mỗi tối",
+    "explanation": "I → read. Every night = thói quen → hiện tại đơn."
+  },
+  {
+    "id": "u01e32",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "What does Cats drink milk mean?",
+    "question": "Câu \"Cats drink milk\" có nghĩa là gì?",
+    "options": [
+      "Mèo đã uống sữa",
+      "Mèo sẽ uống sữa",
+      "Mèo uống sữa",
+      "Mèo đang uống sữa"
+    ],
+    "answer": "Mèo uống sữa",
+    "explanation": "Cats (số nhiều) → drink. Thói quen / đặc điểm loài."
+  },
+  {
+    "id": "u01e33",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "What does She teaches English mean?",
+    "question": "Câu \"She teaches English\" có nghĩa là gì?",
+    "options": [
+      "Cô ấy đã dạy tiếng Anh",
+      "Cô ấy sẽ dạy tiếng Anh",
+      "Cô ấy đang dạy tiếng Anh",
+      "Cô ấy dạy tiếng Anh"
+    ],
+    "answer": "Cô ấy dạy tiếng Anh",
+    "explanation": "She → teaches. Nghề nghiệp hiện tại."
+  },
+  {
+    "id": "u01e34",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "What does It is cold in winter mean?",
+    "question": "Câu \"It is cold in winter\" có nghĩa là gì?",
+    "options": [
+      "Mùa đông thì lạnh",
+      "Mùa đông đã lạnh",
+      "Mùa đông sẽ lạnh",
+      "Mùa đông đang lạnh"
+    ],
+    "answer": "Mùa đông thì lạnh",
+    "explanation": "It is + adj: trạng thái theo mùa. Hiện tại đơn với to be."
+  },
+  {
+    "id": "u01e35",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "What does Do they play tennis on Saturdays mean?",
+    "question": "Câu \"Do they play tennis on Saturdays\" có nghĩa là gì?",
+    "options": [
+      "Họ đã chơi tennis vào thứ Bảy chưa",
+      "Họ sẽ chơi tennis vào thứ Bảy không",
+      "Họ có chơi tennis vào thứ Bảy không",
+      "Họ đang chơi tennis phải không"
+    ],
+    "answer": "Họ có chơi tennis vào thứ Bảy không",
+    "explanation": "They → Do + play. On Saturdays = thói quen hàng tuần."
+  },
+  {
+    "id": "u01e36",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "What does He does not eat meat mean?",
+    "question": "Câu \"He does not eat meat\" có nghĩa là gì?",
+    "options": [
+      "Anh ấy đã không ăn thịt",
+      "Anh ấy không ăn thịt",
+      "Anh ấy sẽ không ăn thịt",
+      "Anh ấy không đang ăn thịt"
+    ],
+    "answer": "Anh ấy không ăn thịt",
+    "explanation": "He → does not + eat."
+  },
+  {
+    "id": "u01e37",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "What does The Earth goes around the Sun mean?",
+    "question": "Câu \"The Earth goes around the Sun\" có nghĩa là gì?",
+    "options": [
+      "Trái Đất đã quay quanh Mặt Trời",
+      "Trái Đất sẽ quay quanh Mặt Trời",
+      "Trái Đất đang quay quanh Mặt Trời",
+      "Trái Đất quay quanh Mặt Trời"
+    ],
+    "answer": "Trái Đất quay quanh Mặt Trời",
+    "explanation": "Sự thật khoa học. The Earth → goes."
+  },
+  {
+    "id": "u01e38",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "What does My father drives to work mean?",
+    "question": "Câu \"My father drives to work\" có nghĩa là gì?",
+    "options": [
+      "Bố tôi lái xe đi làm",
+      "Bố tôi đã lái xe đi làm",
+      "Bố tôi sẽ lái xe đi làm",
+      "Bố tôi đang lái xe đi làm"
+    ],
+    "answer": "Bố tôi lái xe đi làm",
+    "explanation": "My father → drives."
+  },
+  {
+    "id": "u01e39",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "What does Plants need sunlight mean?",
+    "question": "Câu \"Plants need sunlight\" có nghĩa là gì?",
+    "options": [
+      "Cây đã cần ánh sáng",
+      "Cây cần ánh sáng mặt trời",
+      "Cây sẽ cần ánh sáng",
+      "Cây đang cần ánh sáng"
+    ],
+    "answer": "Cây cần ánh sáng mặt trời",
+    "explanation": "Plants → need. Sự thật sinh học."
+  },
+  {
+    "id": "u01e40",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "What does Does it rain a lot here mean?",
+    "question": "Câu \"Does it rain a lot here\" có nghĩa là gì?",
+    "options": [
+      "Ở đây đã mưa nhiều chưa",
+      "Ở đây sẽ mưa nhiều không",
+      "Ở đây có mưa nhiều không",
+      "Ở đây đang mưa nhiều phải không"
+    ],
+    "answer": "Ở đây có mưa nhiều không",
+    "explanation": "It → Does + rain."
+  },
+  {
+    "id": "u01e41",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "What does We love our school mean?",
+    "question": "Câu \"We love our school\" có nghĩa là gì?",
+    "options": [
+      "Chúng tôi đã yêu trường",
+      "Chúng tôi sẽ yêu trường",
+      "Chúng tôi đang yêu trường",
+      "Chúng tôi yêu trường mình"
+    ],
+    "answer": "Chúng tôi yêu trường mình",
+    "explanation": "We → love."
+  },
+  {
+    "id": "u01e42",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "What does She always wears glasses mean?",
+    "question": "Câu \"She always wears glasses\" có nghĩa là gì?",
+    "options": [
+      "Cô ấy luôn đeo kính",
+      "Cô ấy đã luôn đeo kính",
+      "Cô ấy sẽ đeo kính",
+      "Cô ấy đang đeo kính"
+    ],
+    "answer": "Cô ấy luôn đeo kính",
+    "explanation": "Always + hiện tại đơn. She → wears."
+  },
+  {
+    "id": "u01e43",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "What does Fish live in water mean?",
+    "question": "Câu \"Fish live in water\" có nghĩa là gì?",
+    "options": [
+      "Cá đã sống dưới nước",
+      "Cá sống dưới nước",
+      "Cá sẽ sống dưới nước",
+      "Cá đang sống dưới nước"
+    ],
+    "answer": "Cá sống dưới nước",
+    "explanation": "Fish → live."
+  },
+  {
+    "id": "u01e44",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "What does I know the answer mean?",
+    "question": "Câu \"I know the answer\" có nghĩa là gì?",
+    "options": [
+      "Tôi đã biết câu trả lời",
+      "Tôi sẽ biết câu trả lời",
+      "Tôi biết câu trả lời",
+      "Tôi đang biết câu trả lời"
+    ],
+    "answer": "Tôi biết câu trả lời",
+    "explanation": "I → know (stative verb)."
+  },
+  {
+    "id": "u01e45",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "What does The train leaves at nine mean?",
+    "question": "Câu \"The train leaves at nine\" có nghĩa là gì?",
+    "options": [
+      "Tàu đã rời ga lúc 9 giờ",
+      "Tàu sẽ rời ga lúc 9 giờ",
+      "Tàu đang rời ga lúc 9 giờ",
+      "Tàu rời ga lúc 9 giờ"
+    ],
+    "answer": "Tàu rời ga lúc 9 giờ",
+    "explanation": "Lịch trình → leaves."
+  },
+  {
+    "id": "u01e46",
+    "type": "fill_blank",
+    "difficulty": "easy",
+    "script": "Translate this sentence into English.",
+    "question": "Dịch câu \"Em gái tôi học lớp 5\" sang tiếng Anh.",
+    "answer": "My sister is in grade 5",
+    "explanation": "My sister → is in grade 5 / class 5."
+  },
+  {
+    "id": "u01e47",
+    "type": "fill_blank",
+    "difficulty": "easy",
+    "script": "Translate this sentence into English.",
+    "question": "Dịch câu \"Tôi thức dậy lúc 7 giờ sáng\" sang tiếng Anh.",
+    "answer": "I wake up at 7 a.m.",
+    "explanation": "I → wake up. At 7 a.m."
+  },
+  {
+    "id": "u01e48",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "Translate this sentence into English.",
+    "question": "Dịch câu \"Họ không xem phim vào ngày thường\" sang tiếng Anh.",
+    "options": [
+      "They does not watch movies on weekdays",
+      "They do not watch movies on weekdays",
+      "They are not watch movies on weekdays",
+      "They do not watches movies on weekdays"
+    ],
+    "answer": "They do not watch movies on weekdays",
+    "explanation": "They → do not + watch."
+  },
+  {
+    "id": "u01e49",
+    "type": "fill_blank",
+    "difficulty": "easy",
+    "script": "Translate this sentence into English.",
+    "question": "Dịch câu \"Cô ấy uống trà mỗi sáng\" sang tiếng Anh.",
+    "answer": "She drinks tea every morning",
+    "explanation": "She → drinks. Every morning."
+  },
+  {
+    "id": "u01e50",
+    "type": "fill_blank",
+    "difficulty": "easy",
+    "script": "Translate this sentence into English.",
+    "question": "Dịch câu \"Anh trai tôi chơi guitar\" sang tiếng Anh.",
+    "answer": "My brother plays the guitar",
+    "explanation": "My brother → plays the guitar."
+  },
+  {
+    "id": "u01e51",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "Translate this sentence into English.",
+    "question": "Dịch câu \"Trường học bắt đầu lúc 7 giờ 30\" sang tiếng Anh.",
+    "options": [
+      "School start at 7:30",
+      "School is start at 7:30",
+      "School starts at 7:30",
+      "School starting at 7:30"
+    ],
+    "answer": "School starts at 7:30",
+    "explanation": "School → starts (lịch trình)."
+  },
+  {
+    "id": "u01e52",
+    "type": "fill_blank",
+    "difficulty": "easy",
+    "script": "Translate this sentence into English.",
+    "question": "Dịch câu \"Bố tôi đọc báo mỗi sáng\" sang tiếng Anh.",
+    "answer": "My father reads the newspaper every morning",
+    "explanation": "My father → reads the newspaper."
+  },
+  {
+    "id": "u01e53",
+    "type": "fill_blank",
+    "difficulty": "easy",
+    "script": "Translate this sentence into English.",
+    "question": "Dịch câu \"Tôi hiểu bài học này\" sang tiếng Anh.",
+    "answer": "I understand this lesson",
+    "explanation": "I → understand."
+  },
+  {
+    "id": "u01e54",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "Translate this sentence into English.",
+    "question": "Dịch câu \"Máy bay cất cánh lúc 9 giờ\" sang tiếng Anh.",
+    "options": [
+      "The plane takes off at 9 o'clock",
+      "The plane take off at 9 o'clock",
+      "The plane is take off at 9 o'clock",
+      "The plane taking off at 9 o'clock"
+    ],
+    "answer": "The plane takes off at 9 o'clock",
+    "explanation": "The plane → takes off."
+  },
+  {
+    "id": "u01e55",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "Translate this sentence into English.",
+    "question": "Dịch câu \"Bạn có thích bơi không?\" sang tiếng Anh.",
+    "options": [
+      "Are you like swimming?",
+      "Do you likes swimming?",
+      "Does you like swimming?",
+      "Do you like swimming?"
+    ],
+    "answer": "Do you like swimming?",
+    "explanation": "Do you like + V-ing."
+  },
+  {
+    "id": "u01e56",
+    "type": "fill_blank",
+    "difficulty": "easy",
+    "script": "Translate this sentence into English.",
+    "question": "Dịch câu \"Bạn bè tôi sống ở TP.HCM\" sang tiếng Anh.",
+    "answer": "My friends live in Ho Chi Minh City",
+    "explanation": "My friends → live."
+  },
+  {
+    "id": "u01e57",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "Translate this sentence into English.",
+    "question": "Dịch câu \"Bạn làm việc ở đâu?\" sang tiếng Anh.",
+    "options": [
+      "Where does you work?",
+      "Where do you work?",
+      "Where are you work?",
+      "Where do you works?"
+    ],
+    "answer": "Where do you work?",
+    "explanation": "Where + do you + V."
+  },
+  {
+    "id": "u01e58",
+    "type": "fill_blank",
+    "difficulty": "easy",
+    "script": "Translate this sentence into English.",
+    "question": "Dịch câu \"Trái cam có nhiều vitamin C\" sang tiếng Anh.",
+    "answer": "Oranges have a lot of vitamin C",
+    "explanation": "Oranges → have. Sự thật chung."
+  },
+  {
+    "id": "u01e59",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "Translate this sentence into English.",
+    "question": "Dịch câu \"Bạn thích nhạc không?\" sang tiếng Anh.",
+    "options": [
+      "Does you like music?",
+      "Are you like music?",
+      "Do you like music?",
+      "Do you likes music?"
+    ],
+    "answer": "Do you like music?",
+    "explanation": "Do you like + N."
+  },
+  {
+    "id": "u01e60",
+    "type": "fill_blank",
+    "difficulty": "easy",
+    "script": "Translate this sentence into English.",
+    "question": "Dịch câu \"Tôi học tiếng Anh mỗi ngày\" sang tiếng Anh.",
+    "answer": "I study English every day",
+    "explanation": "I → study. Every day."
+  },
+  {
+    "id": "u01m01",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "script": "Choose the correct verb form. He usually goes to school by bus.",
+    "question": "Chọn động từ đúng cho câu sau: \"He usually ______ to school by bus.\"",
+    "options": ["go", "goes", "going", "went"],
+    "answer": "goes",
+    "explanation": "Chủ ngữ là 'He' (ngôi thứ ba số ít) và trạng từ 'usually' chỉ thói quen hiện tại, ta chia động từ 'go' ở thì Hiện tại đơn bằng cách thêm '-es' thành 'goes'."
+  },
+  {
+    "id": "u01m02",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "script": "Choose the correct verb form. They have English classes twice a week.",
+    "question": "Chọn động từ đúng cho câu sau: \"They ______ English classes twice a week.\"",
+    "options": ["have", "has", "having", "had"],
+    "answer": "have",
+    "explanation": "Chủ ngữ là 'They' (ngôi thứ ba số nhiều), động từ 'have' giữ nguyên mẫu ở thì Hiện tại đơn."
+  },
+  {
+    "id": "u01m03",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "script": "Choose the correct auxiliary verb. She does not like coffee, so she drinks tea.",
+    "question": "Chọn trợ động từ đúng cho câu sau: \"She ______ not like coffee, so she drinks tea.\"",
+    "options": ["do", "does", "is", "has"],
+    "answer": "does",
+    "explanation": "Với câu phủ định ở Hiện tại đơn, chủ ngữ số ít 'She' đi với trợ động từ 'does' (does not / doesn't)."
+  },
+  {
+    "id": "u01m04",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "script": "Choose the correct auxiliary verb. Do you want to join our English club?",
+    "question": "Chọn trợ động từ đúng cho câu sau: \"______ you want to join our English club?\"",
+    "options": ["Do", "Does", "Are", "Is"],
+    "answer": "Do",
+    "explanation": "Trong câu hỏi nghi vấn Yes/No của Hiện tại đơn với động từ thường 'want', chủ ngữ là 'you' đi với trợ động từ 'Do'."
+  },
+  {
+    "id": "u01m05",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "script": "Choose the correct verb form. Water boils at one hundred degrees Celsius.",
+    "question": "Chọn động từ đúng cho câu sau: \"Water ______ at 100°C.\"",
+    "options": ["boil", "boils", "boiling", "boiled"],
+    "answer": "boils",
+    "explanation": "Diễn tả sự thật khoa học hiển nhiên. 'Water' là danh từ không đếm được (tính là số ít), do đó động từ 'boil' thêm '-s' thành 'boils'."
+  },
+  {
+    "id": "u01m06",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "script": "Choose the correct verb form. My sister and I visit our grandparents every Sunday.",
+    "question": "Chọn động từ đúng cho câu sau: \"My sister and I ______ our grandparents every Sunday.\"",
+    "options": ["visit", "visits", "visiting", "visited"],
+    "answer": "visit",
+    "explanation": "Chủ ngữ 'My sister and I' là hai người (tương đương với 'We' - số nhiều) nên động từ 'visit' giữ nguyên mẫu."
+  },
+  {
+    "id": "u01m07",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "script": "Choose the correct verb form. The train leaves at eight AM tomorrow.",
+    "question": "Chọn động từ đúng cho câu sau: \"The train ______ at 8:00 AM tomorrow.\"",
+    "options": ["leave", "leaves", "leaving", "left"],
+    "answer": "leaves",
+    "explanation": "Diễn tả lịch trình, thời khóa biểu cố định (tàu xe chạy). Chủ ngữ 'The train' là số ít nên động từ chia là 'leaves' dù hành động xảy ra vào ngày mai."
+  },
+  {
+    "id": "u01m08",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "script": "Choose the correct verb form. Children love playing video games after school.",
+    "question": "Chọn động từ đúng cho câu sau: \"Children ______ playing video games after school.\"",
+    "options": ["love", "loves", "loving", "loved"],
+    "answer": "love",
+    "explanation": "Chủ ngữ 'Children' là danh từ số nhiều (những đứa trẻ), động từ 'love' ở Hiện tại đơn giữ nguyên mẫu."
+  },
+  {
+    "id": "u01m09",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "script": "Choose the correct verb form. My mother always cooks delicious meals for us.",
+    "question": "Chọn động từ đúng cho câu sau: \"My mother always ______ delicious meals for us.\"",
+    "options": ["cook", "cooks", "cooking", "cooked"],
+    "answer": "cooks",
+    "explanation": "Chủ ngữ là 'My mother' (ngôi thứ ba số ít), động từ 'cook' thêm '-s' thành 'cooks' ở thì Hiện tại đơn."
+  },
+  {
+    "id": "u01m10",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "script": "Choose the correct auxiliary verb. Does your brother work in a bank?",
+    "question": "Chọn trợ động từ đúng cho câu sau: \"______ your brother work in a bank?\"",
+    "options": ["Do", "Does", "Is", "Are"],
+    "answer": "Does",
+    "explanation": "Trong câu hỏi với động từ thường 'work', chủ ngữ 'your brother' là ngôi thứ ba số ít nên ta dùng trợ động từ 'Does'."
+  },
+  {
+    "id": "u01m11",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "script": "Choose the correct verb form. He has a very nice apartment in the city center.",
+    "question": "Chọn động từ đúng cho câu sau: \"He ______ a very nice apartment in the city center.\"",
+    "options": ["have", "has", "having", "is have"],
+    "answer": "has",
+    "explanation": "Chủ ngữ là 'He' (ngôi thứ ba số ít). Ở Hiện tại đơn, động từ bất quy tắc 'have' biến đổi thành 'has'."
+  },
+  {
+    "id": "u01m12",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "script": "Choose the correct verb form. The Sun rises in the East.",
+    "question": "Chọn động từ đúng cho câu sau: \"The Sun ______ in the East.\"",
+    "options": ["rise", "rises", "rising", "rose"],
+    "answer": "rises",
+    "explanation": "Diễn tả sự thật hiển nhiên. Chủ ngữ 'The Sun' là số ít nên động từ 'rise' thêm '-s' thành 'rises'."
+  },
+  {
+    "id": "u01m13",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "script": "Choose the correct negative helper. They do not live in a big house anymore.",
+    "question": "Chọn từ phủ định đúng cho câu sau: \"They ______ live in a big house anymore.\"",
+    "options": ["don't", "doesn't", "aren't", "not"],
+    "answer": "don't",
+    "explanation": "Để thành lập thể phủ định cho chủ ngữ số nhiều 'They' ở Hiện tại đơn, ta dùng trợ động từ viết tắt 'don't' (do not)."
+  },
+  {
+    "id": "u01m14",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "script": "Choose the correct auxiliary verb. Does she speak Spanish fluently?",
+    "question": "Chọn trợ động từ đúng cho câu sau: \"______ she speak Spanish fluently?\"",
+    "options": ["Do", "Does", "Is", "Has"],
+    "answer": "Does",
+    "explanation": "Trong câu hỏi nghi vấn của Hiện tại đơn với động từ thường 'speak', chủ ngữ số ít 'she' đi kèm trợ động từ 'Does'."
+  },
+  {
+    "id": "u01m15",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "script": "Choose the correct words. I do not usually wake up early on Sundays.",
+    "question": "Chọn từ đúng cho câu sau: \"I ______ wake up early on Sundays.\"",
+    "options": ["don't usually", "doesn't usually", "not usually", "am not usually"],
+    "answer": "don't usually",
+    "explanation": "Chủ ngữ là 'I' đi với phủ định 'don't'. Trạng từ chỉ tần suất 'usually' đứng sau trợ động từ phủ định và đứng trước động từ thường 'wake'."
+  },
+  {
+    "id": "u01m16",
+    "type": "fill_blank",
+    "difficulty": "medium",
+    "script": "Complete the sentence with the correct form of the verb in brackets. She washes her car every Sunday.",
+    "question": "Chia động từ trong ngoặc cho đúng: \"She ______ (wash) her car every Sunday.\"",
+    "answer": "washes",
+    "explanation": "Chủ ngữ 'She' là số ít, động từ 'wash' tận cùng bằng 'sh' nên ta thêm đuôi '-es' thành 'washes'."
+  },
+  {
+    "id": "u01m17",
+    "type": "fill_blank",
+    "difficulty": "medium",
+    "script": "Complete the sentence with the correct form of the verb in brackets. He studies English for two hours every day.",
+    "question": "Chia động từ trong ngoặc cho đúng: \"He ______ (study) English for two hours every day.\"",
+    "answer": "studies",
+    "explanation": "Chủ ngữ 'He' số ít, động từ 'study' kết thúc bằng phụ âm + 'y', ta đổi 'y' thành 'i' rồi thêm '-es' thành 'studies'."
+  },
+  {
+    "id": "u01m18",
+    "type": "fill_blank",
+    "difficulty": "medium",
+    "script": "Complete the sentence with the correct form of the verb in brackets. He usually goes to the library after school.",
+    "question": "Chia động từ trong ngoặc cho đúng: \"He usually ______ (go) to the library after school.\"",
+    "answer": "goes",
+    "explanation": "Chủ ngữ 'He' số ít, động từ 'go' kết thúc bằng chữ 'o' nên ta thêm đuôi '-es' thành 'goes'."
+  },
+  {
+    "id": "u01m19",
+    "type": "fill_blank",
+    "difficulty": "medium",
+    "script": "Complete the sentence with the correct form of the verb in brackets. She has a beautiful doll.",
+    "question": "Chia động từ trong ngoặc cho đúng: \"She ______ (have) a beautiful doll.\"",
+    "answer": "has",
+    "explanation": "Chủ ngữ là 'She' số ít. Ở Hiện tại đơn, động từ 'have' được chia dưới dạng bất quy tắc là 'has'."
+  },
+  {
+    "id": "u01m20",
+    "type": "fill_blank",
+    "difficulty": "medium",
+    "script": "Complete the sentence with the correct form of the verb in brackets. My uncle fixes computers in his free time.",
+    "question": "Chia động từ trong ngoặc cho đúng: \"My uncle ______ (fix) computers in his free time.\"",
+    "answer": "fixes",
+    "explanation": "Chủ ngữ 'My uncle' là ngôi thứ ba số ít, động từ 'fix' kết thúc bằng chữ 'x' nên ta thêm đuôi '-es' thành 'fixes'."
+  },
+  {
+    "id": "u01m21",
+    "type": "fill_blank",
+    "difficulty": "medium",
+    "script": "Complete the sentence with the correct form of the verb in brackets. She teaches English at a secondary school.",
+    "question": "Chia động từ trong ngoặc cho đúng: \"She ______ (teach) English at a secondary school.\"",
+    "answer": "teaches",
+    "explanation": "Chủ ngữ 'She' số ít, động từ 'teach' tận cùng bằng 'ch' nên ta thêm đuôi '-es' thành 'teaches'."
+  },
+  {
+    "id": "u01m22",
+    "type": "fill_blank",
+    "difficulty": "medium",
+    "script": "Complete the sentence with the correct form of the verb in brackets. The plane flies to London once a week.",
+    "question": "Chia động từ trong ngoặc cho đúng: \"The plane ______ (fly) to London once a week.\"",
+    "answer": "flies",
+    "explanation": "Chủ ngữ 'The plane' là số ít, động từ 'fly' kết thúc bằng phụ âm + 'y' nên ta chuyển 'y' thành 'i' rồi thêm '-es' thành 'flies'."
+  },
+  {
+    "id": "u01m23",
+    "type": "fill_blank",
+    "difficulty": "medium",
+    "script": "Complete the sentence with the correct form of the verb in brackets. My brother plays football every afternoon.",
+    "question": "Chia động từ trong ngoặc cho đúng: \"My brother ______ (play) football every afternoon.\"",
+    "answer": "plays",
+    "explanation": "Chủ ngữ 'My brother' là số ít, động từ 'play' kết thúc bằng nguyên âm + 'y' nên ta chỉ cần thêm '-s' thành 'plays'."
+  },
+  {
+    "id": "u01m24",
+    "type": "fill_blank",
+    "difficulty": "medium",
+    "script": "Complete the sentence with the correct form of the verb in brackets. She carries a heavy bag to work.",
+    "question": "Chia động từ trong ngoặc cho đúng: \"She ______ (carry) a heavy bag to work.\"",
+    "answer": "carries",
+    "explanation": "Chủ ngữ 'She' số ít, động từ 'carry' tận cùng là phụ âm + 'y' nên đổi 'y' thành 'i' và thêm '-es' thành 'carries'."
+  },
+  {
+    "id": "u01m25",
+    "type": "fill_blank",
+    "difficulty": "medium",
+    "script": "Complete the sentence with the correct form of the verb in brackets. He always does his best to pass the exam.",
+    "question": "Chia động từ trong ngoặc cho đúng: \"He always ______ (do) his best to pass the exam.\"",
+    "answer": "does",
+    "explanation": "Chủ ngữ 'He' số ít, động từ 'do' kết thúc bằng chữ 'o' nên ta chia ở dạng thêm '-es' thành 'does'."
+  },
+  {
+    "id": "u01m26",
+    "type": "fill_blank",
+    "difficulty": "medium",
+    "script": "Complete the sentence with the correct form of the verb in brackets. She worries about her exams a lot.",
+    "question": "Chia động từ trong ngoặc cho đúng: \"She ______ (worry) about her exams a lot.\"",
+    "answer": "worries",
+    "explanation": "Chủ ngữ 'She' số ít, động từ 'worry' kết thúc bằng phụ âm + 'y' nên ta chuyển 'y' thành 'i' và thêm '-es' thành 'worries'."
+  },
+  {
+    "id": "u01m27",
+    "type": "fill_blank",
+    "difficulty": "medium",
+    "script": "Complete the sentence with the correct form of the verb in brackets. The bus passes our house every hour.",
+    "question": "Chia động từ trong ngoặc cho đúng: \"The bus ______ (pass) our house every hour.\"",
+    "answer": "passes",
+    "explanation": "Chủ ngữ 'The bus' là ngôi thứ ba số ít, động từ 'pass' tận cùng bằng chữ 'ss' nên ta thêm đuôi '-es' thành 'passes'."
+  },
+  {
+    "id": "u01m28",
+    "type": "fill_blank",
+    "difficulty": "medium",
+    "script": "Complete the sentence with the correct form of the verb in brackets. He mixes blue and yellow to get green.",
+    "question": "Chia động từ trong ngoặc cho đúng: \"He ______ (mix) blue and yellow to get green.\"",
+    "answer": "mixes",
+    "explanation": "Chủ ngữ 'He' số ít, động từ 'mix' kết thúc bằng chữ 'x' nên ta thêm đuôi '-es' thành 'mixes'."
+  },
+  {
+    "id": "u01m29",
+    "type": "fill_blank",
+    "difficulty": "medium",
+    "script": "Complete the sentence with the correct form of the verb in brackets. My father enjoys reading newspaper in the morning.",
+    "question": "Chia động từ trong ngoặc cho đúng: \"My father ______ (enjoy) reading newspaper in the morning.\"",
+    "answer": "enjoys",
+    "explanation": "Chủ ngữ 'My father' số ít, động từ 'enjoy' tận cùng bằng nguyên âm + 'y' nên ta chỉ thêm '-s' thành 'enjoys'."
+  },
+  {
+    "id": "u01m30",
+    "type": "fill_blank",
+    "difficulty": "medium",
+    "script": "Complete the sentence with the correct form of the verb in brackets. She often buys fresh fruit at the local market.",
+    "question": "Chia động từ trong ngoặc cho đúng: \"She often ______ (buy) fresh fruit at the local market.\"",
+    "answer": "buys",
+    "explanation": "Chủ ngữ 'She' số ít, động từ 'buy' tận cùng là nguyên âm + 'y' nên chỉ cần thêm '-s' thành 'buys'."
+  },
+  {
+    "id": "u01q7",
+    "type": "multiple_choice",
+    "difficulty": "hard",
+    "script": "Read the following sentence and choose the correct verb form.",
+    "question": "If the cost of public transportation ___, more people will use it regularly.",
+    "options": [
+      "decrease",
+      "decreases",
+      "will decrease",
+      "decreasing"
+    ],
+    "answer": "decreases",
+    "explanation": "Trong mệnh đề điều kiện (mệnh đề If) của câu điều kiện loại 1, ta dùng thì Hiện tại đơn ở hiện tại để nói về điều kiện có thể xảy ra. Chủ ngữ 'the cost of public transportation' là danh từ số ít nên động từ 'decrease' thêm '-s' thành 'decreases'."
+  },
+  {
+    "id": "u01q8",
+    "type": "multiple_choice",
+    "difficulty": "hard",
+    "script": "Listen and choose the correct answer.",
+    "question": "Our English test ___ next Monday at nine o'clock, so please arrive ten minutes early!",
+    "options": [
+      "start",
+      "starts",
+      "will start",
+      "is going to start"
+    ],
+    "answer": "starts",
+    "explanation": "Dùng thì Hiện tại đơn để diễn tả một lịch trình, thời khóa biểu cố định trong tương lai (kế hoạch thi đã lên lịch sẵn). Chủ ngữ 'Our English test' là số ít nên chọn 'starts'."
+  },
+  {
+    "id": "u01q9",
+    "type": "fill_blank",
+    "difficulty": "hard",
+    "script": "Complete the sentence using the correct form of the verb in brackets.",
+    "question": "If the temperature drops below zero, water ___ (freeze).",
+    "answer": "freezes",
+    "explanation": "Sự thật hiển nhiên dùng thì Hiện tại đơn. Chủ ngữ 'water' là danh từ không đếm được (tính là số ít), động từ 'freeze' thêm '-s' thành 'freezes'."
+  },
+  {
+    "id": "u01q30",
+    "type": "multiple_choice",
+    "difficulty": "hard",
+    "script": "Rarely blank James attend the weekly team meetings.",
+    "question": "Rarely ___ James attend the weekly team meetings.",
+    "options": [
+      "do",
+      "does",
+      "is",
+      "has"
+    ],
+    "answer": "does",
+    "explanation": "Cấu trúc đảo ngữ với trạng từ phủ định 'Rarely'. Ta đưa trợ động từ lên trước chủ ngữ. Chủ ngữ 'James' là số ít nên ta dùng trợ động từ 'does'."
+  },
+  {
+    "id": "u01q31",
+    "type": "multiple_choice",
+    "difficulty": "hard",
+    "script": "Please call me as soon as he blank at the office.",
+    "question": "Please call me as soon as he ___ at the office.",
+    "options": [
+      "arrive",
+      "arrives",
+      "will arrive",
+      "is arriving"
+    ],
+    "answer": "arrives",
+    "explanation": "Trong mệnh đề trạng ngữ chỉ thời gian bắt đầu bằng 'as soon as' diễn tả hành động trong tương lai, ta bắt buộc phải dùng thì Hiện tại đơn. Chủ ngữ 'he' số ít nên chọn 'arrives'."
+  },
+  {
+    "id": "u01q32",
+    "type": "multiple_choice",
+    "difficulty": "hard",
+    "script": "The jury blank its final decision today.",
+    "question": "The jury ___ its final decision today.",
+    "options": [
+      "make",
+      "makes",
+      "making",
+      "are make"
+    ],
+    "answer": "makes",
+    "explanation": "'The jury' (Ban bồi thẩm) là danh từ tập hợp. Ở đây họ hoạt động như một thể thống nhất (đại từ thay thế là 'its'), do đó động từ được chia ở ngôi số ít là 'makes'."
+  },
+  {
+    "id": "u01q33",
+    "type": "multiple_choice",
+    "difficulty": "hard",
+    "script": "Neither of the candidates blank the requirements for this job.",
+    "question": "Neither of the candidates ___ the requirements for this job.",
+    "options": [
+      "meet",
+      "meets",
+      "meeting",
+      "are meet"
+    ],
+    "answer": "meets",
+    "explanation": "Cấu trúc 'Neither of + Danh từ số nhiều' luôn đi với động từ chia ở ngôi số ít. Do đó, động từ 'meet' phải thêm '-s' thành 'meets'."
+  },
+  {
+    "id": "u01q34",
+    "type": "multiple_choice",
+    "difficulty": "hard",
+    "script": "This luxury perfume blank of fresh roses and vanilla.",
+    "question": "This luxury perfume ___ of fresh roses and vanilla.",
+    "options": [
+      "smell",
+      "smells",
+      "is smelling",
+      "are smelling"
+    ],
+    "answer": "smells",
+    "explanation": "'Smell' ở đây là một động từ trạng thái (stative verb) diễn tả đặc tính của vật, không dùng ở thì tiếp diễn. Chủ ngữ số ít nên chọn 'smells'."
+  },
+  {
+    "id": "u01q35",
+    "type": "fill_blank",
+    "difficulty": "hard",
+    "script": "Unless she study harder, she will fail the exam.",
+    "question": "Unless she ___ (study) harder, she will fail the exam.",
+    "answer": "studies",
+    "explanation": "Trong câu điều kiện với 'Unless' (Trừ khi / Nếu không), mệnh đề này tương đương mệnh đề If và chia ở thì Hiện tại đơn. Chủ ngữ 'she' số ít, động từ 'study' biến đổi thành 'studies'."
+  },
+  {
+    "id": "u01q36",
+    "type": "fill_blank",
+    "difficulty": "hard",
+    "script": "Everyone blank to be happy in life.",
+    "question": "Everyone ___ (want) to be happy in life.",
+    "answer": "wants",
+    "explanation": "'Everyone' là đại từ bất định, luôn luôn đi kèm với động từ chia ở ngôi thứ ba số ít. Vì vậy động từ 'want' phải thêm '-s' thành 'wants'."
+  },
+  {
+    "id": "u01q37",
+    "type": "fill_blank",
+    "difficulty": "hard",
+    "script": "The dynamics of the market blank rapidly every year.",
+    "question": "The dynamics of the market ___ (change) rapidly every year.",
+    "answer": "change",
+    "explanation": "Chủ ngữ chính của câu là 'The dynamics' (danh từ số nhiều), cụm 'of the market' chỉ là thành phần bổ nghĩa. Do chủ ngữ số nhiều nên động từ 'change' giữ nguyên mẫu."
+  },
+  {
+    "id": "u01q38",
+    "type": "fill_blank",
+    "difficulty": "hard",
+    "script": "I will lend you the book provided that you return it next week.",
+    "question": "I will lend you the book provided that you ___ (return) it next week.",
+    "answer": "return",
+    "explanation": "'Provided that' (với điều kiện là) dùng để mở đầu mệnh đề điều kiện trong tương lai, động từ trong mệnh đề này chia ở thì Hiện tại đơn. Chủ ngữ 'you' đi với động từ nguyên mẫu 'return'."
+  },
+  {
+    "id": "u01q39",
+    "type": "fill_blank",
+    "difficulty": "hard",
+    "script": "The physics exam blank at exactly two PM tomorrow.",
+    "question": "The physics exam ___ (start) at exactly 2:00 PM tomorrow.",
+    "answer": "starts",
+    "explanation": "Mặc dù có trạng từ chỉ tương lai 'tomorrow', câu này diễn tả một lịch trình thi cử cố định của trường học nên ta phải dùng thì Hiện tại đơn. Chủ ngữ 'The physics exam' là số ít nên chọn 'starts'."
+  },
+  {
+    "id": "u01q40",
+    "type": "multiple_choice",
+    "difficulty": "hard",
+    "script": "Ten million dollars blank a huge amount of money to lose.",
+    "question": "Ten million dollars ___ a huge amount of money to lose.",
+    "options": [
+      "is",
+      "are",
+      "be",
+      "being"
+    ],
+    "answer": "is",
+    "explanation": "Khi chủ ngữ là một số tiền, khoảng cách, thời gian hoặc trọng lượng, ta coi đó là một đại lượng duy nhất và động từ phải chia ở ngôi số ít 'is'."
+  },
+  {
+    "id": "u01q41",
+    "type": "multiple_choice",
+    "difficulty": "hard",
+    "script": "The news from the flooded areas blank deeply concerning.",
+    "question": "The news from the flooded areas ___ deeply concerning.",
+    "options": [
+      "is",
+      "are",
+      "be",
+      "look"
+    ],
+    "answer": "is",
+    "explanation": "'News' (Tin tức) là danh từ không đếm được, dù có đuôi '-s' nhưng luôn đi với động từ số ít. Cụm 'from the flooded areas' chỉ bổ nghĩa cho danh từ này."
+  },
+  {
+    "id": "u01q42",
+    "type": "multiple_choice",
+    "difficulty": "hard",
+    "script": "Scarcely blank she complain about her heavy workload.",
+    "question": "Scarcely ___ she complain about her heavy workload.",
+    "options": [
+      "do",
+      "does",
+      "is",
+      "has"
+    ],
+    "answer": "does",
+    "explanation": "Cấu trúc đảo ngữ với trạng từ tần suất mang nghĩa phủ định 'Scarcely'. Ta phải đưa trợ động từ lên trước chủ ngữ. Chủ ngữ 'she' số ít nên mượn 'does'."
+  },
+  {
+    "id": "u01q43",
+    "type": "multiple_choice",
+    "difficulty": "hard",
+    "script": "By the time the manager blank tomorrow, we will be ready.",
+    "question": "By the time the manager ___ tomorrow, we will be ready.",
+    "options": [
+      "arrive",
+      "arrives",
+      "will arrive",
+      "is arriving"
+    ],
+    "answer": "arrives",
+    "explanation": "Trong cấu trúc 'By the time' diễn tả một hành động sẽ hoàn thành trước một thời điểm ở tương lai, mệnh đề chứa 'By the time' phải chia ở thì Hiện tại đơn. Chủ ngữ 'the manager' số ít nên chọn 'arrives'."
+  },
+  {
+    "id": "u01q44",
+    "type": "multiple_choice",
+    "difficulty": "hard",
+    "script": "Politics blank a complicated subject for many students.",
+    "question": "Politics ___ a complicated subject for many students.",
+    "options": [
+      "is",
+      "are",
+      "be",
+      "seem"
+    ],
+    "answer": "is",
+    "explanation": "Một số danh từ chỉ môn học, lĩnh vực tận cùng bằng '-ics' như 'Politics' (Chính trị học), 'Physics' (Vật lý) là danh từ số ít, do đó động từ chia là 'is'."
+  },
+  {
+    "id": "u01q45",
+    "type": "fill_blank",
+    "difficulty": "hard",
+    "script": "I will stay here until the rain blank.",
+    "question": "I will stay here until the rain ___ (stop).",
+    "answer": "stops",
+    "explanation": "Trong các mệnh đề trạng ngữ chỉ thời gian tương lai bắt đầu bằng 'until', ta dùng thì Hiện tại đơn thay vì tương lai đơn. Chủ ngữ 'the rain' số ít nên động từ thêm '-s' thành 'stops'."
+  },
+  {
+    "id": "u01q46",
+    "type": "fill_blank",
+    "difficulty": "hard",
+    "script": "The committee blank disagreeing on the new policy.",
+    "question": "The committee ___ (be) disagreeing on the new policy.",
+    "answer": "are",
+    "explanation": "'The committee' (Ủy ban) là danh từ tập hợp. Trong ngữ cảnh này, các thành viên đang có ý kiến trái chiều, xung đột lẫn nhau (hành động riêng rẽ) nên động từ được chia ở dạng số nhiều 'are'."
+  },
+  {
+    "id": "u01q47",
+    "type": "fill_blank",
+    "difficulty": "hard",
+    "script": "She blank what you mean, but she doesn't agree.",
+    "question": "She ___ (see) what you mean, but she doesn't agree.",
+    "answer": "sees",
+    "explanation": "Động từ 'see' khi mang ý nghĩa là 'hiểu' (understand) đóng vai trò là một động từ trạng thái (stative verb), không chia ở thì tiếp diễn mà chia ở hiện tại đơn. Chủ ngữ 'She' số ít nên chọn 'sees'."
+  },
+  {
+    "id": "u01q48",
+    "type": "fill_blank",
+    "difficulty": "hard",
+    "script": "On the top of the hill blank the ancient temple.",
+    "question": "On the top of the hill ___ (stand) the ancient temple.",
+    "answer": "stands",
+    "explanation": "Đây là cấu trúc đảo ngữ chỉ nơi chốn (Trạng ngữ chỉ nơi chốn + Động từ + Chủ ngữ). Chủ ngữ thực sự của câu là 'the ancient temple' (ngôi số ít) đứng ở cuối câu, do đó động từ 'stand' chia thành 'stands'."
+  },
+  {
+    "id": "u01q49",
+    "type": "fill_blank",
+    "difficulty": "hard",
+    "script": "Supposing he blank late, what should we do?",
+    "question": "Supposing he ___ (arrive) late, what should we do?",
+    "answer": "arrives",
+    "explanation": "'Supposing' (Giả sử) dùng để bắt đầu một mệnh đề giả định điều kiện có thể xảy ra ở hiện tại hoặc tương lai, tương đương cấu trúc câu điều kiện loại 1. Do đó mệnh đề này dùng thì Hiện tại đơn, chủ ngữ 'he' đi với 'arrives'."
+  }
+]

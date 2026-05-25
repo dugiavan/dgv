@@ -1,0 +1,29 @@
+[
+  {
+    "id": "u_c0_q1",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "question": "If you heat ice, it ___.",
+    "options": ["melts", "melted", "will melt", "would melt"],
+    "answer": "melts",
+    "explanation": "Loại 0: cả hai vế Present Simple (heat / melts) – quy luật tự nhiên."
+  },
+  {
+    "id": "u_c0_q2",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "question": "If water reaches 100°C, it ___.",
+    "options": ["boils", "boiled", "will boil", "would boil"],
+    "answer": "boils",
+    "explanation": "Loại 0 diễn tả sự thật khoa học: reaches / boils (hiện tại đơn)."
+  },
+  {
+    "id": "u_c0_q3",
+    "type": "fill_blank",
+    "difficulty": "hard",
+    "script": "If you mix red and blue, you get purple.",
+    "question": "If you mix red and blue, you ___ (get) purple.",
+    "answer": "get",
+    "explanation": "Loại 0: mệnh đề chính cũng Present Simple (get)."
+  }
+]

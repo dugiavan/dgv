@@ -1,0 +1,242 @@
+[
+  {
+    "id": "unit-01",
+    "title": "Present Simple",
+    "description": "Thì hiện tại đơn – thói quen, sự thật hiển nhiên",
+    "icon": "🌱",
+    "category": "tenses",
+    "questionCount": 106
+  },
+  {
+    "id": "unit-02",
+    "title": "Past Simple",
+    "description": "Thì quá khứ đơn – hành động đã kết thúc hoàn toàn trong quá khứ",
+    "icon": "📖",
+    "category": "tenses",
+    "questionCount": 90
+  },
+  {
+    "id": "unit-03",
+    "title": "Present Continuous",
+    "description": "Thì hiện tại tiếp diễn – hành động đang xảy ra tại thời điểm nói",
+    "icon": "💧",
+    "category": "tenses",
+    "questionCount": 3
+  },
+  {
+    "id": "unit-04",
+    "title": "Past Continuous",
+    "description": "Thì quá khứ tiếp diễn – hành động đang xảy ra tại thời điểm cụ thể trong quá khứ",
+    "icon": "⏳",
+    "category": "tenses",
+    "questionCount": 3
+  },
+  {
+    "id": "unit-05",
+    "title": "Present Perfect",
+    "description": "Thì hiện tại hoàn thành – hành động bắt đầu ở quá khứ và có liên quan đến hiện tại",
+    "icon": "🏅",
+    "category": "tenses",
+    "questionCount": 3
+  },
+  {
+    "id": "unit-06",
+    "title": "Past Perfect",
+    "description": "Thì quá khứ hoàn thành – hành động xảy ra trước một thời điểm quá khứ khác",
+    "icon": "📜",
+    "category": "tenses",
+    "questionCount": 3
+  },
+  {
+    "id": "unit-07",
+    "title": "Future Simple",
+    "description": "Thì tương lai đơn – quyết định tức thời hoặc dự đoán tương lai",
+    "icon": "🚀",
+    "category": "tenses",
+    "questionCount": 3
+  },
+  {
+    "id": "unit-08",
+    "title": "Future Continuous",
+    "description": "Thì tương lai tiếp diễn – hành động đang xảy ra tại thời điểm xác định ở tương lai",
+    "icon": "🕒",
+    "category": "tenses",
+    "questionCount": 3
+  },
+  {
+    "id": "unit-09",
+    "title": "Present Perfect Continuous",
+    "description": "Thì hiện tại hoàn thành tiếp diễn – hành động liên tục từ quá khứ đến nay",
+    "icon": "🔄",
+    "category": "tenses",
+    "questionCount": 3
+  },
+  {
+    "id": "unit-10",
+    "title": "Past Perfect Continuous",
+    "description": "Thì quá khứ hoàn thành tiếp diễn – hành động liên tục xảy ra trước một điểm quá khứ khác",
+    "icon": "⌛",
+    "category": "tenses",
+    "questionCount": 3
+  },
+  {
+    "id": "unit-11",
+    "title": "Future Perfect",
+    "description": "Thì tương lai hoàn thành – hành động hoàn thành trước một thời điểm tương lai khác",
+    "icon": "🎯",
+    "category": "tenses",
+    "questionCount": 3
+  },
+  {
+    "id": "unit-12",
+    "title": "Future Perfect Continuous",
+    "description": "Thì tương lai hoàn thành tiếp diễn – hành động liên tục xảy ra trước một điểm tương lai khác",
+    "icon": "🌌",
+    "category": "tenses",
+    "questionCount": 3
+  },
+  {
+    "id": "unit-sent-pattern",
+    "title": "Sentence Patterns",
+    "description": "Thành phần & cấu trúc câu cơ bản – S, V, O, Complement, Adverbial",
+    "icon": "🧩",
+    "category": "sentence_structures",
+    "questionCount": 3
+  },
+  {
+    "id": "unit-sent-types",
+    "title": "Sentence Types",
+    "description": "Các loại câu – trần thuật, nghi vấn, mệnh lệnh, cảm thán",
+    "icon": "💬",
+    "category": "sentence_structures",
+    "questionCount": 3
+  },
+  {
+    "id": "unit-cond-0",
+    "title": "Zero Conditional (Type 0)",
+    "description": "Câu điều kiện loại 0 – Sự thật hiển nhiên, quy luật tự nhiên",
+    "icon": "☀️",
+    "category": "sentence_structures",
+    "questionCount": 3
+  },
+  {
+    "id": "unit-cond-1",
+    "title": "First Conditional (Type 1)",
+    "description": "Câu điều kiện loại 1 – Có thể xảy ra ở hiện tại hoặc tương lai",
+    "icon": "🌧️",
+    "category": "sentence_structures",
+    "questionCount": 3
+  },
+  {
+    "id": "unit-cond-2",
+    "title": "Second Conditional (Type 2)",
+    "description": "Câu điều kiện loại 2 – Giả định trái với hiện tại",
+    "icon": "🌙",
+    "category": "sentence_structures",
+    "questionCount": 3
+  },
+  {
+    "id": "unit-cond-3",
+    "title": "Third Conditional (Type 3)",
+    "description": "Câu điều kiện loại 3 – Giả định trái với quá khứ",
+    "icon": "⏪",
+    "category": "sentence_structures",
+    "questionCount": 3
+  },
+  {
+    "id": "unit-cond-mixed",
+    "title": "Mixed Conditionals",
+    "description": "Câu điều kiện hỗn hợp – Kết hợp thời điểm khác nhau",
+    "icon": "🔀",
+    "category": "sentence_structures",
+    "questionCount": 3
+  },
+  {
+    "id": "unit-wish",
+    "title": "Wish Sentences",
+    "description": "Câu ước – Thể hiện mong muốn ở hiện tại, tương lai hoặc quá khứ",
+    "icon": "🌠",
+    "category": "sentence_structures",
+    "questionCount": 3
+  },
+  {
+    "id": "unit-reported",
+    "title": "Reported Speech",
+    "description": "Câu tường thuật – Thuật lại lời nói, đổi thì và từ chỉ thời/gian",
+    "icon": "🗣️",
+    "category": "sentence_structures",
+    "questionCount": 3
+  },
+  {
+    "id": "unit-passive",
+    "title": "Passive Voice",
+    "description": "Câu bị động – Be + V3/ed, causative have/get",
+    "icon": "🔄",
+    "category": "sentence_structures",
+    "questionCount": 3
+  },
+  {
+    "id": "unit-subjunctive",
+    "title": "Subjunctive Mood",
+    "description": "Thể giả định – suggest, insist, wish (V-bare, were)",
+    "icon": "📜",
+    "category": "sentence_structures",
+    "questionCount": 3
+  },
+  {
+    "id": "unit-relative",
+    "title": "Relative Clauses",
+    "description": "Mệnh đề quan hệ – who, which, that, whose",
+    "icon": "🔗",
+    "category": "sentence_structures",
+    "questionCount": 3
+  },
+  {
+    "id": "unit-emphasis",
+    "title": "Emphasis & Inversion",
+    "description": "Câu chẻ, đảo ngữ – nhấn mạnh thông tin",
+    "icon": "✨",
+    "category": "sentence_structures",
+    "questionCount": 3
+  },
+  {
+    "id": "unit-adverbial",
+    "title": "Adverbial Clauses",
+    "description": "Mệnh đề trạng ngữ – thời gian, lý do, mục đích, tương phản",
+    "icon": "🌊",
+    "category": "sentence_structures",
+    "questionCount": 3
+  },
+  {
+    "id": "unit-comparison",
+    "title": "Câu So Sánh",
+    "description": "So sánh bằng, so sánh hơn và so sánh nhất – tính từ, trạng từ",
+    "icon": "⚖️",
+    "category": "sentence_structures",
+    "questionCount": 30
+  },
+  {
+    "id": "unit-gerund",
+    "title": "Gerund (V-ing)",
+    "description": "Danh động từ – Cách sử dụng động từ thêm đuôi -ing",
+    "icon": "🍀",
+    "category": "verbs",
+    "questionCount": 3
+  },
+  {
+    "id": "unit-to-v",
+    "title": "To-Infinitive (To-V)",
+    "description": "Động từ nguyên mẫu có To – Cách sử dụng To-V trong câu",
+    "icon": "🍁",
+    "category": "verbs",
+    "questionCount": 3
+  },
+  {
+    "id": "unit-bare-inf",
+    "title": "Bare-Infinitive",
+    "description": "Động từ nguyên mẫu không To – Cách sử dụng Bare-V trong câu",
+    "icon": "🍃",
+    "category": "verbs",
+    "questionCount": 3
+  }
+]
