@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tiếng Anh – Thầy Du Gia Văn</title>
+
+  <!-- Fonts: preconnect + link thay vì @import trong CSS (nhanh hơn ~30%) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- CSS tách riêng — browser cache lần 2+ không cần tải lại -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Thư viện Markdown -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+</head>
+
+<body>
+
+  <canvas id="confetti-canvas" style="position:fixed;inset:0;pointer-events:none;z-index:10000;"></canvas>
+
+  <div class="xp-toast" id="xp-toast">
+    <span>⭐</span><span>Nhận được</span><span id="xp-toast-val" style="font-size:.98rem;font-weight:800;">+0 XP</span>
+  </div>
+
+  <div class="levelup-overlay" id="levelup-overlay" onclick="closeLevelUp(event)">
+    <div class="levelup-box">
+      <span class="levelup-emoji">🏆</span>
+      <div class="levelup-headline">LEVEL UP!</div>
+      <div class="levelup-new-title" id="lu-title"></div>
+      <div class="levelup-xp-badge" id="lu-xp"></div>
+      <div style="font-size:.84rem;color:#6e6e73;margin-bottom:1.4rem;" id="lu-desc"></div>
+      <button class="levelup-close-btn" onclick="closeLevelUp()">Tuyệt vời! 🚀</button>
+    </div>
+  </div>
+
+  <div class="credit-bar">
+    <span>✦ Coded &amp; Designed by</span>
+    <span class="credit-name">Du Gia Văn</span>
+    <span>✦</span>
+  </div>
+
+  <!-- ══ PAGE: LOGIN ══ -->
+  <div class="page" id="page-login">
+    <div style="position:absolute;inset:0;overflow:hidden;pointer-events:none;">
+      <div
+        style="position:absolute;width:min(72rem,120vw);aspect-ratio:1155/678;background:linear-gradient(135deg,#ff80b5,#9089fc);opacity:.22;filter:blur(42px);clip-path:polygon(74.1% 44.1%,100% 61.6%,97.5% 26.9%,85.5% 0.1%,80.7% 2%,72.5% 32.5%,60.2% 62.4%,52.4% 68.1%,47.5% 58.3%,45.2% 34.5%,27.5% 76.7%,0.1% 64.9%,17.9% 100%,27.6% 76.8%,76.1% 97.7%,74.1% 44.1%);left:max(-18rem,-18vw);top:-22rem;transform:rotate(30deg);">
+      </div>
+      <div
+        style="position:absolute;width:min(72rem,120vw);aspect-ratio:1155/678;background:linear-gradient(135deg,#ff80b5,#9089fc);opacity:.20;filter:blur(42px);clip-path:polygon(74.1% 44.1%,100% 61.6%,97.5% 26.9%,85.5% 0.1%,80.7% 2%,72.5% 32.5%,60.2% 62.4%,52.4% 68.1%,47.5% 58.3%,45.2% 34.5%,27.5% 76.7%,0.1% 64.9%,17.9% 100%,27.6% 76.8%,76.1% 97.7%,74.1% 44.1%);right:max(-20rem,-20vw);bottom:-22rem;">
+      </div>
+    </div>
+    <div class="login-fixed-wrap">
+      <div class="login-card">
+        <span class="login-logo">🌿</span>
+        <div class="login-title">Tiếng Anh</div>
+        <div class="login-sub">Lớp học của <strong>Thầy Du Gia Văn</strong> 🍃<br><span
+            style="font-size:.76rem;color:#aaa;">Đăng nhập bằng tài khoản được cấp</span></div>
+
+        <div class="login-field">
+          <span class="fi">👤</span>
+          <input type="text" id="inp-username" placeholder="Tên đăng nhập" autocomplete="username" autocapitalize="off"
+            spellcheck="false" onkeydown="if(event.key==='Enter')document.getElementById('inp-password').focus()" />
+        </div>
+        <div class="login-field">
+          <span class="fi">🔒</span>
+          <input type="password" id="inp-password" placeholder="Mật khẩu" autocomplete="current-password"
+            onkeydown="if(event.key==='Enter')doLogin()" />
+          <button class="toggle-pw" type="button" onclick="togglePw()" tabindex="-1" id="pw-eye">👁</button>
+        </div>
+
+        <button class="btn-login" id="btn-login" onclick="doLogin()">
+          <span class="login-spinner" id="login-spinner"></span>
+          <span id="login-btn-text">Đăng nhập ✨</span>
+        </button>
+        <div class="login-error" id="login-error"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ PAGE: HOME ══ -->
+  <div class="page" id="page-home">
+    <div class="inner-wrap">
+      <div class="home-header">
+        <div class="home-title">📚 Bài học</div>
+        <div style="display:flex;gap:.5rem;">
+          <button class="btn-icon" onclick="showPage('page-leaderboard')" title="Bảng xếp hạng">🏆</button>
+          <button class="btn-icon" onclick="doLogout()" title="Đăng xuất">👋</button>
+        </div>
+      </div>
+
+      <div class="home-dashboard">
+        <aside class="home-sidebar">
+          <!-- Profile card -->
+          <div class="profile-card" id="profile-card">
+            <div class="profile-avatar" id="profile-avatar">🌿</div>
+            <div class="profile-info">
+              <div class="profile-name" id="profile-name">Học Sinh</div>
+              <div class="profile-meta">
+                <span class="profile-tag role" id="profile-role" style="display:none;"></span>
+                <span class="profile-tag dept" id="profile-dept" style="display:none;"></span>
+              </div>
+              <div class="profile-id" id="profile-id"></div>
+              <span class="sync-badge synced" id="sync-badge" style="margin-top:.3rem;">✓ Đồng bộ</span>
+            </div>
+          </div>
+
+          <!-- Gami card -->
+          <div class="gami-card">
+            <div class="gami-top">
+              <div class="gami-level-wrap">
+                <span class="gami-lv-pill">🌿 Lv.<span class="lv-num" id="gami-lv">1</span></span>
+                <span class="gami-lv-title" id="gami-lv-title">Mầm Non</span>
+              </div>
+              <div class="gami-streak"><span class="sf">🔥</span><span id="gami-streak">0</span> ngày</div>
+            </div>
+            <div class="gami-xp-row">
+              <span class="gami-title-text">⭐ Kinh nghiệm</span>
+              <span class="gami-xp-text"><span id="gami-xp-cur">0</span> / <span id="gami-xp-next">100</span> XP</span>
+            </div>
+            <div class="gami-bar-track">
+              <div class="gami-bar-fill" id="gami-bar" style="width:0%"></div>
+            </div>
+            <div class="gami-next-label" id="gami-next-label"></div>
+          </div>
+        </aside>
+
+        <main class="home-main">
+          <!-- Flashcard Banner -->
+          <div class="flashcard-banner" onclick="openFlashcardTopicsPage()">
+            <div class="fb-icon">📇</div>
+            <div class="fb-info">
+              <div class="fb-title">Thẻ Ghi Nhớ (Flashcards)</div>
+              <div class="fb-desc">Học từ vựng theo chủ đề với phát âm tự động</div>
+            </div>
+            <div class="fb-arrow">›</div>
+          </div>
+
+          <div class="section-title">📖 Chủ đề học tập</div>
+          <div id="units-container" class="home-units-grid card-grid">
+            <div class="units-loading">
+              <div class="loader"></div>Đang tải...
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ PAGE: FLASHCARD TOPICS (list of vocabulary topics) ══ -->
+  <div class="page" id="page-flashcard-topics">
+    <div class="inner-wrap">
+      <div class="top-nav">
+        <button class="btn-back" onclick="showPage('page-home')">‹</button>
+        <span class="nav-title">Từ vựng Flashcard</span>
+      </div>
+      <div style="text-align:center;margin-bottom:1.2rem;">
+        <div style="font-size:2.5rem;margin-bottom:.3rem;">📇</div>
+        <div style="font-size:1.15rem;font-weight:800;color:var(--c-text);">Chọn Chủ Đề Từ Vựng</div>
+        <div style="font-size:.78rem;color:var(--c-muted);font-weight:500;margin-top:.2rem;">
+          Luyện nhớ từ vựng hiệu quả qua thẻ lật có phát âm
+        </div>
+      </div>
+      <div id="flashcard-topics-list" class="flash-topics-grid card-grid">
+        <!-- Will be loaded dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ PAGE: FLASHCARD (actual flashcard screen) ══ -->
+  <div class="page" id="page-flashcard">
+    <div class="inner-wrap">
+      <div class="top-nav">
+        <button class="btn-back" onclick="showPage('page-flashcard-topics')">‹</button>
+        <span class="nav-title" id="fc-nav-title">Học Flashcard</span>
+      </div>
+      
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:.5rem;">
+        <div id="fc-topic-info" style="font-size:.78rem; font-weight:700; color:var(--c-muted);"></div>
+        <div class="fc-toggle-container" onclick="toggleAutoSpeak()">
+          <span class="fc-toggle-label">Tự động đọc</span>
+          <label class="fc-switch" onclick="event.stopPropagation()">
+            <input type="checkbox" id="fc-auto-speak-chk" checked onchange="toggleAutoSpeak(this.checked)">
+            <span class="fc-slider"></span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Flashcard 3D area -->
+      <div class="flashcard-container" onclick="flipFlashcard()">
+        <div class="flashcard" id="fc-card">
+          <!-- Front side (English) -->
+          <div class="flashcard-front">
+            <span class="card-badge" id="fc-badge-front">vocabulary</span>
+            <div class="card-english" id="fc-english"></div>
+            <div class="card-phonetic" id="fc-phonetic"></div>
+            <button class="card-speak-btn" onclick="event.stopPropagation(); speakFlashcard();" title="Nghe phát âm">🔊</button>
+            <div class="card-hint">
+              <span>👉 Chạm vào thẻ để xem nghĩa</span>
+            </div>
+          </div>
+          <!-- Back side (Vietnamese) -->
+          <div class="flashcard-back">
+            <span class="card-badge" id="fc-badge-back">vocabulary</span>
+            <div class="card-vietnamese" id="fc-vietnamese"></div>
+            <div class="card-hint">
+              <span>👉 Chạm vào thẻ để quay lại</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Progress bar -->
+      <div class="fc-progress-container">
+        <div class="fc-progress-info">
+          <span id="fc-progress-text">Thẻ 1 / 1</span>
+          <span id="fc-progress-percent">0%</span>
+        </div>
+        <div class="fc-progress-bar">
+          <div class="fc-progress-fill" id="fc-progress-fill"></div>
+        </div>
+      </div>
+
+      <!-- Navigation controls -->
+      <div class="flashcard-controls">
+        <button class="fc-ctrl-btn" onclick="prevFlashcard()">‹ Trước</button>
+        <button class="fc-ctrl-btn" onclick="shuffleFlashcards()">🔀 Xáo trộn</button>
+        <button class="fc-ctrl-btn pri" onclick="nextFlashcard()">Sau ›</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ PAGE: CATEGORY (list units in a category) ══ -->
+  <div class="page" id="page-category">
+    <div class="inner-wrap">
+      <div class="top-nav">
+        <button class="btn-back" onclick="showPage('page-home')">‹</button>
+        <span class="nav-title" id="cat-nav-title">Chủ đề</span>
+      </div>
+      <div style="text-align:center;margin-bottom:1.2rem;">
+        <div id="cat-header-icon" style="font-size:2.5rem;margin-bottom:.3rem;"></div>
+        <div id="cat-header-title" style="font-size:1.15rem;font-weight:800;color:var(--c-text);"></div>
+        <div id="cat-header-desc" style="font-size:.78rem;color:var(--c-muted);font-weight:500;margin-top:.2rem;"></div>
+      </div>
+      <div id="cat-units-list" class="card-grid"></div>
+    </div>
+  </div>
+
+  <!-- ══ PAGE: DETAIL ══ -->
+  <div class="page" id="page-detail">
+    <div class="inner-wrap">
+      <div class="top-nav">
+        <button class="btn-back" onclick="goBackFromDetail()">‹</button>
+        <span class="nav-title" id="detail-nav-title">Chi tiết</span>
+      </div>
+      <div id="detail-icon" style="font-size:2.8rem;margin-bottom:.75rem;text-align:center;"></div>
+      <div class="dtitle" id="detail-title"></div>
+      <div class="dsub" id="detail-desc"></div>
+      <div class="detail-actions">
+        <button class="btn-action btn-action-sec" onclick="showPage('page-theory')">📖 Lý thuyết</button>
+        <button class="btn-action btn-action-pri" onclick="showPage('page-setup')">✏️ Làm bài</button>
+      </div>
+      <div style="font-size:.78rem;color:var(--c-muted);text-align:center;font-weight:500;">Đọc lý thuyết trước để đạt
+        kết quả tốt nhất 🌱</div>
+    </div>
+  </div>
+
+  <!-- ══ PAGE: THEORY ══ -->
+  <div class="page" id="page-theory">
+    <div class="inner-wrap">
+      <div class="top-nav">
+        <button class="btn-back" onclick="showPage('page-detail')">‹</button>
+        <span class="nav-title">📖 Lý thuyết</span>
+      </div>
+      <div class="theory-card">
+        <div class="md-body" id="theory-body">
+          <div class="loader" style="margin:2rem auto;"></div>
+        </div>
+      </div>
+      <button class="btn-start" onclick="showPage('page-setup')">✏️ Làm bài ngay →</button>
+    </div>
+  </div>
+
+  <!-- ══ PAGE: SETUP ══ -->
+  <div class="page" id="page-setup">
+    <div class="inner-wrap">
+      <div class="top-nav">
+        <button class="btn-back" onclick="showPage('page-detail')">‹</button>
+        <span class="nav-title">✏️ Cài đặt bài thi</span>
+      </div>
+      <div class="setup-card">
+        <div class="setup-label">Chọn độ khó</div>
+        <div class="diff-grid">
+          <div class="diff-btn" id="diff-easy" onclick="selectDiff('easy')"><span class="d-icon">🌱</span><span
+              class="d-name">Dễ</span><span class="d-desc">Cơ bản</span></div>
+          <div class="diff-btn active" id="diff-medium" onclick="selectDiff('medium')"><span
+              class="d-icon">🌿</span><span class="d-name">Vừa</span><span class="d-desc">Tiêu chuẩn</span></div>
+          <div class="diff-btn" id="diff-hard" onclick="selectDiff('hard')"><span class="d-icon">🌳</span><span
+              class="d-name">Khó</span><span class="d-desc">Thử thách</span></div>
+        </div>
+      </div>
+      <div class="setup-card">
+        <div class="setup-label">Số lượng câu hỏi</div>
+        <div class="qty-grid">
+          <div class="qty-btn" id="qty-5" onclick="selectQty(5)"><span class="qty-num">5</span><span class="qty-label">câu</span></div>
+          <div class="qty-btn" id="qty-10" onclick="selectQty(10)"><span class="qty-num">10</span><span class="qty-label">câu</span></div>
+          <div class="qty-btn" id="qty-20" onclick="selectQty(20)"><span class="qty-num">20</span><span class="qty-label">câu</span></div>
+          <div class="qty-btn active" id="qty-all" onclick="selectQty('all')"><span class="qty-num">∞</span><span class="qty-label">Tất cả</span></div>
+        </div>
+      </div>
+      <div class="setup-card">
+        <div class="random-row">
+          <div class="random-label">
+            <span class="r-icon">🔀</span>
+            <div>
+              Xáo trộn câu hỏi
+              <span class="r-desc">Thay đổi thứ tự mỗi lần làm bài</span>
+            </div>
+          </div>
+          <label class="toggle-switch">
+            <input type="checkbox" id="random-toggle" onchange="toggleRandom()">
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+      </div>
+      <div class="setup-card">
+        <div class="setup-label">Thông tin bài thi</div>
+        <div id="setup-info" style="font-size:.84rem;color:var(--c-muted);font-weight:500;line-height:1.6;">Vui lòng
+          chọn độ khó...</div>
+      </div>
+      <button class="btn-start" onclick="startExam()">🚀 Bắt đầu làm bài</button>
+    </div>
+  </div>
+
+  <!-- ══ PAGE: EXERCISE ══ -->
+  <div class="page" id="page-exercise">
+    <div class="inner-wrap">
+      <div class="top-nav">
+        <button class="btn-back" onclick="confirmLeave()">✕</button>
+        <span class="nav-title" id="ex-nav-title">Bài tập</span>
+      </div>
+      <div class="ex-progress">
+        <div class="ex-prog-bar">
+          <div class="ex-prog-fill" id="ex-prog-fill" style="width:0%"></div>
+        </div>
+        <span class="ex-prog-text" id="ex-prog-text">0/0</span>
+      </div>
+      <div id="question-area"></div>
+      <div class="ex-nav">
+        <button class="btn-check" id="btn-check" onclick="checkAnswer()" disabled>Kiểm tra ✓</button>
+        <button class="btn-nxt" id="btn-nxt" style="display:none;" onclick="nextQuestion()">Tiếp →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ PAGE: RESULT ══ -->
+  <div class="page" id="page-result">
+    <div class="inner-wrap">
+      <div class="top-nav">
+        <button class="btn-back" onclick="showPage('page-home')">🏠</button>
+        <span class="nav-title">📊 Kết quả</span>
+      </div>
+      <div class="result-header">
+        <span class="result-emoji" id="res-emoji">🎉</span>
+        <div class="result-pct" id="res-pct">0%</div>
+        <div class="result-frac" id="res-frac">0/0 câu đúng</div>
+      </div>
+      <div class="result-gami-row">
+        <div class="result-gami-chip">
+          <div class="rgc-val" id="res-xp">+0</div>
+          <div class="rgc-lbl">XP nhận được</div>
+        </div>
+        <div class="result-gami-chip">
+          <div class="rgc-val" id="res-streak">0🔥</div>
+          <div class="rgc-lbl">Streak</div>
+        </div>
+        <div class="result-gami-chip">
+          <div class="rgc-val" id="res-level">Lv.1</div>
+          <div class="rgc-lbl">Level</div>
+        </div>
+      </div>
+      <div class="sheets-status" id="sheets-status" style="display:none;"></div>
+      <div class="section-title" style="margin-top:1rem;">📋 Chi tiết từng câu</div>
+      <div id="result-details"></div>
+      <button class="btn-again" onclick="startExam()">🔄 Làm lại</button>
+      <button class="btn-home" onclick="showPage('page-home')">🏠 Về trang chủ</button>
+    </div>
+  </div>
+
+  <!-- ══ PAGE: LEADERBOARD ══ -->
+  <div class="page" id="page-leaderboard">
+    <div class="inner-wrap">
+      <div class="top-nav">
+        <button class="btn-back" onclick="showPage('page-home')">‹</button>
+        <span class="nav-title">🏆 Bảng xếp hạng</span>
+      </div>
+      <div id="lb-container">
+        <div class="units-loading">
+          <div class="loader"></div>Đang tải...
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ PAGE: HISTORY ══ -->
+  <div class="page" id="page-history">
+    <div class="inner-wrap">
+      <div class="top-nav">
+        <button class="btn-back" onclick="showPage('page-home')">‹</button>
+        <span class="nav-title">📋 Lịch sử làm bài</span>
+      </div>
+      <div class="setup-card" style="margin-bottom: 1rem; padding: .8rem 1rem;">
+        <div style="display: flex; flex-direction: column; gap: .5rem;">
+          <div style="display: flex; gap: .5rem; align-items: center;">
+            <input type="text" id="history-search" placeholder="Tìm theo tên bài học..." 
+              style="flex: 1; padding: .65rem 1rem; border-radius: 14px; border: 1.5px solid var(--c-separator); font-family: var(--font); font-size: .86rem; outline: none; background: var(--c-surface2);"
+              oninput="filterHistory()"/>
+            <button class="btn-icon" onclick="loadHistory()" title="Tải lại" style="width: 38px; height: 38px; flex-shrink: 0; border-radius: 50%;">🔄</button>
+          </div>
+          <select id="history-lesson-filter" onchange="filterHistory()"
+            style="width: 100%; padding: .65rem 1rem; border-radius: 14px; border: 1.5px solid var(--c-separator); font-family: var(--font); font-size: .86rem; outline: none; background: var(--c-surface2); color: var(--c-text);">
+            <option value="all">📚 Tất cả bài học</option>
+          </select>
+        </div>
+      </div>
+      <div id="history-container">
+        <div class="units-loading"><div class="loader"></div>Đang tải lịch sử...</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ BOTTOM NAV ══ -->
+  <div class="bottom-nav" id="bottom-nav">
+    <div class="bn-item active" id="bn-home" onclick="showPage('page-home')">
+      <span class="bn-icon">🏠</span><span class="bn-label">Trang chủ</span>
+    </div>
+    <div class="bn-item" id="bn-lb" onclick="showPage('page-leaderboard')">
+      <span class="bn-icon">🏆</span><span class="bn-label">Xếp hạng</span>
+    </div>
+    <div class="bn-item" id="bn-history" onclick="showPage('page-history')">
+      <span class="bn-icon">📋</span><span class="bn-label">Lịch sử</span>
+    </div>
+  </div>
+
+  <!-- JS: levels.js → config.js → app.js (defer) -->
+  <script src="levels.js"></script>
+  <script src="config.js"></script>
+  <script src="app.js" defer></script>
+
+</body>
+
+</html>

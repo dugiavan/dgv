@@ -1,0 +1,20 @@
+/* ════════════════════════════════════════════
+   CONFIG — Thầy chỉ cần sửa file này
+   ════════════════════════════════════════════ */
+const CONFIG = {
+  // Dán URL Google Apps Script của thầy vào đây
+  SHEETS_URL: 'https://script.google.com/macros/s/AKfycbyKS6Lb4aqXdC3K5xDmfezww5MD16Lav7tmWoX4IeZYZYQZg8PR2HquU_UHfgSlWNdr/exec',
+  UNITS_INDEX: './content/units-index.json',
+  // Thời gian session (giờ) — sau khi hết sẽ tự logout
+  SESSION_HOURS: 8,
+};
+
+/* LEVELS — xem file levels.js (300 cấp) */
+
+const XP_PER_Q = { easy: 5, medium: 10, hard: 18 };
+
+const CATEGORIES = {
+  tenses: { icon: '⏰', title: 'Các Thì (Tenses)', desc: '12 thì trong tiếng Anh' },
+  sentence_structures: { icon: '📐', title: 'Cấu Trúc Câu', desc: 'Mẫu câu, điều kiện, ước, bị động, quan hệ và mệnh đề trạng ngữ' },
+  verbs: { icon: '🏃', title: 'Chức Năng Động Từ', desc: 'Gerund V-ing, To-V và Bare-Infinitive' }
+};
