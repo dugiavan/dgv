@@ -1,0 +1,51 @@
+{
+  "id": "artificial_intelligence",
+  "title": "Artificial Intelligence",
+  "icon": "🤖",
+  "subtopics": [
+    {
+      "id": "ai_in_job_market",
+      "name": "AI & Job Market",
+      "icon": "💼",
+      "sentences": [
+        {
+          "text": "AI technologies are automating repetitive tasks, creating both new opportunities and job shifts.",
+          "vi": "Công nghệ AI đang tự động hóa các công việc lặp đi lặp lại, tạo ra cả cơ hội mới lẫn sự chuyển dịch việc làm.",
+          "type": "basic"
+        },
+        {
+          "text": "Do you worry that smart programs will replace human writers or designers soon?",
+          "vi": "Bạn có lo lắng rằng các chương trình thông minh sẽ sớm thay thế người viết hoặc nhà thiết kế không?",
+          "type": "conversational"
+        },
+        {
+          "text": "In my opinion, AI will assist workers rather than replace them entirely.",
+          "vi": "Theo tôi, AI sẽ hỗ trợ người lao động thay vì thay thế họ hoàn toàn.",
+          "type": "opinion"
+        }
+      ]
+    },
+    {
+      "id": "ai_ethics",
+      "name": "Ethics & Regulations",
+      "icon": "⚖️",
+      "sentences": [
+        {
+          "text": "Strict regulations are necessary to ensure user data privacy and fair algorithms.",
+          "vi": "Các quy định nghiêm ngặt là cần thiết để đảm bảo quyền riêng tư dữ liệu người dùng và các thuật toán công bằng.",
+          "type": "basic"
+        },
+        {
+          "text": "How can governments prevent deepfakes from spreading fake news online?",
+          "vi": "Làm thế nào chính phủ có thể ngăn chặn deepfake phát tán tin tức giả mạo trên mạng?",
+          "type": "conversational"
+        },
+        {
+          "text": "I strongly believe that developers must prioritize safety over speed when training AI models.",
+          "vi": "Tôi tin tưởng mạnh mẽ rằng các nhà phát triển phải ưu tiên sự an toàn hơn tốc độ khi huấn luyện các mô hình AI.",
+          "type": "opinion"
+        }
+      ]
+    }
+  ]
+}

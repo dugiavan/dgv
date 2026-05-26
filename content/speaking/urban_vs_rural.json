@@ -1,0 +1,41 @@
+{
+  "id": "urban_vs_rural",
+  "title": "Urban vs. Rural Life",
+  "icon": "🏙️",
+  "subtopics": [
+    {
+      "id": "city_pace",
+      "name": "Pace of City Life",
+      "icon": "🚗",
+      "sentences": [
+        {
+          "text": "Living in a big city offers better job opportunities and convenient public transit.",
+          "vi": "Sống ở một thành phố lớn mang lại cơ hội việc làm tốt hơn và phương tiện công cộng thuận tiện.",
+          "type": "basic"
+        },
+        {
+          "text": "How do you cope with the traffic jams and noise in urban areas?",
+          "vi": "Bạn đối phó với kẹt xe và tiếng ồn ở khu vực đô thị như thế nào?",
+          "type": "conversational"
+        }
+      ]
+    },
+    {
+      "id": "countryside_peace",
+      "name": "Countryside Peace",
+      "icon": "🏡",
+      "sentences": [
+        {
+          "text": "The countryside is known for its fresh air, quiet environment, and tight-knit community.",
+          "vi": "Nông thôn được biết đến với không khí trong lành, môi trường yên tĩnh và cộng đồng gắn kết chặt chẽ.",
+          "type": "basic"
+        },
+        {
+          "text": "Personally, I prefer the peace of rural areas to the crowded streets of the city.",
+          "vi": "Cá nhân tôi thích sự yên bình của vùng nông thôn hơn những con phố đông đúc ở thành phố.",
+          "type": "opinion"
+        }
+      ]
+    }
+  ]
+}

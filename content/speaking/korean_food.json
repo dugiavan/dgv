@@ -1,0 +1,41 @@
+{
+  "id": "korean_food",
+  "title": "Korean Food",
+  "icon": "🇰🇷",
+  "subtopics": [
+    {
+      "id": "korean_culture",
+      "name": "Food Culture",
+      "icon": "🍱",
+      "sentences": [
+        {
+          "text": "Korean meals are typically served with a bowl of rice and various side dishes called banchan.",
+          "vi": "Các bữa ăn Hàn Quốc thường được phục vụ với một bát cơm và nhiều món ăn phụ gọi là banchan.",
+          "type": "basic"
+        },
+        {
+          "text": "Have you ever tried traditional Korean kimchi?",
+          "vi": "Bạn đã bao giờ thử kim chi truyền thống của Hàn Quốc chưa?",
+          "type": "conversational"
+        },
+        {
+          "text": "In my opinion, Korean food is not only delicious but also very healthy.",
+          "vi": "Theo tôi, món ăn Hàn Quốc không chỉ ngon mà còn rất tốt cho sức khỏe.",
+          "type": "opinion"
+        }
+      ]
+    },
+    {
+      "id": "korean_flavors",
+      "name": "Flavors & Ingredients",
+      "icon": "🌶️",
+      "sentences": [
+        {
+          "text": "Many Korean dishes use chili pepper paste, sesame oil, and garlic for seasoning.",
+          "vi": "Nhiều món ăn Hàn Quốc sử dụng tương ớt, dầu mè và tỏi để nêm gia vị.",
+          "type": "basic"
+        }
+      ]
+    }
+  ]
+}

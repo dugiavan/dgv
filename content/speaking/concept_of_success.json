@@ -1,0 +1,41 @@
+{
+  "id": "concept_of_success",
+  "title": "Concept of Success",
+  "icon": "🏆",
+  "subtopics": [
+    {
+      "id": "societal_pressure",
+      "name": "Societal Expectations",
+      "icon": "📈",
+      "sentences": [
+        {
+          "text": "Society often measures a person's success by their income and job title.",
+          "vi": "Xã hội thường đo lường thành công của một người qua thu nhập và chức danh công việc của họ.",
+          "type": "basic"
+        },
+        {
+          "text": "Do you feel pressured to meet the achievements of your peers?",
+          "vi": "Bạn có cảm thấy bị áp lực khi phải đạt được những thành tựu như bạn bè đồng trang lứa không?",
+          "type": "conversational"
+        }
+      ]
+    },
+    {
+      "id": "inner_peace",
+      "name": "Personal Fulfillment",
+      "icon": "🧘",
+      "sentences": [
+        {
+          "text": "Finding peace of mind and doing what you love is a form of true success.",
+          "vi": "Tìm thấy sự thanh thản trong tâm hồn và làm những gì mình yêu thích là một dạng thành công thực sự.",
+          "type": "basic"
+        },
+        {
+          "text": "In my view, happiness is the ultimate indicator of a successful life.",
+          "vi": "Theo tôi, hạnh phúc là chỉ số cuối cùng để đánh giá một cuộc đời thành công.",
+          "type": "opinion"
+        }
+      ]
+    }
+  ]
+}

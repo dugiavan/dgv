@@ -1,0 +1,46 @@
+{
+  "id": "social_media_trends",
+  "title": "Social Media Trends",
+  "icon": "📱",
+  "subtopics": [
+    {
+      "id": "digital_detox",
+      "name": "Digital Detox",
+      "icon": "📴",
+      "sentences": [
+        {
+          "text": "Taking a break from social media helps improve my mental health and concentration.",
+          "vi": "Tạm rời xa mạng xã hội giúp cải thiện sức khỏe tinh thần và sự tập trung của tôi.",
+          "type": "basic"
+        },
+        {
+          "text": "Would you consider turning off your phone for an entire weekend?",
+          "vi": "Bạn có nghĩ đến việc tắt điện thoại của mình trong cả ngày cuối tuần không?",
+          "type": "conversational"
+        }
+      ]
+    },
+    {
+      "id": "influencer_culture",
+      "name": "Influencer Culture",
+      "icon": "📸",
+      "sentences": [
+        {
+          "text": "Influencers often share content about lifestyle, beauty, and travel to attract followers.",
+          "vi": "Những người có ảnh hưởng thường chia sẻ nội dung về phong cách sống, làm đẹp và du lịch để thu hút người theo dõi.",
+          "type": "basic"
+        },
+        {
+          "text": "I feel that some online reviews might be biased because of sponsorship.",
+          "vi": "Tôi cảm thấy một số đánh giá trực tuyến có thể bị thiên vị vì có tài trợ.",
+          "type": "opinion"
+        },
+        {
+          "text": "Do you follow any influencers for studying tips or advice?",
+          "vi": "Bạn có theo dõi người ảnh hưởng nào để học hỏi mẹo hoặc lời khuyên học tập không?",
+          "type": "conversational"
+        }
+      ]
+    }
+  ]
+}

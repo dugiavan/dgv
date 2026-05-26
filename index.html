@@ -129,14 +129,21 @@
         </aside>
 
         <main class="home-main">
-          <!-- Flashcard Banner -->
-          <div class="flashcard-banner" onclick="openFlashcardTopicsPage()">
-            <div class="fb-icon">📇</div>
-            <div class="fb-info">
-              <div class="fb-title">Thẻ Ghi Nhớ (Flashcards)</div>
-              <div class="fb-desc">Học từ vựng theo chủ đề với phát âm tự động</div>
+          <!-- Features Horizontal Scrolling Row -->
+          <div class="features-scroll-row">
+            <!-- Flashcard Card -->
+            <div class="feature-card" onclick="openFlashcardTopicsPage()">
+              <div class="fc-icon-wrapper" style="background-color: rgba(74, 140, 92, 0.12); color: #4a8c5c;">📇</div>
+              <div class="fc-card-title">Thẻ Ghi Nhớ</div>
+              <div class="fc-card-desc">Học từ vựng theo chủ đề với phát âm tự động</div>
             </div>
-            <div class="fb-arrow">›</div>
+
+            <!-- Speaking Card -->
+            <div class="feature-card" onclick="openSpeakingTopicsPage()" style="background: linear-gradient(135deg, rgba(255,253,248,.95) 0%, rgba(255, 107, 107, 0.05) 100%);">
+              <div class="fc-icon-wrapper" style="background-color: rgba(255, 107, 107, 0.12); color: #ff6b6b;">🎤</div>
+              <div class="fc-card-title">Luyện Nói</div>
+              <div class="fc-card-desc">Nghe phát âm chuẩn & luyện phản xạ nói</div>
+            </div>
           </div>
 
           <div class="section-title">📖 Chủ đề học tập</div>
@@ -432,6 +439,79 @@
     </div>
   </div>
 
+  <!-- ══ PAGE: SPEAKING TOPICS ══ -->
+  <div class="page" id="page-speaking-topics">
+    <div class="inner-wrap">
+      <div class="top-nav">
+        <button class="btn-back" onclick="showPage('page-home')">‹</button>
+        <span class="nav-title">🎤 Luyện Nói</span>
+      </div>
+      <div style="text-align:center;margin-bottom:1.2rem;">
+        <div style="font-size:2.5rem;margin-bottom:.3rem;">🎤</div>
+        <div style="font-size:1.15rem;font-weight:800;color:var(--c-text);">Chọn Chủ Đề Speaking</div>
+        <div style="font-size:.78rem;color:var(--c-muted);font-weight:500;margin-top:.2rem;">
+          Nghe — Hiểu — Lặp lại để luyện phản xạ nói
+        </div>
+      </div>
+      <div id="speaking-topics-list" class="flash-topics-grid">
+        <!-- Được load động bởi speaking.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ PAGE: SPEAKING SUBTOPICS ══ -->
+  <div class="page" id="page-speaking-subtopics">
+    <div class="inner-wrap">
+      <div class="top-nav">
+        <button class="btn-back" onclick="spkGoBack()">‹</button>
+        <span class="nav-title" id="spk-subtopic-nav-title">Chủ Đề</span>
+      </div>
+      <div style="text-align:center;margin-bottom:1rem;">
+        <div id="spk-subtopic-header-icon" style="font-size:2.2rem;"></div>
+        <div id="spk-subtopic-header-title"
+          style="font-size:1.1rem;font-weight:800;color:var(--c-text);margin-top:.3rem;"></div>
+      </div>
+      <div id="speaking-subtopics-list" class="flash-topics-grid"></div>
+    </div>
+  </div>
+
+  <!-- ══ PAGE: SPEAKING PRACTICE ══ -->
+  <div class="page" id="page-speaking-practice">
+    <div class="inner-wrap">
+      <div class="top-nav">
+        <button class="btn-back" onclick="spkGoBack()">‹</button>
+        <span class="nav-title" id="spk-practice-nav-title">Luyện Nói</span>
+      </div>
+
+      <!-- Breadcrumb -->
+      <div class="breadcrumb" id="spk-breadcrumb"></div>
+
+      <!-- Header -->
+      <div class="practice-header">
+        <div class="practice-topic-label">🎤 Speaking Practice</div>
+        <h2 class="practice-title" id="spk-practice-title"></h2>
+        <p class="practice-subtitle" id="spk-practice-subtitle"></p>
+      </div>
+
+      <!-- Controls -->
+      <div class="practice-controls">
+        <button class="btn-play-all" id="spk-btn-play-all" onclick="spkPlayAll()">
+          ▶ Play All
+        </button>
+        <span class="practice-hint">🎯 Nghe rồi lặp lại thành tiếng</span>
+      </div>
+
+      <!-- Sentence cards -->
+      <div id="spk-sentences-list" class="sentences-list"></div>
+
+      <!-- Repeat hint -->
+      <div class="repeat-hint">
+        <span class="repeat-hint-icon">🎤</span>
+        <span><strong>Luyện phản xạ:</strong> Sau mỗi câu, hãy nói lại thành tiếng để nhớ lâu hơn.</span>
+      </div>
+    </div>
+  </div>
+
   <!-- ══ BOTTOM NAV ══ -->
   <div class="bottom-nav" id="bottom-nav">
     <div class="bn-item active" id="bn-home" onclick="showPage('page-home')">
@@ -449,6 +529,7 @@
   <script src="levels.js"></script>
   <script src="config.js"></script>
   <script src="app.js" defer></script>
+  <script src="speaking.js" defer></script>
 
 </body>
 

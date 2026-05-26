@@ -1,0 +1,46 @@
+{
+  "id": "daily_routines",
+  "title": "Daily Routines",
+  "icon": "⏰",
+  "subtopics": [
+    {
+      "id": "morning_habits",
+      "name": "Morning Habits",
+      "icon": "🌅",
+      "sentences": [
+        {
+          "text": "Waking up early gives me time to plan my day and exercise.",
+          "vi": "Thức dậy sớm giúp tôi có thời gian lên kế hoạch cho ngày mới và tập thể dục.",
+          "type": "basic"
+        },
+        {
+          "text": "Do you prefer a heavy breakfast or just a cup of coffee in the morning?",
+          "vi": "Bạn thích một bữa sáng thịnh soạn hay chỉ một tách cà phê vào buổi sáng?",
+          "type": "conversational"
+        },
+        {
+          "text": "I believe that a productive morning routine sets the tone for the entire day.",
+          "vi": "Tôi tin rằng một thói quen buổi sáng hiệu quả sẽ quyết định tinh thần cho cả ngày.",
+          "type": "opinion"
+        }
+      ]
+    },
+    {
+      "id": "evening_relaxation",
+      "name": "Evening Relaxation",
+      "icon": "🌙",
+      "sentences": [
+        {
+          "text": "Reading a book before sleeping helps me wind down and sleep better.",
+          "vi": "Đọc sách trước khi ngủ giúp tôi thư giãn và ngủ ngon hơn.",
+          "type": "basic"
+        },
+        {
+          "text": "In my view, evening screen time should be limited to improve sleep quality.",
+          "vi": "Theo quan điểm của tôi, thời gian sử dụng màn hình buổi tối nên được hạn chế để cải thiện chất lượng giấc ngủ.",
+          "type": "opinion"
+        }
+      ]
+    }
+  ]
+}

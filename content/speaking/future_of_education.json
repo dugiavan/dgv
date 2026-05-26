@@ -1,0 +1,41 @@
+{
+  "id": "future_of_education",
+  "title": "Future of Education",
+  "icon": "🎓",
+  "subtopics": [
+    {
+      "id": "remote_learning",
+      "name": "Remote Learning",
+      "icon": "💻",
+      "sentences": [
+        {
+          "text": "Online platforms allow students to access materials and lectures from anywhere in the world.",
+          "vi": "Các nền tảng trực tuyến cho phép sinh viên tiếp cận tài liệu và bài giảng từ bất kỳ nơi nào trên thế giới.",
+          "type": "basic"
+        },
+        {
+          "text": "Do you study better during online classes or in-person lectures?",
+          "vi": "Bạn học tốt hơn trong các lớp học trực tuyến hay các bài giảng trực tiếp?",
+          "type": "conversational"
+        }
+      ]
+    },
+    {
+      "id": "skill_vs_degree",
+      "name": "Skills vs. Degrees",
+      "icon": "📜",
+      "sentences": [
+        {
+          "text": "Many tech companies now prioritize practical skills over traditional university degrees.",
+          "vi": "Nhiều công ty công nghệ hiện ưu tiên các kỹ năng thực tế hơn là bằng đại học truyền thống.",
+          "type": "basic"
+        },
+        {
+          "text": "I believe that hands-on experience is more valuable than just theoretical study.",
+          "vi": "Tôi tin rằng kinh nghiệm thực hành có giá trị hơn là chỉ học lý thuyết.",
+          "type": "opinion"
+        }
+      ]
+    }
+  ]
+}

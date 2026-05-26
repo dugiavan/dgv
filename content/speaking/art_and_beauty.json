@@ -1,0 +1,41 @@
+{
+  "id": "art_and_beauty",
+  "title": "Art & Beauty",
+  "icon": "🎭",
+  "subtopics": [
+    {
+      "id": "subjective_beauty",
+      "name": "Subjective Taste",
+      "icon": "👁️",
+      "sentences": [
+        {
+          "text": "What is considered beautiful in one culture might not be in another.",
+          "vi": "Những gì được coi là đẹp trong một nền văn hóa này có thể lại không phải trong một nền văn hóa khác.",
+          "type": "basic"
+        },
+        {
+          "text": "In your opinion, does abstract art require real skill to create?",
+          "vi": "Theo ý kiến của bạn, nghệ thuật trừu tượng có đòi hỏi kỹ năng thực sự để tạo ra không?",
+          "type": "conversational"
+        }
+      ]
+    },
+    {
+      "id": "art_in_society",
+      "name": "Societal Value of Art",
+      "icon": "🏛️",
+      "sentences": [
+        {
+          "text": "Art galleries and museums preserve historical memories and cultural identities.",
+          "vi": "Các phòng trưng bày nghệ thuật và bảo tàng lưu giữ những ký ức lịch sử và bản sắc văn hóa.",
+          "type": "basic"
+        },
+        {
+          "text": "I believe that society is much richer when creative arts are funded and respected.",
+          "vi": "Tôi tin rằng xã hội sẽ phong phú hơn nhiều khi nghệ thuật sáng tạo được tài trợ và tôn trọng.",
+          "type": "opinion"
+        }
+      ]
+    }
+  ]
+}

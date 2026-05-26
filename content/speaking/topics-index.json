@@ -1,0 +1,110 @@
+[
+  {
+    "id": "daily_routines",
+    "title": "Daily Routines",
+    "category": "personal_life",
+    "icon": "⏰",
+    "color": "#FF6B6B",
+    "description": "Morning habits, schedules, and work-life balance",
+    "sentenceCount": 5
+  },
+  {
+    "id": "korean_food",
+    "title": "Korean Food",
+    "category": "personal_life",
+    "icon": "🇰🇷",
+    "color": "#FF8E53",
+    "description": "Dishes, flavors, and food culture",
+    "sentenceCount": 4
+  },
+  {
+    "id": "hobbies_leisure",
+    "title": "Hobbies & Leisure",
+    "category": "personal_life",
+    "icon": "🎨",
+    "color": "#FFAA00",
+    "description": "Free time activities, sports, and creative arts",
+    "sentenceCount": 4
+  },
+  {
+    "id": "food_safety",
+    "title": "Food Safety",
+    "category": "social_lifestyle",
+    "icon": "🛡️",
+    "color": "#4E9F3D",
+    "description": "Hygiene, expiration dates, and safe food storage",
+    "sentenceCount": 4
+  },
+  {
+    "id": "social_media_trends",
+    "title": "Social Media Trends",
+    "category": "social_lifestyle",
+    "icon": "📱",
+    "color": "#10B981",
+    "description": "Short-form videos, online privacy, and viral content",
+    "sentenceCount": 5
+  },
+  {
+    "id": "urban_vs_rural",
+    "title": "Urban vs. Rural Life",
+    "category": "social_lifestyle",
+    "icon": "🏙️",
+    "color": "#06B6D4",
+    "description": "Cost of living, job opportunities, and community ties",
+    "sentenceCount": 4
+  },
+  {
+    "id": "artificial_intelligence",
+    "title": "Artificial Intelligence",
+    "category": "global_issues",
+    "icon": "🤖",
+    "color": "#3B82F6",
+    "description": "Automation, future ethics, and human-AI collaboration",
+    "sentenceCount": 6
+  },
+  {
+    "id": "global_warming",
+    "title": "Climate Change",
+    "category": "global_issues",
+    "icon": "🌍",
+    "color": "#6366F1",
+    "description": "Carbon footprint, extreme weather, and green solutions",
+    "sentenceCount": 5
+  },
+  {
+    "id": "future_of_education",
+    "title": "Future of Education",
+    "category": "global_issues",
+    "icon": "🎓",
+    "color": "#8B5CF6",
+    "description": "Online learning, gamification, and traditional degrees",
+    "sentenceCount": 4
+  },
+  {
+    "id": "concept_of_success",
+    "title": "Concept of Success",
+    "category": "philosophical_abstract",
+    "icon": "🏆",
+    "color": "#A855F7",
+    "description": "Defining wealth, happiness, and personal achievements",
+    "sentenceCount": 4
+  },
+  {
+    "id": "nature_of_happiness",
+    "title": "Nature of Happiness",
+    "category": "philosophical_abstract",
+    "icon": "💭",
+    "color": "#D946EF",
+    "description": "Materialism, emotional resilience, and fleeting joy",
+    "sentenceCount": 4
+  },
+  {
+    "id": "art_and_beauty",
+    "title": "Art & Beauty",
+    "category": "philosophical_abstract",
+    "icon": "🎭",
+    "color": "#EC4899",
+    "description": "Subjective aesthetics, cultural value, and self-expression",
+    "sentenceCount": 4
+  }
+]

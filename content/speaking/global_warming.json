@@ -1,0 +1,46 @@
+{
+  "id": "global_warming",
+  "title": "Climate Change",
+  "icon": "🌍",
+  "subtopics": [
+    {
+      "id": "environmental_impact",
+      "name": "Current Impacts",
+      "icon": "🔥",
+      "sentences": [
+        {
+          "text": "Rising sea levels and extreme heatwaves are threatening coastal cities worldwide.",
+          "vi": "Mực nước biển dâng cao và các đợt nắng nóng cực đoan đang đe dọa các thành phố ven biển trên toàn thế giới.",
+          "type": "basic"
+        },
+        {
+          "text": "Have you noticed any changes in the local weather patterns recently?",
+          "vi": "Gần đây bạn có nhận thấy bất kỳ sự thay đổi nào trong các mô hình thời tiết địa phương không?",
+          "type": "conversational"
+        }
+      ]
+    },
+    {
+      "id": "individual_actions",
+      "name": "Sustainable Living",
+      "icon": "🌱",
+      "sentences": [
+        {
+          "text": "Reducing single-use plastics and recycling more can lower our carbon footprint.",
+          "vi": "Giảm thiểu nhựa dùng một lần và tái chế nhiều hơn có thể làm giảm lượng khí thải carbon của chúng ta.",
+          "type": "basic"
+        },
+        {
+          "text": "In my view, daily individual habits play a huge role in protecting the environment.",
+          "vi": "Theo quan điểm của tôi, thói quen cá nhân hàng ngày đóng vai trò rất lớn trong việc bảo vệ môi trường.",
+          "type": "opinion"
+        },
+        {
+          "text": "Would you switch to public transport to help lower emission levels?",
+          "vi": "Bạn có chuyển sang phương tiện giao thông công cộng để giúp giảm mức phát thải không?",
+          "type": "conversational"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "id": "hobbies_leisure",
+  "title": "Hobbies & Leisure",
+  "icon": "🎨",
+  "subtopics": [
+    {
+      "id": "indoor_activities",
+      "name": "Indoor Crafts",
+      "icon": "🧩",
+      "sentences": [
+        {
+          "text": "Solving puzzles and drawing help me relieve stress after a long working day.",
+          "vi": "Giải câu đố và vẽ tranh giúp tôi giải tỏa căng thẳng sau một ngày làm việc dài.",
+          "type": "basic"
+        },
+        {
+          "text": "Do you enjoy spending your free time crafting things or reading books?",
+          "vi": "Bạn có thích dành thời gian rảnh rỗi để làm đồ thủ công hay đọc sách không?",
+          "type": "conversational"
+        }
+      ]
+    },
+    {
+      "id": "outdoor_sports",
+      "name": "Outdoor Sports",
+      "icon": "🏃",
+      "sentences": [
+        {
+          "text": "Playing sports outdoors improves physical health and builds teamwork.",
+          "vi": "Chơi thể thao ngoài trời giúp cải thiện sức khỏe thể chất và xây dựng tinh thần đồng đội.",
+          "type": "basic"
+        },
+        {
+          "text": "I think everyone should engage in at least one outdoor activity to stay active.",
+          "vi": "Tôi nghĩ mọi người nên tham gia ít nhất một hoạt động ngoài trời để giữ sự năng động.",
+          "type": "opinion"
+        }
+      ]
+    }
+  ]
+}

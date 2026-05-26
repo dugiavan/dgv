@@ -1,0 +1,41 @@
+{
+  "id": "nature_of_happiness",
+  "title": "Nature of Happiness",
+  "icon": "💭",
+  "subtopics": [
+    {
+      "id": "material_wealth",
+      "name": "Wealth & Joy",
+      "icon": "💰",
+      "sentences": [
+        {
+          "text": "Material possessions can buy temporary comfort but rarely bring long-term joy.",
+          "vi": "Sở hữu vật chất có thể mua được sự thoải mái tạm thời nhưng hiếm khi mang lại niềm vui lâu dài.",
+          "type": "basic"
+        },
+        {
+          "text": "Do you think money is a necessary condition for a happy life?",
+          "vi": "Bạn có nghĩ tiền là điều kiện cần thiết cho một cuộc sống hạnh phúc không?",
+          "type": "conversational"
+        }
+      ]
+    },
+    {
+      "id": "mindfulness",
+      "name": "Mindfulness & Peace",
+      "icon": "🍃",
+      "sentences": [
+        {
+          "text": "Practicing mindfulness helps us appreciate the simple details of everyday life.",
+          "vi": "Thực hành chánh niệm giúp chúng ta trân quý những chi tiết giản đơn của cuộc sống hàng ngày.",
+          "type": "basic"
+        },
+        {
+          "text": "I feel that true happiness comes from within, not from external achievements.",
+          "vi": "Tôi cảm thấy rằng hạnh phúc đích thực đến từ bên trong, chứ không phải từ những thành tựu bên ngoài.",
+          "type": "opinion"
+        }
+      ]
+    }
+  ]
+}

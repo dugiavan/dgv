@@ -1,0 +1,41 @@
+{
+  "id": "food_safety",
+  "title": "Food Safety",
+  "icon": "🛡️",
+  "subtopics": [
+    {
+      "id": "kitchen_hygiene",
+      "name": "Kitchen Hygiene",
+      "icon": "🧼",
+      "sentences": [
+        {
+          "text": "Keeping kitchen counters clean is essential to prevent cross-contamination.",
+          "vi": "Giữ cho bàn bếp sạch sẽ là điều cần thiết để ngăn ngừa nhiễm chéo vi khuẩn.",
+          "type": "basic"
+        },
+        {
+          "text": "Do you wash raw vegetables thoroughly before cooking them?",
+          "vi": "Bạn có rửa sạch rau sống thật kỹ trước khi chế biến không?",
+          "type": "conversational"
+        }
+      ]
+    },
+    {
+      "id": "food_preservation",
+      "name": "Food Preservation",
+      "icon": "🧊",
+      "sentences": [
+        {
+          "text": "Storing meat in the freezer stops bacteria from multiplying quickly.",
+          "vi": "Bảo quản thịt trong ngăn đông ngăn chặn vi khuẩn sinh sôi nhanh chóng.",
+          "type": "basic"
+        },
+        {
+          "text": "In my opinion, checking expiration dates is the easiest way to avoid food poisoning.",
+          "vi": "Theo tôi, kiểm tra hạn sử dụng là cách dễ nhất để tránh ngộ độc thực phẩm.",
+          "type": "opinion"
+        }
+      ]
+    }
+  ]
+}
