@@ -1,0 +1,19 @@
+[
+  {
+    "id": "earth-in-billion-years",
+    "youtubeId": "uD4izuDMUQA",
+    "title": "The Earth In 100 Million Years",
+    "titleVi": "Trái Đất Trong 100 Triệu Năm Tới",
+    "channel": "Ridddle",
+    "duration": "11:08",
+    "level": "intermediate",
+    "tags": ["science", "earth", "future"],
+    "thumbnail": "https://img.youtube.com/vi/uD4izuDMUQA/mqdefault.jpg",
+    "hasQuiz": true,
+    "quizCount": 5,
+    "featured": true,
+    "addedDate": "2026-05-27",
+    "description": "Khám phá những thay đổi đáng kinh ngạc của Trái Đất qua hàng triệu năm tới",
+    "keyVocabulary": ["continent", "tectonic plates", "evolution", "atmosphere", "extinction"]
+  }
+]

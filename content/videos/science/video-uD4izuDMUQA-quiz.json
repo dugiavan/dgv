@@ -1,0 +1,65 @@
+[
+  {
+    "id": "vq1",
+    "timestamp": "01:30",
+    "type": "multiple_choice",
+    "question": "What does 'tectonic plates' mean in the video?",
+    "options": [
+      "Large pieces of Earth's surface that move slowly",
+      "Types of volcanic rocks",
+      "Layers of the atmosphere",
+      "Underground water reservoirs"
+    ],
+    "answer": "Large pieces of Earth's surface that move slowly",
+    "explanation": "'Tectonic plates' là các mảng kiến tạo — những mảnh lớn của vỏ Trái Đất di chuyển chậm trên lớp manti.",
+    "vocabularyFocus": "tectonic plates"
+  },
+  {
+    "id": "vq2",
+    "timestamp": "03:15",
+    "type": "fill_blank",
+    "question": "The continents will eventually ___ together to form a supercontinent.",
+    "answer": "merge",
+    "explanation": "'Merge' nghĩa là hợp nhất, sáp nhập. Các lục địa sẽ dần hợp nhất thành một siêu lục địa.",
+    "vocabularyFocus": "merge"
+  },
+  {
+    "id": "vq3",
+    "timestamp": "05:00",
+    "type": "multiple_choice",
+    "question": "What is the main force that moves the continents?",
+    "options": [
+      "Convection currents in Earth's mantle",
+      "The Moon's gravitational pull",
+      "Wind and ocean currents",
+      "Solar radiation"
+    ],
+    "answer": "Convection currents in Earth's mantle",
+    "explanation": "Dòng đối lưu (convection currents) trong lớp manti của Trái Đất là lực chính di chuyển các mảng kiến tạo.",
+    "vocabularyFocus": "convection currents"
+  },
+  {
+    "id": "vq4",
+    "timestamp": "07:20",
+    "type": "fill_blank",
+    "question": "Many species may face ___ if they cannot adapt to the changing environment.",
+    "answer": "extinction",
+    "explanation": "'Extinction' nghĩa là sự tuyệt chủng. Nhiều loài có thể đối mặt với sự tuyệt chủng nếu không thích nghi được.",
+    "vocabularyFocus": "extinction"
+  },
+  {
+    "id": "vq5",
+    "timestamp": "09:45",
+    "type": "multiple_choice",
+    "question": "According to the video, what will happen to Earth's atmosphere in the far future?",
+    "options": [
+      "It will gradually change as the Sun gets hotter",
+      "It will stay exactly the same forever",
+      "It will disappear completely within 1000 years",
+      "It will become identical to Mars"
+    ],
+    "answer": "It will gradually change as the Sun gets hotter",
+    "explanation": "Theo video, bầu khí quyển Trái Đất sẽ thay đổi dần khi Mặt Trời nóng hơn theo thời gian.",
+    "vocabularyFocus": "atmosphere"
+  }
+]

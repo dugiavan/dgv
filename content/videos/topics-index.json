@@ -1,0 +1,20 @@
+[
+  {
+    "id": "science",
+    "title": "Khoa Học & Vũ Trụ",
+    "description": "Các video khoa học thú vị bằng tiếng Anh",
+    "icon": "🔬",
+    "color": "#3B82F6",
+    "videoCount": 1,
+    "tags": ["science", "space", "nature"]
+  },
+  {
+    "id": "english-skills",
+    "title": "Kỹ Năng Tiếng Anh",
+    "description": "Pronunciation, vocabulary, grammar qua video",
+    "icon": "📖",
+    "color": "#10B981",
+    "videoCount": 1,
+    "tags": ["grammar", "vocabulary", "pronunciation"]
+  }
+]

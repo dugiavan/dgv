@@ -41,6 +41,7 @@ function showPage(id) {
   if (id === 'page-leaderboard') loadLeaderboard();
   if (id === 'page-history') loadHistory();
   if (id === 'page-blog-list') { if (typeof openBlogList === 'function') openBlogList(); }
+  if (id === 'page-video-topics') { if (typeof openVideoTopicsPage === 'function') openVideoTopicsPage(); }
 }
 
 /* ════════════════════════════════════════════
@@ -158,6 +159,7 @@ function initHome() {
   refreshGamiCard();
   loadUnits();
   if (typeof blogInitHome === 'function') blogInitHome();
+  if (typeof videoInitHome === 'function') videoInitHome();
 }
 
 function getLevelInfo(xp) {

@@ -34,3 +34,11 @@ const BLOG_CONFIG = {
   PAGE_SIZE: 12,
 };
 
+const VIDEO_CONFIG = {
+  TOPICS_INDEX: './content/videos/topics-index.json',
+  VIDEOS_DIR: './content/videos/',
+  // YouTube video ID hiển thị trên trang chủ (đổi ID này để đổi video)
+  HOME_VIDEO_ID: 'uD4izuDMUQA',
+  HOME_VIDEO_TITLE: 'The Earth In 100 Million Years',
+};
+

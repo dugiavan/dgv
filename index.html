@@ -126,6 +126,11 @@
             </div>
             <div class="gami-next-label" id="gami-next-label"></div>
           </div>
+
+          <!-- Hero Video Widget -->
+          <div id="video-hero-widget" class="video-hero-widget" style="display: none;">
+            <!-- Rendered dynamically by video.js -->
+          </div>
         </aside>
 
         <main class="home-main">
@@ -150,6 +155,13 @@
               <div class="fc-icon-wrapper" style="background-color: rgba(99, 102, 241, 0.12); color: #6366f1;">📝</div>
               <div class="fc-card-title">Blog Học Tập</div>
               <div class="fc-card-desc">Mẹo học & kiến thức bổ ích từ Thầy Văn</div>
+            </div>
+
+            <!-- Video Card -->
+            <div class="feature-card" onclick="openVideoTopicsPage()" style="background: linear-gradient(135deg, rgba(255,253,248,.95) 0%, rgba(239, 68, 68, 0.05) 100%);">
+              <div class="fc-icon-wrapper" style="background-color: rgba(239, 68, 68, 0.12); color: #ef4444;">🎬</div>
+              <div class="fc-card-title">Video</div>
+              <div class="fc-card-desc">Học tiếng Anh qua video thú vị</div>
             </div>
           </div>
 
@@ -594,6 +606,86 @@
     </div>
   </div>
 
+  <!-- ══ PAGE: VIDEO TOPICS ══ -->
+  <div class="page" id="page-video-topics">
+    <div class="inner-wrap">
+      <div class="top-nav">
+        <button class="btn-back" onclick="showPage('page-home')">‹</button>
+        <span class="nav-title">🎬 Video Học Tập</span>
+      </div>
+      <div style="text-align:center;margin-bottom:1.2rem;">
+        <div style="font-size:2.5rem;margin-bottom:.3rem;">🎬</div>
+        <div style="font-size:1.15rem;font-weight:800;color:var(--c-text);">Chọn Chủ Đề Video</div>
+        <div style="font-size:.78rem;color:var(--c-muted);font-weight:500;margin-top:.2rem;">
+          Học tiếng Anh qua video thú vị với quiz tương tác
+        </div>
+      </div>
+      <div id="video-topics-list" class="flash-topics-grid card-grid">
+        <!-- Loaded dynamically by video.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ PAGE: VIDEO LIST ══ -->
+  <div class="page" id="page-video-list">
+    <div class="inner-wrap">
+      <div class="top-nav">
+        <button class="btn-back" onclick="videoGoBack()">‹</button>
+        <span class="nav-title" id="video-list-nav-title">Danh sách Video</span>
+      </div>
+      <div style="text-align:center;margin-bottom:1.2rem;">
+        <div id="video-list-header-icon" style="font-size:2.2rem;margin-bottom:.3rem;"></div>
+        <div id="video-list-header-title" style="font-size:1.1rem;font-weight:800;color:var(--c-text);"></div>
+        <div id="video-list-header-desc" style="font-size:.78rem;color:var(--c-muted);font-weight:500;margin-top:.2rem;"></div>
+      </div>
+      <div id="video-list-container" class="video-list-grid">
+        <!-- Loaded dynamically by video.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ PAGE: VIDEO WATCH ══ -->
+  <div class="page" id="page-video-watch">
+    <div class="inner-wrap">
+      <div class="top-nav">
+        <button class="btn-back" onclick="videoGoBack()">‹</button>
+        <span class="nav-title" id="video-watch-nav-title">Xem Video</span>
+      </div>
+
+      <!-- YouTube Player -->
+      <div class="video-player-container">
+        <div class="video-player-wrap" id="video-player-wrap">
+          <!-- iframe injected by video.js -->
+        </div>
+      </div>
+
+      <!-- Video Info -->
+      <div class="video-watch-info">
+        <h2 class="video-watch-title" id="video-watch-title"></h2>
+        <div class="video-watch-subtitle" id="video-watch-subtitle"></div>
+        <div class="video-watch-meta" id="video-watch-meta"></div>
+      </div>
+
+      <!-- Tab Switcher -->
+      <div class="video-tabs">
+        <button class="video-tab-btn active" data-tab="vocab" onclick="videoSwitchTab('vocab')">
+          📖 Từ Vựng
+        </button>
+        <button class="video-tab-btn" data-tab="quiz" onclick="videoSwitchTab('quiz')">
+          ❓ Quiz
+        </button>
+      </div>
+
+      <!-- Tab Content -->
+      <div id="video-vocab-container" class="video-tab-content">
+        <!-- Vocab rendered by video.js -->
+      </div>
+      <div id="video-quiz-container" class="video-tab-content" style="display:none;">
+        <!-- Quiz rendered by video.js -->
+      </div>
+    </div>
+  </div>
+
   <!-- ══ BOTTOM NAV ══ -->
   <div class="bottom-nav" id="bottom-nav">
     <div class="bn-item active" id="bn-home" onclick="showPage('page-home')">
@@ -613,6 +705,7 @@
   <script src="app.js" defer></script>
   <script src="speaking.js" defer></script>
   <script src="blog.js" defer></script>
+  <script src="video.js" defer></script>
 
 </body>
 
