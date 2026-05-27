@@ -1,38 +1,1202 @@
 [
   {
-    "id": "u05q1",
+    "id": "u05e01",
     "type": "multiple_choice",
     "difficulty": "easy",
-    "question": "I ___ this movie three times already.",
+    "script": "What does I have washed the dishes mean?",
+    "question": "Câu \"I have washed the dishes\" có nghĩa là gì?",
     "options": [
-      "saw",
-      "have seen",
-      "has seen",
-      "see"
+      "Tôi đã rửa bát đĩa (quá khứ và hiện tại bát đĩa đã sạch)",
+      "Tôi sẽ rửa bát đĩa",
+      "Tôi đang rửa bát đĩa",
+      "Tôi rửa bát đĩa hàng ngày"
     ],
-    "answer": "have seen",
-    "explanation": "Từ 'three times already' chỉ số lần trải nghiệm kéo dài đến hiện tại. Chủ ngữ 'I' đi với 'have seen'."
+    "answer": "Tôi đã rửa bát đĩa (quá khứ và hiện tại bát đĩa đã sạch)",
+    "explanation": "Câu sử dụng thì Hiện tại hoàn thành với chủ ngữ 'I' đi kèm 'have washed', nhấn mạnh kết quả ở hiện tại là bát đĩa đã sạch sẽ."
   },
   {
-    "id": "u05q2",
+    "id": "u05e02",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "What does She has not finished yet mean?",
+    "question": "Câu \"She has not finished yet\" có nghĩa là gì?",
+    "options": [
+      "Cô ấy vẫn chưa hoàn thành",
+      "Cô ấy đã hoàn thành rồi",
+      "Cô ấy đang hoàn thành",
+      "Cô ấy sẽ không hoàn thành"
+    ],
+    "answer": "Cô ấy vẫn chưa hoàn thành",
+    "explanation": "Trạng từ 'yet' thường dùng cuối câu phủ định của thì Hiện tại hoàn thành để diễn tả việc gì đó chưa xảy ra tính đến nay."
+  },
+  {
+    "id": "u05e03",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "What does Have you ever been to Japan mean?",
+    "question": "Câu \"Have you ever been to Japan?\" có nghĩa là gì?",
+    "options": [
+      "Bạn đã từng đến Nhật Bản chưa?",
+      "Bạn đang đi Nhật Bản phải không?",
+      "Bạn sẽ đi Nhật Bản chứ?",
+      "Bạn đã ở Nhật Bản bao lâu?"
+    ],
+    "answer": "Bạn đã từng đến Nhật Bản chưa?",
+    "explanation": "Cấu trúc 'Have you ever + V3' dùng để hỏi về trải nghiệm tính đến thời điểm hiện tại."
+  },
+  {
+    "id": "u05e04",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "What does He has lost his keys mean?",
+    "question": "Câu \"He has lost his keys\" có nghĩa là gì?",
+    "options": [
+      "Anh ấy làm mất chìa khóa rồi (hiện tại vẫn chưa tìm thấy)",
+      "Anh ấy đã tìm thấy chìa khóa",
+      "Anh ấy sẽ làm mất chìa khóa",
+      "Anh ấy luôn làm mất chìa khóa"
+    ],
+    "answer": "Anh ấy làm mất chìa khóa rồi (hiện tại vẫn chưa tìm thấy)",
+    "explanation": "Hiện tại hoàn thành nhấn mạnh kết quả ở hiện tại: anh ấy đã làm mất trong quá khứ và bây giờ không có chìa khóa dùng."
+  },
+  {
+    "id": "u05e05",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "What does We have lived here since two thousand and ten mean?",
+    "question": "Câu \"We have lived here since 2010\" có nghĩa là gì?",
+    "options": [
+      "Chúng tôi đã sống ở đây từ năm 2010",
+      "Chúng tôi đã sống ở đây được 10 năm",
+      "Chúng tôi sẽ sống ở đây từ năm 2010",
+      "Chúng tôi từng sống ở đây năm 2010"
+    ],
+    "answer": "Chúng tôi đã sống ở đây từ năm 2010",
+    "explanation": "'Since + mốc thời gian' (since 2010) diễn tả hành động bắt đầu từ quá khứ và vẫn tiếp diễn ở hiện tại."
+  },
+  {
+    "id": "u05e06",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "What does They have bought a new car mean?",
+    "question": "Câu \"They have bought a new car\" có nghĩa là gì?",
+    "options": [
+      "Họ vừa mới mua một chiếc ô tô mới",
+      "Họ đã bán chiếc ô tô mới",
+      "Họ sẽ mua một chiếc ô tô mới",
+      "Họ đang lái chiếc ô tô mới"
+    ],
+    "answer": "Họ vừa mới mua một chiếc ô tô mới",
+    "explanation": "Hiện tại hoàn thành diễn tả hành động vừa xảy ra trong quá khứ và kết quả là họ đang có một chiếc xe mới."
+  },
+  {
+    "id": "u05e07",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "What does I have just eaten lunch mean?",
+    "question": "Câu \"I have just eaten lunch\" có nghĩa là gì?",
+    "options": [
+      "Tôi vừa mới ăn trưa xong",
+      "Tôi chưa ăn trưa",
+      "Tôi sẽ ăn trưa sớm",
+      "Tôi ăn trưa lúc 12 giờ"
+    ],
+    "answer": "Tôi vừa mới ăn trưa xong",
+    "explanation": "'Just' đứng giữa 'have' và 'V3' (eaten) diễn tả hành động vừa mới xảy ra cách đây rất ngắn."
+  },
+  {
+    "id": "u05e08",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "What does She has already read this book mean?",
+    "question": "Câu \"She has already read this book\" có nghĩa là gì?",
+    "options": [
+      "Cô ấy đã đọc cuốn sách này rồi",
+      "Cô ấy chưa đọc cuốn sách này",
+      "Cô ấy đang đọc cuốn sách này",
+      "Cô ấy sẽ đọc cuốn sách này"
+    ],
+    "answer": "Cô ấy đã đọc cuốn sách này rồi",
+    "explanation": "'Already' dùng trong câu khẳng định của thì Hiện tại hoàn thành để nhấn mạnh việc gì đó đã hoàn thành sớm hơn mong đợi."
+  },
+  {
+    "id": "u05e09",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "What does My father has worked here for five years mean?",
+    "question": "Câu \"My father has worked here for 5 years\" có nghĩa là gì?",
+    "options": [
+      "Bố tôi đã làm việc ở đây được 5 năm",
+      "Bố tôi làm việc ở đây từ 5 năm trước và đã nghỉ",
+      "Bố tôi sẽ làm việc ở đây trong 5 năm",
+      "Bố tôi làm việc ở đây mỗi ngày"
+    ],
+    "answer": "Bố tôi đã làm việc ở đây được 5 năm",
+    "explanation": "'For + khoảng thời gian' (for 5 years) diễn tả một hành động kéo dài liên tục từ quá khứ đến hiện tại."
+  },
+  {
+    "id": "u05e10",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "What does I have never seen this movie before mean?",
+    "question": "Câu \"I have never seen this movie before\" có nghĩa là gì?",
+    "options": [
+      "Tôi chưa bao giờ xem bộ phim này trước đây",
+      "Tôi đã xem bộ phim này một lần rồi",
+      "Tôi đang xem bộ phim này",
+      "Tôi sẽ không bao giờ xem phim này"
+    ],
+    "answer": "Tôi chưa bao giờ xem bộ phim này trước đây",
+    "explanation": "'Never' dùng để diễn tả trải nghiệm phủ định (chưa từng làm gì đó tính đến thời điểm nói)."
+  },
+  {
+    "id": "u05e11",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "What does We have known each other for a long time mean?",
+    "question": "Câu \"We have known each other for a long time\" có nghĩa là gì?",
+    "options": [
+      "Chúng tôi đã biết nhau được một thời gian dài",
+      "Chúng tôi sẽ biết nhau lâu hơn",
+      "Chúng tôi mới quen biết nhau gần đây",
+      "Chúng tôi quen biết nhau từ hôm qua"
+    ],
+    "answer": "Chúng tôi đã biết nhau được một thời gian dài",
+    "explanation": "'Know' là động từ trạng thái nên ta chia Hiện tại hoàn thành đơn để chỉ trạng thái kéo dài từ quá khứ đến hiện tại."
+  },
+  {
+    "id": "u05e12",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "What does Has he arrived yet mean?",
+    "question": "Câu \"Has he arrived yet?\" có nghĩa là gì?",
+    "options": [
+      "Anh ấy đã đến nơi chưa?",
+      "Anh ấy vừa mới đến phải không?",
+      "Khi nào anh ấy sẽ đến?",
+      "Anh ấy đang đi đến đây à?"
+    ],
+    "answer": "Anh ấy đã đến nơi chưa?",
+    "explanation": "'Yet' dùng trong câu nghi vấn cuối câu để hỏi xem một hành động mong đợi đã diễn ra chưa."
+  },
+  {
+    "id": "u05e13",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "What does She has been to Paris twice mean?",
+    "question": "Câu \"She has been to Paris twice\" có nghĩa là gì?",
+    "options": [
+      "Cô ấy đã từng đi Paris hai lần (và hiện tại đã về)",
+      "Cô ấy đang đi Paris lần thứ hai (chưa về)",
+      "Cô ấy sẽ đi Paris hai lần",
+      "Cô ấy sống ở Paris được hai năm"
+    ],
+    "answer": "Cô ấy đã từng đi Paris hai lần (và hiện tại đã về)",
+    "explanation": "'Been to' chỉ trải nghiệm đi đến một nơi nào đó và đã trở về."
+  },
+  {
+    "id": "u05e14",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "What does My brother has gone to Hanoi mean?",
+    "question": "Câu \"My brother has gone to Hanoi\" có nghĩa là gì?",
+    "options": [
+      "Anh trai tôi đã đi Hà Nội (và hiện vẫn đang ở đó)",
+      "Anh trai tôi từng đi Hà Nội nhiều lần",
+      "Anh trai tôi đã về từ Hà Nội",
+      "Anh trai tôi sẽ đi Hà Nội sớm"
+    ],
+    "answer": "Anh trai tôi đã đi Hà Nội (và hiện vẫn đang ở đó)",
+    "explanation": "'Gone to' chỉ hành động đi đến một địa điểm và người đó hiện vẫn chưa quay trở lại."
+  },
+  {
+    "id": "u05e15",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "What does They have not written the report yet mean?",
+    "question": "Câu \"They have not written the report yet\" có nghĩa là gì?",
+    "options": [
+      "Họ vẫn chưa viết báo cáo",
+      "Họ vừa mới viết xong báo cáo",
+      "Họ sẽ không viết báo cáo",
+      "Họ đang viết báo cáo ngay lúc này"
+    ],
+    "answer": "Họ vẫn chưa viết báo cáo",
+    "explanation": "'Have not written... yet' là cấu trúc phủ định diễn tả hành động chưa được thực hiện."
+  },
+  {
+    "id": "u05e16",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "What does It is the first time I have eaten sushi mean?",
+    "question": "Câu \"It is the first time I have eaten sushi\" có nghĩa là gì?",
+    "options": [
+      "Đây là lần đầu tiên tôi ăn sushi",
+      "Tôi ăn sushi nhiều lần trước đây",
+      "Tôi thích ăn sushi nhất",
+      "Tôi sẽ đi ăn sushi lần đầu"
+    ],
+    "answer": "Đây là lần đầu tiên tôi ăn sushi",
+    "explanation": "Cấu trúc 'It is the first time + S + have/has + V3' diễn tả trải nghiệm lần đầu làm việc gì."
+  },
+  {
+    "id": "u05e17",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "What does I have not seen him recently mean?",
+    "question": "Câu \"I have not seen him recently\" có nghĩa là gì?",
+    "options": [
+      "Gần đây tôi không gặp anh ấy",
+      "Tôi chưa bao giờ gặp anh ấy trước đây",
+      "Tôi sẽ không gặp anh ấy gần đây",
+      "Tôi vừa mới gặp anh ấy xong"
+    ],
+    "answer": "Gần đây tôi không gặp anh ấy",
+    "explanation": "'Recently' có nghĩa là gần đây, thường dùng trong câu phủ định hoặc khẳng định của thì Hiện tại hoàn thành."
+  },
+  {
+    "id": "u05e18",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "What does Have you finished your homework mean?",
+    "question": "Câu \"Have you finished your homework?\" có nghĩa là gì?",
+    "options": [
+      "Bạn đã hoàn thành bài tập về nhà chưa?",
+      "Bạn đang làm bài tập về nhà phải không?",
+      "Bạn có làm bài tập về nhà không?",
+      "Khi nào bạn làm bài tập về nhà?"
+    ],
+    "answer": "Bạn đã hoàn thành bài tập về nhà chưa?",
+    "explanation": "Câu hỏi nghi vấn Yes/No kiểm tra một hành động trong quá khứ đã được hoàn tất ở hiện tại chưa."
+  },
+  {
+    "id": "u05e19",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "What does She has lived in Saigon since last month mean?",
+    "question": "Câu \"She has lived in Saigon since last month\" có nghĩa là gì?",
+    "options": [
+      "Cô ấy đã sống ở Sài Gòn từ tháng trước",
+      "Cô ấy sống ở Sài Gòn được một tháng rồi",
+      "Cô ấy đã chuyển khỏi Sài Gòn từ tháng trước",
+      "Cô ấy sẽ sống ở Sài Gòn vào tháng tới"
+    ],
+    "answer": "Cô ấy đã sống ở Sài Gòn từ tháng trước",
+    "explanation": "'Since last month' (từ tháng trước) đánh dấu mốc thời gian bắt đầu của hành động sống ở Sài Gòn."
+  },
+  {
+    "id": "u05e20",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "What does We have visited Danang three times mean?",
+    "question": "Câu \"We have visited Danang three times\" có nghĩa là gì?",
+    "options": [
+      "Chúng tôi đã ghé thăm Đà Nẵng ba lần",
+      "Chúng tôi sẽ đi Đà Nẵng trong ba ngày",
+      "Chúng tôi đang ở Đà Nẵng lần thứ ba",
+      "Chúng tôi muốn đi Đà Nẵng ba lần nữa"
+    ],
+    "answer": "Chúng tôi đã ghé thăm Đà Nẵng ba lần",
+    "explanation": "Chỉ số lần trải nghiệm tính đến hiện tại: 'three times' (ba lần) đi với Hiện tại hoàn thành."
+  },
+  {
+    "id": "u05e21",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "Translate this sentence into English.",
+    "question": "Dịch câu \"Tôi đã làm mất chìa khóa của tôi rồi\" sang tiếng Anh.",
+    "options": [
+      "I have lost my keys.",
+      "I lose my keys.",
+      "I will lose my keys.",
+      "I am losing my keys."
+    ],
+    "answer": "I have lost my keys.",
+    "explanation": "Hành động mất khóa xảy ra trong quá khứ để lại kết quả hiện tại nên chia Hiện tại hoàn thành: 'I have lost'."
+  },
+  {
+    "id": "u05e22",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "Translate this sentence into English.",
+    "question": "Dịch câu \"Cô ấy vẫn chưa ăn tối\" sang tiếng Anh.",
+    "options": [
+      "She has not eaten dinner yet.",
+      "She does not eat dinner yet.",
+      "She is not eating dinner.",
+      "She will not eat dinner yet."
+    ],
+    "answer": "She has not eaten dinner yet.",
+    "explanation": "Cấu trúc phủ định thì Hiện tại hoàn thành: 'S + have/has + not + V3 + yet'."
+  },
+  {
+    "id": "u05e23",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "Translate this sentence into English.",
+    "question": "Dịch câu \"Bạn đã từng xem phim này chưa?\" sang tiếng Anh.",
+    "options": [
+      "Have you ever seen this movie?",
+      "Do you ever see this movie?",
+      "Are you seeing this movie?",
+      "Did you ever saw this movie?"
+    ],
+    "answer": "Have you ever seen this movie?",
+    "explanation": "Hỏi về trải nghiệm: 'Have you ever + V3 (seen)'."
+  },
+  {
+    "id": "u05e24",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "Translate this sentence into English.",
+    "question": "Dịch câu \"Họ đã sống ở đây được mười năm\" sang tiếng Anh.",
+    "options": [
+      "They have lived here for ten years.",
+      "They lived here since ten years.",
+      "They live here for ten years.",
+      "They have lived here since ten years."
+    ],
+    "answer": "They have lived here for ten years.",
+    "explanation": "'Mười năm' là khoảng thời gian nên ta dùng giới từ 'for' + Hiện tại hoàn thành: 'have lived here for ten years'."
+  },
+  {
+    "id": "u05e25",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "Translate this sentence into English.",
+    "question": "Dịch câu \"Bố tôi vừa mới đi làm\" sang tiếng Anh.",
+    "options": [
+      "My father has just gone to work.",
+      "My father just goes to work.",
+      "My father is just going to work.",
+      "My father has gone to work just."
+    ],
+    "answer": "My father has just gone to work.",
+    "explanation": "Diễn tả việc vừa mới xảy ra: 'have/has + just + V3'. Chủ ngữ 'My father' (số ít) đi với 'has'."
+  },
+  {
+    "id": "u05e26",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "Translate this sentence into English.",
+    "question": "Dịch câu \"Chúng tôi đã hoàn thành bài thi rồi\" sang tiếng Anh.",
+    "options": [
+      "We have already finished the exam.",
+      "We already finish the exam.",
+      "We have finished the exam yet.",
+      "We are finishing the exam already."
+    ],
+    "answer": "We have already finished the exam.",
+    "explanation": "Khẳng định đã làm gì rồi: 'have/has + already + V3'. 'We' đi với 'have'."
+  },
+  {
+    "id": "u05e27",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "Translate this sentence into English.",
+    "question": "Dịch câu \"Tôi chưa bao giờ đi du lịch nước ngoài\" sang tiếng Anh.",
+    "options": [
+      "I have never traveled abroad.",
+      "I never travel abroad.",
+      "I have traveled abroad never.",
+      "I am never traveling abroad."
+    ],
+    "answer": "I have never traveled abroad.",
+    "explanation": "Chưa bao giờ làm gì: 'have/has + never + V3'. 'I' đi với 'have'."
+  },
+  {
+    "id": "u05e28",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "Translate this sentence into English.",
+    "question": "Dịch câu \"Anh ấy đã đi đến siêu thị rồi (hiện chưa về)\" sang tiếng Anh.",
+    "options": [
+      "He has gone to the supermarket.",
+      "He has been to the supermarket.",
+      "He goes to the supermarket.",
+      "He was to the supermarket."
+    ],
+    "answer": "He has gone to the supermarket.",
+    "explanation": "Đi đến đó và hiện vẫn đang ở đó thì dùng 'has gone to'."
+  },
+  {
+    "id": "u05e29",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "Translate this sentence into English.",
+    "question": "Dịch câu \"Tôi đã từng đến Luân Đôn hai lần (hiện đã về)\" sang tiếng Anh.",
+    "options": [
+      "I have been to London twice.",
+      "I have gone to London twice.",
+      "I was in London twice.",
+      "I go to London twice."
+    ],
+    "answer": "I have been to London twice.",
+    "explanation": "Đã đi và đã quay trở về (chỉ trải nghiệm) thì dùng 'have been to'."
+  },
+  {
+    "id": "u05e30",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "Translate this sentence into English.",
+    "question": "Dịch câu \"Họ đã biết nhau từ thời thơ ấu\" sang tiếng Anh.",
+    "options": [
+      "They have known each other since childhood.",
+      "They know each other since childhood.",
+      "They have known each other for childhood.",
+      "They knew each other since childhood."
+    ],
+    "answer": "They have known each other since childhood.",
+    "explanation": "'Thời thơ ấu' (childhood) là mốc thời gian nên dùng giới từ 'since'."
+  },
+  {
+    "id": "u05e31",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "Translate this sentence into English.",
+    "question": "Dịch câu \"Trời đã mưa từ sáng nay\" sang tiếng Anh.",
+    "options": [
+      "It has rained since this morning.",
+      "It rains since this morning.",
+      "It has rained for this morning.",
+      "It rained since this morning."
+    ],
+    "answer": "It has rained since this morning.",
+    "explanation": "'Sáng nay' là mốc thời gian nên ta dùng giới từ 'since' với Hiện tại hoàn thành."
+  },
+  {
+    "id": "u05e32",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "Translate this sentence into English.",
+    "question": "Dịch câu \"Gần đây cô ấy có khỏe không?\" sang tiếng Anh.",
+    "options": [
+      "Has she been well recently?",
+      "Is she well recently?",
+      "Was she well recently?",
+      "Does she well recently?"
+    ],
+    "answer": "Has she been well recently?",
+    "explanation": "Câu hỏi trạng thái gần đây: 'Has + S + been + adj + recently?'."
+  },
+  {
+    "id": "u05e33",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "Translate this sentence into English.",
+    "question": "Dịch câu \"Chúng tôi vẫn chưa quyết định\" sang tiếng Anh.",
+    "options": [
+      "We have not decided yet.",
+      "We do not decide yet.",
+      "We have not decide yet.",
+      "We are not deciding yet."
+    ],
+    "answer": "We have not decided yet.",
+    "explanation": "Phủ định Hiện tại hoàn thành: 'We + have + not + V3 (decided) + yet'."
+  },
+  {
+    "id": "u05e34",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "Translate this sentence into English.",
+    "question": "Dịch câu \"Đây là lần thứ hai anh ấy gọi điện\" sang tiếng Anh.",
+    "options": [
+      "It is the second time he has called.",
+      "It is the second time he calls.",
+      "It is the second time he called.",
+      "It is the second time he is calling."
+    ],
+    "answer": "It is the second time he has called.",
+    "explanation": "Cấu trúc: 'It is the second time + S + have/has + V3'."
+  },
+  {
+    "id": "u05e35",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "Translate this sentence into English.",
+    "question": "Dịch câu \"Tôi vừa mới hoàn thành bài tập của mình\" sang tiếng Anh.",
+    "options": [
+      "I have just finished my homework.",
+      "I just finished my homework.",
+      "I have finished just my homework.",
+      "I am just finishing my homework."
+    ],
+    "answer": "I have just finished my homework.",
+    "explanation": "Chủ ngữ 'I' + 'have just finished' để diễn tả việc vừa mới hoàn tất."
+  },
+  {
+    "id": "u05e36",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "Translate this sentence into English.",
+    "question": "Dịch câu \"Bạn đã từng ăn món này chưa?\" sang tiếng Anh.",
+    "options": [
+      "Have you ever eaten this food?",
+      "Do you ever eat this food?",
+      "Did you ever eat this food?",
+      "Have you ever ate this food?"
+    ],
+    "answer": "Have you ever eaten this food?",
+    "explanation": "Hỏi về trải nghiệm ăn uống: 'Have you ever + V3 (eaten)'."
+  },
+  {
+    "id": "u05e37",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "Translate this sentence into English.",
+    "question": "Dịch câu \"Cô ấy đã viết ba bức thư\" sang tiếng Anh.",
+    "options": [
+      "She has written three letters.",
+      "She writes three letters.",
+      "She has wrote three letters.",
+      "She wrote three letters."
+    ],
+    "answer": "She has written three letters.",
+    "explanation": "She (số ít) đi với 'has' + V3 của write là 'written'."
+  },
+  {
+    "id": "u05e38",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "Translate this sentence into English.",
+    "question": "Dịch câu \"Tính đến nay, chúng tôi chưa nhận được tin gì\" sang tiếng Anh.",
+    "options": [
+      "So far, we have not heard anything.",
+      "So far, we do not hear anything.",
+      "So far, we did not hear anything.",
+      "So far, we have not hear anything."
+    ],
+    "answer": "So far, we have not heard anything.",
+    "explanation": "'So far' (tính đến nay) là dấu hiệu chia Hiện tại hoàn thành: 'we have not heard'."
+  },
+  {
+    "id": "u05e39",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "Translate this sentence into English.",
+    "question": "Dịch câu \"Họ đã dọn dẹp phòng của họ chưa?\" sang tiếng Anh.",
+    "options": [
+      "Have they cleaned their room?",
+      "Do they clean their room?",
+      "Did they cleaned their room?",
+      "Has they cleaned their room?"
+    ],
+    "answer": "Have they cleaned their room?",
+    "explanation": "Chủ ngữ 'They' dùng trợ động từ 'Have' + V3 'cleaned'."
+  },
+  {
+    "id": "u05e40",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "script": "Translate this sentence into English.",
+    "question": "Dịch câu \"Tôi đã đọc cuốn sách này ba lần rồi\" sang tiếng Anh.",
+    "options": [
+      "I have read this book three times already.",
+      "I read this book three times already.",
+      "I have readen this book three times.",
+      "I am reading this book three times."
+    ],
+    "answer": "I have read this book three times already.",
+    "explanation": "Chủ ngữ 'I' + 'have read' (read phát âm là /red/ ở dạng V3 nhưng viết giống nhau). 'Three times already' chỉ trải nghiệm lặp lại."
+  },
+  {
+    "id": "u05m01",
     "type": "multiple_choice",
     "difficulty": "medium",
-    "question": "She ___ in this city since 2018.",
+    "script": "Choose the correct verb form.",
+    "question": "Chọn động từ đúng để hoàn thành câu sau: \"He ______ (live) in this town for ten years.\"",
     "options": [
-      "lived",
+      "lives",
       "has lived",
       "have lived",
-      "lives"
+      "lived"
     ],
     "answer": "has lived",
-    "explanation": "Dấu hiệu 'since 2018' (từ năm 2018) chỉ hành động kéo dài từ quá khứ đến nay. Chủ ngữ 'She' đi với 'has lived'."
+    "explanation": "Dấu hiệu 'for ten years' chỉ hành động kéo dài từ quá khứ đến nay. Chủ ngữ 'He' số ít đi với 'has lived'."
   },
   {
-    "id": "u05q3",
+    "id": "u05m02",
     "type": "fill_blank",
-    "difficulty": "hard",
-    "question": "It is the first time I ___ (ever / eat) sushi.",
-    "answer": "have ever eaten",
-    "explanation": "Cấu trúc 'It is the first/second... time + S + present perfect' (đây là lần đầu tiên làm gì). Chia động từ thành 'have ever eaten'."
+    "difficulty": "medium",
+    "script": "Fill in the blank with the correct verb form.",
+    "question": "Chia động từ trong ngoặc (chỉ viết từ cần điền): \"I ______ (know) her since we were children.\"",
+    "answer": "have known",
+    "explanation": "'Since we were children' là mốc thời gian quá khứ. Động từ 'know' chia Hiện tại hoàn thành với chủ ngữ 'I' là 'have known'."
+  },
+  {
+    "id": "u05m03",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "script": "Choose the correct verb form.",
+    "question": "Chọn đáp án đúng: \"Where is Anna? She ______ (go) to the supermarket. She will be back in an hour.\"",
+    "options": [
+      "has gone",
+      "has been",
+      "went",
+      "goes"
+    ],
+    "answer": "has gone",
+    "explanation": "Vì cô ấy chưa quay lại ('she will be back in an hour') nên dùng 'has gone to' để chỉ việc đi chưa về."
+  },
+  {
+    "id": "u05m04",
+    "type": "fill_blank",
+    "difficulty": "medium",
+    "script": "Fill in the blank with the correct verb form.",
+    "question": "Chia động từ trong ngoặc: \"They ______ (not finish) their homework yet.\"",
+    "answer": "haven't finished",
+    "explanation": "Phủ định Hiện tại hoàn thành với chủ ngữ số nhiều 'They' đi kèm 'yet' là 'haven't finished' hoặc 'have not finished'."
+  },
+  {
+    "id": "u05m05",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "script": "Choose the correct verb form.",
+    "question": "Chọn phương án đúng: \"It is the first time he ______ (drive) a car.\"",
+    "options": [
+      "drives",
+      "drove",
+      "has driven",
+      "has drove"
+    ],
+    "answer": "has driven",
+    "explanation": "Cấu trúc 'It is the first time + S + present perfect'. Động từ bất quy tắc 'drive -> drove -> driven'."
+  },
+  {
+    "id": "u05m06",
+    "type": "fill_blank",
+    "difficulty": "medium",
+    "script": "Fill in the blank with the correct verb form.",
+    "question": "Chia động từ trong ngoặc: \"She ______ (not see) him since last Sunday.\"",
+    "answer": "hasn't seen",
+    "explanation": "Mốc thời gian 'since last Sunday' yêu cầu dùng Hiện tại hoàn thành phủ định. Chủ ngữ 'She' đi với 'hasn't seen' hoặc 'has not seen'."
+  },
+  {
+    "id": "u05m07",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "script": "Choose the correct verb form.",
+    "question": "Chọn từ thích hợp điền vào chỗ trống: \"We ______ each other since 2015.\"",
+    "options": [
+      "known",
+      "have known",
+      "has known",
+      "knew"
+    ],
+    "answer": "have known",
+    "explanation": "Chủ ngữ 'We' đi với 'have known'. 'Since 2015' là mốc thời gian bắt đầu hành động quen nhau."
+  },
+  {
+    "id": "u05m08",
+    "type": "fill_blank",
+    "difficulty": "medium",
+    "script": "Fill in the blank with the correct verb form.",
+    "question": "Chia động từ trong ngoặc: \"I ______ (just / buy) a new laptop.\"",
+    "answer": "have just bought",
+    "explanation": "'Just' đứng giữa trợ động từ và động từ chính: 'have just bought'. V3 của buy là bought."
+  },
+  {
+    "id": "u05m09",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "script": "Choose the correct verb form.",
+    "question": "Chọn đáp án đúng: \"My sister ______ (be) to London twice. She loved it.\"",
+    "options": [
+      "has gone",
+      "has been",
+      "was",
+      "goes"
+    ],
+    "answer": "has been",
+    "explanation": "Cô ấy đã đi London và hiện tại đã trở về kể lại trải nghiệm, ta dùng 'has been to'."
+  },
+  {
+    "id": "u05m10",
+    "type": "fill_blank",
+    "difficulty": "medium",
+    "script": "Fill in the blank with the correct verb form.",
+    "question": "Chia động từ trong ngoặc: \"How long ______ you ______ (study) English?\"",
+    "answer": "have you studied",
+    "explanation": "Câu hỏi 'How long' chỉ độ dài thời gian kéo dài đến nay: 'Have + you + studied'."
+  },
+  {
+    "id": "u05m11",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "script": "Choose the correct verb form.",
+    "question": "Chọn đáp án đúng: \"No, I ______ (not read) the newspaper today.\"",
+    "options": [
+      "didn't read",
+      "haven't read",
+      "don't read",
+      "hasn't read"
+    ],
+    "answer": "haven't read",
+    "explanation": "Khoảng thời gian chưa kết thúc 'today' yêu cầu Hiện tại hoàn thành: 'I haven't read'."
+  },
+  {
+    "id": "u05m12",
+    "type": "fill_blank",
+    "difficulty": "medium",
+    "script": "Fill in the blank with the correct verb form.",
+    "question": "Chia động từ trong ngoặc: \"She ______ (already / clean) the kitchen.\"",
+    "answer": "has already cleaned",
+    "explanation": "'Already' đứng giữa trợ động từ và động từ chính: 'has already cleaned'."
+  },
+  {
+    "id": "u05m13",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "script": "Choose the correct verb form.",
+    "question": "Chọn đáp án đúng: \"They ______ (not write) to us for a long time.\"",
+    "options": [
+      "haven't written",
+      "didn't write",
+      "hasn't written",
+      "don't write"
+    ],
+    "answer": "haven't written",
+    "explanation": "Dấu hiệu 'for a long time' (khoảng thời gian dài) chia Hiện tại hoàn thành. Chủ ngữ 'They' đi với 'haven't written'."
+  },
+  {
+    "id": "u05m14",
+    "type": "fill_blank",
+    "difficulty": "medium",
+    "script": "Fill in the blank with the correct verb form.",
+    "question": "Chia động từ trong ngoặc: \"He ______ (never / eat) sushi before.\"",
+    "answer": "has never eaten",
+    "explanation": "Chủ ngữ số ít 'He' đi với 'has'. Vị trí của trạng từ: 'has never eaten'."
+  },
+  {
+    "id": "u05m15",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "script": "Choose the correct verb form.",
+    "question": "Chọn đáp án đúng: \"I can't find my bag. Somebody ______ (take) it!\"",
+    "options": [
+      "takes",
+      "took",
+      "has taken",
+      "has took"
+    ],
+    "answer": "has taken",
+    "explanation": "Hành động lấy túi xảy ra trong quá khứ và để lại hậu quả hiện tại không thấy túi. Chia Hiện tại hoàn thành: 'has taken'."
+  },
+  {
+    "id": "u05m16",
+    "type": "fill_blank",
+    "difficulty": "medium",
+    "script": "Fill in the blank with the correct verb form.",
+    "question": "Chia động từ trong ngoặc: \"It ______ (rain) a lot recently.\"",
+    "answer": "has rained",
+    "explanation": "'Recently' (gần đây) chỉ hành động vừa mới xảy ra hoặc kéo dài đến nay. Chủ ngữ 'It' đi với 'has rained'."
+  },
+  {
+    "id": "u05m17",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "script": "Choose the correct verb form.",
+    "question": "Chọn câu đúng ngữ pháp:",
+    "options": [
+      "I have seen him yesterday.",
+      "I saw him yesterday.",
+      "I have saw him yesterday.",
+      "I had seen him yesterday."
+    ],
+    "answer": "I saw him yesterday.",
+    "explanation": "'Yesterday' là mốc thời gian cụ thể đã kết thúc trong quá khứ, bắt buộc dùng Quá khứ đơn chứ không được dùng Hiện tại hoàn thành."
+  },
+  {
+    "id": "u05m18",
+    "type": "fill_blank",
+    "difficulty": "medium",
+    "script": "Fill in the blank with the correct verb form.",
+    "question": "Chia động từ trong ngoặc: \"We ______ (visit) this museum three times so far.\"",
+    "answer": "have visited",
+    "explanation": "'So far' (tính đến nay) và số lần trải nghiệm 'three times' yêu cầu chia Hiện tại hoàn thành: 'have visited'."
+  },
+  {
+    "id": "u05m19",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "script": "Choose the correct verb form.",
+    "question": "Chọn phương án đúng: \"Lisa is not at home. She ______ (go) out.\"",
+    "options": [
+      "went",
+      "has gone",
+      "has been",
+      "is going"
+    ],
+    "answer": "has gone",
+    "explanation": "Kết quả hiện tại là Lisa không có ở nhà vì cô ấy đã đi ra ngoài và chưa về."
+  },
+  {
+    "id": "u05m20",
+    "type": "fill_blank",
+    "difficulty": "medium",
+    "script": "Fill in the blank with the correct verb form.",
+    "question": "Chia động từ trong ngoặc: \"I ______ (not hear) from them lately.\"",
+    "answer": "haven't heard",
+    "explanation": "'Lately' (gần đây) dùng trong câu phủ định của thì Hiện tại hoàn thành: 'haven't heard'."
+  },
+  {
+    "id": "u05m21",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "script": "Choose the correct verb form.",
+    "question": "Chọn đáp án đúng: \"This is the best movie I ______ (ever / watch).\"",
+    "options": [
+      "watched",
+      "have ever watched",
+      "has ever watched",
+      "ever watched"
+    ],
+    "answer": "have ever watched",
+    "explanation": "Sau cấu trúc so sánh nhất (the best movie), ta chia Hiện tại hoàn thành kèm trạng từ 'ever': 'have ever watched'."
+  },
+  {
+    "id": "u05m22",
+    "type": "fill_blank",
+    "difficulty": "medium",
+    "script": "Fill in the blank with the correct verb form.",
+    "question": "Chia động từ trong ngoặc: \"______ you ______ (ever / meet) a famous person?\"",
+    "answer": "Have you ever met",
+    "explanation": "Câu hỏi trải nghiệm ở dạng nghi vấn: 'Have + S + ever + V3'. V3 của meet là met."
+  },
+  {
+    "id": "u05m23",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "script": "Choose the correct verb form.",
+    "question": "Chọn từ thích hợp điền vào chỗ trống: \"I have lived here ______ three years.\"",
+    "options": [
+      "since",
+      "for",
+      "in",
+      "ago"
+    ],
+    "answer": "for",
+    "explanation": "'Three years' là khoảng thời gian nên ta dùng giới từ 'for'."
+  },
+  {
+    "id": "u05m24",
+    "type": "fill_blank",
+    "difficulty": "medium",
+    "script": "Fill in the blank with the correct verb form.",
+    "question": "Điền từ thích hợp vào chỗ trống (since/for): \"He has been sick ______ last Monday.\"",
+    "answer": "since",
+    "explanation": "'Last Monday' (Thứ Hai trước) là mốc thời gian xác định nên ta dùng giới từ 'since'."
+  },
+  {
+    "id": "u05m25",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "script": "Choose the correct verb form.",
+    "question": "Chọn câu đúng ngữ pháp:",
+    "options": [
+      "I lived here since I was a child.",
+      "I have lived here since I was a child.",
+      "I have lived here for I was a child.",
+      "I am living here since I was a child."
+    ],
+    "answer": "I have lived here since I was a child.",
+    "explanation": "Vế 'since' đi với mệnh đề quá khứ đơn (I was a child), mệnh đề chính chia Hiện tại hoàn thành (I have lived)."
+  },
+  {
+    "id": "u05m26",
+    "type": "fill_blank",
+    "difficulty": "medium",
+    "script": "Fill in the blank with the correct verb form.",
+    "question": "Chia động từ trong ngoặc: \"The train ______ (just / leave) the station.\"",
+    "answer": "has just left",
+    "explanation": "Chủ ngữ 'The train' (số ít) đi với 'has'. V3 của leave là left: 'has just left'."
+  },
+  {
+    "id": "u05m27",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "script": "Choose the correct verb form.",
+    "question": "Chọn phương án đúng: \"We ______ (study) four units so far.\"",
+    "options": [
+      "studied",
+      "study",
+      "have studied",
+      "are studying"
+    ],
+    "answer": "have studied",
+    "explanation": "'So far' yêu cầu chia Hiện tại hoàn thành. Chủ ngữ 'We' đi với 'have studied'."
+  },
+  {
+    "id": "u05m28",
+    "type": "fill_blank",
+    "difficulty": "medium",
+    "script": "Fill in the blank with the correct verb form.",
+    "question": "Chia động từ trong ngoặc: \"They ______ (not buy) the tickets yet.\"",
+    "answer": "haven't bought",
+    "explanation": "Câu phủ định với 'yet'. Chủ ngữ số nhiều 'They' đi với 'haven't bought' hoặc 'have not bought'."
+  },
+  {
+    "id": "u05m29",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "script": "Choose the correct verb form.",
+    "question": "Chọn đáp án đúng: \"Where have you been? I ______ (wait) for you for an hour!\"",
+    "options": [
+      "waited",
+      "have waited",
+      "was waiting",
+      "has waited"
+    ],
+    "answer": "have waited",
+    "explanation": "Hành động chờ đợi kéo dài trong khoảng thời gian 'for an hour' đến tận bây giờ khi người kia xuất hiện. Chia 'have waited'."
+  },
+  {
+    "id": "u05m30",
+    "type": "fill_blank",
+    "difficulty": "medium",
+    "script": "Fill in the blank with the correct verb form.",
+    "question": "Chia động từ trong ngoặc: \"She ______ (write) three books so far.\"",
+    "answer": "has written",
+    "explanation": "'So far' (tính đến nay) chia Hiện tại hoàn thành. Chủ ngữ 'She' đi với 'has written'."
+  },
+  {
+    "id": "u05m31",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "script": "Choose the correct verb form.",
+    "question": "Chọn câu trả lời đúng cho câu hỏi: \"When did you buy this car?\"",
+    "options": [
+      "I have bought it in 2018.",
+      "I bought it in 2018.",
+      "I have buy it in 2018.",
+      "I had bought it in 2018."
+    ],
+    "answer": "I bought it in 2018.",
+    "explanation": "Câu hỏi với 'When' nhắm đến thời điểm cụ thể đã qua (in 2018) nên câu trả lời bắt buộc chia Quá khứ đơn: 'bought'."
+  },
+  {
+    "id": "u05m32",
+    "type": "fill_blank",
+    "difficulty": "medium",
+    "script": "Fill in the blank with the correct verb form.",
+    "question": "Chia động từ trong ngoặc: \"He ______ (work) for this company since he graduated.\"",
+    "answer": "has worked",
+    "explanation": "Mệnh đề sau 'since' chia quá khứ đơn (he graduated), mệnh đề chính chia Hiện tại hoàn thành: 'has worked'."
+  },
+  {
+    "id": "u05m33",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "script": "Choose the correct verb form.",
+    "question": "Chọn phương án đúng: \"My parents ______ (be) married for thirty years.\"",
+    "options": [
+      "are",
+      "were",
+      "have been",
+      "has been"
+    ],
+    "answer": "have been",
+    "explanation": "Chủ ngữ 'My parents' (số nhiều) đi với 'have been'. Trạng ngữ 'for thirty years' kéo dài từ quá khứ đến nay."
+  },
+  {
+    "id": "u05m34",
+    "type": "fill_blank",
+    "difficulty": "medium",
+    "script": "Fill in the blank with the correct verb form.",
+    "question": "Chia động từ trong ngoặc: \"They ______ (not see) each other for ages.\"",
+    "answer": "haven't seen",
+    "explanation": "'For ages' (đã lâu rồi) chia Hiện tại hoàn thành phủ định: 'haven't seen' hoặc 'have not seen'."
+  },
+  {
+    "id": "u05m35",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "script": "Choose the correct verb form.",
+    "question": "Chọn đáp án đúng: \"We ______ (know) the truth now.\"",
+    "options": [
+      "have known",
+      "know",
+      "are knowing",
+      "known"
+    ],
+    "answer": "know",
+    "explanation": "Mặc dù 'know' là động từ trạng thái, nhưng ở đây có trạng từ 'now' chỉ thời điểm hiện tại đơn thuần, không kéo dài từ quá khứ. Ta dùng Hiện tại đơn 'know'."
+  },
+  {
+    "id": "u05m36",
+    "type": "fill_blank",
+    "difficulty": "medium",
+    "script": "Fill in the blank with the correct verb form.",
+    "question": "Chia động từ trong ngoặc: \"I ______ (read) fifty pages of the book so far.\"",
+    "answer": "have read",
+    "explanation": "Dấu hiệu 'so far' chia Hiện tại hoàn thành. V3 của read viết giống V1 nhưng đọc là /red/: 'have read'."
+  },
+  {
+    "id": "u05m37",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "script": "Choose the correct verb form.",
+    "question": "Chọn phương án đúng: \"Jack is on holiday. He ______ (go) to Spain.\"",
+    "options": [
+      "has gone",
+      "has been",
+      "went",
+      "goes"
+    ],
+    "answer": "has gone",
+    "explanation": "Jack đang đi nghỉ mát ở Tây Ban Nha (chưa về) nên dùng 'has gone'."
+  },
+  {
+    "id": "u05m38",
+    "type": "fill_blank",
+    "difficulty": "medium",
+    "script": "Fill in the blank with the correct verb form.",
+    "question": "Chia động từ trong ngoặc: \"She ______ (already / cook) dinner, so we can eat now.\"",
+    "answer": "has already cooked",
+    "explanation": "Đã nấu xong rồi: 'has already cooked'. Chủ ngữ 'She' đi với 'has'."
+  },
+  {
+    "id": "u05m39",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "script": "Choose the correct verb form.",
+    "question": "Chọn đáp án đúng: \"This is the second time she ______ (lose) her phone.\"",
+    "options": [
+      "loses",
+      "lost",
+      "has lost",
+      "has lose"
+    ],
+    "answer": "has lost",
+    "explanation": "Cấu trúc 'It is the second time + present perfect'. V3 của lose là lost."
+  },
+  {
+    "id": "u05m40",
+    "type": "fill_blank",
+    "difficulty": "medium",
+    "script": "Fill in the blank with the correct verb form.",
+    "question": "Chia động từ trong ngoặc: \"We ______ (not receive) any news since yesterday.\"",
+    "answer": "haven't received",
+    "explanation": "'Since yesterday' chia Hiện tại hoàn thành phủ định. Chủ ngữ 'We' đi với 'haven't received' hoặc 'have not received'."
+  },
+  {
+    "id": "u05m41",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "script": "Choose the correct verb form.",
+    "question": "Chọn đáp án đúng: \"I ______ (wear) glasses since I was ten.\"",
+    "options": [
+      "wore",
+      "have worn",
+      "has worn",
+      "wear"
+    ],
+    "answer": "have worn",
+    "explanation": "Động từ 'wear -> wore -> worn'. Chủ ngữ 'I' đi với 'have worn'."
+  },
+  {
+    "id": "u05m42",
+    "type": "fill_blank",
+    "difficulty": "medium",
+    "script": "Fill in the blank with the correct verb form.",
+    "question": "Chia động từ trong ngoặc: \"They ______ (build) three new schools in this area recently.\"",
+    "answer": "have built",
+    "explanation": "'Recently' yêu cầu chia Hiện tại hoàn thành. V3 của build là built: 'have built'."
+  },
+  {
+    "id": "u05m43",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "script": "Choose the correct verb form.",
+    "question": "Chọn đáp án đúng: \"I ______ (not see) Tom today. Is he sick?\"",
+    "options": [
+      "didn't see",
+      "haven't seen",
+      "don't see",
+      "am not seeing"
+    ],
+    "answer": "haven't seen",
+    "explanation": "Khoảng thời gian chưa kết thúc 'today' yêu cầu Hiện tại hoàn thành phủ định: 'haven't seen'."
+  },
+  {
+    "id": "u05m44",
+    "type": "fill_blank",
+    "difficulty": "medium",
+    "script": "Fill in the blank with the correct verb form.",
+    "question": "Chia động từ trong ngoặc: \"He ______ (just / finish) his speech.\"",
+    "answer": "has just finished",
+    "explanation": "Hành động vừa mới hoàn thành: 'has just finished'. Chủ ngữ số ít 'He' đi với 'has'."
+  },
+  {
+    "id": "u05m45",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "script": "Choose the correct verb form.",
+    "question": "Chọn đáp án đúng: \"I am hungry. I ______ (not eat) anything since morning.\"",
+    "options": [
+      "didn't eat",
+      "don't eat",
+      "haven't eaten",
+      "haven't ate"
+    ],
+    "answer": "haven't eaten",
+    "explanation": "'Since morning' yêu cầu Hiện tại hoàn thành phủ định. V3 của eat là eaten."
+  },
+  {
+    "id": "u05m46",
+    "type": "fill_blank",
+    "difficulty": "medium",
+    "script": "Fill in the blank with the correct verb form.",
+    "question": "Chia động từ trong ngoặc: \"She ______ (not speak) to him yet.\"",
+    "answer": "hasn't spoken",
+    "explanation": "Phủ định Hiện tại hoàn thành với 'yet'. Chủ ngữ 'She' + 'hasn't spoken' (V3 của speak là spoken)."
+  },
+  {
+    "id": "u05m47",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "script": "Choose the correct verb form.",
+    "question": "Chọn phương án đúng: \"How many times ______ (you / visit) London?\"",
+    "options": [
+      "did you visit",
+      "have you visited",
+      "do you visit",
+      "were you visiting"
+    ],
+    "answer": "have you visited",
+    "explanation": "Hỏi về số lần trải nghiệm tính đến hiện tại dùng Hiện tại hoàn thành nghi vấn: 'have you visited'."
+  },
+  {
+    "id": "u05m48",
+    "type": "fill_blank",
+    "difficulty": "medium",
+    "script": "Fill in the blank with the correct verb form.",
+    "question": "Chia động từ trong ngoặc: \"We ______ (live) in this house for five years now.\"",
+    "answer": "have lived",
+    "explanation": "Dấu hiệu 'for five years now' yêu cầu chia Hiện tại hoàn thành: 'have lived'."
+  },
+  {
+    "id": "u05m49",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "script": "Choose the correct verb form.",
+    "question": "Chọn câu đúng ngữ pháp:",
+    "options": [
+      "We have been friends since ten years.",
+      "We have been friends for ten years.",
+      "We are friends since ten years.",
+      "We were friends since ten years."
+    ],
+    "answer": "We have been friends for ten years.",
+    "explanation": "Khoảng thời gian 'ten years' phải đi với giới từ 'for', không đi với 'since'."
+  },
+  {
+    "id": "u05m50",
+    "type": "fill_blank",
+    "difficulty": "medium",
+    "script": "Fill in the blank with the correct verb form.",
+    "question": "Chia động từ trong ngoặc: \"I ______ (never / see) a real tiger before.\"",
+    "answer": "have never seen",
+    "explanation": "Trải nghiệm phủ định: 'have never seen'. Chủ ngữ 'I' đi với 'have'."
   }
 ]

@@ -7,6 +7,14 @@ const CONFIG = {
   UNITS_INDEX: './content/units-index.json',
   // Thời gian session (giờ) — sau khi hết sẽ tự logout
   SESSION_HOURS: 8,
+
+  // ─── CHẾ ĐỘ DEMO ───────────────────────────────
+  // true  = tự động đăng nhập bằng tài khoản bên dưới
+  // false = hiện trang đăng nhập như bình thường
+  DEMO_MODE: true,
+  DEMO_USERNAME: 'dgv',
+  DEMO_PASSWORD: 'dgv',
+  // ─────────────────────────────────────────────────
 };
 
 /* LEVELS — xem file levels.js (300 cấp) */
@@ -18,3 +26,11 @@ const CATEGORIES = {
   sentence_structures: { icon: '📐', title: 'Cấu Trúc Câu', desc: 'Mẫu câu, điều kiện, ước, bị động, quan hệ và mệnh đề trạng ngữ' },
   verbs: { icon: '🏃', title: 'Chức Năng Động Từ', desc: 'Gerund V-ing, To-V và Bare-Infinitive' }
 };
+
+const BLOG_CONFIG = {
+  INDEX_URL: './content/blog/index.json',
+  TAGS_URL: './content/blog/tags.json',
+  POSTS_DIR: './content/blog/posts/',
+  PAGE_SIZE: 12,
+};
+

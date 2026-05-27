@@ -144,6 +144,18 @@
               <div class="fc-card-title">Luyện Nói</div>
               <div class="fc-card-desc">Nghe phát âm chuẩn & luyện phản xạ nói</div>
             </div>
+
+            <!-- Blog Card -->
+            <div class="feature-card" onclick="openBlogList()" style="background: linear-gradient(135deg, rgba(255,253,248,.95) 0%, rgba(99, 102, 241, 0.05) 100%);">
+              <div class="fc-icon-wrapper" style="background-color: rgba(99, 102, 241, 0.12); color: #6366f1;">📝</div>
+              <div class="fc-card-title">Blog Học Tập</div>
+              <div class="fc-card-desc">Mẹo học & kiến thức bổ ích từ Thầy Văn</div>
+            </div>
+          </div>
+
+          <!-- Random Blog Post Widget -->
+          <div id="random-post-widget" class="random-post-widget" style="display: none;">
+            <!-- Rendered dynamically by blog.js -->
           </div>
 
           <div class="section-title">📖 Chủ đề học tập</div>
@@ -512,6 +524,76 @@
     </div>
   </div>
 
+  <!-- ══ PAGE: BLOG LIST ══ -->
+  <div class="page" id="page-blog-list">
+    <div class="inner-wrap">
+      <div class="top-nav">
+        <button class="btn-back" onclick="showPage('page-home')">‹</button>
+        <span class="nav-title">📝 Blog Tiếng Anh</span>
+      </div>
+      
+      <!-- Search & Filters -->
+      <div class="blog-filters-container">
+        <div class="blog-search-wrapper">
+          <span class="blog-search-icon">🔍</span>
+          <input type="text" id="blog-search-input" placeholder="Tìm kiếm bài viết..." oninput="blogOnSearch()">
+        </div>
+        
+        <div class="blog-categories" id="blog-categories-list">
+          <!-- Rendered dynamically by blog.js -->
+        </div>
+
+        <div class="blog-tags-scroll" id="blog-tags-list">
+          <!-- Rendered dynamically by blog.js -->
+        </div>
+      </div>
+
+      <!-- Posts List -->
+      <div id="blog-posts-list" class="blog-grid">
+        <!-- Rendered dynamically by blog.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ PAGE: BLOG POST ══ -->
+  <div class="page" id="page-blog-post">
+    <!-- Scroll Progress Bar -->
+    <div class="blog-progress-container">
+      <div class="blog-progress-fill" id="blog-progress-fill"></div>
+    </div>
+    
+    <div class="inner-wrap">
+      <div class="top-nav">
+        <button class="btn-back" onclick="blogGoBack()">‹</button>
+        <span class="nav-title" id="blog-detail-nav-title">Đọc Bài Viết</span>
+        <button class="btn-icon" onclick="blogShare()" title="Chia sẻ bài viết">🔗</button>
+      </div>
+
+      <article class="blog-detail-card">
+        <div class="blog-detail-header" id="blog-detail-header">
+          <!-- Cover emoji, Title, Author, Reading Time, Date -->
+        </div>
+
+        <!-- Rendered Markdown Body -->
+        <div class="theory-card">
+          <div class="md-body blog-post-body" id="blog-post-body">
+            <!-- Content render via marked.js -->
+          </div>
+        </div>
+
+        <!-- Cross-links (Làm bài tập / Ôn flashcard) -->
+        <div class="blog-crosslinks" id="blog-crosslinks">
+          <!-- Cross links buttons -->
+        </div>
+
+        <!-- Prev / Next & Related Posts -->
+        <div class="blog-footer-nav" id="blog-footer-nav">
+          <!-- Related posts list + Next/Prev buttons -->
+        </div>
+      </article>
+    </div>
+  </div>
+
   <!-- ══ BOTTOM NAV ══ -->
   <div class="bottom-nav" id="bottom-nav">
     <div class="bn-item active" id="bn-home" onclick="showPage('page-home')">
@@ -530,6 +612,7 @@
   <script src="config.js"></script>
   <script src="app.js" defer></script>
   <script src="speaking.js" defer></script>
+  <script src="blog.js" defer></script>
 
 </body>
 

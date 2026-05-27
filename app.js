@@ -40,6 +40,7 @@ function showPage(id) {
   if (id === 'page-setup') loadQuestions();
   if (id === 'page-leaderboard') loadLeaderboard();
   if (id === 'page-history') loadHistory();
+  if (id === 'page-blog-list') { if (typeof openBlogList === 'function') openBlogList(); }
 }
 
 /* ════════════════════════════════════════════
@@ -124,6 +125,14 @@ function updateStreakOnLogin() {
 }
 
 function doLogout() {
+  if (CONFIG.DEMO_MODE) {
+    // Demo: đăng xuất xong tự đăng nhập lại — khách không bị kẹt ở trang login
+    clearSession();
+    clearHistoryCache();
+    // Tự reload lại trang → DOMContentLoaded chạy lại → tự login lại
+    window.location.reload();
+    return;
+  }
   if (!confirm('Đăng xuất?')) return;
   clearSession();
   clearHistoryCache();
@@ -148,6 +157,7 @@ function initHome() {
   document.getElementById('profile-id').textContent = currentUser.student_id ? 'ID: ' + currentUser.student_id : '';
   refreshGamiCard();
   loadUnits();
+  if (typeof blogInitHome === 'function') blogInitHome();
 }
 
 function getLevelInfo(xp) {
@@ -1305,7 +1315,16 @@ function toggleAutoSpeak(checked) {
 }
 
 // Khởi chạy ứng dụng
-window.addEventListener('DOMContentLoaded', () => {
+window.addEventListener('DOMContentLoaded', async () => {
+  // ── Chế độ demo: tự động đăng nhập tài khoản thật ──
+  if (CONFIG.DEMO_MODE) {
+    document.getElementById('inp-username').value = CONFIG.DEMO_USERNAME;
+    document.getElementById('inp-password').value = CONFIG.DEMO_PASSWORD;
+    await doLogin(); // Gọi đúng hàm đăng nhập thật — kết nối Google Sheets bình thường
+    return;
+  }
+
+  // ── Bình thường: kiểm tra session rồi quyết định ──
   currentUser = loadSession();
   if (currentUser) {
     initHome();
