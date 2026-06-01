@@ -2,18 +2,38 @@
   {
     "id": "earth-in-billion-years",
     "youtubeId": "uD4izuDMUQA",
-    "title": "The Earth In 100 Million Years",
-    "titleVi": "Trái Đất Trong 100 Triệu Năm Tới",
-    "channel": "Ridddle",
-    "duration": "11:08",
+    "title": "TIMELAPSE OF THE FUTURE: A Journey to the End of Time",
+    "titleVi": "Dòng Thời Gian Của Tương Lai: Hành Trình Đến Điểm Kết Thúc Của Thời Gian",
+    "channel": "Melodysheep",
+    "duration": "29:21",
     "level": "intermediate",
-    "tags": ["science", "earth", "future"],
+    "tags": [
+      "science",
+      "future",
+      "universe"
+    ],
     "thumbnail": "https://img.youtube.com/vi/uD4izuDMUQA/mqdefault.jpg",
     "hasQuiz": true,
     "quizCount": 5,
     "featured": true,
-    "addedDate": "2026-05-27",
-    "description": "Khám phá những thay đổi đáng kinh ngạc của Trái Đất qua hàng triệu năm tới",
-    "keyVocabulary": ["continent", "tectonic plates", "evolution", "atmosphere", "extinction"]
+    "addedDate": "2026-05-28",
+    "description": "Một chuyến du hành ngoạn mục đi xuyên qua thời gian để chứng kiến sự lụi tàn của các ngôi sao, sự bốc hơi của các hố đen và điểm kết thúc của vũ trụ.",
+    "keyVocabulary": [
+      "Anthropocene",
+      "Exponentially",
+      "Luminosity",
+      "Supernova",
+      "White Dwarf",
+      "Black Dwarf",
+      "Degenerate matter",
+      "Dormant",
+      "Proton decay",
+      "Evaporate",
+      "Hawking radiation",
+      "Dark energy",
+      "Big Crunch",
+      "Big Rip",
+      "Entropy"
+    ]
   }
 ]

@@ -1,65 +1,185 @@
 [
   {
     "id": "vq1",
-    "timestamp": "01:30",
+    "timestamp": "00:45",
     "type": "multiple_choice",
-    "question": "What does 'tectonic plates' mean in the video?",
+    "question": "According to Helen Keller's quote, what has its wonders?",
     "options": [
-      "Large pieces of Earth's surface that move slowly",
-      "Types of volcanic rocks",
-      "Layers of the atmosphere",
-      "Underground water reservoirs"
+      "Everything, even darkness and silence",
+      "Only the bright stars and galaxies",
+      "The rapid expansion of space",
+      "Advanced alien civilizations"
     ],
-    "answer": "Large pieces of Earth's surface that move slowly",
-    "explanation": "'Tectonic plates' là các mảng kiến tạo — những mảnh lớn của vỏ Trái Đất di chuyển chậm trên lớp manti.",
-    "vocabularyFocus": "tectonic plates"
+    "answer": "Everything, even darkness and silence",
+    "explanation": "Helen Keller đã triết lý rằng ngay cả trong bóng tối và sự im lặng cũng có những điều kỳ diệu riêng của nó.",
+    "vocabularyFocus": "wonders"
   },
   {
     "id": "vq2",
-    "timestamp": "03:15",
+    "timestamp": "01:20",
     "type": "fill_blank",
-    "question": "The continents will eventually ___ together to form a supercontinent.",
-    "answer": "merge",
-    "explanation": "'Merge' nghĩa là hợp nhất, sáp nhập. Các lục địa sẽ dần hợp nhất thành một siêu lục địa.",
-    "vocabularyFocus": "merge"
+    "question": "We will travel through time __________, doubling our speed every 5 seconds.",
+    "answer": "exponentially",
+    "explanation": "'Exponentially' có nghĩa là theo cấp số nhân. Trong video, chúng ta sẽ du hành thời gian với tốc độ tăng chóng mặt.",
+    "vocabularyFocus": "exponentially"
   },
   {
     "id": "vq3",
-    "timestamp": "05:00",
+    "timestamp": "02:10",
     "type": "multiple_choice",
-    "question": "What is the main force that moves the continents?",
+    "question": "What era is the Earth currently leaving behind as conditions change fast?",
     "options": [
-      "Convection currents in Earth's mantle",
-      "The Moon's gravitational pull",
-      "Wind and ocean currents",
-      "Solar radiation"
+      "The Anthropocene era",
+      "The Jurassic era",
+      "The Ice Age era",
+      "The Intersolar era"
     ],
-    "answer": "Convection currents in Earth's mantle",
-    "explanation": "Dòng đối lưu (convection currents) trong lớp manti của Trái Đất là lực chính di chuyển các mảng kiến tạo.",
-    "vocabularyFocus": "convection currents"
+    "answer": "The Anthropocene era",
+    "explanation": "Script có nhắc đến 'Anthrpocene era' (Kỷ nhân sinh) - thời kỳ mà hoạt động của con người làm thay đổi hành tinh.",
+    "vocabularyFocus": "Anthropocene"
   },
   {
     "id": "vq4",
-    "timestamp": "07:20",
+    "timestamp": "04:15",
     "type": "fill_blank",
-    "question": "Many species may face ___ if they cannot adapt to the changing environment.",
-    "answer": "extinction",
-    "explanation": "'Extinction' nghĩa là sự tuyệt chủng. Nhiều loài có thể đối mặt với sự tuyệt chủng nếu không thích nghi được.",
-    "vocabularyFocus": "extinction"
+    "question": "The sun won't simply fade away; its core will collapse and its outer layers will __________.",
+    "answer": "expand",
+    "explanation": "'Expand' có nghĩa là giãn nở. Khi cạn nhiên liệu, Mặt Trời sẽ phình to ra thành một ngôi sao khổng lồ đỏ.",
+    "vocabularyFocus": "expand"
   },
   {
     "id": "vq5",
-    "timestamp": "09:45",
+    "timestamp": "05:30",
     "type": "multiple_choice",
-    "question": "According to the video, what will happen to Earth's atmosphere in the far future?",
+    "question": "What is the final shrunken state of our Sun after it expands and dies?",
     "options": [
-      "It will gradually change as the Sun gets hotter",
-      "It will stay exactly the same forever",
-      "It will disappear completely within 1000 years",
-      "It will become identical to Mars"
+      "A White Dwarf",
+      "A Supermassive Black Hole",
+      "A Neutron Star",
+      "A Red Giant"
     ],
-    "answer": "It will gradually change as the Sun gets hotter",
-    "explanation": "Theo video, bầu khí quyển Trái Đất sẽ thay đổi dần khi Mặt Trời nóng hơn theo thời gian.",
-    "vocabularyFocus": "atmosphere"
+    "answer": "A White Dwarf",
+    "explanation": "Mặt Trời của chúng ta sau khi chết đi sẽ co lại thành một 'White Dwarf' (Sao lùn trắng) - một cái xác sao nguội lạnh.",
+    "vocabularyFocus": "White Dwarf"
+  },
+  {
+    "id": "vq6",
+    "timestamp": "07:10",
+    "type": "fill_blank",
+    "question": "By chance, some Brown Dwarfs collide and form accidental new __________.",
+    "answer": "stars",
+    "explanation": "Khi các 'Brown Dwarfs' (Sao lùn nâu) va chạm vào nhau một cách tình cờ, chúng có thể kích hoạt lại phản ứng và tạo thành sao mới.",
+    "vocabularyFocus": "collide"
+  },
+  {
+    "id": "vq7",
+    "timestamp": "08:55",
+    "type": "multiple_choice",
+    "question": "What will be the ultimate fate of the last stars when they emit no more heat or light?",
+    "options": [
+      "Black Dwarfs",
+      "Supernovas",
+      "Hypergiants",
+      "Nebulas"
+    ],
+    "answer": "Black Dwarfs",
+    "explanation": "'Black Dwarfs' (Sao lùn đen) là trạng thái cuối cùng khi sao lùn trắng nguội hoàn toàn đến mức không còn phát ra ánh sáng.",
+    "vocabularyFocus": "Black Dwarfs"
+  },
+  {
+    "id": "vq8",
+    "timestamp": "11:05",
+    "type": "fill_blank",
+    "question": "As the expansion of the universe accelerates, it begins to spread __________ apart.",
+    "answer": "matter",
+    "explanation": "Sự giãn nở tăng tốc của vũ trụ sẽ xé toạc các thiên hà và kéo các 'matter' (vật chất) cách xa nhau.",
+    "vocabularyFocus": "accelerates"
+  },
+  {
+    "id": "vq9",
+    "timestamp": "12:30",
+    "type": "multiple_choice",
+    "question": "What current theory predicts that atoms themselves will spontaneously fall apart?",
+    "options": [
+      "Proton decay",
+      "Hawking radiation",
+      "The Big Bang",
+      "Quantum tunneling"
+    ],
+    "answer": "Proton decay",
+    "explanation": "Thuyết 'Proton decay' (Phân rã proton) dự đoán các hạt cơ bản cấu tạo nên nguyên tử cũng sẽ tự tan rã.",
+    "vocabularyFocus": "proton decay"
+  },
+  {
+    "id": "vq10",
+    "timestamp": "14:50",
+    "type": "fill_blank",
+    "question": "When black holes merge, they send out powerful gravity __________.",
+    "answer": "waves",
+    "explanation": "Khi hai hố đen sáp nhập, chúng tạo ra các 'gravity waves' (sóng hấp dẫn) làm co giãn cấu trúc không-thời gian.",
+    "vocabularyFocus": "gravity waves"
+  },
+  {
+    "id": "vq11",
+    "timestamp": "17:15",
+    "type": "multiple_choice",
+    "question": "According to Hawking radiation, what happens to black holes over unimaginable timescales?",
+    "options": [
+      "They slowly evaporate and vanish",
+      "They live forever and never change",
+      "They immediately turn into white dwarfs",
+      "They collapse the universe into a point"
+    ],
+    "answer": "They slowly evaporate and vanish",
+    "explanation": "Bức xạ Hawking chỉ ra hố đen không bất tử, chúng sẽ bốc hơi (evaporate) dần và biến mất trong một vụ nổ lớn.",
+    "vocabularyFocus": "evaporate"
+  },
+  {
+    "id": "vq12",
+    "timestamp": "19:40",
+    "type": "fill_blank",
+    "question": "The mysterious dominant force that accelerates the universe is called dark __________.",
+    "answer": "energy",
+    "explanation": "'Dark energy' (Năng lượng tối) chiếm phần lớn vũ trụ và là thứ đang đẩy vũ trụ giãn nở mất kiểm soát.",
+    "vocabularyFocus": "dark energy"
+  },
+  {
+    "id": "vq13",
+    "timestamp": "21:10",
+    "type": "multiple_choice",
+    "question": "If dark energy weakens over time, what could gravity do to the universe?",
+    "options": [
+      "Collapse it under gravity into a 'big crunch'",
+      "Tear it apart into a 'big rip'",
+      "Keep it perfectly still forever",
+      "Turn all matter into light instantly"
+    ],
+    "answer": "Collapse it under gravity into a 'big crunch'",
+    "explanation": "Nếu năng lượng tối yếu đi, lực hấp dẫn sẽ kéo mọi thứ lại với nhau gây ra vụ co lớn - 'Big Crunch'.",
+    "vocabularyFocus": "big crunch"
+  },
+  {
+    "id": "vq14",
+    "timestamp": "24:00",
+    "type": "fill_blank",
+    "question": "Some physicists speculate we could escape by creating a gateway to a __________ universe.",
+    "answer": "baby",
+    "explanation": "'Baby universe' (vũ trụ sơ sinh). Các nhà khoa học giả định có thể dùng năng lượng cực lớn để mở cổng sang một vũ trụ mới.",
+    "vocabularyFocus": "gateway"
+  },
+  {
+    "id": "vq15",
+    "timestamp": "26:50",
+    "type": "multiple_choice",
+    "question": "What happens when entropy finally stops increasing at the absolute end?",
+    "options": [
+      "Time becomes meaningless, and nothing happens forever",
+      "The universe triggers a brand new Big Bang",
+      "All dead stars come back to life",
+      "Black holes start growing again"
+    ],
+    "answer": "Time becomes meaningless, and nothing happens forever",
+    "explanation": "Khi đạt mức hỗn loạn tối đa, entropy dừng lại, thời gian mất đi ý nghĩa, vũ trụ rơi vào trạng thái tĩnh lặng vĩnh hằng.",
+    "vocabularyFocus": "entropy"
   }
 ]

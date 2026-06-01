@@ -39,6 +39,6 @@ const VIDEO_CONFIG = {
   VIDEOS_DIR: './content/videos/',
   // YouTube video ID hiển thị trên trang chủ (đổi ID này để đổi video)
   HOME_VIDEO_ID: 'uD4izuDMUQA',
-  HOME_VIDEO_TITLE: 'The Earth In 100 Million Years',
+  HOME_VIDEO_TITLE: 'TIMELAPSE OF THE FUTURE: A Journey to the End of Time',
 };
 
