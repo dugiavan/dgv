@@ -319,10 +319,13 @@ async function openBlogPost(postId) {
     setupBlogScrollProgress();
 
   } catch (e) {
+    console.error("Lỗi khi tải bài viết blog:", e);
+    const targetFile = post ? `${post.id}-${post.slug}.md` : postId;
     container.innerHTML = `
       <div class="units-loading" style="color:var(--c-danger);">
         ⚠️ Lỗi khi tải nội dung bài viết.<br>
-        <span style="font-size:.78rem;">Vui lòng kiểm tra: ${BLOG_CONFIG.POSTS_DIR}${postId}</span>
+        <span style="font-size:.78rem;">Đường dẫn: ${BLOG_CONFIG.POSTS_DIR}${targetFile}</span><br>
+        <span style="font-size:.74rem;color:var(--c-muted); font-family:monospace;">Chi tiết: ${e.message}</span>
       </div>`;
   }
 }

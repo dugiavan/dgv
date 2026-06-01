@@ -699,13 +699,34 @@
     </div>
   </div>
 
-  <!-- JS: levels.js → config.js → app.js (defer) -->
+  <!-- Nền tảng (không phụ thuộc gì) -->
   <script src="levels.js"></script>
   <script src="config.js"></script>
-  <script src="app.js" defer></script>
+
+  <!-- UI helpers (không phụ thuộc module app) -->
+  <script src="effects.js"></script>
+  <script src="speech.js"></script>
+
+  <!-- Core app -->
+  <script src="router.js"></script>
+  <script src="auth.js" defer></script>
+  <script src="gami.js" defer></script>
+  <script src="units.js" defer></script>
+  <script src="theory.js" defer></script>
+  <script src="setup.js" defer></script>
+  <script src="exercise.js" defer></script>
+  <script src="result.js" defer></script>
+  <script src="flashcard.js" defer></script>
+  <script src="history.js" defer></script>
+  <script src="leaderboard.js" defer></script>
+
+  <!-- Features (đã tách sẵn) -->
   <script src="speaking.js" defer></script>
   <script src="blog.js" defer></script>
   <script src="video.js" defer></script>
+
+  <!-- Entry point (phải load cuối cùng) -->
+  <script src="app.js" defer></script>
 
 </body>
 
