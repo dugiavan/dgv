@@ -1,0 +1,34 @@
+[
+  {
+    "id": "u_word_noun_q1",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "question": "There are three ___ on the table.",
+    "options": [
+      "apple",
+      "apples",
+      "an apple",
+      "apple's"
+    ],
+    "answer": "apples",
+    "explanation": "Sau số đếm từ hai trở lên (three), ta dùng danh từ số nhiều thêm 's' (apples)."
+  },
+  {
+    "id": "u_word_noun_q2",
+    "type": "fill_blank",
+    "difficulty": "medium",
+    "script": "How many children are playing in the park?",
+    "question": "How many ___ (child) are playing in the park?",
+    "answer": "children",
+    "explanation": "Danh từ 'child' (đứa trẻ) chuyển sang số nhiều theo dạng bất quy tắc là 'children'."
+  },
+  {
+    "id": "u_word_noun_q3",
+    "type": "fill_blank",
+    "difficulty": "hard",
+    "script": "We need more information to solve this case.",
+    "question": "We need more ___ (information) to solve this case.",
+    "answer": "information",
+    "explanation": "'Information' là danh từ không đếm được (uncountable noun). Do đó, nó không có dạng số nhiều và không thêm 's/es' kể cả khi đi sau từ chỉ số lượng nhiều như 'more'."
+  }
+]

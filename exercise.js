@@ -32,43 +32,43 @@ function startExam() {
   }
 
   examQuestions = qs;
-  currentQIdx = 0; 
-  userAnswers = []; 
+  currentQIdx = 0;
+  userAnswers = [];
   answered = false;
-  
+
   const navTitle = document.getElementById('ex-nav-title');
   if (navTitle && currentUnit) navTitle.textContent = currentUnit.title;
-  
+
   showPage('page-exercise');
   renderQuestion();
 }
 
-function shuffle(a) { 
-  for (let i = a.length - 1; i > 0; i--) { 
+function shuffle(a) {
+  for (let i = a.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
-    [a[i], a[j]] = [a[j], a[i]]; 
-  } 
-  return a; 
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
 }
 
 function renderQuestion() {
   if (examQuestions.length === 0) return;
   const q = examQuestions[currentQIdx], total = examQuestions.length;
-  
+
   const progressFill = document.getElementById('ex-prog-fill');
   const progressText = document.getElementById('ex-prog-text');
   const btnC = document.getElementById('btn-check');
   const btnN = document.getElementById('btn-nxt');
-  
+
   if (progressFill) progressFill.style.width = (currentQIdx / total * 100) + '%';
   if (progressText) progressText.textContent = `${currentQIdx + 1}/${total}`;
   if (btnC) {
-    btnC.style.display = ''; 
+    btnC.style.display = '';
     btnC.disabled = true;
   }
   if (btnN) btnN.style.display = 'none';
-  
-  answered = false; 
+
+  answered = false;
   selectedOptIdx = -1;
 
   // Stop any ongoing speech from previous question
@@ -76,7 +76,7 @@ function renderQuestion() {
 
   const area = document.getElementById('question-area');
   if (!area) return;
-  
+
   const typeLabel = q.type === 'fill_blank' ? '✍️ Điền vào chỗ trống' : '🔘 Chọn đáp án đúng';
   const qText = (q.question || q.q || '').replace(/___+/g, '<em>___</em>');
 
@@ -122,27 +122,27 @@ function renderQuestion() {
   }
 
   // Auto-play script after a short delay so voices are loaded
-  if (q.script) {
-    if (window.speechSynthesis) {
-      const trySpeak = () => {
-        const voices = window.speechSynthesis.getVoices();
-        if (voices.length > 0) {
+  // [ĐÃ SỬA] Tối ưu bộ nhớ, tự động huỷ lắng nghe sau khi gọi giọng đọc xong
+  if (q.script && window.speechSynthesis) {
+    const trySpeak = () => {
+      const voices = window.speechSynthesis.getVoices();
+      if (voices.length > 0) {
+        if (typeof speakScript === 'function') speakScript(q.script);
+      } else {
+        window.speechSynthesis.onvoiceschanged = () => {
           if (typeof speakScript === 'function') speakScript(q.script);
-        } else {
-          window.speechSynthesis.onvoiceschanged = () => {
-            if (typeof speakScript === 'function') speakScript(q.script);
-          };
-        }
-      };
-      setTimeout(trySpeak, 350);
-    }
+          window.speechSynthesis.onvoiceschanged = null; // <- Thầy thêm dòng này vào đây
+        };
+      }
+    };
+    setTimeout(trySpeak, 350);
   }
 }
 
-function esc(s) { 
-  const d = document.createElement('div'); 
-  d.textContent = s; 
-  return d.innerHTML; 
+function esc(s) {
+  const d = document.createElement('div');
+  d.textContent = s;
+  return d.innerHTML;
 }
 
 function selectOpt(i) {
@@ -166,33 +166,37 @@ function checkAnswer() {
     userAns = opts[selectedOptIdx] || '';
     correct = userAns.trim().toLowerCase() === answer.toLowerCase();
     opts.forEach((o, i) => {
-      const b = document.getElementById('opt-' + i); 
-      if (!b) return; 
+      const b = document.getElementById('opt-' + i);
+      if (!b) return;
       b.disabled = true;
       if (o.trim().toLowerCase() === answer.toLowerCase()) b.classList.add('correct');
       else if (i === selectedOptIdx && !correct) b.classList.add('wrong');
     });
   } else {
     const inp = document.getElementById('fill-input');
+    // Ép làm sạch khoảng trắng ở hai đầu chuỗi do học sinh nhập vào
     userAns = inp ? inp.value.trim() : '';
-    correct = userAns.toLowerCase() === answer.toLowerCase();
-    if (inp) { 
-      inp.disabled = true; 
-      inp.classList.add(correct ? 'correct' : 'wrong'); 
+
+    // So sánh sau khi đã .trim() đáp án gốc và .toLowerCase() cả hai vế
+    correct = userAns.toLowerCase() === answer.trim().toLowerCase();
+
+    if (inp) {
+      inp.disabled = true;
+      inp.classList.add(correct ? 'correct' : 'wrong');
     }
   }
   userAnswers.push({ q, userAns, correct });
-  
+
   const fb = document.getElementById('fb-area');
   if (fb) {
     fb.innerHTML = correct
       ? `<div class="fb-box correct"><div class="fb-label">✅ Chính xác!</div><div>${q.explanation || ''}</div></div>`
       : `<div class="fb-box wrong"><div class="fb-label">❌ Đáp án: <strong>${answer}</strong></div><div>${q.explanation || ''}</div></div>`;
   }
-  
+
   const btnC = document.getElementById('btn-check');
   if (btnC) btnC.style.display = 'none';
-  const nxt = document.getElementById('btn-nxt'); 
+  const nxt = document.getElementById('btn-nxt');
   if (nxt) {
     nxt.style.display = '';
     nxt.textContent = currentQIdx >= examQuestions.length - 1 ? 'Xem kết quả 📊' : 'Tiếp →';
@@ -202,9 +206,9 @@ function checkAnswer() {
 function nextQuestion() {
   if (currentQIdx >= examQuestions.length - 1) {
     if (typeof finishExam === 'function') finishExam();
-  } else { 
-    currentQIdx++; 
-    renderQuestion(); 
+  } else {
+    currentQIdx++;
+    renderQuestion();
   }
 }
 

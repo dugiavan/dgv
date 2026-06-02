@@ -1,0 +1,34 @@
+[
+  {
+    "id": "u_word_adverb_q1",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "question": "She speaks English very ___.",
+    "options": [
+      "good",
+      "well",
+      "fluent",
+      "easy"
+    ],
+    "answer": "well",
+    "explanation": "Ta dùng trạng từ 'well' để bổ nghĩa cho động từ thường 'speaks'. 'Good', 'fluent', 'easy' là các tính từ."
+  },
+  {
+    "id": "u_word_adverb_q2",
+    "type": "fill_blank",
+    "difficulty": "medium",
+    "script": "He drives very carefully on rainy days.",
+    "question": "He drives very ___ (careful) on rainy days.",
+    "answer": "carefully",
+    "explanation": "Động từ chính 'drives' là động từ thường nên cần bổ nghĩa bằng một trạng từ chỉ cách thức. Trạng từ của tính từ 'careful' là 'carefully'."
+  },
+  {
+    "id": "u_word_adverb_q3",
+    "type": "fill_blank",
+    "difficulty": "hard",
+    "script": "Unfortunately, he lost his keys and missed the flight.",
+    "question": "___ (fortunate), he lost his keys and missed the flight.",
+    "answer": "Unfortunately",
+    "explanation": "Trạng từ đứng ở đầu câu dùng để bổ nghĩa cho toàn bộ câu phía sau. Dựa trên ngữ cảnh mang tính không may/tiêu cực ('lost his keys' - mất chìa khóa, 'missed the flight' - lỡ chuyến bay), ta cần trạng từ mang nghĩa phủ định 'Unfortunately' (Thật không may)."
+  }
+]

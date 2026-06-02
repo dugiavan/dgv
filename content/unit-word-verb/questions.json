@@ -1,0 +1,34 @@
+[
+  {
+    "id": "u_word_verb_q1",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "question": "They ___ soccer every afternoon.",
+    "options": [
+      "plays",
+      "play",
+      "playing",
+      "played"
+    ],
+    "answer": "play",
+    "explanation": "Chủ ngữ 'They' là ngôi thứ ba số nhiều nên động từ ở hiện tại đơn giữ nguyên mẫu (play)."
+  },
+  {
+    "id": "u_word_verb_q2",
+    "type": "fill_blank",
+    "difficulty": "medium",
+    "script": "He decided to go home early.",
+    "question": "He decided to ___ (go) home early.",
+    "answer": "go",
+    "explanation": "Cấu trúc: 'decide to + V_inf' (quyết định làm gì), nên sau 'decide to' ta điền động từ nguyên mẫu 'go'."
+  },
+  {
+    "id": "u_word_verb_q3",
+    "type": "fill_blank",
+    "difficulty": "hard",
+    "script": "The manager requested that he submit the report immediately.",
+    "question": "The manager requested that he ___ (submit) the report immediately.",
+    "answer": "submit",
+    "explanation": "Câu giả định (Subjunctive Mood) dùng sau các động từ như 'request that', động từ ở mệnh đề sau 'that' luôn ở dạng nguyên thể không to (submit) cho tất cả các ngôi chủ ngữ."
+  }
+]

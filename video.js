@@ -118,19 +118,31 @@ function videoPlayHero() {
 }
 
 async function videoOpenFeatured() {
-  // Find which topic contains the featured video
+  // [ĐÃ SỬA] Dò tìm video thông minh bằng Promise.all, không còn bị nghẽn luồng xử lý
   try {
     const topics = await VIDEO_CACHE.getTopics();
-    for (const topic of topics) {
-      const videos = await VIDEO_CACHE.getVideos(topic.id);
-      const found = videos.find(v => v.youtubeId === VIDEO_CONFIG.HOME_VIDEO_ID);
-      if (found) {
-        openVideoWatch(topic.id, found.id);
-        return;
-      }
+    const targetVideoId = VIDEO_CONFIG.HOME_VIDEO_ID;
+
+    // Kích hoạt tải song song tất cả index của các topic cùng một lúc, cực nhanh
+    const promises = topics.map(async (topic) => {
+      try {
+        const videos = await VIDEO_CACHE.getVideos(topic.id);
+        const found = videos.find(v => v.youtubeId === targetVideoId);
+        return found ? { topicId: topic.id, videoId: found.id } : null;
+      } catch { return null; }
+    });
+
+    // Đợi tất cả các tiến trình chạy ngầm hoàn thành
+    const results = await Promise.all(promises);
+    const match = results.find(r => r !== null);
+
+    if (match) {
+      openVideoWatch(match.topicId, match.videoId);
+    } else {
+      console.warn('Không tìm thấy dữ liệu cấu hình cho video nổi bật hiện tại.');
     }
   } catch (e) {
-    console.warn('Could not find featured video topic:', e);
+    console.warn('Có lỗi xảy ra khi quét danh mục video nổi bật:', e);
   }
 }
 
@@ -199,7 +211,7 @@ async function openVideoList(topicId) {
       document.getElementById('video-list-header-desc').textContent =
         `${topic.videoCount} video · ${topic.description}`;
     }
-  } catch {}
+  } catch { }
 
   const container = document.getElementById('video-list-container');
   container.innerHTML = '<div class="units-loading"><div class="loader"></div>Đang tải...</div>';
@@ -238,10 +250,9 @@ function renderVideoList(videos, topicId) {
         <div class="video-card-title">${video.titleVi || video.title}</div>
         <div class="video-card-meta">
           <span class="video-card-channel">📺 ${video.channel}</span>
-          <span class="video-card-level video-level-${video.level}">${
-            video.level === 'beginner' ? '🌱 Cơ bản' :
-            video.level === 'intermediate' ? '🌿 Trung bình' : '🌳 Nâng cao'
-          }</span>
+          <span class="video-card-level video-level-${video.level}">${video.level === 'beginner' ? '🌱 Cơ bản' :
+      video.level === 'intermediate' ? '🌿 Trung bình' : '🌳 Nâng cao'
+    }</span>
         </div>
         ${video.hasQuiz ? '<span class="video-card-quiz-badge">❓ Có Quiz</span>' : ''}
       </div>
@@ -294,7 +305,7 @@ async function openVideoWatch(topicId, videoId) {
     // Update nav title
     document.getElementById('video-watch-nav-title').textContent = video.titleVi || video.title;
 
-    // Render iframe
+    // Render iframe (Hiển thị ngay lập tức, không chờ Quiz)
     playerWrap.innerHTML = `
       <iframe
         src="https://www.youtube.com/embed/${video.youtubeId}?rel=0&modestbranding=1&playsinline=1"
@@ -310,25 +321,27 @@ async function openVideoWatch(topicId, videoId) {
     document.getElementById('video-watch-meta').innerHTML = `
       <span>📺 ${video.channel}</span>
       <span>⏱ ${video.duration}</span>
-      <span class="video-level-${video.level}">${
-        video.level === 'beginner' ? '🌱 Cơ bản' :
+      <span class="video-level-${video.level}">${video.level === 'beginner' ? '🌱 Cơ bản' :
         video.level === 'intermediate' ? '🌿 Trung bình' : '🌳 Nâng cao'
       }</span>`;
 
     // Render vocabulary
     renderVideoVocab(video.keyVocabulary);
 
-    // Load quiz if available
+    // [ĐÃ SỬA] Tách luồng tải Quiz chạy ngầm để không gây lag/đơ giao diện
     if (video.hasQuiz) {
-      const quiz = await VIDEO_CACHE.getQuiz(topicId, video.youtubeId);
-      if (quiz && quiz.length) {
-        VID.quizData = quiz;
-        VID.quizIndex = 0;
-        VID.quizScore = 0;
-        renderVideoQuiz();
-      } else {
-        quizContainer.innerHTML = '<div class="video-quiz-empty">📝 Quiz đang được cập nhật...</div>';
-      }
+      VIDEO_CACHE.getQuiz(topicId, video.youtubeId).then(quiz => {
+        if (quiz && quiz.length) {
+          VID.quizData = quiz;
+          VID.quizIndex = 0;
+          VID.quizScore = 0;
+          renderVideoQuiz();
+        } else {
+          quizContainer.innerHTML = '<div class="video-quiz-empty">📝 Quiz đang được cập nhật...</div>';
+        }
+      }).catch(() => {
+        quizContainer.innerHTML = '<div class="video-quiz-empty">⚠️ Không tải được dữ liệu câu hỏi.</div>';
+      });
     } else {
       quizContainer.innerHTML = '<div class="video-quiz-empty">📝 Video này chưa có quiz</div>';
     }

@@ -1,23 +1,117 @@
 {
-  "grammar": { "label": "Ngữ Pháp", "emoji": "📐", "count": 6 },
-  "vocabulary": { "label": "Từ Vựng", "emoji": "📖", "count": 5 },
-  "tips": { "label": "Mẹo Học", "emoji": "💡", "count": 6 },
-  "past-tense": { "label": "Thì Quá Khứ", "emoji": "⏪", "count": 1 },
-  "present-perfect": { "label": "Hiện Tại Hoàn Thành", "emoji": "✅", "count": 1 },
-  "flashcard": { "label": "Thẻ Ghi Nhớ", "emoji": "📇", "count": 1 },
-  "future-tense": { "label": "Thì Tương Lai", "emoji": "🔮", "count": 2 },
-  "slang": { "label": "Từ Lóng", "emoji": "😎", "count": 1 },
-  "travel": { "label": "Du Lịch", "emoji": "✈️", "count": 1 },
-  "pronunciation": { "label": "Phát Âm", "emoji": "🗣️", "count": 1 },
-  "synonyms": { "label": "Từ Đồng Nghĩa", "emoji": "🔄", "count": 1 },
-  "style": { "label": "Phong Cách", "emoji": "✨", "count": 1 },
-  "prepositions": { "label": "Giới Từ", "emoji": "📍", "count": 1 },
-  "idioms": { "label": "Thành Ngữ", "emoji": "💬", "count": 1 },
-  "food": { "label": "Ẩm Thực", "emoji": "🍕", "count": 2 },
-  "past-continuous": { "label": "Quá Khứ Tiếp Diễn", "emoji": "⏳", "count": 1 },
-  "hacks": { "label": "Bí Kíp", "emoji": "🛠️", "count": 1 },
-  "lazy": { "label": "Lười Biếng", "emoji": "🛌", "count": 1 },
-  "learning-tips": { "label": "Mẹo Tiếp Thu", "emoji": "🧠", "count": 1 },
-  "greeting": { "label": "Chào Hỏi", "emoji": "👋", "count": 1 },
-  "communication": { "label": "Giao Tiếp", "emoji": "💬", "count": 1 }
+  "grammar": {
+    "label": "Ngữ Pháp",
+    "emoji": "📐",
+    "count": 6
+  },
+  "vocabulary": {
+    "label": "Từ Vựng",
+    "emoji": "📖",
+    "count": 5
+  },
+  "tips": {
+    "label": "Mẹo Học",
+    "emoji": "💡",
+    "count": 6
+  },
+  "past-tense": {
+    "label": "Thì Quá Khứ",
+    "emoji": "⏪",
+    "count": 1
+  },
+  "present-perfect": {
+    "label": "Hiện Tại Hoàn Thành",
+    "emoji": "✅",
+    "count": 1
+  },
+  "flashcard": {
+    "label": "Thẻ Ghi Nhớ",
+    "emoji": "📇",
+    "count": 1
+  },
+  "future-tense": {
+    "label": "Thì Tương Lai",
+    "emoji": "🔮",
+    "count": 2
+  },
+  "slang": {
+    "label": "Từ Lóng",
+    "emoji": "😎",
+    "count": 1
+  },
+  "travel": {
+    "label": "Du Lịch",
+    "emoji": "✈️",
+    "count": 1
+  },
+  "pronunciation": {
+    "label": "Phát Âm",
+    "emoji": "🗣️",
+    "count": 1
+  },
+  "synonyms": {
+    "label": "Từ Đồng Nghĩa",
+    "emoji": "🔄",
+    "count": 1
+  },
+  "style": {
+    "label": "Phong Cách",
+    "emoji": "✨",
+    "count": 1
+  },
+  "prepositions": {
+    "label": "Giới Từ",
+    "emoji": "📍",
+    "count": 1
+  },
+  "idioms": {
+    "label": "Thành Ngữ",
+    "emoji": "💬",
+    "count": 1
+  },
+  "food": {
+    "label": "Ẩm Thực",
+    "emoji": "🍕",
+    "count": 2
+  },
+  "past-continuous": {
+    "label": "Quá Khứ Tiếp Diễn",
+    "emoji": "⏳",
+    "count": 1
+  },
+  "hacks": {
+    "label": "Bí Kíp",
+    "emoji": "🛠️",
+    "count": 1
+  },
+  "lazy": {
+    "label": "Lười Biếng",
+    "emoji": "🛌",
+    "count": 1
+  },
+  "learning-tips": {
+    "label": "Mẹo Tiếp Thu",
+    "emoji": "🧠",
+    "count": 1
+  },
+  "greeting": {
+    "label": "Chào Hỏi",
+    "emoji": "👋",
+    "count": 1
+  },
+  "communication": {
+    "label": "Giao Tiếp",
+    "emoji": "💬",
+    "count": 1
+  },
+  "announcement": {
+    "label": "Thông Báo",
+    "emoji": "📢",
+    "count": 1
+  },
+  "rules": {
+    "label": "Nội Quy",
+    "emoji": "📜",
+    "count": 1
+  }
 }

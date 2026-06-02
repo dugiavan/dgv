@@ -1,0 +1,34 @@
+[
+  {
+    "id": "u_word_adjective_q1",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "question": "This is a very ___ book.",
+    "options": [
+      "interest",
+      "interested",
+      "interesting",
+      "interestingly"
+    ],
+    "answer": "interesting",
+    "explanation": "Ta dùng tính từ đuôi '-ing' (interesting) để miêu tả bản chất, đặc điểm của sự vật (cuốn sách)."
+  },
+  {
+    "id": "u_word_adjective_q2",
+    "type": "fill_blank",
+    "difficulty": "medium",
+    "script": "She is excited about her upcoming trip to Paris.",
+    "question": "She is ___ (excite) about her upcoming trip to Paris.",
+    "answer": "excited",
+    "explanation": "Ta dùng tính từ đuôi '-ed' (excited) để diễn tả cảm xúc, thái độ của con người đối với một tác động bên ngoài."
+  },
+  {
+    "id": "u_word_adjective_q3",
+    "type": "fill_blank",
+    "difficulty": "hard",
+    "script": "The weather is getting worse and worse day by day.",
+    "question": "The weather is getting ___ and ___ (bad) day by day.",
+    "answer": "worse and worse",
+    "explanation": "Cấu trúc so sánh lũy tiến (ngày càng...) của tính từ bất quy tắc 'bad' là 'worse and worse' (tệ càng thêm tệ)."
+  }
+]

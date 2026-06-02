@@ -220,27 +220,67 @@
         </div>
       </div>
 
-      <!-- Flashcard 3D area -->
-      <div class="flashcard-container" onclick="flipFlashcard()">
-        <div class="flashcard" id="fc-card">
-          <!-- Front side (English) -->
-          <div class="flashcard-front">
-            <span class="card-badge" id="fc-badge-front">vocabulary</span>
-            <div class="card-english" id="fc-english"></div>
-            <div class="card-phonetic" id="fc-phonetic"></div>
-            <button class="card-speak-btn" onclick="event.stopPropagation(); speakFlashcard();" title="Nghe phát âm">🔊</button>
-            <div class="card-hint">
-              <span>👉 Chạm vào thẻ để xem nghĩa</span>
+      <!-- Segmented Control for Modes -->
+      <div class="fc-mode-selector">
+        <button class="fc-mode-btn active" id="fc-mode-classic" onclick="setFlashcardMode('classic')">🎴 Thẻ Lật</button>
+        <button class="fc-mode-btn" id="fc-mode-quiz" onclick="setFlashcardMode('quiz')">✍️ Trắc Nghiệm</button>
+        <button class="fc-mode-btn" id="fc-mode-type" onclick="setFlashcardMode('type')">⌨️ Gõ Đáp Án</button>
+      </div>
+
+      <!-- Classic Flip Card View -->
+      <div id="fc-classic-view" style="width: 100%;">
+        <div class="flashcard-container" onclick="flipFlashcard()">
+          <div class="flashcard" id="fc-card">
+            <!-- Front side (English) -->
+            <div class="flashcard-front">
+              <span class="card-badge" id="fc-badge-front">vocabulary</span>
+              <div class="card-english" id="fc-english"></div>
+              <div class="card-phonetic" id="fc-phonetic"></div>
+              <button class="card-speak-btn" onclick="event.stopPropagation(); speakFlashcard();" title="Nghe phát âm">🔊</button>
+              <div class="card-hint">
+                <span>👉 Chạm vào thẻ để xem nghĩa</span>
+              </div>
+            </div>
+            <!-- Back side (Vietnamese) -->
+            <div class="flashcard-back">
+              <span class="card-badge" id="fc-badge-back">vocabulary</span>
+              <div class="card-vietnamese" id="fc-vietnamese"></div>
+              <div class="card-hint">
+                <span>👉 Chạm vào thẻ để quay lại</span>
+              </div>
             </div>
           </div>
-          <!-- Back side (Vietnamese) -->
-          <div class="flashcard-back">
-            <span class="card-badge" id="fc-badge-back">vocabulary</span>
-            <div class="card-vietnamese" id="fc-vietnamese"></div>
-            <div class="card-hint">
-              <span>👉 Chạm vào thẻ để quay lại</span>
-            </div>
+        </div>
+      </div>
+
+      <!-- Quiz Mode View -->
+      <div id="fc-quiz-view" style="display:none; width: 100%;">
+        <div class="quiz-card-container">
+          <div class="quiz-question-box">
+            <span class="card-badge">TRẮC NGHIỆM</span>
+            <div class="quiz-question-word" id="fc-quiz-english"></div>
+            <div class="quiz-question-phonetic" id="fc-quiz-phonetic"></div>
+            <button class="card-speak-btn" onclick="speakFlashcard();" title="Nghe phát âm">🔊</button>
           </div>
+          <div class="quiz-options-grid" id="fc-quiz-options">
+            <!-- Dynamically populated options -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Type Answer Mode View -->
+      <div id="fc-type-view" style="display:none; width: 100%;">
+        <div class="type-card-container">
+          <div class="type-question-box">
+            <span class="card-badge">GÕ ĐÁP ÁN</span>
+            <div class="type-question-vietnamese" id="fc-type-vietnamese"></div>
+            <div class="type-hint">Dịch nghĩa này sang tiếng Anh</div>
+          </div>
+          <div class="type-input-wrapper">
+            <input type="text" id="fc-type-input" placeholder="Nhập từ tiếng Anh..." autofocus autocomplete="off" spellcheck="false" onkeydown="if(event.key==='Enter')checkTypeAnswer()" />
+            <button class="type-submit-btn" id="fc-type-submit" onclick="checkTypeAnswer()">Kiểm tra ✓</button>
+          </div>
+          <div class="type-feedback" id="fc-type-feedback"></div>
         </div>
       </div>
 

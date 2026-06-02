@@ -22,7 +22,7 @@ async function blogInitHome() {
       if (!res.ok) return;
       BLOG.posts = await res.json();
     }
-    
+
     const published = BLOG.posts.filter(p => p.status === 'published');
     if (published.length === 0) return;
 
@@ -67,7 +67,7 @@ async function blogInitHome() {
 // Mở trang danh sách bài viết
 async function openBlogList() {
   showPage('page-blog-list');
-  
+
   const container = document.getElementById('blog-posts-list');
   container.innerHTML = '<div class="units-loading"><div class="loader"></div>Đang tải bài viết...</div>';
 
@@ -125,7 +125,7 @@ function renderBlogTags() {
   if (!listEl || Object.keys(BLOG.tags).length === 0) return;
 
   let tagsHtml = `<button class="blog-tag-pill ${!BLOG.activeTag ? 'active' : ''}" onclick="blogFilterTag(null)"># Tất cả tag</button>`;
-  
+
   for (const [tagKey, tagMeta] of Object.entries(BLOG.tags)) {
     tagsHtml += `
       <button class="blog-tag-pill ${BLOG.activeTag === tagKey ? 'active' : ''}" 
@@ -133,7 +133,7 @@ function renderBlogTags() {
         ${tagMeta.emoji || '#'} ${tagMeta.label}
       </button>`;
   }
-  
+
   listEl.innerHTML = tagsHtml;
 }
 
@@ -163,7 +163,13 @@ function renderBlogPosts() {
   const container = document.getElementById('blog-posts-list');
   if (!container) return;
 
+  // 1. Chỉ lấy những bài viết đã xuất bản
   let filtered = BLOG.posts.filter(p => p.status === 'published');
+
+  // ─── LỆNH MỚI CHÈN VÀO ĐÂY ───
+  // Sắp xếp ngày đăng: Ngày gần nhất (mới nhất) sẽ đảo lên đầu danh sách
+  filtered.sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt));
+  // ──────────────────────────────
 
   // Lọc theo category
   if (BLOG.activeCategory !== 'all') {
@@ -177,7 +183,7 @@ function renderBlogPosts() {
 
   // Tìm kiếm (trong tiêu đề, tóm tắt và tags)
   if (BLOG.searchQuery) {
-    filtered = filtered.filter(p => 
+    filtered = filtered.filter(p =>
       p.title.toLowerCase().includes(BLOG.searchQuery) ||
       p.excerpt.toLowerCase().includes(BLOG.searchQuery) ||
       (p.tags && p.tags.some(t => t.toLowerCase().includes(BLOG.searchQuery)))
@@ -195,7 +201,7 @@ function renderBlogPosts() {
   container.innerHTML = filtered.map((post, i) => {
     const isRead = readHistory.includes(post.id);
     const categoryLabel = post.category === 'grammar' ? 'Ngữ Pháp' : post.category === 'tips' ? 'Mẹo Học' : 'Từ Vựng';
-    
+
     return `
       <div class="blog-card" style="animation-delay:${i * 0.05}s" onclick="openBlogPost('${post.id}')">
         <div class="blog-card-cover" style="background-color: ${post.coverColor || '#f9f9f9'}">
@@ -230,7 +236,7 @@ async function openBlogPost(postId) {
   header.innerHTML = '';
   crosslinks.innerHTML = '';
   footerNav.innerHTML = '';
-  
+
   // Reset progress bar
   document.getElementById('blog-progress-fill').style.width = '0%';
 
@@ -251,7 +257,7 @@ async function openBlogPost(postId) {
 
     const post = BLOG.posts.find(p => p.id === postId);
     if (!post) throw new Error('Không tìm thấy bài viết');
-    
+
     BLOG.currentPost = post;
     document.getElementById('blog-detail-nav-title').textContent = post.title;
 
@@ -410,7 +416,7 @@ function renderPostFooterNav(currentPost) {
 
   const published = BLOG.posts.filter(p => p.status === 'published');
   const currentIndex = published.findIndex(p => p.id === currentPost.id);
-  
+
   const prevPost = currentIndex > 0 ? published[currentIndex - 1] : null;
   const nextPost = currentIndex < published.length - 1 ? published[currentIndex + 1] : null;
 

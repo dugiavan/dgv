@@ -27,7 +27,7 @@ function spkSpeak(text, index, onEnd) {
   if (spkSynth.speaking) spkSynth.cancel();
   const utt = new SpeechSynthesisUtterance(text);
   utt.lang = 'en-US';
-  utt.rate = 0.92;
+  utt.rate = 0.7;
   utt.pitch = 1.0;
   // Chọn giọng đọc tốt nhất có sẵn
   const voices = spkSynth.getVoices();
@@ -36,7 +36,7 @@ function spkSpeak(text, index, onEnd) {
     || voices[0];
   if (best) utt.voice = best;
   utt.onstart = () => { SPK.playingIndex = index; spkUpdateButtons(); };
-  utt.onend   = () => { SPK.playingIndex = null; spkUpdateButtons(); if (onEnd) onEnd(); };
+  utt.onend = () => { SPK.playingIndex = null; spkUpdateButtons(); if (onEnd) onEnd(); };
   utt.onerror = () => { SPK.playingIndex = null; spkUpdateButtons(); };
   spkSynth.speak(utt);
 }

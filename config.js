@@ -24,7 +24,8 @@ const XP_PER_Q = { easy: 5, medium: 10, hard: 18 };
 const CATEGORIES = {
   tenses: { icon: '⏰', title: 'Các Thì (Tenses)', desc: '12 thì trong tiếng Anh' },
   sentence_structures: { icon: '📐', title: 'Cấu Trúc Câu', desc: 'Mẫu câu, điều kiện, ước, bị động, quan hệ và mệnh đề trạng ngữ' },
-  verbs: { icon: '🏃', title: 'Chức Năng Động Từ', desc: 'Gerund V-ing, To-V và Bare-Infinitive' }
+  verbs: { icon: '🏃', title: 'Chức Năng Động Từ', desc: 'Gerund V-ing, To-V và Bare-Infinitive' },
+  word_types: { icon: '🔤', title: 'Loại Từ', desc: 'Các loại từ cơ bản trong tiếng Anh: Động Từ, Danh Từ, Trạng Từ, Tính Từ' }
 };
 
 const BLOG_CONFIG = {

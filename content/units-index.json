@@ -238,5 +238,37 @@
     "icon": "🍃",
     "category": "verbs",
     "questionCount": 3
+  },
+  {
+    "id": "unit-word-verb",
+    "title": "Động Từ",
+    "description": "Các loại động từ, trợ động từ, động từ khuyết thiếu và cách chia động từ",
+    "icon": "🎬",
+    "category": "word_types",
+    "questionCount": 3
+  },
+  {
+    "id": "unit-word-noun",
+    "title": "Danh Từ",
+    "description": "Danh từ số ít, số nhiều, danh từ đếm được, không đếm được và sở hữu cách",
+    "icon": "📦",
+    "category": "word_types",
+    "questionCount": 3
+  },
+  {
+    "id": "unit-word-adverb",
+    "title": "Trạng Từ",
+    "description": "Trạng từ chỉ cách thức, thời gian, nơi chốn, mức độ và tần suất",
+    "icon": "⚡",
+    "category": "word_types",
+    "questionCount": 3
+  },
+  {
+    "id": "unit-word-adjective",
+    "title": "Tính Từ",
+    "description": "Tính từ chỉ tính chất, trạng thái, thứ tự của tính từ trong câu",
+    "icon": "🎨",
+    "category": "word_types",
+    "questionCount": 3
   }
 ]

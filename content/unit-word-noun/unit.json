@@ -1,0 +1,8 @@
+{
+  "id": "unit-word-noun",
+  "title": "Danh Từ",
+  "description": "Danh từ số ít, số nhiều, danh từ đếm được, không đếm được và sở hữu cách.",
+  "icon": "📦",
+  "tags": ["grammar", "word-types", "nouns"],
+  "estimatedTime": "10 phút"
+}

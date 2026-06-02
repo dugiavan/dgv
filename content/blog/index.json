@@ -9,14 +9,22 @@
     "publishedAt": "2026-05-25",
     "updatedAt": null,
     "readingTime": 3,
-    "tags": ["grammar", "past-tense", "tips"],
+    "tags": [
+      "grammar",
+      "past-tense",
+      "tips"
+    ],
     "category": "tips",
     "featured": true,
     "pinned": false,
     "difficulty": "beginner",
     "coverEmoji": "⏰",
     "coverColor": "#FFF0F0",
-    "relatedPosts": ["002", "004", "011"],
+    "relatedPosts": [
+      "002",
+      "004",
+      "011"
+    ],
     "linkedUnit": "unit-02",
     "linkedFlashcard": null,
     "views": 0,
@@ -33,14 +41,21 @@
     "publishedAt": "2026-05-26",
     "updatedAt": null,
     "readingTime": 5,
-    "tags": ["grammar", "present-perfect", "guide"],
+    "tags": [
+      "grammar",
+      "present-perfect",
+      "guide"
+    ],
     "category": "grammar",
     "featured": false,
     "pinned": false,
     "difficulty": "intermediate",
     "coverEmoji": "✅",
     "coverColor": "#EAF8EB",
-    "relatedPosts": ["001", "011"],
+    "relatedPosts": [
+      "001",
+      "011"
+    ],
     "linkedUnit": "unit-05",
     "linkedFlashcard": null,
     "views": 0,
@@ -57,14 +72,20 @@
     "publishedAt": "2026-05-27",
     "updatedAt": null,
     "readingTime": 4,
-    "tags": ["vocabulary", "flashcard", "tips"],
+    "tags": [
+      "vocabulary",
+      "flashcard",
+      "tips"
+    ],
     "category": "tips",
     "featured": false,
     "pinned": false,
     "difficulty": "beginner",
     "coverEmoji": "💡",
     "coverColor": "#EBF3FE",
-    "relatedPosts": ["012"],
+    "relatedPosts": [
+      "012"
+    ],
     "linkedUnit": null,
     "linkedFlashcard": "food-and-drinks",
     "views": 0,
@@ -81,14 +102,21 @@
     "publishedAt": "2026-05-27",
     "updatedAt": null,
     "readingTime": 3,
-    "tags": ["grammar", "future-tense", "tips"],
+    "tags": [
+      "grammar",
+      "future-tense",
+      "tips"
+    ],
     "category": "grammar",
     "featured": true,
     "pinned": false,
     "difficulty": "beginner",
     "coverEmoji": "🔮",
     "coverColor": "#F5F3FF",
-    "relatedPosts": ["001", "008"],
+    "relatedPosts": [
+      "001",
+      "008"
+    ],
     "linkedUnit": "unit-07",
     "linkedFlashcard": null,
     "views": 0,
@@ -105,14 +133,21 @@
     "publishedAt": "2026-05-27",
     "updatedAt": null,
     "readingTime": 3,
-    "tags": ["vocabulary", "slang", "travel"],
+    "tags": [
+      "vocabulary",
+      "slang",
+      "travel"
+    ],
     "category": "vocabulary",
     "featured": false,
     "pinned": false,
     "difficulty": "intermediate",
     "coverEmoji": "😎",
     "coverColor": "#FFF7ED",
-    "relatedPosts": ["007", "013"],
+    "relatedPosts": [
+      "007",
+      "013"
+    ],
     "linkedUnit": null,
     "linkedFlashcard": "travel-and-tourism",
     "views": 0,
@@ -129,14 +164,20 @@
     "publishedAt": "2026-05-27",
     "updatedAt": null,
     "readingTime": 3,
-    "tags": ["grammar", "pronunciation", "tips"],
+    "tags": [
+      "grammar",
+      "pronunciation",
+      "tips"
+    ],
     "category": "tips",
     "featured": false,
     "pinned": false,
     "difficulty": "beginner",
     "coverEmoji": "🗣️",
     "coverColor": "#ECFDF5",
-    "relatedPosts": ["001"],
+    "relatedPosts": [
+      "001"
+    ],
     "linkedUnit": "unit-01",
     "linkedFlashcard": null,
     "views": 0,
@@ -153,14 +194,21 @@
     "publishedAt": "2026-05-27",
     "updatedAt": null,
     "readingTime": 3,
-    "tags": ["vocabulary", "synonyms", "style"],
+    "tags": [
+      "vocabulary",
+      "synonyms",
+      "style"
+    ],
     "category": "vocabulary",
     "featured": false,
     "pinned": false,
     "difficulty": "intermediate",
     "coverEmoji": "🚫",
     "coverColor": "#FFF1F2",
-    "relatedPosts": ["005", "010"],
+    "relatedPosts": [
+      "005",
+      "010"
+    ],
     "linkedUnit": null,
     "linkedFlashcard": "shopping-and-fashion",
     "views": 0,
@@ -177,14 +225,21 @@
     "publishedAt": "2026-05-27",
     "updatedAt": null,
     "readingTime": 3,
-    "tags": ["grammar", "tenses", "future"],
+    "tags": [
+      "grammar",
+      "tenses",
+      "future"
+    ],
     "category": "grammar",
     "featured": false,
     "pinned": false,
     "difficulty": "intermediate",
     "coverEmoji": "🏃",
     "coverColor": "#EFF6FF",
-    "relatedPosts": ["004", "002"],
+    "relatedPosts": [
+      "004",
+      "002"
+    ],
     "linkedUnit": "unit-03",
     "linkedFlashcard": null,
     "views": 0,
@@ -201,14 +256,20 @@
     "publishedAt": "2026-05-27",
     "updatedAt": null,
     "readingTime": 3,
-    "tags": ["grammar", "prepositions", "tips"],
+    "tags": [
+      "grammar",
+      "prepositions",
+      "tips"
+    ],
     "category": "tips",
     "featured": true,
     "pinned": false,
     "difficulty": "beginner",
     "coverEmoji": "📍",
     "coverColor": "#FEF3C7",
-    "relatedPosts": ["006"],
+    "relatedPosts": [
+      "006"
+    ],
     "linkedUnit": "unit-sent-pattern",
     "linkedFlashcard": null,
     "views": 0,
@@ -225,14 +286,21 @@
     "publishedAt": "2026-05-27",
     "updatedAt": null,
     "readingTime": 3,
-    "tags": ["vocabulary", "idioms", "food"],
+    "tags": [
+      "vocabulary",
+      "idioms",
+      "food"
+    ],
     "category": "vocabulary",
     "featured": false,
     "pinned": false,
     "difficulty": "intermediate",
     "coverEmoji": "🍕",
     "coverColor": "#FEF2F2",
-    "relatedPosts": ["007", "003"],
+    "relatedPosts": [
+      "007",
+      "003"
+    ],
     "linkedUnit": null,
     "linkedFlashcard": "food-and-drinks",
     "views": 0,
@@ -249,14 +317,21 @@
     "publishedAt": "2026-05-27",
     "updatedAt": null,
     "readingTime": 4,
-    "tags": ["grammar", "past-continuous", "when-while"],
+    "tags": [
+      "grammar",
+      "past-continuous",
+      "when-while"
+    ],
     "category": "grammar",
     "featured": false,
     "pinned": false,
     "difficulty": "intermediate",
     "coverEmoji": "⏳",
     "coverColor": "#F5F3FF",
-    "relatedPosts": ["001", "008"],
+    "relatedPosts": [
+      "001",
+      "008"
+    ],
     "linkedUnit": "unit-04",
     "linkedFlashcard": null,
     "views": 0,
@@ -273,14 +348,20 @@
     "publishedAt": "2026-05-27",
     "updatedAt": null,
     "readingTime": 3,
-    "tags": ["hacks", "lazy", "learning-tips"],
+    "tags": [
+      "hacks",
+      "lazy",
+      "learning-tips"
+    ],
     "category": "tips",
     "featured": false,
     "pinned": false,
     "difficulty": "beginner",
     "coverEmoji": "🛌",
     "coverColor": "#ECFDF5",
-    "relatedPosts": ["003"],
+    "relatedPosts": [
+      "003"
+    ],
     "linkedUnit": null,
     "linkedFlashcard": "hobbies-and-leisure",
     "views": 0,
@@ -297,16 +378,49 @@
     "publishedAt": "2026-05-27",
     "updatedAt": null,
     "readingTime": 3,
-    "tags": ["vocabulary", "greeting", "communication"],
+    "tags": [
+      "vocabulary",
+      "greeting",
+      "communication"
+    ],
     "category": "vocabulary",
     "featured": false,
     "pinned": false,
     "difficulty": "beginner",
     "coverEmoji": "👋",
     "coverColor": "#FAF5FF",
-    "relatedPosts": ["005"],
+    "relatedPosts": [
+      "005"
+    ],
     "linkedUnit": null,
     "linkedFlashcard": "family-and-relationships",
+    "views": 0,
+    "likes": 0,
+    "status": "published"
+  },
+  {
+    "id": "014",
+    "slug": "noiquy",
+    "title": "📄 NỘI QUY LỚP HỌC TIẾNG ANH TẠI NHÀ",
+    "excerpt": "Để đảm bảo chất lượng giảng dạy tốt nhất, tạo môi trường học tập hiệu quả và xây dựng thói quen kỷ luật cho các con, Thầy Văn xin phép gửi đến Quý phụ huynh một số quy định cơ bản của lớp học.",
+    "author": "Du Gia Văn",
+    "authorAvatar": "🧑‍🏫",
+    "publishedAt": "2026-06-01",
+    "updatedAt": null,
+    "readingTime": 3,
+    "tags": [
+      "announcement",
+      "rules"
+    ],
+    "category": "announcement",
+    "featured": false,
+    "pinned": true,
+    "difficulty": "beginner",
+    "coverEmoji": "📄",
+    "coverColor": "#F1F5F9",
+    "relatedPosts": [],
+    "linkedUnit": null,
+    "linkedFlashcard": null,
     "views": 0,
     "likes": 0,
     "status": "published"
