@@ -11,7 +11,7 @@ const CONFIG = {
   // ─── CHẾ ĐỘ DEMO ───────────────────────────────
   // true  = tự động đăng nhập bằng tài khoản bên dưới
   // false = hiện trang đăng nhập như bình thường
-  DEMO_MODE: true,
+  DEMO_MODE: false,
   DEMO_USERNAME: 'dgv',
   DEMO_PASSWORD: 'dgv',
   // ─────────────────────────────────────────────────
