@@ -424,5 +424,65 @@
     "views": 0,
     "likes": 0,
     "status": "published"
+  },
+  {
+    "id": "015",
+    "slug": "makedoget",
+    "title": "Biệt đội siêu anh hùng: Make, Do, Take & Get",
+    "excerpt": "Chào mừng bạn đến với lớp học 'Biệt đội siêu anh hùng: Make, Do, Take & Get' – những kẻ thống trị mọi ngóc ngách trong đời sống hàng ngày của chúng ta, nhưng cũng là những 'ông thần' chuyên gây lú cho người học tiếng Anh.",
+    "author": "Du Gia Văn",
+    "authorAvatar": "🧑‍🏫",
+    "publishedAt": "2026-06-03",
+    "updatedAt": null,
+    "readingTime": 5,
+    "tags": [
+      "vocabulary",
+      "tips",
+      "grammar"
+    ],
+    "category": "vocabulary",
+    "featured": true,
+    "pinned": false,
+    "difficulty": "intermediate",
+    "coverEmoji": "🦸",
+    "coverColor": "#FFF0F0",
+    "relatedPosts": [
+      "001",
+      "002"
+    ],
+    "linkedUnit": null,
+    "linkedFlashcard": null,
+    "views": 0,
+    "likes": 0,
+    "status": "published"
+  },
+  {
+    "id": "016",
+    "slug": "aihonai",
+    "title": "Đấu trường 'Ai hơn ai?' – Bí kíp làm trùm Ngữ pháp So sánh",
+    "excerpt": "Chào mừng các bạn đến với đấu trường 'Ai hơn ai?' – nơi chúng ta sẽ học cách cân đo đong đếm mọi thứ trên đời bằng Ngữ pháp So sánh (Comparison) qua một cuộc thi nhan sắc và tài năng đầy thú vị.",
+    "author": "Du Gia Văn",
+    "authorAvatar": "🧑‍🏫",
+    "publishedAt": "2026-06-03",
+    "updatedAt": null,
+    "readingTime": 4,
+    "tags": [
+      "grammar",
+      "tips"
+    ],
+    "category": "grammar",
+    "featured": true,
+    "pinned": false,
+    "difficulty": "beginner",
+    "coverEmoji": "⚔️",
+    "coverColor": "#EBF3FE",
+    "relatedPosts": [
+      "004"
+    ],
+    "linkedUnit": null,
+    "linkedFlashcard": null,
+    "views": 0,
+    "likes": 0,
+    "status": "published"
   }
 ]

@@ -9,19 +9,54 @@
       "icon": "🌅",
       "sentences": [
         {
-          "text": "Waking up early gives me time to plan my day and exercise.",
-          "vi": "Thức dậy sớm giúp tôi có thời gian lên kế hoạch cho ngày mới và tập thể dục.",
-          "type": "basic"
-        },
-        {
           "text": "Do you prefer a heavy breakfast or just a cup of coffee in the morning?",
           "vi": "Bạn thích một bữa sáng thịnh soạn hay chỉ một tách cà phê vào buổi sáng?",
           "type": "conversational"
         },
         {
-          "text": "I believe that a productive morning routine sets the tone for the entire day.",
-          "vi": "Tôi tin rằng một thói quen buổi sáng hiệu quả sẽ quyết định tinh thần cho cả ngày.",
+          "text": "I usually have a heavy breakfast. It gives me energy.",
+          "vi": "Tui thường ăn sáng thịnh soạn. Nó cung cấp năng lượng cho tui.",
+          "type": "basic"
+        },
+        {
+          "text": "What time do you usually wake up?",
+          "vi": "Bạn thường thức dậy lúc mấy giờ?",
+          "type": "conversational"
+        },
+        {
+          "text": "Waking up early gives me time to plan my day and exercise.",
+          "vi": "Thức dậy sớm giúp tui có thời gian lên kế hoạch cho ngày mới và tập thể dục.",
+          "type": "basic"
+        },
+        {
+          "text": "Great! Do you often brush your teeth before or after breakfast?",
+          "vi": "Hay quá! Bạn thường đánh răng trước hay sau khi ăn sáng?",
+          "type": "conversational"
+        },
+        {
+          "text": "I always brush my teeth first, then I wash my face.",
+          "vi": "Tui luôn đánh răng trước, sau đó tui mới rửa mặt.",
+          "type": "basic"
+        },
+        {
+          "text": "I do the same. Do you check your phone right after waking up?",
+          "vi": "Tui cũng vậy. Bạn có kiểm tra điện thoại ngay sau khi thức dậy không?",
+          "type": "conversational"
+        },
+        {
+          "text": "No. In my opinion, checking phones early makes us lose focus.",
+          "vi": "Không. Theo quan điểm của tui, xem điện thoại sớm làm chúng ta mất tập trung.",
           "type": "opinion"
+        },
+        {
+          "text": "Agree. I believe that a productive morning routine sets the tone for the entire day.",
+          "vi": "Đồng ý. Tui tin rằng một thói quen buổi sáng hiệu quả sẽ quyết định tinh thần cho cả ngày.",
+          "type": "opinion"
+        },
+        {
+          "text": "Exactly. Let's make a healthy habit together from tomorrow.",
+          "vi": "Chính xác. Chúng ta hãy cùng nhau tạo một thói quen lành mạnh từ ngày mai nhé.",
+          "type": "basic"
         }
       ]
     },
@@ -31,14 +66,39 @@
       "icon": "🌙",
       "sentences": [
         {
+          "text": "What do you usually do to relax in the evening?",
+          "vi": "Bạn thường làm gì để thư giãn vào buổi tối?",
+          "type": "conversational"
+        },
+        {
           "text": "Reading a book before sleeping helps me wind down and sleep better.",
-          "vi": "Đọc sách trước khi ngủ giúp tôi thư giãn và ngủ ngon hơn.",
+          "vi": "Đọc sách trước khi ngủ giúp tui thư giãn và ngủ ngon hơn.",
           "type": "basic"
         },
         {
-          "text": "In my view, evening screen time should be limited to improve sleep quality.",
-          "vi": "Theo quan điểm của tôi, thời gian sử dụng màn hình buổi tối nên được hạn chế để cải thiện chất lượng giấc ngủ.",
+          "text": "That sounds nice. Do you often watch videos on your phone too?",
+          "vi": "Nghe hay đó. Bạn có thường xem video trên điện thoại nữa không?",
+          "type": "conversational"
+        },
+        {
+          "text": "No. In my view, evening screen time should be limited to improve sleep quality.",
+          "vi": "Không. Theo quan điểm của tui, thời gian sử dụng màn hình buổi tối nên được hạn chế để cải thiện chất lượng giấc ngủ.",
           "type": "opinion"
+        },
+        {
+          "text": "I agree. Playing games late makes it hard to fall asleep.",
+          "vi": "Tui đồng ý. Chơi game muộn làm chúng ta rất khó ngủ.",
+          "type": "opinion"
+        },
+        {
+          "text": "Exactly. So I usually take a warm shower and listen to music instead.",
+          "vi": "Chính xác. Vì vậy thay vào đó tui thường tắm nước ấm và nghe nhạc.",
+          "type": "basic"
+        },
+        {
+          "text": "Good habit! I will try doing that tonight.",
+          "vi": "Thói quen tốt đó! Tui sẽ thử làm việc đó tối nay.",
+          "type": "basic"
         }
       ]
     }

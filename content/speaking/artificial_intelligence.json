@@ -9,40 +9,147 @@
       "icon": "💼",
       "sentences": [
         {
-          "text": "AI technologies are automating repetitive tasks, creating both new opportunities and job shifts.",
-          "vi": "Công nghệ AI đang tự động hóa các công việc lặp đi lặp lại, tạo ra cả cơ hội mới lẫn sự chuyển dịch việc làm.",
-          "type": "basic"
-        },
-        {
-          "text": "Do you worry that smart programs will replace human writers or designers soon?",
-          "vi": "Bạn có lo lắng rằng các chương trình thông minh sẽ sớm thay thế người viết hoặc nhà thiết kế không?",
+          "text": "Do you worry that AI will replace human workers soon?",
+          "vi": "Bạn có lo lắng rằng AI sẽ sớm thay thế người lao động không?",
           "type": "conversational"
         },
         {
-          "text": "In my opinion, AI will assist workers rather than replace them entirely.",
-          "vi": "Theo tôi, AI sẽ hỗ trợ người lao động thay vì thay thế họ hoàn toàn.",
+          "text": "A bit. AI technologies are automating repetitive tasks now.",
+          "vi": "Một chút. Các công nghệ AI hiện đang tự động hóa các công việc lặp đi lặp lại.",
+          "type": "basic"
+        },
+        {
+          "text": "True, but this is also creating many new opportunities.",
+          "vi": "Đúng vậy, nhưng điều này cũng đang tạo ra nhiều cơ hội mới.",
+          "type": "basic"
+        },
+        {
+          "text": "Do you worry that smart programs will replace writers or designers?",
+          "vi": "Bạn có lo lắng rằng các chương trình thông minh sẽ thay thế người viết hoặc nhà thiết kế không?",
+          "type": "conversational"
+        },
+        {
+          "text": "Not really. In my opinion, AI will assist workers rather than replace them entirely.",
+          "vi": "Không hẳn. Theo tui, AI sẽ hỗ trợ người lao động thay vì thay thế họ hoàn toàn.",
           "type": "opinion"
+        },
+        {
+          "text": "I agree. Humans have creativity that machines cannot copy.",
+          "vi": "Tui đồng ý. Con người có sự sáng tạo mà máy móc không thể sao chép.",
+          "type": "opinion"
+        },
+        {
+          "text": "Exactly. We just need to learn how to work with AI.",
+          "vi": "Chính xác. Chúng ta chỉ cần học cách làm việc cùng với AI thôi.",
+          "type": "basic"
+        },
+        {
+          "text": "What should we do to prepare for the AI age?",
+          "vi": "Chúng ta nên làm gì để chuẩn bị cho thời đại AI?",
+          "type": "conversational"
+        },
+        {
+          "text": "In my opinion, everyone must learn basic tech skills.",
+          "vi": "Theo quan điểm của tui, mọi người đều phải học các kỹ năng công nghệ cơ bản.",
+          "type": "opinion"
+        },
+        {
+          "text": "That is true. Do you think schools should teach AI tools?",
+          "vi": "Đúng vậy. Bạn có nghĩ các trường học nên dạy cách dùng các công cụ AI không?",
+          "type": "conversational"
+        },
+        {
+          "text": "Yes. This will create a big shift in how students learn.",
+          "vi": "Có chứ. Điều này sẽ tạo ra một sự dịch chuyển lớn trong cách học sinh học tập.",
+          "type": "basic"
+        },
+        {
+          "text": "I agree. Soft skills like teamwork are also more valuable now.",
+          "vi": "Tui đồng ý. Các kỹ năng mềm như làm việc nhóm giờ đây cũng quý giá hơn.",
+          "type": "opinion"
+        },
+        {
+          "text": "Exactly. AI cannot understand human emotions like we do.",
+          "vi": "Chính xác. AI không thể hiểu được cảm xúc của con người như chúng ta.",
+          "type": "basic"
+        },
+        {
+          "text": "So instead of fearing it, let's learn to control it.",
+          "vi": "Vì vậy thay vì sợ hãi nó, chúng ta hãy học cách làm chủ nó.",
+          "type": "basic"
         }
       ]
     },
     {
-      "id": "ai_ethics",
-      "name": "Ethics & Regulations",
+      "id": "ai_ethics_deepfakes",
+      "name": "AI & Deepfakes",
       "icon": "⚖️",
       "sentences": [
-        {
-          "text": "Strict regulations are necessary to ensure user data privacy and fair algorithms.",
-          "vi": "Các quy định nghiêm ngặt là cần thiết để đảm bảo quyền riêng tư dữ liệu người dùng và các thuật toán công bằng.",
-          "type": "basic"
-        },
         {
           "text": "How can governments prevent deepfakes from spreading fake news online?",
           "vi": "Làm thế nào chính phủ có thể ngăn chặn deepfake phát tán tin tức giả mạo trên mạng?",
           "type": "conversational"
         },
         {
-          "text": "I strongly believe that developers must prioritize safety over speed when training AI models.",
-          "vi": "Tôi tin tưởng mạnh mẽ rằng các nhà phát triển phải ưu tiên sự an toàn hơn tốc độ khi huấn luyện các mô hình AI.",
+          "text": "It is hard. Deepfakes look so real nowadays.",
+          "vi": "Khó lắm chứ. Công nghệ deepfake dạo này nhìn y như thật vậy.",
+          "type": "basic"
+        },
+        {
+          "text": "I know. People can easily believe anything they see.",
+          "vi": "Tui biết mà. Mọi người có thể dễ dàng tin vào bất cứ điều gì họ thấy.",
+          "type": "basic"
+        },
+        {
+          "text": "Do you think we need new laws to punish this?",
+          "vi": "Bạn có nghĩ chúng ta cần những luật mới để xử phạt việc này không?",
+          "type": "conversational"
+        },
+        {
+          "text": "In my opinion, we need strict laws to block fake accounts immediately.",
+          "vi": "Theo tui, chúng ta cần luật nghiêm khắc để khóa các tài khoản giả mạo ngay lập tức.",
+          "type": "opinion"
+        },
+        {
+          "text": "Exactly. Social media companies must also take responsibility.",
+          "vi": "Chính xác. Các công ty mạng xã hội cũng phải chịu trách nhiệm nữa.",
+          "type": "opinion"
+        }
+      ]
+    },
+    {
+      "id": "ai_data_privacy",
+      "name": "Data Privacy & Safety",
+      "icon": "🛡️",
+      "sentences": [
+        {
+          "text": "Is our personal data safe with AI companies?",
+          "vi": "Dữ liệu cá nhân của chúng ta có an toàn với các công ty AI không?",
+          "type": "conversational"
+        },
+        {
+          "text": "Strict regulations are necessary to ensure user data privacy.",
+          "vi": "Các quy định nghiêm ngặt là cần thiết để đảm bảo quyền riêng tư dữ liệu người dùng.",
+          "type": "basic"
+        },
+        {
+          "text": "Agree. We also need fair algorithms that do not discriminate.",
+          "vi": "Đồng ý. Chúng ta cũng cần các thuật toán công bằng và không phân biệt đối xử.",
+          "type": "basic"
+        },
+        {
+          "text": "But companies always want to launch new tools quickly.",
+          "vi": "Nhưng các công ty luôn muốn tung ra các công cụ mới thật nhanh.",
+          "type": "conversational"
+        },
+        {
+          "text": "I strongly believe that developers must prioritize safety over speed.",
+          "vi": "Tui tin tưởng mạnh mẽ rằng các nhà phát triển phải ưu tiên sự an toàn hơn là tốc độ.",
+          "type": "opinion"
+        },
+        {
+          "text": "You are right. Speed means nothing if the system is dangerous.",
+          "vi": "Bạn nói đúng. Tốc độ chẳng có ý nghĩa gì nếu hệ thống đó nguy hiểm.",
           "type": "opinion"
         }
       ]

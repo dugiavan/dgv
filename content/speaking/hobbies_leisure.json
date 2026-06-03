@@ -9,14 +9,39 @@
       "icon": "🧩",
       "sentences": [
         {
-          "text": "Solving puzzles and drawing help me relieve stress after a long working day.",
-          "vi": "Giải câu đố và vẽ tranh giúp tôi giải tỏa căng thẳng sau một ngày làm việc dài.",
-          "type": "basic"
-        },
-        {
           "text": "Do you enjoy spending your free time crafting things or reading books?",
           "vi": "Bạn có thích dành thời gian rảnh rỗi để làm đồ thủ công hay đọc sách không?",
           "type": "conversational"
+        },
+        {
+          "text": "I love crafting things. Solving puzzles and drawing also help me relieve stress.",
+          "vi": "Tui thích làm đồ thủ công. Giải câu đố và vẽ tranh cũng giúp tui giải tỏa căng thẳng.",
+          "type": "basic"
+        },
+        {
+          "text": "That is cool. Drawing helps me relax after a long working day too.",
+          "vi": "Hay quá. Vẽ tranh cũng giúp tui thư giãn sau một ngày làm việc dài.",
+          "type": "basic"
+        },
+        {
+          "text": "Have you ever tried making scented candles or knitting?",
+          "vi": "Bạn đã bao giờ thử làm nến thơm hoặc đan lát chưa?",
+          "type": "conversational"
+        },
+        {
+          "text": "Not yet. In my opinion, knitting requires a lot of patience.",
+          "vi": "Chưa nữa. Theo quan điểm của tui, đan lát đòi hỏi rất nhiều sự kiên nhẫn.",
+          "type": "opinion"
+        },
+        {
+          "text": "True, but making your own stuff is highly valuable and rewarding.",
+          "vi": "Đúng vậy, nhưng tự làm ra món đồ của riêng mình rất quý giá và xứng đáng.",
+          "type": "opinion"
+        },
+        {
+          "text": "Agree. Let's paint some pictures together this weekend!",
+          "vi": "Đồng ý nè. Cuối tuần này chúng ta cùng vẽ vài bức tranh nha!",
+          "type": "basic"
         }
       ]
     },
@@ -26,14 +51,220 @@
       "icon": "🏃",
       "sentences": [
         {
-          "text": "Playing sports outdoors improves physical health and builds teamwork.",
-          "vi": "Chơi thể thao ngoài trời giúp cải thiện sức khỏe thể chất và xây dựng tinh thần đồng đội.",
+          "text": "What is your favorite outdoor sport? Football or badminton?",
+          "vi": "Môn thể thao ngoài trời yêu thích của bạn là gì? Đá bóng hay cầu lông?",
+          "type": "conversational"
+        },
+        {
+          "text": "I love football. Playing sports outdoors improves physical health and builds teamwork.",
+          "vi": "Tui thích đá bóng. Chơi thể thao ngoài trời giúp cải thiện sức khỏe thể chất và xây dựng tinh thần đồng đội.",
+          "type": "basic"
+        },
+        {
+          "text": "That is true. Do you think older people should play it too?",
+          "vi": "Đúng vậy. Bạn có nghĩ người lớn tuổi cũng nên chơi môn đó không?",
+          "type": "conversational"
+        },
+        {
+          "text": "Maybe not football, but they can try cycling or walking.",
+          "vi": "Có lẽ không phải đá bóng, nhưng họ có thể thử đạp xe hoặc đi bộ.",
           "type": "basic"
         },
         {
           "text": "I think everyone should engage in at least one outdoor activity to stay active.",
-          "vi": "Tôi nghĩ mọi người nên tham gia ít nhất một hoạt động ngoài trời để giữ sự năng động.",
+          "vi": "Tui nghĩ mọi người nên tham gia ít nhất một hoạt động ngoài trời để giữ sự năng động.",
           "type": "opinion"
+        },
+        {
+          "text": "Exactly. Breathing fresh air is also very good for our minds.",
+          "vi": "Chính xác luôn. Hít thở không khí trong lành cũng rất tốt cho tâm trí của chúng ta.",
+          "type": "opinion"
+        },
+        {
+          "text": "Agree. Let's go out and play something now!",
+          "vi": "Đồng ý nè. Giờ chúng ta ra ngoài chơi môn gì đó đi thôi!",
+          "type": "basic"
+        }
+      ]
+    },
+    {
+      "id": "myhobby",
+      "name": "My Hobby",
+      "icon": "📚",
+      "sentences": [
+        {
+          "text": "Do you like watching TV or swimming?",
+          "vi": "Bạn thích xem tivi hay đi bơi?",
+          "type": "conversational"
+        },
+        {
+          "text": "Neither. I prefer gardening. It has many benefits.",
+          "vi": "Không cái nào cả. Tui thích làm vườn hơn. Nó có nhiều lợi ích.",
+          "type": "basic"
+        },
+        {
+          "text": "Cool! But you should go camping with me to reduce stress.",
+          "vi": "Hay đấy! Nhưng bạn nên đi cắm trại với tui để giảm căng thẳng đi.",
+          "type": "basic"
+        },
+        {
+          "text": "I can't. The sun sets early and I must do yoga.",
+          "vi": "Tui không đi được. Mặt trời lặn sớm và tui phải tập yoga rồi.",
+          "type": "basic"
+        },
+        {
+          "text": "Oh, doing yoga and judo is very popular now.",
+          "vi": "Ồ, tập yoga và võ judo dạo này rất phổ biến.",
+          "type": "basic"
+        },
+        {
+          "text": "Yes. These hobbies teach us responsibility and maturity.",
+          "vi": "Đúng vậy. Những sở thích này dạy chúng ta trách nhiệm và sự trưởng thành.",
+          "type": "opinion"
+        },
+        {
+          "text": "What about your brother? He enjoys collecting stamps and coins, right?",
+          "vi": "Còn anh trai bạn thì sao? Anh ấy thích sưu tầm tem và tiền xu đúng không?",
+          "type": "basic"
+        },
+        {
+          "text": "Yes. Look! Does this insect collection belong to him too?",
+          "vi": "Đúng vậy. Nhìn kìa! Bộ sưu tập côn trùng này cũng thuộc về anh ấy hả?",
+          "type": "conversational"
+        },
+        {
+          "text": "No. He gave it up. Horse riding is his new unusual hobby.",
+          "vi": "Không. Anh ấy bỏ rồi. Cưỡi ngựa mới là sở thích khác thường mới của anh ấy.",
+          "type": "opinion"
+        },
+        {
+          "text": "Wow. I prefer making models. Please be patient when doing it.",
+          "vi": "Chà. Tui thì thích làm mô hình hơn. Hãy kiên nhẫn khi làm nó nhé.",
+          "type": "basic"
+        },
+        {
+          "text": "I see. I often use cardboard and glue to make a dollhouse.",
+          "vi": "Tui hiểu rồi. Tui thì thường dùng bìa các tông và keo dán để làm nhà búp bê.",
+          "type": "basic"
+        },
+        {
+          "text": "My sister hates that. She loves painting pictures instead.",
+          "vi": "Chị gái tui thì ghét trò đó. Thay vào đó chị ấy thích vẽ tranh hơn.",
+          "type": "basic"
+        },
+        {
+          "text": "Great! I think this cooking class is also very valuable for her.",
+          "vi": "Tuyệt! Tui nghĩ lớp học nấu ăn này cũng rất quý giá đối với chị ấy.",
+          "type": "opinion"
+        },
+        {
+          "text": "Agree. Let's talk more about her when we go jogging.",
+          "vi": "Đồng ý. Chúng ta hãy nói thêm về chị ấy khi đi chạy bộ nhé.",
+          "type": "basic"
+        }
+      ]
+    },
+    {
+      "id": "english_learning_hobby",
+      "name": "Learning English",
+      "icon": "🇬🇧",
+      "sentences": [
+        {
+          "text": "Do you like learning English in your free time?",
+          "vi": "Bạn có thích học tiếng Anh vào thời gian rảnh không?",
+          "type": "conversational"
+        },
+        {
+          "text": "Yes, absolutely! Learning English has many benefits.",
+          "vi": "Có chứ, chắc chắn rồi! Học tiếng Anh có rất nhiều lợi ích.",
+          "type": "basic"
+        },
+        {
+          "text": "Really? I think it helps us reduce stress too.",
+          "vi": "Thật sao? Tui nghĩ nó cũng giúp chúng ta giảm căng thẳng nữa.",
+          "type": "opinion"
+        },
+        {
+          "text": "Exactly. This hobby is very popular at my school.",
+          "vi": "Chính xác luôn. Sở thích này rất phổ biến ở trường của tui.",
+          "type": "basic"
+        },
+        {
+          "text": "I see. Do you prefer watching English movies or listening to music?",
+          "vi": "Tui hiểu rồi. Bạn thích xem phim tiếng Anh hay nghe nhạc hơn?",
+          "type": "conversational"
+        },
+        {
+          "text": "I love watching cartoons. It is a valuable way to practice.",
+          "vi": "Tui thích xem hoạt hình. Đó là một cách luyện tập rất quý giá.",
+          "type": "opinion"
+        },
+        {
+          "text": "My brother hates movies. He enjoys reading English books instead.",
+          "vi": "Anh trai tui thì ghét xem phim. Thay vào đó anh ấy thích đọc sách tiếng Anh hơn.",
+          "type": "basic"
+        },
+        {
+          "text": "Wow! Please be patient when reading long stories.",
+          "vi": "Chà! Hãy kiên nhẫn khi đọc những câu chuyện dài nhé.",
+          "type": "basic"
+        },
+        {
+          "text": "Agree. Let's practice English together when we go jogging.",
+          "vi": "Đồng ý nè. Chúng ta hãy cùng luyện tiếng Anh khi đi chạy bộ nha.",
+          "type": "basic"
+        }
+      ]
+    },
+    {
+      "id": "art_painting_hobby",
+      "name": "Art & Painting",
+      "icon": "🎨",
+      "sentences": [
+        {
+          "text": "Do you enjoy painting pictures in your free time?",
+          "vi": "Bạn có thích vẽ tranh vào thời gian rảnh rỗi không?",
+          "type": "conversational"
+        },
+        {
+          "text": "Yes. Painting is my favorite hobby. It has many benefits.",
+          "vi": "Có chứ. Vẽ tranh là sở thích lớn nhất của tui. Nó có rất nhiều lợi ích.",
+          "type": "basic"
+        },
+        {
+          "text": "Cool! I think it helps us reduce stress after class.",
+          "vi": "Hay quá! Tui nghĩ nó giúp chúng ta giảm căng thẳng sau giờ học.",
+          "type": "opinion"
+        },
+        {
+          "text": "Exactly. This hobby is very popular nowadays.",
+          "vi": "Chính xác luôn. Sở thích này dạo này rất phổ biến.",
+          "type": "basic"
+        },
+        {
+          "text": "What do you usually paint? Nature or people?",
+          "vi": "Bạn thường vẽ gì vậy? Thiên nhiên hay con người?",
+          "type": "conversational"
+        },
+        {
+          "text": "I love painting the sun sets near the beach.",
+          "vi": "Tui thích vẽ cảnh mặt trời lặn ở gần bãi biển.",
+          "type": "basic"
+        },
+        {
+          "text": "Wow! Please be patient because drawing takes time.",
+          "vi": "Chà! Hãy kiên nhẫn nhé vì việc vẽ tranh mất khá nhiều thời gian.",
+          "type": "basic"
+        },
+        {
+          "text": "I know. Art teaches us responsibility and maturity.",
+          "vi": "Tui biết mà. Nghệ thuật dạy chúng ta trách nhiệm và sự trưởng thành.",
+          "type": "opinion"
+        },
+        {
+          "text": "Great! Let's go jogging and find some ideas now.",
+          "vi": "Tuyệt vời! Giờ chúng ta đi chạy bộ và tìm thêm vài ý tưởng đi.",
+          "type": "basic"
         }
       ]
     }
