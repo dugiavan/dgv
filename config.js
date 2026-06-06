@@ -11,7 +11,7 @@ const CONFIG = {
   // ─── CHẾ ĐỘ DEMO ───────────────────────────────
   // true  = tự động đăng nhập bằng tài khoản bên dưới
   // false = hiện trang đăng nhập như bình thường
-  DEMO_MODE: false,
+  DEMO_MODE: true,
   DEMO_USERNAME: 'dgv',
   DEMO_PASSWORD: 'dgv',
   // ─────────────────────────────────────────────────
@@ -41,5 +41,18 @@ const VIDEO_CONFIG = {
   // YouTube video ID hiển thị trên trang chủ (đổi ID này để đổi video)
   HOME_VIDEO_ID: 'uD4izuDMUQA',
   HOME_VIDEO_TITLE: 'TIMELAPSE OF THE FUTURE: A Journey to the End of Time',
+};
+
+const WORDSHOOTER_CONFIG = {
+  MAX_WORDS_ON_SCREEN: 6,
+  SPAWN_INTERVAL_MS: 1600,
+  FALL_SPEED_BASE: 1.6,
+  FALL_SPEED_SCALE: 0.1,
+  SHIP_SPEED: 8,
+  LIVES: 3,
+  XP_PER_CORRECT: 3,
+  DEFAULT_SHIP: 'classic',
+  DEFAULT_BG: 'space',
+  WORD_MIN_COUNT: 8,
 };
 

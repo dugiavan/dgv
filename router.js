@@ -11,8 +11,11 @@ function showPage(id) {
   
   const nav = document.getElementById('bottom-nav');
   if (nav) {
-    id === 'page-login' ? nav.classList.remove('visible') : nav.classList.add('visible');
+    const hideNav = id === 'page-login' || id === 'page-wordshooter-game';
+    hideNav ? nav.classList.remove('visible') : nav.classList.add('visible');
   }
+
+  document.body.classList.toggle('ws-game-active', id === 'page-wordshooter-game');
   
   document.querySelectorAll('.bn-item').forEach(b => b.classList.remove('active'));
   if (id === 'page-home') {

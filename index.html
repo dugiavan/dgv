@@ -150,6 +150,14 @@
               <div class="fc-card-desc">Nghe phát âm chuẩn & luyện phản xạ nói</div>
             </div>
 
+            <!-- Word Shooter Card -->
+            <div class="feature-card" onclick="openWordShooterTopics()"
+              style="background: linear-gradient(135deg, rgba(255,253,248,.95) 0%, rgba(255,152,0,.05) 100%);">
+              <div class="fc-icon-wrapper" style="background-color: rgba(255,152,0,.12); color: #f57c00;">🎯</div>
+              <div class="fc-card-title">Bắn Từ</div>
+              <div class="fc-card-desc">Bắn hạ từ vựng đúng để ghi điểm</div>
+            </div>
+
             <!-- Blog Card -->
             <div class="feature-card" onclick="openBlogList()" style="background: linear-gradient(135deg, rgba(255,253,248,.95) 0%, rgba(99, 102, 241, 0.05) 100%);">
               <div class="fc-icon-wrapper" style="background-color: rgba(99, 102, 241, 0.12); color: #6366f1;">📝</div>
@@ -503,6 +511,68 @@
     </div>
   </div>
 
+  <!-- ══ PAGE: WORD SHOOTER TOPICS ══ -->
+  <div class="page" id="page-wordshooter-topics">
+    <div class="inner-wrap">
+      <div class="top-nav">
+        <button class="btn-back" onclick="showPage('page-home')">‹</button>
+        <span class="nav-title">🎯 Bắn Từ Vựng</span>
+      </div>
+      <div style="text-align:center;margin-bottom:1.2rem;">
+        <div style="font-size:2.5rem;margin-bottom:.3rem;">🎯</div>
+        <div style="font-size:1.15rem;font-weight:800;color:var(--c-text);">Sky Vocab — Bắn Từ Vựng</div>
+        <div style="font-size:.78rem;color:var(--c-muted);font-weight:500;margin-top:.2rem;">
+          Tap vào từ tiếng Anh đúng với nghĩa tiếng Việt hiển thị phía trên
+        </div>
+      </div>
+      <div id="wordshooter-topics-list" class="flash-topics-grid card-grid"></div>
+      <div id="wordshooter-skin-selector" style="display:none;"></div>
+      <button id="wordshooter-start-btn" style="display:none;" class="btn-start" onclick="wsStartFromSetup()">
+        🚀 Bắt Đầu Chơi
+      </button>
+    </div>
+  </div>
+
+  <!-- ══ PAGE: WORD SHOOTER GAME ══ -->
+  <div class="page" id="page-wordshooter-game">
+    <div class="ws-hud">
+      <div class="ws-hud-left">
+        <div class="ws-lives" id="ws-lives">❤️❤️❤️</div>
+        <div class="ws-level" id="ws-level">Lv.1</div>
+      </div>
+      <div class="ws-hud-center">
+        <div class="ws-target-label">Hãy bắn:</div>
+        <div class="ws-target-word" id="ws-target-word">---</div>
+      </div>
+    <div class="ws-hud-right">
+      <div class="ws-score" id="ws-score">0</div>
+      <div class="ws-combo" id="ws-combo"></div>
+      <button class="ws-btn-pause" onclick="wsPause()" type="button" aria-label="Tạm dừng">⏸</button>
+    </div>
+  </div>
+  <div class="ws-mobile-hint" id="ws-mobile-hint">👆 Kéo ngang để di chuyển · Chạm từ để bắn</div>
+  <canvas id="ws-canvas"></canvas>
+    <div class="ws-pause-overlay" id="ws-pause" style="display:none;">
+      <div class="ws-overlay-box">
+        <div class="ws-overlay-title">⏸ Tạm dừng</div>
+        <button class="ws-overlay-btn ws-overlay-btn-primary" onclick="wsResume()">▶ Tiếp tục</button>
+        <button class="ws-overlay-btn" onclick="wsQuit()">✕ Thoát</button>
+      </div>
+    </div>
+    <div class="ws-gameover-overlay" id="ws-gameover" style="display:none;">
+      <div class="ws-overlay-box ws-gameover-box">
+        <div class="ws-go-emoji">🎮</div>
+        <div class="ws-overlay-title">Game Over!</div>
+        <div class="ws-go-stat"><span>Điểm</span><strong id="ws-go-score">0</strong></div>
+        <div class="ws-go-stat"><span>Cấp độ</span><strong id="ws-go-level">Lv.1</strong></div>
+        <div class="ws-go-xp" id="ws-go-xp">+0 XP</div>
+        <div class="ws-go-combo" id="ws-go-combo"></div>
+        <button class="ws-overlay-btn ws-overlay-btn-primary" onclick="wsReplay()">🔄 Chơi lại</button>
+        <button class="ws-overlay-btn" onclick="wsQuit()">✕ Thoát</button>
+      </div>
+    </div>
+  </div>
+
   <!-- ══ PAGE: SPEAKING TOPICS ══ -->
   <div class="page" id="page-speaking-topics">
     <div class="inner-wrap">
@@ -762,6 +832,8 @@
 
   <!-- Features (đã tách sẵn) -->
   <script src="speaking.js" defer></script>
+  <script src="wordshooter-assets.js" defer></script>
+  <script src="wordshooter.js" defer></script>
   <script src="blog.js" defer></script>
   <script src="video.js" defer></script>
 
