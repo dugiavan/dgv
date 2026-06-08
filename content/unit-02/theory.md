@@ -145,17 +145,52 @@ Chia thành **was** hoặc **were** tùy theo chủ ngữ:
   > * **Was your steak** nice? (Miếng bít tết của bạn có ngon không?).
   >   * *Trả lời ngắn*: Yes, it was. / No, it wasn't.
 
+Dưới đây là danh sách **30 từ và cụm từ nhận biết (dấu hiệu thời gian)** thường dùng với thì **Quá khứ đơn (Past Simple)**, được tổng hợp và phân loại từ các nguồn tài liệu ngữ pháp để bạn dễ dàng ghi nhớ:
+
+### I. Nhóm với "Yesterday" (Hôm qua)
+1.  **Yesterday:** Hôm qua.
+2.  **Yesterday morning:** Sáng hôm qua.
+3.  **Yesterday afternoon:** Chiều hôm qua.
+4.  **Yesterday evening:** Tối hôm qua.
+5.  **The day before yesterday:** Hôm kia.
+
+### II. Nhóm với "Last" (Vừa qua/Trước)
+6.  **Last night:** Tối qua.
+7.  **Last week:** Tuần trước.
+8.  **Last month:** Tháng trước.
+9.  **Last year:** Năm ngoái.
+10. **Last summer:** Mùa hè năm ngoái.
+11. **Last weekend:** Cuối tuần trước.
+12. **Last Christmas:** Giáng sinh năm ngoái.
+13. **Last Monday/Tuesday...:** Thứ Hai/Thứ Ba... tuần trước.
+
+### III. Nhóm với "Ago" (Cách đây)
+14. **A minute ago:** Một phút trước.
+15. **An hour ago:** Một tiếng trước.
+16. **Three days ago:** Ba ngày trước.
+17. **Two weeks ago:** Hai tuần trước.
+18. **A month ago:** Một tháng trước.
+19. **Five years ago:** Năm năm trước.
+20. **A few weeks ago:** Vài tuần trước.
+21. **A long time ago:** Cách đây lâu rồi.
+22. **Ages ago:** Cách đây rất lâu.
+
+### IV. Nhóm chỉ Mốc thời gian cụ thể trong Quá khứ
+23. **In 1990/2002...:** Vào năm 1990/2002... (Bất kỳ năm nào đã qua).
+24. **In the past:** Trong quá khứ.
+25. **In earlier times:** Vào thời gian trước/xa xưa.
+26. **Once / Once upon a time:** Một lần nọ / Ngày xửa ngày xưa (Dùng trong kể chuyện).
+
+### V. Các cụm từ đặc biệt khác
+27. **The other day:** Hôm nọ/Mấy hôm trước.
+28. **The other week:** Tuần nọ.
+29. **That day / That afternoon:** Ngày đó / Chiều hôm đó.
+30. **When I was a child:** Khi tôi còn là một đứa trẻ.
+
 ---
+### 💡 Lưu ý quan trọng từ nguồn tài liệu:
+*   **Sự kết thúc của thời gian:** Thì quá khứ đơn luôn được dùng khi thời gian của hành động đã **thực sự chấm dứt** (ví dụ: *last week* đã trôi qua hoàn toàn).
+*   **Tránh nhầm lẫn:** Không sử dụng thì Hiện tại hoàn thành với các mốc thời gian đã kết thúc như *yesterday* hay *six months ago*.
+*   **Văn phong kể chuyện:** Trong các câu chuyện, quá khứ đơn là thì chủ đạo để dẫn dắt các chuỗi sự kiện nối tiếp nhau.
 
-## 5. Luyện Tập Trong App (Easy vs Medium)
-
-| Cấp độ | Số câu | Dạng bài | Mục tiêu |
-|--------|--------|----------|----------|
-| **Easy** | 40 | Chỉ trắc nghiệm (không điền khuyết) | Dịch câu Anh → Việt và Việt → Anh; nhận diện nghĩa quá khứ |
-| **Medium** | 50 | Trắc nghiệm + điền khuyết | Chọn/chia đúng V2, was/were, did/didn't |
-
-**Script trong bài nghe (luôn bằng tiếng Anh):** *What does … mean?*, *Translate this sentence into English.*, *Choose the correct verb form.*, *Complete the sentence with the correct past form of the verb in brackets.*
-
----
-
-*Chúc các em học tập thật tốt! 📖*
+Nếu bạn muốn thực hành cách chia động từ với các từ nhận biết này, tôi có thể tạo một **bài kiểm tra (quiz)** hoặc **bộ thẻ ghi nhớ (flashcards)** cho bạn!

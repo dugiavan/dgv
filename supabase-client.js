@@ -1,8 +1,15 @@
-// supabase-client.js
-// Thông tin kết nối dự án Supabase của Thầy Du Gia Văn
+// supabase-client.js — Phiên bản sửa lỗi
 const SUPABASE_URL = "https://fgesawwyjidyyfuiiqga.supabase.co";
 const SUPABASE_ANON_KEY = "sb_publishable_JrCxME29MxPgfehEiOR1LQ_kyqrOXGx";
 
-// Khởi tạo và xuất Supabase Client dùng chung cho toàn bộ ứng dụng
-// Khóa anon này an toàn tuyệt đối khi chạy trên trình duyệt (Front-end thuần)
-const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+// Biến toàn cục, sẽ được gán sau khi thư viện load
+let supabaseClient = null;
+
+function initSupabase() {
+  if (typeof window.supabase !== 'undefined' && window.supabase.createClient) {
+    supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+    console.log('✅ Supabase đã kết nối');
+  } else {
+    console.warn('⚠️ Supabase SDK chưa được load');
+  }
+}

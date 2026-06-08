@@ -66,13 +66,52 @@ Chúng ta đưa trợ động từ **Do** hoặc **Does** lên trước chủ ng
 
 ---
 
-## 6. Các Trạng Từ Chỉ Tần Suất Thường Gặp
-Thì Hiện tại đơn thường đi kèm với các trạng từ chỉ tần suất để diễn tả mức độ lặp lại của hành động:
-* **Always** (Luôn luôn), **usually** (Thường xuyên), **often** (Hay), **sometimes** (Thỉnh thoảng), **rarely/seldom** (Hiếm khi), **never** (Không bao giờ).
-* **Vị trí**: Đứng **trước** động từ chính nhưng đứng **sau** động từ to be.
-  > * I **usually get** up early. (Tôi thường ngủ dậy sớm).
-  > * He **is always** late. (Anh ấy luôn luôn đi muộn).
+Dưới đây là danh sách **từ và cụm từ nhận biết** (dấu hiệu thời gian) thường dùng với thì **Hiện tại đơn (Present Simple)**
 
----
+### I. Trạng từ chỉ tần suất (Adverbs of Frequency)
+Các từ này thường đứng trước động từ thường hoặc sau động từ "to be".
 
-*Chúc các em học tập thật tốt! 🌿*
+1.  **Always** (Luôn luôn).
+2.  **Usually** (Thường xuyên).
+3.  **Often** (Thường).
+4.  **Sometimes** (Thỉnh thoảng).
+5.  **Never** (Không bao giờ).
+6.  **Seldom** (Hiếm khi).
+7.  **Rarely** (Hiếm khi - cực kỳ ít).
+8.  **Frequently** (Thường xuyên - sắc thái trang trọng hơn).
+9.  **Occasionally** (Thỉnh thoảng/Đôi khi).
+10. **Generally** (Nhìn chung/Thông thường).
+
+### II. Cụm từ với "Every" (Mỗi...)
+Cấu trúc này dùng để diễn tả những hành động lặp đi lặp lại có tính chu kỳ.
+
+11. **Every day** (Mỗi ngày).
+12. **Every week** (Mỗi tuần).
+13. **Every month** (Mỗi tháng).
+14. **Every year** (Mỗi năm).
+15. **Every evening** (Mỗi tối).
+16. **Every morning** (Mỗi sáng).
+17. **Every weekend** (Mỗi cuối tuần).
+18. **Every five minutes** (Mỗi 5 phút).
+19. **Every six months** (Mỗi 6 tháng).
+
+### III. Cụm từ chỉ số lần (Frequency with Numbers)
+Dùng để xác định tần suất thực hiện hành động cụ thể trong một đơn vị thời gian.
+
+20. **Once a week** (Một lần một tuần).
+21. **Twice a week** (Hai lần một tuần).
+22. **Three times a day** (Ba lần một ngày).
+23. **Many times** (Nhiều lần).
+
+### IV. Các cụm từ chỉ thời gian định kỳ khác
+24. **At weekends** (Vào những ngày cuối tuần).
+25. **On Sundays** (Vào các ngày Chủ nhật).
+26. **Nowadays** (Ngày nay/Dạo này - dùng cho các trạng thái ở hiện tại).
+27. **Daily** (Hàng ngày).
+28. **Yearly** (Hàng năm).
+29. **As a rule** (Như một thói quen/thông thường).
+30. **In the morning / In the evening** (Vào buổi sáng / tối - khi chỉ một lịch trình cố định).
+
+**Lưu ý quan trọng:**
+*   **Vị trí:** Trạng từ chỉ tần suất (nhóm I) thường đứng trước động từ chính (ví dụ: *I **always** work*). Các cụm từ chỉ thời gian (nhóm II, III, IV) thường đứng ở cuối câu hoặc đầu câu (ví dụ: *I go there **every week***).
+*   **Trường hợp đặc biệt:** Ngoài các dấu hiệu thời gian, một số **động từ chỉ trạng thái** (Stative Verbs) như *know, want, understand, like, believe, promise* hầu như luôn chia ở thì hiện tại đơn thay vì tiếp diễn, ngay cả khi đang nói về lúc này.

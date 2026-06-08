@@ -3,6 +3,8 @@
    ════════════════════════════════════════════ */
 
 window.addEventListener('DOMContentLoaded', async () => {
+  if (typeof initSupabase === 'function') initSupabase(); // Thêm dòng này vào đầu
+
   // ── Chế độ demo: tự động đăng nhập tài khoản thật ──
   if (typeof CONFIG !== 'undefined' && CONFIG.DEMO_MODE) {
     const userInp = document.getElementById('inp-username');

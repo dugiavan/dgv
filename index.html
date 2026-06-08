@@ -16,6 +16,9 @@
 
   <!-- Thư viện Markdown -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+  
+  <!-- Supabase SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 
 <body>
@@ -836,6 +839,13 @@
   <script src="wordshooter.js" defer></script>
   <script src="blog.js" defer></script>
   <script src="video.js" defer></script>
+
+  <!-- Supabase Scripts (Đè lên các hàm xử lý Google Sheets) -->
+  <script src="supabase-client.js"></script>
+  <script src="auth-supabase.js" defer></script>
+  <script src="sync-supabase.js" defer></script>
+  <script src="leaderboard-supabase.js" defer></script>
+  <script src="history-supabase.js" defer></script>
 
   <!-- Entry point (phải load cuối cùng) -->
   <script src="app.js" defer></script>
