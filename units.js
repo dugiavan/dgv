@@ -11,12 +11,44 @@ async function loadUnits() {
   if (!c) return;
   c.innerHTML = '<div class="units-loading"><div class="loader"></div>Đang tải bài học...</div>';
   try {
-    const r = await fetch(CONFIG.UNITS_INDEX + '?t=' + Date.now());
-    if (!r.ok) throw new Error();
-    allUnits = await r.json();
+    if (!supabaseClient) {
+      throw new Error('Supabase client chưa được khởi tạo');
+    }
+    // Tải dữ liệu danh mục cùng với danh sách bài học thuộc danh mục đó
+    const { data: categoriesData, error } = await supabaseClient
+      .from('categories')
+      .select('*, units(*)');
+      
+    if (error) throw error;
+
+    // Map về đúng format cũ mà app đang dùng và sắp xếp theo sort_order của unit
+    allUnits = categoriesData.flatMap(cat =>
+      (cat.units || [])
+        .filter(u => u.is_published !== false)
+        .map(u => ({
+          id: u.id,
+          category: cat.id,
+          title: u.title,
+          description: u.description || '',
+          icon: u.icon || '📘',
+          questionCount: u.question_count || 0,
+          sort_order: u.sort_order || 0
+        }))
+    ).sort((a, b) => a.sort_order - b.sort_order);
+
+    // Cập nhật cấu hình danh mục động
+    categoriesData.forEach(cat => {
+      CATEGORIES[cat.id] = {
+        icon: cat.icon || '📁',
+        title: cat.title,
+        desc: cat.description || ''
+      };
+    });
+
     renderCategories();
   } catch (e) {
-    c.innerHTML = '<div class="units-loading" style="color:var(--c-danger);">⚠️ Chưa có dữ liệu bài học.<br><span style="font-size:.78rem;color:var(--c-muted);">Thêm file content/units-index.json</span></div>';
+    console.error('Lỗi tải bài học từ Supabase:', e);
+    c.innerHTML = '<div class="units-loading" style="color:var(--c-danger);">⚠️ Lỗi tải dữ liệu bài học từ Server.<br><span style="font-size:.78rem;color:var(--c-muted);">Vui lòng kiểm tra lại kết nối Database.</span></div>';
   }
 }
 
@@ -92,10 +124,7 @@ async function openUnit(id) {
   if (!currentUnit) return;
   // Track which category this unit belongs to
   if (!lastOpenCategory && currentUnit.category) lastOpenCategory = currentUnit.category;
-  try {
-    const r = await fetch(`./content/${id}/unit.json?t=${Date.now()}`);
-    if (r.ok) currentUnit = { ...currentUnit, ...(await r.json()) };
-  } catch (e) { }
+  
   
   const detailIcon = document.getElementById('detail-icon');
   const detailNavTitle = document.getElementById('detail-nav-title');

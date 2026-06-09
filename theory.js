@@ -11,10 +11,24 @@ async function loadTheory() {
     return;
   }
   try {
-    const r = await fetch(`./content/${currentUnit.id}/theory.md?t=${Date.now()}`);
-    if (!r.ok) throw new Error();
-    b.innerHTML = marked.parse(await r.text());
+    if (!supabaseClient) {
+      throw new Error('Supabase client chưa được khởi tạo');
+    }
+    const { data, error } = await supabaseClient
+      .from('theory')
+      .select('content')
+      .eq('unit_id', currentUnit.id)
+      .maybeSingle();
+
+    if (error) throw error;
+    
+    if (data && data.content) {
+      b.innerHTML = marked.parse(data.content);
+    } else {
+      b.innerHTML = '<p style="color:var(--c-muted);text-align:center;padding:2rem;">📭 Bài học này chưa cập nhật nội dung lý thuyết.</p>';
+    }
   } catch (e) { 
-    b.innerHTML = '<p style="color:var(--c-muted);text-align:center;padding:2rem;">📭 Chưa có lý thuyết.</p>'; 
+    console.error('Lỗi tải lý thuyết:', e);
+    b.innerHTML = '<p style="color:var(--c-muted);text-align:center;padding:2rem;">📭 Không thể tải lý thuyết. Kiểm tra lại kết nối.</p>'; 
   }
 }

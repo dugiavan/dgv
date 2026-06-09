@@ -1,0 +1,1265 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CMS — Quản lý nội dung học tập Thầy Du Gia Văn</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- React & SDKs (Bản dev có Babel biên dịch JSX trên trình duyệt) -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Quicksand', 'sans-serif'],
+          },
+          colors: {
+            primary: '#4a8c5c',
+            'primary-dark': '#3b6f49',
+            bg: '#eef6f0',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #eef6f0;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: rgba(0,0,0,0.05);
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: rgba(74, 140, 92, 0.3);
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body class="font-sans antialiased text-gray-800">
+  <div id="root"></div>
+
+  <script type="text/babel">
+    const { useState, useEffect, useRef } = React;
+
+    const SUPABASE_URL = "https://fgesawwyjidyyfuiiqga.supabase.co";
+
+    function App() {
+      const [isAuthenticated, setIsAuthenticated] = useState(false);
+      const [password, setPassword] = useState('');
+      const [serviceRoleKey, setServiceRoleKey] = useState('');
+      const [loginError, setLoginError] = useState('');
+      
+      const [currentTab, setCurrentTab] = useState('dashboard'); // 'dashboard', 'categories', 'units', 'questions', 'theory'
+      const [supabaseClient, setSupabaseClient] = useState(null);
+
+      // Data States
+      const [categories, setCategories] = useState([]);
+      const [units, setUnits] = useState([]);
+      const [questions, setQuestions] = useState([]);
+      const [selectedUnit, setSelectedUnit] = useState(null);
+      const [selectedCategoryFilter, setSelectedCategoryFilter] = useState('all');
+      
+      // Loaders & Alerts
+      const [loading, setLoading] = useState(false);
+      const [toast, setToast] = useState(null);
+      const [modal, setModal] = useState(null); // { type: 'add_category'|'edit_category'|'add_unit'|'edit_unit'|'add_question'|'edit_question'|'import_json', data: any }
+
+      // Theory Editing
+      const [theoryContent, setTheoryContent] = useState('');
+      const [theorySaveStatus, setTheorySaveStatus] = useState('saved'); // 'saved', 'unsaved', 'saving'
+      const saveTimerRef = useRef(null);
+
+      // Session Check on Load
+      useEffect(() => {
+        const savedKey = localStorage.getItem('cms_service_role_key');
+        if (savedKey) {
+          try {
+            const client = window.supabase.createClient(SUPABASE_URL, savedKey);
+            setSupabaseClient(client);
+            setServiceRoleKey(savedKey);
+            setIsAuthenticated(true);
+          } catch (e) {
+            localStorage.removeItem('cms_service_role_key');
+          }
+        }
+      }, []);
+
+      // Fetch initial data when authenticated
+      useEffect(() => {
+        if (isAuthenticated && supabaseClient) {
+          fetchData();
+        }
+      }, [isAuthenticated, supabaseClient]);
+
+      const showToast = (message, type = 'success') => {
+        setToast({ message, type });
+        setTimeout(() => setToast(null), 3000);
+      };
+
+      const handleLogin = (e) => {
+        e.preventDefault();
+        if (password !== 'dgv123') {
+          setLoginError('Mật khẩu quản trị không đúng');
+          return;
+        }
+        if (!serviceRoleKey.trim()) {
+          setLoginError('Vui lòng nhập Service Role Key để có quyền Ghi');
+          return;
+        }
+
+        try {
+          const client = window.supabase.createClient(SUPABASE_URL, serviceRoleKey.trim());
+          setSupabaseClient(client);
+          localStorage.setItem('cms_service_role_key', serviceRoleKey.trim());
+          setIsAuthenticated(true);
+          setLoginError('');
+        } catch (err) {
+          setLoginError('Key không hợp lệ hoặc không khởi tạo được Client');
+        }
+      };
+
+      const handleLogout = () => {
+        localStorage.removeItem('cms_service_role_key');
+        setSupabaseClient(null);
+        setServiceRoleKey('');
+        setIsAuthenticated(false);
+        setPassword('');
+      };
+
+      const fetchData = async () => {
+        setLoading(true);
+        try {
+          const { data: catData, error: catErr } = await supabaseClient
+            .from('categories')
+            .select('*')
+            .order('sort_order', { ascending: true });
+          if (catErr) throw catErr;
+          setCategories(catData || []);
+
+          const { data: unitData, error: unitErr } = await supabaseClient
+            .from('units')
+            .select('*')
+            .order('sort_order', { ascending: true });
+          if (unitErr) throw unitErr;
+          setUnits(unitData || []);
+        } catch (err) {
+          console.error(err);
+          showToast('Không tải được dữ liệu từ database: ' + err.message, 'error');
+        } finally {
+          setLoading(false);
+        }
+      };
+
+      // CRUD Category
+      const handleSaveCategory = async (catId, formData) => {
+        setLoading(true);
+        try {
+          const { error } = await supabaseClient
+            .from('categories')
+            .upsert({ id: catId, ...formData });
+          if (error) throw error;
+          showToast('Đã lưu danh mục thành công!');
+          setModal(null);
+          fetchData();
+        } catch (err) {
+          showToast(err.message, 'error');
+        } finally {
+          setLoading(false);
+        }
+      };
+
+      const handleDeleteCategory = async (id) => {
+        if (!confirm('Bạn có chắc chắn muốn xóa danh mục này? Tất cả các bài học thuộc danh mục này sẽ bị xóa!')) return;
+        setLoading(true);
+        try {
+          const { error } = await supabaseClient.from('categories').delete().eq('id', id);
+          if (error) throw error;
+          showToast('Đã xóa danh mục thành công');
+          fetchData();
+        } catch (err) {
+          showToast(err.message, 'error');
+        } finally {
+          setLoading(false);
+        }
+      };
+
+      // CRUD Unit
+      const handleSaveUnit = async (unitId, formData) => {
+        setLoading(true);
+        try {
+          const { error } = await supabaseClient
+            .from('units')
+            .upsert({ id: unitId, ...formData });
+          if (error) throw error;
+          showToast('Đã lưu bài học thành công!');
+          setModal(null);
+          fetchData();
+        } catch (err) {
+          showToast(err.message, 'error');
+        } finally {
+          setLoading(false);
+        }
+      };
+
+      const handleDeleteUnit = async (id) => {
+        if (!confirm('Xác nhận xóa bài học này? Mọi câu hỏi và lý thuyết kèm theo bài này sẽ bị xóa vĩnh viễn!')) return;
+        setLoading(true);
+        try {
+          const { error } = await supabaseClient.from('units').delete().eq('id', id);
+          if (error) throw error;
+          showToast('Đã xóa bài học thành công');
+          fetchData();
+        } catch (err) {
+          showToast(err.message, 'error');
+        } finally {
+          setLoading(false);
+        }
+      };
+
+      // CRUD Questions
+      const fetchQuestionsForUnit = async (unitId) => {
+        setLoading(true);
+        try {
+          const { data, error } = await supabaseClient
+            .from('questions')
+            .select('*')
+            .eq('unit_id', unitId)
+            .eq('is_active', true)
+            .order('sort_order', { ascending: true });
+          if (error) throw error;
+          setQuestions(data || []);
+        } catch (err) {
+          showToast('Lỗi tải câu hỏi: ' + err.message, 'error');
+        } finally {
+          setLoading(false);
+        }
+      };
+
+      const handleSaveQuestion = async (qId, formData) => {
+        try {
+          const { error } = await supabaseClient
+            .from('questions')
+            .upsert({ id: qId || undefined, unit_id: selectedUnit.id, ...formData });
+          if (error) throw error;
+          showToast('Đã lưu câu hỏi thành công!');
+          setModal(null);
+          fetchQuestionsForUnit(selectedUnit.id);
+        } catch (err) {
+          showToast(err.message, 'error');
+        }
+      };
+
+      const handleDeleteQuestion = async (id) => {
+        if (!confirm('Bạn có chắc chắn muốn xóa câu hỏi này?')) return;
+        try {
+          // Soft delete bằng cách set is_active = false
+          const { error } = await supabaseClient
+            .from('questions')
+            .update({ is_active: false })
+            .eq('id', id);
+          if (error) throw error;
+          showToast('Đã xóa câu hỏi thành công');
+          fetchQuestionsForUnit(selectedUnit.id);
+        } catch (err) {
+          showToast(err.message, 'error');
+        }
+      };
+
+      // Import/Export JSON
+      const handleImportJSON = async (jsonText) => {
+        try {
+          const parsed = JSON.parse(jsonText);
+          const arr = Array.isArray(parsed) ? parsed : [parsed];
+          
+          // Validate sơ bộ
+          for (let q of arr) {
+            if (!q.question || !q.answer || !q.type || !q.difficulty) {
+              throw new Error('Dữ liệu câu hỏi bị thiếu trường bắt buộc (question, answer, type, difficulty)');
+            }
+          }
+
+          setLoading(true);
+          const rowsToInsert = arr.map(q => ({
+            unit_id: selectedUnit.id,
+            type: q.type,
+            difficulty: q.difficulty,
+            question: q.question,
+            options: Array.isArray(q.options) ? q.options : [],
+            answer: q.answer,
+            explanation: q.explanation || '',
+            script: q.script || '',
+            is_active: true
+          }));
+
+          const { error } = await supabaseClient
+            .from('questions')
+            .insert(rowsToInsert);
+
+          if (error) throw error;
+          showToast(`Đã import thành công ${rowsToInsert.length} câu hỏi!`);
+          setModal(null);
+          fetchQuestionsForUnit(selectedUnit.id);
+        } catch (err) {
+          alert('Lỗi parse JSON hoặc lỗi Database: ' + err.message);
+        } finally {
+          setLoading(false);
+        }
+      };
+
+      // CRUD Theory (Live auto-save)
+      const fetchTheoryForUnit = async (unitId) => {
+        setLoading(true);
+        try {
+          const { data, error } = await supabaseClient
+            .from('theory')
+            .select('content')
+            .eq('unit_id', unitId)
+            .maybeSingle();
+          if (error) throw error;
+          setTheoryContent(data ? data.content : '');
+          setTheorySaveStatus('saved');
+        } catch (err) {
+          showToast('Lỗi tải lý thuyết: ' + err.message, 'error');
+        } finally {
+          setLoading(false);
+        }
+      };
+
+      const saveTheoryNow = async (content, unitId) => {
+        setTheorySaveStatus('saving');
+        try {
+          const { error } = await supabaseClient
+            .from('theory')
+            .upsert({ unit_id: unitId, content }, { onConflict: 'unit_id' });
+          if (error) throw error;
+          setTheorySaveStatus('saved');
+        } catch (err) {
+          console.error(err);
+          setTheorySaveStatus('unsaved');
+          showToast('Lỗi tự động lưu lý thuyết: ' + err.message, 'error');
+        }
+      };
+
+      const handleTheoryChange = (e) => {
+        const val = e.target.value;
+        setTheoryContent(val);
+        setTheorySaveStatus('unsaved');
+        
+        if (saveTimerRef.current) clearTimeout(saveTimerRef.current);
+        saveTimerRef.current = setTimeout(() => {
+          saveTheoryNow(val, selectedUnit.id);
+        }, 1500);
+      };
+
+      const handleInsertMarkdownHelper = (syntax) => {
+        const textarea = document.getElementById('theory-editor-area');
+        if (!textarea) return;
+        const start = textarea.selectionStart;
+        const end = textarea.selectionEnd;
+        const text = textarea.value;
+        const before = text.substring(0, start);
+        const after = text.substring(end, text.length);
+        const selected = text.substring(start, end);
+
+        let replacement = '';
+        if (syntax === 'bold') replacement = `**${selected || 'chữ đậm'}**`;
+        else if (syntax === 'italic') replacement = `*${selected || 'chữ nghiêng'}*`;
+        else if (syntax === 'h2') replacement = `\n## ${selected || 'Tiêu đề lớn'}\n`;
+        else if (syntax === 'h3') replacement = `\n### ${selected || 'Tiêu đề nhỏ'}\n`;
+        else if (syntax === 'quote') replacement = `\n> ${selected || 'Trích dẫn'}\n`;
+        else if (syntax === 'code') replacement = `\n\`\`\`javascript\n${selected || '// code'}\n\`\`\`\n`;
+        else if (syntax === 'table') replacement = `\n| Cột 1 | Cột 2 |\n|---|---|\n| Giá trị 1 | Giá trị 2 |\n`;
+
+        const newContent = before + replacement + after;
+        setTheoryContent(newContent);
+        setTheorySaveStatus('unsaved');
+        saveTheoryNow(newContent, selectedUnit.id);
+      };
+
+      if (!isAuthenticated) {
+        return (
+          <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-white rounded-3xl p-8 max-w-md w-full shadow-xl border border-emerald-100">
+              <div class="text-center mb-6">
+                <span class="text-5xl">🌿</span>
+                <h1 class="text-2xl font-bold text-primary mt-2">CMS Quản lý nội dung</h1>
+                <p class="text-xs text-gray-400 mt-1">Dành cho Thầy Du Gia Văn soạn bài tập</p>
+              </div>
+              <form onSubmit={handleLogin} class="space-y-4">
+                <div>
+                  <label class="block text-sm font-semibold text-gray-600 mb-1">Mật khẩu soạn thảo (DGV)</label>
+                  <input 
+                    type="password" 
+                    value={password}
+                    onChange={e => setPassword(e.target.value)}
+                    placeholder="Mật khẩu CMS..." 
+                    class="w-full px-4 py-3 rounded-2xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary transition"
+                  />
+                </div>
+                <div>
+                  <label class="block text-sm font-semibold text-gray-600 mb-1 flex justify-between">
+                    <span>Supabase Service Role Key</span>
+                    <a href="https://supabase.com/dashboard/project/fgesawwyjidyyfuiiqga/settings/api" target="_blank" class="text-xs text-emerald-600 hover:underline">Lấy Key ↗</a>
+                  </label>
+                  <input 
+                    type="password" 
+                    value={serviceRoleKey}
+                    onChange={e => setServiceRoleKey(e.target.value)}
+                    placeholder="eyJhbGciOiJIUzI1NiIsIn..." 
+                    class="w-full px-4 py-3 rounded-2xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary transition text-xs"
+                  />
+                  <p class="text-[10px] text-red-500 mt-1">⚠️ Cảnh báo: Sử dụng key này cho phép ghi đè database hoàn toàn.</p>
+                </div>
+                {loginError && <p class="text-sm text-red-500 font-medium">{loginError}</p>}
+                <button type="submit" class="w-full bg-primary hover:bg-primary-dark text-white font-bold py-3 rounded-2xl shadow-lg transition">
+                  Kết nối Database ✨
+                </button>
+              </form>
+            </div>
+          </div>
+        );
+      }
+
+      return (
+        <div class="flex h-screen overflow-hidden">
+          {/* Toast Notification */}
+          {toast && (
+            <div class={`fixed bottom-6 right-6 px-5 py-3 rounded-2xl shadow-xl text-white font-semibold z-50 flex items-center gap-2 transition-all ${toast.type === 'error' ? 'bg-red-500' : 'bg-primary'}`}>
+              <span>{toast.type === 'error' ? '❌' : '✅'}</span>
+              <span>{toast.message}</span>
+            </div>
+          )}
+
+          {/* Sidebar */}
+          <aside class="w-64 bg-white border-r border-emerald-50 flex flex-col">
+            <div class="p-6 border-b border-emerald-50 flex items-center gap-3">
+              <span class="text-3xl">🌿</span>
+              <div>
+                <div class="font-bold text-primary">DGV CMS</div>
+                <div class="text-[10px] text-gray-400 font-bold uppercase tracking-wider">Hệ thống bài giảng</div>
+              </div>
+            </div>
+            
+            <nav class="flex-1 p-4 space-y-2">
+              <button 
+                onClick={() => setCurrentTab('dashboard')}
+                class={`w-full flex items-center gap-3 px-4 py-3 rounded-2xl font-bold transition ${currentTab === 'dashboard' ? 'bg-bg text-primary' : 'text-gray-500 hover:bg-gray-50'}`}
+              >
+                <span>📊</span> Dashboard
+              </button>
+              <button 
+                onClick={() => setCurrentTab('categories')}
+                class={`w-full flex items-center gap-3 px-4 py-3 rounded-2xl font-bold transition ${currentTab === 'categories' ? 'bg-bg text-primary' : 'text-gray-500 hover:bg-gray-50'}`}
+              >
+                <span>📁</span> Danh Mục (Category)
+              </button>
+              <button 
+                onClick={() => setCurrentTab('units')}
+                class={`w-full flex items-center gap-3 px-4 py-3 rounded-2xl font-bold transition ${currentTab === 'units' ? 'bg-bg text-primary' : 'text-gray-500 hover:bg-gray-50'}`}
+              >
+                <span>📘</span> Bài Học (Units)
+              </button>
+            </nav>
+
+            <div class="p-4 border-t border-emerald-50">
+              <button onClick={handleLogout} class="w-full flex items-center justify-center gap-2 bg-gray-100 hover:bg-red-50 hover:text-red-600 text-gray-500 font-bold py-2.5 rounded-xl transition">
+                👋 Đăng xuất
+              </button>
+            </div>
+          </aside>
+
+          {/* Main Area */}
+          <main class="flex-1 flex flex-col overflow-hidden bg-bg">
+            <header class="bg-white border-b border-emerald-50 px-8 py-4 flex items-center justify-between">
+              <h2 class="text-xl font-extrabold text-gray-700 capitalize">
+                {currentTab === 'dashboard' && 'Dashboard Thống Kê'}
+                {currentTab === 'categories' && 'Danh mục chủ đề'}
+                {currentTab === 'units' && 'Bài học & lý thuyết'}
+                {currentTab === 'questions' && `Quản lý câu hỏi: ${selectedUnit?.title}`}
+                {currentTab === 'theory' && `Lý thuyết bài: ${selectedUnit?.title}`}
+              </h2>
+              {currentTab === 'questions' && (
+                <button 
+                  onClick={() => {
+                    setSelectedUnit(null);
+                    setCurrentTab('units');
+                  }}
+                  class="bg-gray-100 hover:bg-gray-200 text-gray-600 font-bold px-4 py-2 rounded-2xl text-sm transition"
+                >
+                  ← Quay lại Unit
+                </button>
+              )}
+              {currentTab === 'theory' && (
+                <div class="flex items-center gap-3">
+                  <span class={`text-xs px-3 py-1.5 rounded-full font-bold transition ${theorySaveStatus === 'saved' ? 'bg-emerald-100 text-emerald-700' : theorySaveStatus === 'saving' ? 'bg-yellow-100 text-yellow-700' : 'bg-red-100 text-red-700'}`}>
+                    {theorySaveStatus === 'saved' && '✓ Đã đồng bộ'}
+                    {theorySaveStatus === 'saving' && '📡 Đang lưu...'}
+                    {theorySaveStatus === 'unsaved' && '● Chưa lưu'}
+                  </span>
+                  <button 
+                    onClick={() => {
+                      setSelectedUnit(null);
+                      setCurrentTab('units');
+                    }}
+                    class="bg-gray-100 hover:bg-gray-200 text-gray-600 font-bold px-4 py-2 rounded-2xl text-sm transition"
+                  >
+                    ← Quay lại Unit
+                  </button>
+                </div>
+              )}
+            </header>
+
+            <div class="flex-1 overflow-y-auto p-8 custom-scrollbar">
+              {loading && (
+                <div class="flex items-center justify-center py-12">
+                  <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
+                  <span class="ml-3 font-semibold text-gray-500">Đang đồng bộ dữ liệu...</span>
+                </div>
+              )}
+
+              {/* TAB: DASHBOARD */}
+              {currentTab === 'dashboard' && !loading && (
+                <div class="space-y-6">
+                  {/* Stats Grid */}
+                  <div class="grid grid-cols-4 gap-6">
+                    <div class="bg-white p-6 rounded-3xl border border-emerald-50/50 shadow-sm flex items-center gap-4">
+                      <span class="text-4xl">📁</span>
+                      <div>
+                        <div class="text-3xl font-extrabold text-primary">{categories.length}</div>
+                        <div class="text-xs font-semibold text-gray-400">Danh Mục Chủ Đề</div>
+                      </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-3xl border border-emerald-50/50 shadow-sm flex items-center gap-4">
+                      <span class="text-4xl">📘</span>
+                      <div>
+                        <div class="text-3xl font-extrabold text-blue-600">{units.length}</div>
+                        <div class="text-xs font-semibold text-gray-400">Bài Học (Units)</div>
+                      </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-3xl border border-emerald-50/50 shadow-sm flex items-center gap-4">
+                      <span class="text-4xl">❓</span>
+                      <div>
+                        <div class="text-3xl font-extrabold text-purple-600">
+                          {units.reduce((acc, u) => acc + (u.question_count || 0), 0)}
+                        </div>
+                        <div class="text-xs font-semibold text-gray-400">Câu Hỏi Bài Tập</div>
+                      </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-3xl border border-emerald-50/50 shadow-sm flex items-center gap-4">
+                      <span class="text-4xl">🎓</span>
+                      <div>
+                        <div class="text-3xl font-extrabold text-emerald-600">Supabase</div>
+                        <div class="text-xs font-semibold text-gray-400 font-mono">Realtime Connected</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Dashboard Content */}
+                  <div class="bg-white p-6 rounded-3xl border border-emerald-50 shadow-sm">
+                    <h3 class="text-lg font-bold text-gray-700 mb-4 flex items-center gap-2"><span>🎯</span> Hướng dẫn soạn bài giảng</h3>
+                    <div class="text-sm text-gray-600 leading-relaxed space-y-2">
+                      <p>1. **Bước 1**: Tạo/sửa các **Danh mục chủ đề** (Ví dụ: Các thì tenses, Cấu trúc câu).</p>
+                      <p>2. **Bước 2**: Nhấp vào tab **Bài học** để thêm các bài học mới (Ví dụ: Present Simple) và chọn danh mục tương ứng.</p>
+                      <p>3. **Bước 3**: Tiến hành soạn thảo **Lý thuyết** dưới dạng Markdown (Hệ thống tự động lưu tự động) hoặc **Quản lý Câu hỏi** chi tiết cho mỗi bài học.</p>
+                      <p class="text-red-500 font-semibold">⚠️ Tránh để các bài học xuất bản khi không có ít hơn 5 câu hỏi để học sinh có đủ số câu làm bài.</p>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* TAB: CATEGORIES */}
+              {currentTab === 'categories' && !loading && (
+                <div class="space-y-6">
+                  <div class="flex justify-end">
+                    <button 
+                      onClick={() => setModal({ type: 'add_category', data: null })}
+                      class="bg-primary hover:bg-primary-dark text-white font-bold px-5 py-3 rounded-2xl shadow-md flex items-center gap-2 text-sm transition"
+                    >
+                      <span>➕</span> Thêm Danh Mục Mới
+                    </button>
+                  </div>
+
+                  <div class="grid grid-cols-2 gap-6">
+                    {categories.map(cat => {
+                      const relatedUnits = units.filter(u => u.category_id === cat.id);
+                      return (
+                        <div key={cat.id} class="bg-white p-6 rounded-3xl border border-emerald-50 shadow-sm flex items-start gap-4">
+                          <span class="text-4xl p-3 bg-emerald-50 rounded-2xl">{cat.icon || '📁'}</span>
+                          <div class="flex-1">
+                            <h4 class="text-lg font-extrabold text-gray-700">{cat.title}</h4>
+                            <p class="text-xs text-gray-400 mt-1">{cat.description || 'Chưa có mô tả'}</p>
+                            <div class="flex items-center gap-4 mt-4 text-xs font-bold text-gray-500">
+                              <span class="bg-emerald-50 text-primary px-3 py-1 rounded-full">{relatedUnits.length} bài học</span>
+                              <span>Thứ tự hiển thị: {cat.sort_order || 0}</span>
+                            </div>
+                          </div>
+                          <div class="flex flex-col gap-2">
+                            <button 
+                              onClick={() => setModal({ type: 'edit_category', data: cat })}
+                              class="text-xs bg-blue-50 text-blue-600 hover:bg-blue-100 font-bold px-3 py-2 rounded-xl transition text-center"
+                            >
+                              ✏️ Sửa
+                            </button>
+                            <button 
+                              onClick={() => handleDeleteCategory(cat.id)}
+                              class="text-xs bg-red-50 text-red-600 hover:bg-red-100 font-bold px-3 py-2 rounded-xl transition text-center"
+                            >
+                              🗑️ Xóa
+                            </button>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
+
+              {/* TAB: UNITS */}
+              {currentTab === 'units' && !loading && (
+                <div class="space-y-6">
+                  <div class="flex justify-between items-center bg-white p-4 rounded-3xl border border-emerald-50 shadow-sm">
+                    <div class="flex items-center gap-3">
+                      <span class="text-sm font-bold text-gray-500">Lọc theo danh mục:</span>
+                      <select 
+                        value={selectedCategoryFilter}
+                        onChange={e => setSelectedCategoryFilter(e.target.value)}
+                        class="px-4 py-2 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-primary text-sm font-semibold"
+                      >
+                        <option value="all">📚 Tất cả danh mục</option>
+                        {categories.map(c => (
+                          <option key={c.id} value={c.id}>{c.title}</option>
+                        ))}
+                      </select>
+                    </div>
+
+                    <button 
+                      onClick={() => setModal({ type: 'add_unit', data: null })}
+                      class="bg-primary hover:bg-primary-dark text-white font-bold px-5 py-3 rounded-2xl shadow-md flex items-center gap-2 text-sm transition"
+                    >
+                      <span>➕</span> Thêm Bài Học Mới
+                    </button>
+                  </div>
+
+                  <div class="grid grid-cols-1 gap-4">
+                    {units
+                      .filter(u => selectedCategoryFilter === 'all' || u.category_id === selectedCategoryFilter)
+                      .map(u => {
+                        const cat = categories.find(c => c.id === u.category_id);
+                        return (
+                          <div key={u.id} class="bg-white p-5 rounded-3xl border border-emerald-50 shadow-sm flex items-center justify-between gap-6 hover:border-emerald-100 transition">
+                            <div class="flex items-center gap-4">
+                              <span class="text-3xl p-3 bg-bg rounded-2xl text-primary">{u.icon || '📘'}</span>
+                              <div>
+                                <div class="flex items-center gap-2">
+                                  <h4 class="text-base font-extrabold text-gray-700">{u.title}</h4>
+                                  <span class={`text-[10px] px-2 py-0.5 rounded-full font-bold ${u.is_published ? 'bg-emerald-100 text-emerald-700' : 'bg-gray-100 text-gray-500'}`}>
+                                    {u.is_published ? 'Công khai' : 'Nháp'}
+                                  </span>
+                                </div>
+                                <p class="text-xs text-gray-400 mt-0.5">{u.description || 'Chưa có mô tả ngắn'}</p>
+                                <div class="flex items-center gap-3 mt-2 text-[10px] text-gray-400 font-bold">
+                                  <span>DM: <strong class="text-gray-600">{cat ? cat.title : 'Chưa có'}</strong></span>
+                                  <span>•</span>
+                                  <span>Thứ tự: {u.sort_order}</span>
+                                  <span>•</span>
+                                  <span class="text-purple-600">{u.question_count || 0} câu hỏi</span>
+                                </div>
+                              </div>
+                            </div>
+                            
+                            <div class="flex items-center gap-3">
+                              <button 
+                                onClick={() => {
+                                  setSelectedUnit(u);
+                                  setCurrentTab('theory');
+                                  fetchTheoryForUnit(u.id);
+                                }}
+                                class="bg-emerald-50 hover:bg-emerald-100 text-primary font-bold px-4 py-2.5 rounded-2xl text-xs transition"
+                              >
+                                📝 Lý Thuyết
+                              </button>
+                              <button 
+                                onClick={() => {
+                                  setSelectedUnit(u);
+                                  setCurrentTab('questions');
+                                  fetchQuestionsForUnit(u.id);
+                                }}
+                                class="bg-purple-50 hover:bg-purple-100 text-purple-600 font-bold px-4 py-2.5 rounded-2xl text-xs transition"
+                              >
+                                ❓ Câu Hỏi ({u.question_count || 0})
+                              </button>
+                              <button 
+                                onClick={() => setModal({ type: 'edit_unit', data: u })}
+                                class="bg-gray-50 hover:bg-gray-100 text-gray-600 font-semibold p-2.5 rounded-2xl text-xs transition"
+                              >
+                                ✏️ Sửa
+                              </button>
+                              <button 
+                                onClick={() => handleDeleteUnit(u.id)}
+                                class="bg-red-50 hover:bg-red-100 text-red-600 font-semibold p-2.5 rounded-2xl text-xs transition"
+                              >
+                                🗑️ Xóa
+                              </button>
+                            </div>
+                          </div>
+                        );
+                      })}
+                  </div>
+                </div>
+              )}
+
+              {/* TAB: QUESTIONS (Unit Detail Manager) */}
+              {currentTab === 'questions' && !loading && (
+                <div class="space-y-6">
+                  {/* Actions Bar */}
+                  <div class="flex justify-between items-center bg-white p-4 rounded-3xl border border-emerald-50 shadow-sm">
+                    <div class="flex items-center gap-4 text-sm font-bold text-gray-500">
+                      <span class="bg-emerald-100 text-primary px-3.5 py-1.5 rounded-2xl">🌱 Dễ: {questions.filter(q => q.difficulty === 'easy').length}</span>
+                      <span class="bg-yellow-100 text-yellow-700 px-3.5 py-1.5 rounded-2xl">🌿 Vừa: {questions.filter(q => q.difficulty === 'medium').length}</span>
+                      <span class="bg-red-100 text-red-700 px-3.5 py-1.5 rounded-2xl">🌳 Khó: {questions.filter(q => q.difficulty === 'hard').length}</span>
+                    </div>
+
+                    <div class="flex items-center gap-3">
+                      <button 
+                        onClick={() => setModal({ type: 'import_json', data: null })}
+                        class="bg-blue-50 text-blue-600 hover:bg-blue-100 font-bold px-4 py-3 rounded-2xl text-xs transition flex items-center gap-1.5"
+                      >
+                        📥 Import JSON
+                      </button>
+                      <button 
+                        onClick={() => {
+                          const simpleQs = questions.map(q => ({
+                            type: q.type,
+                            difficulty: q.difficulty,
+                            question: q.question,
+                            options: q.options,
+                            answer: q.answer,
+                            explanation: q.explanation || '',
+                            script: q.script || ''
+                          }));
+                          const blob = new Blob([JSON.stringify(simpleQs, null, 2)], { type: 'application/json' });
+                          const url = URL.createObjectURL(blob);
+                          const a = document.createElement('a');
+                          a.href = url;
+                          a.download = `questions-${selectedUnit.id}.json`;
+                          a.click();
+                        }}
+                        class="bg-gray-100 text-gray-600 hover:bg-gray-200 font-bold px-4 py-3 rounded-2xl text-xs transition"
+                      >
+                        📤 Export JSON
+                      </button>
+                      <button 
+                        onClick={() => setModal({ type: 'add_question', data: null })}
+                        class="bg-primary hover:bg-primary-dark text-white font-bold px-5 py-3 rounded-2xl shadow-md flex items-center gap-1.5 text-xs transition"
+                      >
+                        ➕ Thêm Câu Hỏi
+                      </button>
+                    </div>
+                  </div>
+
+                  {/* Questions Grid */}
+                  <div class="space-y-4">
+                    {questions.length === 0 ? (
+                      <div class="bg-white p-12 rounded-3xl text-center text-gray-400 font-bold border border-emerald-50">
+                        📭 Bài học này chưa có câu hỏi nào.
+                      </div>
+                    ) : (
+                      questions.map((q, idx) => (
+                        <div key={q.id} class="bg-white p-5 rounded-3xl border border-emerald-50 shadow-sm flex items-start justify-between gap-4">
+                          <div class="flex-1">
+                            <div class="flex items-center gap-3 mb-2">
+                              <span class="text-xs font-bold text-gray-400">#{idx + 1}</span>
+                              <span class={`text-[10px] px-2.5 py-0.5 rounded-full font-bold ${q.type === 'multiple_choice' ? 'bg-blue-100 text-blue-700' : q.type === 'fill_blank' ? 'bg-purple-100 text-purple-700' : 'bg-pink-100 text-pink-700'}`}>
+                                {q.type === 'multiple_choice' ? 'Trắc nghiệm' : q.type === 'fill_blank' ? 'Điền từ' : 'Nghe & trả lời'}
+                              </span>
+                              <span class={`text-[10px] px-2.5 py-0.5 rounded-full font-bold ${q.difficulty === 'easy' ? 'bg-emerald-100 text-emerald-700' : q.difficulty === 'medium' ? 'bg-yellow-100 text-yellow-700' : 'bg-red-100 text-red-700'}`}>
+                                {q.difficulty === 'easy' ? 'Dễ' : q.difficulty === 'medium' ? 'Vừa' : 'Khó'}
+                              </span>
+                            </div>
+                            <h5 class="font-bold text-gray-700 text-sm mb-2">{q.question}</h5>
+                            {q.options && q.options.length > 0 && (
+                              <div class="grid grid-cols-2 gap-2 max-w-lg mb-3">
+                                {q.options.map((opt, i) => (
+                                  <div key={i} class={`text-xs px-3 py-2 border rounded-xl font-medium ${opt === q.answer ? 'bg-emerald-50 border-primary/40 text-primary font-bold' : 'border-gray-100 text-gray-500 bg-gray-50'}`}>
+                                    {String.fromCharCode(65 + i)}. {opt} {opt === q.answer && '✓'}
+                                  </div>
+                                ))}
+                              </div>
+                            )}
+                            {q.type === 'listening' && q.script && (
+                              <p class="text-xs text-pink-600 bg-pink-50/50 p-2.5 rounded-xl border border-pink-100/50 mb-2">🗣️ Script: <strong>{q.script}</strong></p>
+                            )}
+                            <div class="text-[11px] text-gray-500 bg-gray-50 p-3 rounded-2xl">
+                              💡 Đáp án: <strong class="text-emerald-700">{q.answer}</strong> {q.explanation && ` | Giải thích: ${q.explanation}`}
+                            </div>
+                          </div>
+
+                          <div class="flex items-center gap-2 flex-shrink-0">
+                            <button 
+                              onClick={() => setModal({ type: 'edit_question', data: q })}
+                              class="text-xs bg-gray-100 hover:bg-gray-200 text-gray-600 font-bold px-3 py-2 rounded-xl transition"
+                            >
+                              ✏️ Sửa
+                            </button>
+                            <button 
+                              onClick={() => handleDeleteQuestion(q.id)}
+                              class="text-xs bg-red-50 hover:bg-red-100 text-red-600 font-bold px-3 py-2 rounded-xl transition"
+                            >
+                              🗑️ Xóa
+                            </button>
+                          </div>
+                        </div>
+                      ))
+                    )}
+                  </div>
+                </div>
+              )}
+
+              {/* TAB: THEORY (Editor) */}
+              {currentTab === 'theory' && !loading && (
+                <div class="bg-white rounded-3xl border border-emerald-50 shadow-sm flex flex-col h-[calc(100vh-180px)] overflow-hidden">
+                  {/* Editor Toolbar */}
+                  <div class="bg-gray-50 border-b border-gray-100 px-6 py-3 flex gap-2 flex-wrap">
+                    <button onClick={() => handleInsertMarkdownHelper('bold')} class="px-3 py-1 bg-white border border-gray-200 rounded-lg text-xs font-bold hover:bg-gray-50">Đậm (Bold)</button>
+                    <button onClick={() => handleInsertMarkdownHelper('italic')} class="px-3 py-1 bg-white border border-gray-200 rounded-lg text-xs font-bold hover:bg-gray-50">Nghiêng (Italic)</button>
+                    <button onClick={() => handleInsertMarkdownHelper('h2')} class="px-3 py-1 bg-white border border-gray-200 rounded-lg text-xs font-bold hover:bg-gray-50">Tiêu đề lớn (H2)</button>
+                    <button onClick={() => handleInsertMarkdownHelper('h3')} class="px-3 py-1 bg-white border border-gray-200 rounded-lg text-xs font-bold hover:bg-gray-50">Tiêu đề nhỏ (H3)</button>
+                    <button onClick={() => handleInsertMarkdownHelper('quote')} class="px-3 py-1 bg-white border border-gray-200 rounded-lg text-xs font-bold hover:bg-gray-50">Trích dẫn (Quote)</button>
+                    <button onClick={() => handleInsertMarkdownHelper('code')} class="px-3 py-1 bg-white border border-gray-200 rounded-lg text-xs font-bold hover:bg-gray-50">Code Block</button>
+                    <button onClick={() => handleInsertMarkdownHelper('table')} class="px-3 py-1 bg-white border border-gray-200 rounded-lg text-xs font-bold hover:bg-gray-50">Bảng (Table)</button>
+                  </div>
+
+                  <div class="flex-1 flex overflow-hidden">
+                    {/* Left Pane: Markdown Editor */}
+                    <div class="w-1/2 border-r border-gray-100 flex flex-col">
+                      <textarea
+                        id="theory-editor-area"
+                        value={theoryContent}
+                        onChange={handleTheoryChange}
+                        placeholder="Soạn thảo lý thuyết bằng Markdown tại đây. Hệ thống sẽ tự động lưu lại..."
+                        class="flex-1 p-6 font-mono text-sm focus:outline-none resize-none custom-scrollbar bg-slate-50/50"
+                      />
+                    </div>
+
+                    {/* Right Pane: Markdown Preview */}
+                    <div class="w-1/2 p-6 overflow-y-auto custom-scrollbar prose max-w-none">
+                      <div class="text-[10px] uppercase font-bold text-gray-400 mb-4 tracking-wider">Preview (Xem trước hiển thị trên App)</div>
+                      <div 
+                        dangerouslySetInnerHTML={{ __html: theoryContent ? marked.parse(theoryContent) : '<p class="text-gray-400 italic">Chưa soạn thảo nội dung lý thuyết.</p>' }}
+                        class="text-gray-700 leading-relaxed text-sm space-y-4"
+                      />
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+          </main>
+
+          {/* MODALS */}
+          {modal && (
+            <div class="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50 overflow-y-auto">
+              <div class="bg-white rounded-3xl max-w-lg w-full p-6 shadow-2xl my-8">
+                <div class="flex justify-between items-center mb-6">
+                  <h3 class="text-lg font-extrabold text-gray-700">
+                    {modal.type === 'add_category' && '➕ Thêm Danh Mục Mới'}
+                    {modal.type === 'edit_category' && '✏️ Chỉnh Sửa Danh Mục'}
+                    {modal.type === 'add_unit' && '➕ Thêm Bài Học Mới'}
+                    {modal.type === 'edit_unit' && '✏️ Chỉnh Sửa Bài Học'}
+                    {modal.type === 'add_question' && '➕ Thêm Câu Hỏi Mới'}
+                    {modal.type === 'edit_question' && '✏️ Chỉnh Sửa Câu Hỏi'}
+                    {modal.type === 'import_json' && '📥 Import JSON Hàng Loạt'}
+                  </h3>
+                  <button onClick={() => setModal(null)} class="text-gray-400 hover:text-gray-600 text-xl font-bold">✕</button>
+                </div>
+
+                {/* MODAL: CATEGORY FORM */}
+                {(modal.type === 'add_category' || modal.type === 'edit_category') && (
+                  <CategoryForm 
+                    initialData={modal.data} 
+                    onSave={(formData) => handleSaveCategory(modal.data ? modal.data.id : formData.id, formData)}
+                    isEdit={modal.type === 'edit_category'}
+                  />
+                )}
+
+                {/* MODAL: UNIT FORM */}
+                {(modal.type === 'add_unit' || modal.type === 'edit_unit') && (
+                  <UnitForm 
+                    initialData={modal.data} 
+                    categories={categories}
+                    onSave={(formData) => handleSaveUnit(modal.data ? modal.data.id : formData.id, formData)}
+                    isEdit={modal.type === 'edit_unit'}
+                  />
+                )}
+
+                {/* MODAL: QUESTION FORM */}
+                {(modal.type === 'add_question' || modal.type === 'edit_question') && (
+                  <QuestionForm 
+                    initialData={modal.data} 
+                    onSave={(formData) => handleSaveQuestion(modal.data?.id, formData)}
+                  />
+                )}
+
+                {/* MODAL: IMPORT JSON */}
+                {modal.type === 'import_json' && (
+                  <ImportJSONForm onImport={handleImportJSON} />
+                )}
+              </div>
+            </div>
+          )}
+        </div>
+      );
+    }
+
+    // Component Form: Category
+    function CategoryForm({ initialData, onSave, isEdit }) {
+      const [id, setId] = useState(initialData?.id || '');
+      const [icon, setIcon] = useState(initialData?.icon || '📁');
+      const [title, setTitle] = useState(initialData?.title || '');
+      const [description, setDescription] = useState(initialData?.description || '');
+      const [sortOrder, setSortOrder] = useState(initialData?.sort_order || 0);
+
+      const handleSubmit = (e) => {
+        e.preventDefault();
+        if (!id.trim() || !title.trim()) {
+          alert('ID và Tên không được để trống');
+          return;
+        }
+        onSave({ id: id.trim(), icon, title, description, sort_order: Number(sortOrder) });
+      };
+
+      return (
+        <form onSubmit={handleSubmit} class="space-y-4">
+          <div>
+            <label class="block text-xs font-bold text-gray-500 mb-1">Mã định danh ID (Slug)</label>
+            <input 
+              type="text" 
+              value={id}
+              onChange={e => setId(e.target.value.toLowerCase().replace(/[^a-z0-9_-]/g, ''))}
+              placeholder="ví dụ: tenses-past"
+              disabled={isEdit}
+              class="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary text-sm font-semibold disabled:bg-gray-100"
+            />
+          </div>
+          <div class="grid grid-cols-3 gap-4">
+            <div class="col-span-1">
+              <label class="block text-xs font-bold text-gray-500 mb-1">Emoji Icon</label>
+              <input 
+                type="text" 
+                value={icon}
+                onChange={e => setIcon(e.target.value)}
+                placeholder="⏰"
+                class="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary text-sm font-semibold text-center"
+              />
+            </div>
+            <div class="col-span-2">
+              <label class="block text-xs font-bold text-gray-500 mb-1">Thứ tự hiển thị</label>
+              <input 
+                type="number" 
+                value={sortOrder}
+                onChange={e => setSortOrder(e.target.value)}
+                placeholder="1"
+                class="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary text-sm font-semibold"
+              />
+            </div>
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-gray-500 mb-1">Tên danh mục</label>
+            <input 
+              type="text" 
+              value={title}
+              onChange={e => setTitle(e.target.value)}
+              placeholder="ví dụ: Các Thì Quá Khứ"
+              class="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary text-sm font-semibold"
+            />
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-gray-500 mb-1">Mô tả ngắn</label>
+            <textarea 
+              value={description}
+              onChange={e => setDescription(e.target.value)}
+              placeholder="Mô tả tóm tắt..."
+              class="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary text-sm font-semibold h-20"
+            />
+          </div>
+          <button type="submit" class="w-full bg-primary hover:bg-primary-dark text-white font-bold py-3 rounded-2xl transition">Lưu Danh Mục</button>
+        </form>
+      );
+    }
+
+    // Component Form: Unit
+    function UnitForm({ initialData, categories, onSave, isEdit }) {
+      const [id, setId] = useState(initialData?.id || '');
+      const [categoryId, setCategoryId] = useState(initialData?.category_id || categories[0]?.id || '');
+      const [icon, setIcon] = useState(initialData?.icon || '📘');
+      const [title, setTitle] = useState(initialData?.title || '');
+      const [description, setDescription] = useState(initialData?.description || '');
+      const [sortOrder, setSortOrder] = useState(initialData?.sort_order || 0);
+      const [isPublished, setIsPublished] = useState(initialData ? initialData.is_published : true);
+
+      const handleSubmit = (e) => {
+        e.preventDefault();
+        if (!id.trim() || !title.trim()) {
+          alert('ID và Tên không được để trống');
+          return;
+        }
+        onSave({ id: id.trim(), category_id: categoryId, icon, title, description, sort_order: Number(sortOrder), is_published: isPublished });
+      };
+
+      return (
+        <form onSubmit={handleSubmit} class="space-y-4">
+          <div>
+            <label class="block text-xs font-bold text-gray-500 mb-1">Mã định danh ID (Slug)</label>
+            <input 
+              type="text" 
+              value={id}
+              onChange={e => setId(e.target.value.toLowerCase().replace(/[^a-z0-9_-]/g, ''))}
+              placeholder="ví dụ: present-simple"
+              disabled={isEdit}
+              class="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary text-sm font-semibold disabled:bg-gray-100"
+            />
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-gray-500 mb-1">Thuộc danh mục</label>
+            <select 
+              value={categoryId}
+              onChange={e => setCategoryId(e.target.value)}
+              class="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary text-sm font-semibold"
+            >
+              {categories.map(c => (
+                <option key={c.id} value={c.id}>{c.title}</option>
+              ))}
+            </select>
+          </div>
+          <div class="grid grid-cols-3 gap-4">
+            <div class="col-span-1">
+              <label class="block text-xs font-bold text-gray-500 mb-1">Emoji Icon</label>
+              <input 
+                type="text" 
+                value={icon}
+                onChange={e => setIcon(e.target.value)}
+                placeholder="📘"
+                class="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary text-sm font-semibold text-center"
+              />
+            </div>
+            <div class="col-span-2">
+              <label class="block text-xs font-bold text-gray-500 mb-1">Thứ tự trong danh mục</label>
+              <input 
+                type="number" 
+                value={sortOrder}
+                onChange={e => setSortOrder(e.target.value)}
+                placeholder="1"
+                class="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary text-sm font-semibold"
+              />
+            </div>
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-gray-500 mb-1">Tên bài học</label>
+            <input 
+              type="text" 
+              value={title}
+              onChange={e => setTitle(e.target.value)}
+              placeholder="ví dụ: Present Simple (Hiện tại đơn)"
+              class="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary text-sm font-semibold"
+            />
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-gray-500 mb-1">Mô tả ngắn</label>
+            <textarea 
+              value={description}
+              onChange={e => setDescription(e.target.value)}
+              placeholder="Thì dùng để mô tả một sự thật hiển nhiên..."
+              class="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary text-sm font-semibold h-20"
+            />
+          </div>
+          <div class="flex items-center gap-2">
+            <input 
+              type="checkbox" 
+              id="is_published_chk"
+              checked={isPublished}
+              onChange={e => setIsPublished(e.target.checked)}
+              class="w-4 h-4 rounded text-primary focus:ring-primary"
+            />
+            <label htmlFor="is_published_chk" class="text-sm font-bold text-gray-600 cursor-pointer">Xuất bản hiển thị trên App học tập</label>
+          </div>
+          <button type="submit" class="w-full bg-primary hover:bg-primary-dark text-white font-bold py-3 rounded-2xl transition">Lưu Bài Học</button>
+        </form>
+      );
+    }
+
+    // Component Form: Question
+    function QuestionForm({ initialData, onSave }) {
+      const [type, setType] = useState(initialData?.type || 'multiple_choice');
+      const [difficulty, setDifficulty] = useState(initialData?.difficulty || 'medium');
+      const [question, setQuestion] = useState(initialData?.question || '');
+      const [optionsInput, setOptionsInput] = useState(initialData?.options ? initialData.options.join('\n') : '');
+      const [answer, setAnswer] = useState(initialData?.answer || '');
+      const [explanation, setExplanation] = useState(initialData?.explanation || '');
+      const [script, setScript] = useState(initialData?.script || '');
+
+      const handleSubmit = (e) => {
+        e.preventDefault();
+        if (!question.trim() || !answer.trim()) {
+          alert('Câu hỏi và đáp án không được để trống');
+          return;
+        }
+
+        let options = [];
+        if (type === 'multiple_choice') {
+          options = optionsInput.split('\n').map(o => o.trim()).filter(o => o);
+          if (options.length < 2) {
+            alert('Trắc nghiệm cần nhập ít nhất 2 lựa chọn');
+            return;
+          }
+          if (!options.includes(answer.trim())) {
+            alert('Đáp án đúng phải nằm trong các lựa chọn');
+            return;
+          }
+        }
+
+        onSave({
+          type,
+          difficulty,
+          question: question.trim(),
+          options: type === 'multiple_choice' ? options : [],
+          answer: answer.trim(),
+          explanation: explanation.trim(),
+          script: type === 'listening' ? script.trim() : ''
+        });
+      };
+
+      return (
+        <form onSubmit={handleSubmit} class="space-y-4 max-h-[70vh] overflow-y-auto custom-scrollbar pr-2">
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-gray-500 mb-1">Loại câu hỏi</label>
+              <select 
+                value={type} 
+                onChange={e => setType(e.target.value)}
+                class="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary text-sm font-semibold"
+              >
+                <option value="multiple_choice">🔘 Trắc nghiệm</option>
+                <option value="fill_blank">✍️ Điền từ vào chỗ trống</option>
+                <option value="listening">🔊 Nghe & Trả lời</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-gray-500 mb-1">Độ khó</label>
+              <select 
+                value={difficulty} 
+                onChange={e => setDifficulty(e.target.value)}
+                class="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary text-sm font-semibold"
+              >
+                <option value="easy">🌱 Dễ (Easy)</option>
+                <option value="medium">🌿 Vừa (Medium)</option>
+                <option value="hard">🌳 Khó (Hard)</option>
+              </select>
+            </div>
+          </div>
+
+          {type === 'listening' && (
+            <div>
+              <label class="block text-xs font-bold text-gray-500 mb-1">Đoạn hội thoại TTS (Phát âm giọng đọc AI)</label>
+              <input 
+                type="text" 
+                value={script}
+                onChange={e => setScript(e.target.value)}
+                placeholder="ví dụ: He plays tennis every afternoon."
+                class="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary text-sm font-semibold"
+              />
+            </div>
+          )}
+
+          <div>
+            <label class="block text-xs font-bold text-gray-500 mb-1">Nội dung câu hỏi (Dùng ___ cho chỗ trống)</label>
+            <textarea 
+              value={question}
+              onChange={e => setQuestion(e.target.value)}
+              placeholder="ví dụ: She ___ (go) to school by bus."
+              class="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary text-sm font-semibold h-16"
+            />
+          </div>
+
+          {type === 'multiple_choice' && (
+            <div>
+              <label class="block text-xs font-bold text-gray-500 mb-1">Các phương án lựa chọn (Nhập mỗi dòng một phương án)</label>
+              <textarea 
+                value={optionsInput}
+                onChange={e => setOptionsInput(e.target.value)}
+                placeholder="go&#10;goes&#10;going&#10;went"
+                class="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary text-sm font-semibold font-mono h-24"
+              />
+            </div>
+          )}
+
+          <div>
+            <label class="block text-xs font-bold text-gray-500 mb-1">Đáp án chính xác</label>
+            <input 
+              type="text" 
+              value={answer}
+              onChange={e => setAnswer(e.target.value)}
+              placeholder="ví dụ: goes"
+              class="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary text-sm font-semibold"
+            />
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-gray-500 mb-1">Giải thích đáp án (Nếu có)</label>
+            <textarea 
+              value={explanation}
+              onChange={e => setExplanation(e.target.value)}
+              placeholder="Chủ ngữ 'she' là ngôi thứ 3 số ít nên động từ 'go' cần thêm 'es'..."
+              class="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary text-sm font-semibold h-16"
+            />
+          </div>
+
+          <button type="submit" class="w-full bg-primary hover:bg-primary-dark text-white font-bold py-3 rounded-2xl transition">Lưu Câu Hỏi</button>
+        </form>
+      );
+    }
+
+    // Component Form: Import JSON
+    function ImportJSONForm({ onImport }) {
+      const [jsonText, setJsonText] = useState('');
+
+      const handleSubmit = (e) => {
+        e.preventDefault();
+        onImport(jsonText);
+      };
+
+      return (
+        <form onSubmit={handleSubmit} class="space-y-4">
+          <div>
+            <label class="block text-xs font-bold text-gray-500 mb-1">Dán khối JSON câu hỏi của bạn</label>
+            <textarea 
+              value={jsonText}
+              onChange={e => setJsonText(e.target.value)}
+              placeholder='[&#10;  {&#10;    "type": "multiple_choice",&#10;    "difficulty": "medium",&#10;    "question": "He ___ football now.",&#10;    "options": ["play", "plays", "playing", "is playing"],&#10;    "answer": "is playing",&#10;    "explanation": "Có now chia HTTD"&#10;  }&#10;]'
+              class="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary text-xs font-mono h-48 custom-scrollbar"
+            />
+          </div>
+          <button type="submit" class="w-full bg-primary hover:bg-primary-dark text-white font-bold py-3 rounded-2xl transition">Import Dữ Liệu</button>
+        </form>
+      );
+    }
+
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<App />);
+  </script>
+</body>
+</html>

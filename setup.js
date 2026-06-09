@@ -52,12 +52,32 @@ async function loadQuestions() {
   if (!currentUnit) return;
   const infoEl = document.getElementById('setup-info');
   try {
-    const r = await fetch(`./content/${currentUnit.id}/questions.json?t=${Date.now()}`);
-    if (!r.ok) throw new Error();
-    allQuestions = await r.json();
+    if (!supabaseClient) {
+      throw new Error('Supabase client chưa được khởi tạo');
+    }
+    const { data, error } = await supabaseClient
+      .from('questions')
+      .select('*')
+      .eq('unit_id', currentUnit.id)
+      .eq('is_active', true);
+      
+    if (error) throw error;
+
+    // Map dữ liệu về cấu trúc chuẩn cũ của câu hỏi
+    allQuestions = (data || []).map(q => ({
+      type: q.type,
+      difficulty: q.difficulty,
+      question: q.question,
+      options: Array.isArray(q.options) ? q.options : JSON.parse(q.options || '[]'),
+      answer: q.answer,
+      explanation: q.explanation || '',
+      script: q.script || ''
+    }));
+
     updateSetupInfo();
   } catch (e) { 
+    console.error('Lỗi tải câu hỏi từ Supabase:', e);
     allQuestions = []; 
-    if (infoEl) infoEl.textContent = '⚠️ Chưa có câu hỏi.'; 
+    if (infoEl) infoEl.textContent = '⚠️ Không thể tải danh sách câu hỏi.'; 
   }
 }
