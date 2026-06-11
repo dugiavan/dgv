@@ -16,6 +16,7 @@
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.2/Sortable.min.js"></script>
   <script src="https://cdn.tailwindcss.com"></script>
 
   <script>
@@ -74,11 +75,17 @@
       const [questions, setQuestions] = useState([]);
       const [selectedUnit, setSelectedUnit] = useState(null);
       const [selectedCategoryFilter, setSelectedCategoryFilter] = useState('all');
+      const [selectedQIds, setSelectedQIds] = useState(new Set());
+      const [commandPaletteOpen, setCommandPaletteOpen] = useState(false);
       
       // Loaders & Alerts
       const [loading, setLoading] = useState(false);
       const [toast, setToast] = useState(null);
       const [modal, setModal] = useState(null); // { type: 'add_category'|'edit_category'|'add_unit'|'edit_unit'|'add_question'|'edit_question'|'import_json', data: any }
+
+      useEffect(() => {
+        setSelectedQIds(new Set());
+      }, [currentTab, selectedUnit]);
 
       // Theory Editing
       const [theoryContent, setTheoryContent] = useState('');
@@ -106,6 +113,166 @@
           fetchData();
         }
       }, [isAuthenticated, supabaseClient]);
+
+      // SortableJS initialization for Categories, Units, Questions
+      useEffect(() => {
+        if (!isAuthenticated || !supabaseClient) return;
+
+        let sortableCat, sortableUnit, sortableQ;
+
+        if (currentTab === 'categories') {
+          const el = document.getElementById('categories-sortable-list');
+          if (el) {
+            sortableCat = new Sortable(el, {
+              handle: '.drag-handle',
+              animation: 150,
+              onEnd: async () => {
+                const items = [...el.querySelectorAll('[data-id]')];
+                const updates = items.map((item, index) => ({
+                  id: item.dataset.id,
+                  sort_order: index + 1,
+                }));
+                setLoading(true);
+                try {
+                  for (const item of updates) {
+                    await supabaseClient
+                      .from('categories')
+                      .update({ sort_order: item.sort_order })
+                      .eq('id', item.id);
+                  }
+                  showToast('Đã cập nhật thứ tự danh mục!');
+                  fetchData();
+                } catch (err) {
+                  showToast('Lỗi cập nhật thứ tự: ' + err.message, 'error');
+                  setLoading(false);
+                }
+              }
+            });
+          }
+        }
+
+        if (currentTab === 'units') {
+          const el = document.getElementById('units-sortable-list');
+          if (el) {
+            sortableUnit = new Sortable(el, {
+              handle: '.drag-handle',
+              animation: 150,
+              onEnd: async () => {
+                const items = [...el.querySelectorAll('[data-id]')];
+                const updates = items.map((item, index) => ({
+                  id: item.dataset.id,
+                  sort_order: index + 1,
+                }));
+                setLoading(true);
+                try {
+                  for (const item of updates) {
+                    await supabaseClient
+                      .from('units')
+                      .update({ sort_order: item.sort_order })
+                      .eq('id', item.id);
+                  }
+                  showToast('Đã cập nhật thứ tự bài học!');
+                  fetchData();
+                } catch (err) {
+                  showToast('Lỗi cập nhật thứ tự: ' + err.message, 'error');
+                  setLoading(false);
+                }
+              }
+            });
+          }
+        }
+
+        if (currentTab === 'questions') {
+          const el = document.getElementById('questions-sortable-list');
+          if (el) {
+            sortableQ = new Sortable(el, {
+              handle: '.drag-handle',
+              animation: 150,
+              onEnd: async () => {
+                const items = [...el.querySelectorAll('[data-id]')];
+                const updates = items.map((item, index) => ({
+                  id: item.dataset.id,
+                  sort_order: index + 1,
+                }));
+                setLoading(true);
+                try {
+                  for (const item of updates) {
+                    await supabaseClient
+                      .from('questions')
+                      .update({ sort_order: item.sort_order })
+                      .eq('id', item.id);
+                  }
+                  showToast('Đã cập nhật thứ tự câu hỏi!');
+                  fetchQuestionsForUnit(selectedUnit.id);
+                } catch (err) {
+                  showToast('Lỗi cập nhật thứ tự: ' + err.message, 'error');
+                  setLoading(false);
+                }
+              }
+            });
+          }
+        }
+
+        return () => {
+          if (sortableCat) sortableCat.destroy();
+          if (sortableUnit) sortableUnit.destroy();
+          if (sortableQ) sortableQ.destroy();
+        };
+      }, [currentTab, categories, units, questions, isAuthenticated, supabaseClient]);
+
+      // Keyboard Shortcuts
+      useEffect(() => {
+        if (!isAuthenticated) return;
+
+        const handleKeyDown = (e) => {
+          const tagName = e.target.tagName;
+          if (['INPUT', 'TEXTAREA', 'SELECT'].includes(tagName)) {
+            if (e.key === 'Escape') {
+              setCommandPaletteOpen(false);
+              setModal(null);
+              e.target.blur();
+            }
+            return;
+          }
+
+          // Ctrl+K or Cmd+K
+          if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
+            e.preventDefault();
+            setCommandPaletteOpen(prev => !prev);
+          }
+
+          // Escape
+          if (e.key === 'Escape') {
+            e.preventDefault();
+            setCommandPaletteOpen(false);
+            setModal(null);
+          }
+
+          // Alt+1/2/3
+          if (e.altKey) {
+            if (e.key === '1') {
+              e.preventDefault();
+              setCurrentTab('dashboard');
+            } else if (e.key === '2') {
+              e.preventDefault();
+              setCurrentTab('categories');
+            } else if (e.key === '3') {
+              e.preventDefault();
+              setCurrentTab('units');
+            }
+          }
+        };
+
+        window.addEventListener('keydown', handleKeyDown);
+        return () => window.removeEventListener('keydown', handleKeyDown);
+      }, [isAuthenticated]);
+
+      useEffect(() => {
+        window.cmsSetModal = setModal;
+        return () => {
+          delete window.cmsSetModal;
+        };
+      }, [setModal]);
 
       const showToast = (message, type = 'success') => {
         setToast({ message, type });
@@ -487,13 +654,21 @@
           {/* Main Area */}
           <main class="flex-1 flex flex-col overflow-hidden bg-bg">
             <header class="bg-white border-b border-emerald-50 px-8 py-4 flex items-center justify-between">
-              <h2 class="text-xl font-extrabold text-gray-700 capitalize">
-                {currentTab === 'dashboard' && 'Dashboard Thống Kê'}
-                {currentTab === 'categories' && 'Danh mục chủ đề'}
-                {currentTab === 'units' && 'Bài học & lý thuyết'}
-                {currentTab === 'questions' && `Quản lý câu hỏi: ${selectedUnit?.title}`}
-                {currentTab === 'theory' && `Lý thuyết bài: ${selectedUnit?.title}`}
-              </h2>
+              <div class="flex items-center gap-4">
+                <h2 class="text-xl font-extrabold text-gray-700 capitalize">
+                  {currentTab === 'dashboard' && 'Dashboard Thống Kê'}
+                  {currentTab === 'categories' && 'Danh mục chủ đề'}
+                  {currentTab === 'units' && 'Bài học & lý thuyết'}
+                  {currentTab === 'questions' && `Quản lý câu hỏi: ${selectedUnit?.title}`}
+                  {currentTab === 'theory' && `Lý thuyết bài: ${selectedUnit?.title}`}
+                </h2>
+                <button
+                  onClick={() => setCommandPaletteOpen(true)}
+                  class="flex items-center gap-2 bg-gray-100 hover:bg-gray-200 text-gray-500 font-bold px-3.5 py-1.5 rounded-xl text-xs transition select-none"
+                >
+                  🔍 Tìm nhanh <kbd class="bg-white border border-gray-200 px-1.5 rounded text-[10px] font-mono">Ctrl+K</kbd>
+                </button>
+              </div>
               {currentTab === 'questions' && (
                 <button 
                   onClick={() => {
@@ -595,11 +770,14 @@
                     </button>
                   </div>
 
-                  <div class="grid grid-cols-2 gap-6">
+                  <div id="categories-sortable-list" class="grid grid-cols-2 gap-6">
                     {categories.map(cat => {
                       const relatedUnits = units.filter(u => u.category_id === cat.id);
                       return (
-                        <div key={cat.id} class="bg-white p-6 rounded-3xl border border-emerald-50 shadow-sm flex items-start gap-4">
+                        <div key={cat.id} data-id={cat.id} class="bg-white p-6 rounded-3xl border border-emerald-50 shadow-sm flex items-start gap-4">
+                          <div class="drag-handle cursor-grab text-gray-300 hover:text-gray-500 self-center text-lg select-none pr-1">
+                            ⠿
+                          </div>
                           <span class="text-4xl p-3 bg-emerald-50 rounded-2xl">{cat.icon || '📁'}</span>
                           <div class="flex-1">
                             <h4 class="text-lg font-extrabold text-gray-700">{cat.title}</h4>
@@ -656,20 +834,47 @@
                     </button>
                   </div>
 
-                  <div class="grid grid-cols-1 gap-4">
+                  <div id="units-sortable-list" class="grid grid-cols-1 gap-4">
                     {units
                       .filter(u => selectedCategoryFilter === 'all' || u.category_id === selectedCategoryFilter)
                       .map(u => {
                         const cat = categories.find(c => c.id === u.category_id);
                         return (
-                          <div key={u.id} class="bg-white p-5 rounded-3xl border border-emerald-50 shadow-sm flex items-center justify-between gap-6 hover:border-emerald-100 transition">
+                          <div key={u.id} data-id={u.id} class="bg-white p-5 rounded-3xl border border-emerald-50 shadow-sm flex items-center justify-between gap-6 hover:border-emerald-100 transition">
                             <div class="flex items-center gap-4">
+                              <div class="drag-handle cursor-grab text-gray-300 hover:text-gray-500 text-lg select-none pr-1">
+                                ⠿
+                              </div>
                               <span class="text-3xl p-3 bg-bg rounded-2xl text-primary">{u.icon || '📘'}</span>
                               <div>
                                 <div class="flex items-center gap-2">
                                   <h4 class="text-base font-extrabold text-gray-700">{u.title}</h4>
-                                  <span class={`text-[10px] px-2 py-0.5 rounded-full font-bold ${u.is_published ? 'bg-emerald-100 text-emerald-700' : 'bg-gray-100 text-gray-500'}`}>
-                                    {u.is_published ? 'Công khai' : 'Nháp'}
+                                  <span
+                                    onClick={async (e) => {
+                                      e.stopPropagation();
+                                      const newStatus = !u.is_published;
+                                      setLoading(true);
+                                      try {
+                                        const { error } = await supabaseClient
+                                          .from('units')
+                                          .update({ is_published: newStatus })
+                                          .eq('id', u.id);
+                                        if (error) throw error;
+                                        showToast(newStatus ? 'Đã công khai bài học' : 'Đã chuyển sang Nháp');
+                                        fetchData();
+                                      } catch (err) {
+                                        showToast('Lỗi cập nhật: ' + err.message, 'error');
+                                        setLoading(false);
+                                      }
+                                    }}
+                                    class={`text-[10px] px-2 py-0.5 rounded-full font-bold cursor-pointer select-none transition hover:ring-2
+                                      ${u.is_published
+                                        ? 'bg-emerald-100 text-emerald-700 hover:ring-emerald-300'
+                                        : 'bg-gray-100 text-gray-500 hover:ring-gray-300'
+                                      }`}
+                                    title="Click để đổi trạng thái"
+                                  >
+                                    {u.is_published ? '✓ Công khai' : '● Nháp'}
                                   </span>
                                 </div>
                                 <p class="text-xs text-gray-400 mt-0.5">{u.description || 'Chưa có mô tả ngắn'}</p>
@@ -774,60 +979,140 @@
                   </div>
 
                   {/* Questions Grid */}
-                  <div class="space-y-4">
+                  <div id="questions-sortable-list" class="space-y-4">
                     {questions.length === 0 ? (
                       <div class="bg-white p-12 rounded-3xl text-center text-gray-400 font-bold border border-emerald-50">
                         📭 Bài học này chưa có câu hỏi nào.
                       </div>
                     ) : (
-                      questions.map((q, idx) => (
-                        <div key={q.id} class="bg-white p-5 rounded-3xl border border-emerald-50 shadow-sm flex items-start justify-between gap-4">
-                          <div class="flex-1">
-                            <div class="flex items-center gap-3 mb-2">
-                              <span class="text-xs font-bold text-gray-400">#{idx + 1}</span>
-                              <span class={`text-[10px] px-2.5 py-0.5 rounded-full font-bold ${q.type === 'multiple_choice' ? 'bg-blue-100 text-blue-700' : q.type === 'fill_blank' ? 'bg-purple-100 text-purple-700' : 'bg-pink-100 text-pink-700'}`}>
-                                {q.type === 'multiple_choice' ? 'Trắc nghiệm' : q.type === 'fill_blank' ? 'Điền từ' : 'Nghe & trả lời'}
-                              </span>
-                              <span class={`text-[10px] px-2.5 py-0.5 rounded-full font-bold ${q.difficulty === 'easy' ? 'bg-emerald-100 text-emerald-700' : q.difficulty === 'medium' ? 'bg-yellow-100 text-yellow-700' : 'bg-red-100 text-red-700'}`}>
-                                {q.difficulty === 'easy' ? 'Dễ' : q.difficulty === 'medium' ? 'Vừa' : 'Khó'}
-                              </span>
-                            </div>
-                            <h5 class="font-bold text-gray-700 text-sm mb-2">{q.question}</h5>
-                            {q.options && q.options.length > 0 && (
-                              <div class="grid grid-cols-2 gap-2 max-w-lg mb-3">
-                                {q.options.map((opt, i) => (
-                                  <div key={i} class={`text-xs px-3 py-2 border rounded-xl font-medium ${opt === q.answer ? 'bg-emerald-50 border-primary/40 text-primary font-bold' : 'border-gray-100 text-gray-500 bg-gray-50'}`}>
-                                    {String.fromCharCode(65 + i)}. {opt} {opt === q.answer && '✓'}
-                                  </div>
-                                ))}
+                      questions.map((q, idx) => {
+                        const isSelected = selectedQIds.has(q.id);
+                        return (
+                          <div key={q.id} data-id={q.id} class="bg-white p-5 rounded-3xl border border-emerald-50 shadow-sm flex items-start justify-between gap-4">
+                            <div class="flex items-center gap-3 self-start mt-1">
+                              <div class="drag-handle cursor-grab text-gray-300 hover:text-gray-500 text-lg select-none pr-1">
+                                ⠿
                               </div>
-                            )}
-                            {q.type === 'listening' && q.script && (
-                              <p class="text-xs text-pink-600 bg-pink-50/50 p-2.5 rounded-xl border border-pink-100/50 mb-2">🗣️ Script: <strong>{q.script}</strong></p>
-                            )}
-                            <div class="text-[11px] text-gray-500 bg-gray-50 p-3 rounded-2xl">
-                              💡 Đáp án: <strong class="text-emerald-700">{q.answer}</strong> {q.explanation && ` | Giải thích: ${q.explanation}`}
+                              <input 
+                                type="checkbox"
+                                checked={isSelected}
+                                onChange={() => {
+                                  const next = new Set(selectedQIds);
+                                  if (next.has(q.id)) {
+                                    next.delete(q.id);
+                                  } else {
+                                    next.add(q.id);
+                                  }
+                                  setSelectedQIds(next);
+                                }}
+                                class="w-4 h-4 rounded text-primary focus:ring-primary cursor-pointer"
+                              />
+                            </div>
+                            <div class="flex-1">
+                              <div class="flex items-center gap-3 mb-2">
+                                <span class="text-xs font-bold text-gray-400">#{idx + 1}</span>
+                                <span class={`text-[10px] px-2.5 py-0.5 rounded-full font-bold ${q.type === 'multiple_choice' ? 'bg-blue-100 text-blue-700' : q.type === 'fill_blank' ? 'bg-purple-100 text-purple-700' : 'bg-pink-100 text-pink-700'}`}>
+                                  {q.type === 'multiple_choice' ? 'Trắc nghiệm' : q.type === 'fill_blank' ? 'Điền từ' : 'Nghe & trả lời'}
+                                </span>
+                                <span class={`text-[10px] px-2.5 py-0.5 rounded-full font-bold ${q.difficulty === 'easy' ? 'bg-emerald-100 text-emerald-700' : q.difficulty === 'medium' ? 'bg-yellow-100 text-yellow-700' : 'bg-red-100 text-red-700'}`}>
+                                  {q.difficulty === 'easy' ? 'Dễ' : q.difficulty === 'medium' ? 'Vừa' : 'Khó'}
+                                </span>
+                              </div>
+                              <h5 class="font-bold text-gray-700 text-sm mb-2">{q.question}</h5>
+                              {q.options && q.options.length > 0 && (
+                                <div class="grid grid-cols-2 gap-2 max-w-lg mb-3">
+                                  {q.options.map((opt, i) => (
+                                    <div key={i} class={`text-xs px-3 py-2 border rounded-xl font-medium ${opt === q.answer ? 'bg-emerald-50 border-primary/40 text-primary font-bold' : 'border-gray-100 text-gray-500 bg-gray-50'}`}>
+                                      {String.fromCharCode(65 + i)}. {opt} {opt === q.answer && '✓'}
+                                    </div>
+                                  ))}
+                                </div>
+                              )}
+                              {q.type === 'listening' && q.script && (
+                                <p class="text-xs text-pink-600 bg-pink-50/50 p-2.5 rounded-xl border border-pink-100/50 mb-2">🗣️ Script: <strong>{q.script}</strong></p>
+                              )}
+                              <div class="text-[11px] text-gray-500 bg-gray-50 p-3 rounded-2xl">
+                                💡 Đáp án: <strong class="text-emerald-700">{q.answer}</strong> {q.explanation && ` | Giải thích: ${q.explanation}`}
+                              </div>
+                            </div>
+
+                            <div class="flex items-center gap-2 flex-shrink-0">
+                              <button 
+                                onClick={() => setModal({ type: 'edit_question', data: q })}
+                                class="text-xs bg-gray-100 hover:bg-gray-200 text-gray-600 font-bold px-3 py-2 rounded-xl transition"
+                              >
+                                ✏️ Sửa
+                              </button>
+                              <button 
+                                onClick={() => handleDeleteQuestion(q.id)}
+                                class="text-xs bg-red-50 hover:bg-red-100 text-red-600 font-bold px-3 py-2 rounded-xl transition"
+                              >
+                                🗑️ Xóa
+                              </button>
                             </div>
                           </div>
-
-                          <div class="flex items-center gap-2 flex-shrink-0">
-                            <button 
-                              onClick={() => setModal({ type: 'edit_question', data: q })}
-                              class="text-xs bg-gray-100 hover:bg-gray-200 text-gray-600 font-bold px-3 py-2 rounded-xl transition"
-                            >
-                              ✏️ Sửa
-                            </button>
-                            <button 
-                              onClick={() => handleDeleteQuestion(q.id)}
-                              class="text-xs bg-red-50 hover:bg-red-100 text-red-600 font-bold px-3 py-2 rounded-xl transition"
-                            >
-                              🗑️ Xóa
-                            </button>
-                          </div>
-                        </div>
-                      ))
+                        );
+                      })
                     )}
                   </div>
+
+                  {/* Bulk Actions Toolbar */}
+                  {selectedQIds.size > 0 && (
+                    <div class="fixed bottom-6 left-1/2 -translate-x-1/2 bg-gray-900 text-white rounded-2xl px-6 py-3 flex items-center gap-4 shadow-2xl z-50">
+                      <span class="font-bold text-sm">Đã chọn {selectedQIds.size} câu</span>
+                      <select
+                        onChange={async (e) => {
+                          const newDiff = e.target.value;
+                          if (!newDiff) return;
+                          setLoading(true);
+                          try {
+                            for (const id of selectedQIds) {
+                              await supabaseClient
+                                .from('questions')
+                                .update({ difficulty: newDiff })
+                                .eq('id', id);
+                            }
+                            setSelectedQIds(new Set());
+                            fetchQuestionsForUnit(selectedUnit.id);
+                            showToast(`Đã đổi độ khó thành công!`);
+                          } catch (err) {
+                            showToast('Lỗi thay đổi độ khó: ' + err.message, 'error');
+                            setLoading(false);
+                          }
+                        }}
+                        class="bg-gray-700 text-white px-3 py-1.5 rounded-xl text-sm font-bold border-none outline-none"
+                      >
+                        <option value="">Đổi độ khó...</option>
+                        <option value="easy">🌱 Dễ</option>
+                        <option value="medium">🌿 Vừa</option>
+                        <option value="hard">🌳 Khó</option>
+                      </select>
+                      <button
+                        onClick={async () => {
+                          if (!confirm(`Xóa ${selectedQIds.size} câu hỏi đã chọn?`)) return;
+                          setLoading(true);
+                          try {
+                            for (const id of selectedQIds) {
+                              await supabaseClient
+                                .from('questions')
+                                .update({ is_active: false })
+                                .eq('id', id);
+                            }
+                            setSelectedQIds(new Set());
+                            fetchQuestionsForUnit(selectedUnit.id);
+                            showToast(`Đã xóa ${selectedQIds.size} câu hỏi`);
+                          } catch (err) {
+                            showToast('Lỗi xóa câu hỏi: ' + err.message, 'error');
+                            setLoading(false);
+                          }
+                        }}
+                        class="bg-red-500 hover:bg-red-600 text-white font-bold px-4 py-1.5 rounded-xl text-sm transition"
+                      >
+                        🗑️ Xóa tất cả
+                      </button>
+                      <button onClick={() => setSelectedQIds(new Set())} class="text-gray-400 hover:text-white text-lg">✕</button>
+                    </div>
+                  )}
                 </div>
               )}
 
@@ -921,6 +1206,24 @@
                 )}
               </div>
             </div>
+          )}
+
+          {/* COMMAND PALETTE */}
+          {commandPaletteOpen && (
+            <CommandPalette
+              units={units}
+              categories={categories}
+              onClose={() => setCommandPaletteOpen(false)}
+              onNavigate={(tab, unit) => {
+                setCurrentTab(tab);
+                if (unit) {
+                  setSelectedUnit(unit);
+                  // Auto fetch when navigating directly to unit tabs
+                  fetchQuestionsForUnit(unit.id);
+                  fetchTheoryForUnit(unit.id);
+                }
+              }}
+            />
           )}
         </div>
       );
@@ -1255,6 +1558,97 @@
           </div>
           <button type="submit" class="w-full bg-primary hover:bg-primary-dark text-white font-bold py-3 rounded-2xl transition">Import Dữ Liệu</button>
         </form>
+      );
+    }
+
+    // Component: Command Palette search overlay
+    function CommandPalette({ units, categories, onClose, onNavigate }) {
+      const [query, setQuery] = useState('');
+      const [selectedIndex, setSelectedIndex] = useState(0);
+      const inputRef = useRef(null);
+
+      useEffect(() => inputRef.current?.focus(), []);
+
+      // Total list of items searchable
+      const items = [
+        ...categories.map(c => ({ label: `📁 ${c.title}`, type: 'category', sub: 'Danh mục', action: () => onNavigate('categories') })),
+        ...units.map(u => ({
+          label: `📘 ${u.title}`,
+          type: 'unit',
+          sub: categories.find(c => c.id === u.category_id)?.title || 'Bài học',
+          action: () => onNavigate('units', u),
+        })),
+        { label: '➕ Thêm bài học mới', type: 'action', sub: 'Tác vụ', action: () => { onNavigate('units'); onClose(); setTimeout(() => window.cmsSetModal({ type: 'add_unit', data: null }), 100); } },
+        { label: '➕ Thêm danh mục mới', type: 'action', sub: 'Tác vụ', action: () => { onNavigate('categories'); onClose(); setTimeout(() => window.cmsSetModal({ type: 'add_category', data: null }), 100); } },
+      ];
+
+      const filtered = query
+        ? items.filter(i => i.label.toLowerCase().includes(query.toLowerCase()))
+        : items.slice(0, 8);
+
+      // Reset selection on search query change
+      useEffect(() => {
+        setSelectedIndex(0);
+      }, [query]);
+
+      // Handle keyboard navigation
+      useEffect(() => {
+        const handleKeyDown = (e) => {
+          if (e.key === 'ArrowDown') {
+            e.preventDefault();
+            setSelectedIndex(prev => (prev + 1) % Math.max(1, filtered.length));
+          } else if (e.key === 'ArrowUp') {
+            e.preventDefault();
+            setSelectedIndex(prev => (prev - 1 + filtered.length) % Math.max(1, filtered.length));
+          } else if (e.key === 'Enter') {
+            e.preventDefault();
+            if (filtered[selectedIndex]) {
+              filtered[selectedIndex].action();
+              onClose();
+            }
+          }
+        };
+        window.addEventListener('keydown', handleKeyDown);
+        return () => window.removeEventListener('keydown', handleKeyDown);
+      }, [filtered, selectedIndex]);
+
+      return (
+        <div class="fixed inset-0 bg-black/60 flex items-start justify-center pt-[20vh] z-50 p-4" onClick={onClose}>
+          <div class="bg-white w-full max-w-xl rounded-3xl shadow-2xl overflow-hidden flex flex-col animate-in fade-in zoom-in duration-150" onClick={e => e.stopPropagation()}>
+            <div class="flex items-center gap-3 px-5 py-4 border-b border-gray-100">
+              <span class="text-gray-400 text-xl">🔍</span>
+              <input
+                ref={inputRef}
+                value={query}
+                onChange={e => setQuery(e.target.value)}
+                placeholder="Tìm Unit, Category hoặc hành động..."
+                class="flex-1 outline-none text-base font-semibold text-gray-700 bg-transparent"
+              />
+              <span class="text-xs text-gray-400 bg-gray-100 px-2 py-1 rounded-lg font-mono">ESC</span>
+            </div>
+            <div class="max-h-80 overflow-y-auto py-2 custom-scrollbar">
+              {filtered.length === 0 && (
+                <div class="text-center py-8 text-gray-400 text-sm font-semibold">Không tìm thấy kết quả</div>
+              )}
+              {filtered.map((item, i) => (
+                <button
+                  key={i}
+                  onClick={() => { item.action(); onClose(); }}
+                  class={`w-full flex items-center justify-between px-5 py-3 text-left transition ${i === selectedIndex ? 'bg-emerald-50' : 'hover:bg-gray-50'}`}
+                >
+                  <span class={`text-sm font-bold ${i === selectedIndex ? 'text-primary' : 'text-gray-700'}`}>{item.label}</span>
+                  {item.sub && <span class="text-xs text-gray-400 font-medium">{item.sub}</span>}
+                </button>
+              ))}
+            </div>
+            <div class="px-5 py-2.5 border-t border-gray-55 flex gap-4 text-[10px] text-gray-400 font-bold bg-gray-50/50">
+              <span>↑↓ Di chuyển</span>
+              <span>↵ Chọn</span>
+              <span>ESC Đóng</span>
+              <span class="ml-auto">Ctrl+K để đóng/mở</span>
+            </div>
+          </div>
+        </div>
       );
     }
 

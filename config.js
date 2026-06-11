@@ -49,10 +49,19 @@ const WORDSHOOTER_CONFIG = {
   FALL_SPEED_BASE: 1.6,
   FALL_SPEED_SCALE: 0.1,
   SHIP_SPEED: 8,
-  LIVES: 3,
+  LIVES: 5,
   XP_PER_CORRECT: 3,
   DEFAULT_SHIP: 'classic',
   DEFAULT_BG: 'space',
   WORD_MIN_COUNT: 8,
+  SESSION_DURATION_MS: 60000,
+  AUTO_AIM_RADIUS: 40,
+  TARGET_GRACE_PERIOD_MS: 800,
+  PHASES: [
+    { name: 'Warm-up', start: 0, maxWords: 4, speedMult: 0.8, xpMult: 1 },
+    { name: 'Normal', start: 15000, maxWords: 5, speedMult: 1.0, xpMult: 1 },
+    { name: 'Hot', start: 30000, maxWords: 6, speedMult: 1.2, xpMult: 2 },
+    { name: 'Fever', start: 45000, maxWords: 6, speedMult: 1.5, xpMult: 3 },
+  ],
 };
 

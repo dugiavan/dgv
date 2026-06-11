@@ -540,21 +540,32 @@
   <div class="page" id="page-wordshooter-game">
     <div class="ws-hud">
       <div class="ws-hud-left">
-        <div class="ws-lives" id="ws-lives">❤️❤️❤️</div>
+        <div class="ws-lives" id="ws-lives">❤️❤️❤️❤️❤️</div>
         <div class="ws-level" id="ws-level">Lv.1</div>
       </div>
       <div class="ws-hud-center">
-        <div class="ws-target-label">Hãy bắn:</div>
+        <div class="ws-target-label">🎯 HÃY BẮN:</div>
         <div class="ws-target-word" id="ws-target-word">---</div>
       </div>
-    <div class="ws-hud-right">
-      <div class="ws-score" id="ws-score">0</div>
-      <div class="ws-combo" id="ws-combo"></div>
-      <button class="ws-btn-pause" onclick="wsPause()" type="button" aria-label="Tạm dừng">⏸</button>
+      <div class="ws-hud-right">
+        <div class="ws-score" id="ws-score">0</div>
+        <div class="ws-combo" id="ws-combo"></div>
+        <button class="ws-btn-pause" onclick="wsPause()" type="button" aria-label="Tạm dừng">⏸</button>
+      </div>
     </div>
-  </div>
-  <div class="ws-mobile-hint" id="ws-mobile-hint">👆 Kéo ngang để di chuyển · Chạm từ để bắn</div>
-  <canvas id="ws-canvas"></canvas>
+    <div class="ws-session-bar">
+      <div class="ws-session-fill" id="ws-session-fill"></div>
+      <div class="ws-phase-badge" id="ws-phase-badge">☀️ Warm-up</div>
+    </div>
+    <div class="ws-mobile-hint" id="ws-mobile-hint">👆 Kéo ngang để di chuyển · Chạm từ để bắn</div>
+    <canvas id="ws-canvas"></canvas>
+    <!-- Combo overlay -->
+    <div class="ws-combo-overlay" id="ws-combo-overlay"></div>
+    <!-- Level Up overlay -->
+    <div class="ws-levelup-overlay" id="ws-levelup-overlay">LEVEL UP!</div>
+    <!-- Miss flash -->
+    <div class="ws-miss-flash" id="ws-miss-flash"></div>
+    <!-- Pause -->
     <div class="ws-pause-overlay" id="ws-pause" style="display:none;">
       <div class="ws-overlay-box">
         <div class="ws-overlay-title">⏸ Tạm dừng</div>
@@ -562,12 +573,14 @@
         <button class="ws-overlay-btn" onclick="wsQuit()">✕ Thoát</button>
       </div>
     </div>
+    <!-- Game Over -->
     <div class="ws-gameover-overlay" id="ws-gameover" style="display:none;">
       <div class="ws-overlay-box ws-gameover-box">
-        <div class="ws-go-emoji">🎮</div>
-        <div class="ws-overlay-title">Game Over!</div>
+        <div class="ws-go-emoji" id="ws-go-emoji">🎮</div>
+        <div class="ws-overlay-title" id="ws-go-title">Game Over!</div>
         <div class="ws-go-stat"><span>Điểm</span><strong id="ws-go-score">0</strong></div>
         <div class="ws-go-stat"><span>Cấp độ</span><strong id="ws-go-level">Lv.1</strong></div>
+        <div class="ws-go-stat"><span>Thời gian</span><strong id="ws-go-time">0s</strong></div>
         <div class="ws-go-xp" id="ws-go-xp">+0 XP</div>
         <div class="ws-go-combo" id="ws-go-combo"></div>
         <button class="ws-overlay-btn ws-overlay-btn-primary" onclick="wsReplay()">🔄 Chơi lại</button>

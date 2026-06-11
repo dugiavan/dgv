@@ -299,24 +299,36 @@ const WS_BACKGROUNDS = {
 const WS_EFFECTS = {
   bullet_green: {
     id: 'bullet_green',
-    duration: 350,
+    duration: 180,
     draw(ctx, x1, y1, x2, y2, progress) {
       const px = x1 + (x2 - x1) * progress;
       const py = y1 + (y2 - y1) * progress;
+      // Trail
+      const trailLen = 0.15;
+      for (let i = 3; i >= 1; i--) {
+        const tp = Math.max(0, progress - trailLen * (i / 3));
+        const tx = x1 + (x2 - x1) * tp;
+        const ty = y1 + (y2 - y1) * tp;
+        ctx.beginPath();
+        ctx.arc(tx, ty, 3 + (3 - i), 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(74, 222, 128, ${0.12 * (4 - i)})`;
+        ctx.fill();
+      }
+      // Main bullet
       ctx.beginPath();
       ctx.arc(px, py, 5, 0, Math.PI * 2);
       ctx.fillStyle = '#4ade80';
       ctx.fill();
       ctx.beginPath();
-      ctx.arc(px, py, 8, 0, Math.PI * 2);
-      ctx.fillStyle = 'rgba(74, 222, 128, 0.3)';
+      ctx.arc(px, py, 9, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(74, 222, 128, 0.25)';
       ctx.fill();
     },
   },
 
   bullet_fire: {
     id: 'bullet_fire',
-    duration: 300,
+    duration: 160,
     draw(ctx, x1, y1, x2, y2, progress) {
       const px = x1 + (x2 - x1) * progress;
       const py = y1 + (y2 - y1) * progress;
@@ -335,7 +347,7 @@ const WS_EFFECTS = {
 
   bullet_dragon: {
     id: 'bullet_dragon',
-    duration: 280,
+    duration: 150,
     draw(ctx, x1, y1, x2, y2, progress) {
       const px = x1 + (x2 - x1) * progress;
       const py = y1 + (y2 - y1) * progress;
