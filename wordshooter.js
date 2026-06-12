@@ -1099,9 +1099,15 @@ async function startWordShooterGame(topicId, skinId, bgId) {
   requestAnimationFrame(() => wsResizeCanvas());
 
   try {
-    const res = await fetch(`./content/flashcards/${topicId}.json?t=${Date.now()}`);
-    if (!res.ok) throw new Error('load failed');
-    const raw = await res.json();
+    let raw = null;
+    if (typeof fetchFlashcardsFromSupabase === 'function') {
+      raw = await fetchFlashcardsFromSupabase(topicId);
+    }
+    if (!raw || raw.length === 0) {
+      const res = await fetch(`./content/flashcards/${topicId}.json?t=${Date.now()}`);
+      if (!res.ok) throw new Error('load failed');
+      raw = await res.json();
+    }
     WS.words = raw.map((item, i) => ({
       id: i,
       english: item.english,
@@ -1284,9 +1290,14 @@ async function openWordShooterTopics() {
 
   try {
     if (WS.topics.length === 0) {
-      const res = await fetch(`./content/flashcards/topics-index.json?t=${Date.now()}`);
-      if (!res.ok) throw new Error();
-      WS.topics = await res.json();
+      if (typeof fetchFlashcardTopicsFromSupabase === 'function') {
+        WS.topics = await fetchFlashcardTopicsFromSupabase();
+      }
+      if (!WS.topics || WS.topics.length === 0) {
+        const res = await fetch(`./content/flashcards/topics-index.json?t=${Date.now()}`);
+        if (!res.ok) throw new Error();
+        WS.topics = await res.json();
+      }
     }
     wsRenderTopics();
   } catch (e) {

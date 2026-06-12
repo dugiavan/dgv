@@ -18,9 +18,14 @@ const BLOG = {
 async function blogInitHome() {
   try {
     if (BLOG.posts.length === 0) {
-      const res = await fetch(`${BLOG_CONFIG.INDEX_URL}?t=${Date.now()}`);
-      if (!res.ok) return;
-      BLOG.posts = await res.json();
+      if (typeof fetchBlogPostsFromSupabase === 'function') {
+        BLOG.posts = await fetchBlogPostsFromSupabase();
+      }
+      if (!BLOG.posts || BLOG.posts.length === 0) {
+        const res = await fetch(`${BLOG_CONFIG.INDEX_URL}?t=${Date.now()}`);
+        if (!res.ok) return;
+        BLOG.posts = await res.json();
+      }
     }
 
     const published = BLOG.posts.filter(p => p.status === 'published');
@@ -74,9 +79,14 @@ async function openBlogList() {
   try {
     // Tải danh sách bài viết nếu chưa có
     if (BLOG.posts.length === 0) {
-      const res = await fetch(`${BLOG_CONFIG.INDEX_URL}?t=${Date.now()}`);
-      if (!res.ok) throw new Error();
-      BLOG.posts = await res.json();
+      if (typeof fetchBlogPostsFromSupabase === 'function') {
+        BLOG.posts = await fetchBlogPostsFromSupabase();
+      }
+      if (!BLOG.posts || BLOG.posts.length === 0) {
+        const res = await fetch(`${BLOG_CONFIG.INDEX_URL}?t=${Date.now()}`);
+        if (!res.ok) throw new Error();
+        BLOG.posts = await res.json();
+      }
     }
 
     // Tải danh sách tags nếu chưa có
@@ -248,23 +258,39 @@ async function openBlogPost(postId) {
 
   showPage('page-blog-post');
 
+  let post = null;
   try {
     // Đảm bảo đã có index bài viết
     if (BLOG.posts.length === 0) {
-      const res = await fetch(`${BLOG_CONFIG.INDEX_URL}?t=${Date.now()}`);
-      BLOG.posts = await res.json();
+      if (typeof fetchBlogPostsFromSupabase === 'function') {
+        BLOG.posts = await fetchBlogPostsFromSupabase();
+      }
+      if (!BLOG.posts || BLOG.posts.length === 0) {
+        const res = await fetch(`${BLOG_CONFIG.INDEX_URL}?t=${Date.now()}`);
+        BLOG.posts = await res.json();
+      }
     }
 
-    const post = BLOG.posts.find(p => p.id === postId);
+    post = BLOG.posts.find(p => p.id === postId);
     if (!post) throw new Error('Không tìm thấy bài viết');
+    if (typeof fetchBlogPostFromSupabase === 'function') {
+      try {
+        post = await fetchBlogPostFromSupabase(postId);
+      } catch (supabaseError) {
+        console.warn('Fallback to Markdown blog post:', supabaseError);
+      }
+    }
 
     BLOG.currentPost = post;
     document.getElementById('blog-detail-nav-title').textContent = post.title;
 
     // Load Markdown content
-    const resMd = await fetch(`${BLOG_CONFIG.POSTS_DIR}${post.id}-${post.slug}.md?t=${Date.now()}`);
-    if (!resMd.ok) throw new Error('Không load được nội dung');
-    const markdownText = await resMd.text();
+    let markdownText = post.content_markdown || '';
+    if (!markdownText) {
+      const resMd = await fetch(`${BLOG_CONFIG.POSTS_DIR}${post.id}-${post.slug}.md?t=${Date.now()}`);
+      if (!resMd.ok) throw new Error('Không load được nội dung');
+      markdownText = await resMd.text();
+    }
 
     // Render header
     const categoryLabel = post.category === 'grammar' ? 'Ngữ Pháp' : post.category === 'tips' ? 'Mẹo Học' : 'Từ Vựng';
@@ -394,10 +420,16 @@ function blogGoToUnit(unitId) {
 function blogGoToFlashcard(topicId) {
   if (typeof startFlashcardTopic === 'function') {
     if (typeof flashcardTopics !== 'undefined' && flashcardTopics.length === 0) {
-      fetch(`./content/flashcards/topics-index.json?t=${Date.now()}`)
-        .then(res => res.json())
+      const topicLoader = typeof fetchFlashcardTopicsFromSupabase === 'function'
+        ? fetchFlashcardTopicsFromSupabase()
+        : Promise.resolve(null);
+      topicLoader
         .then(data => {
-          flashcardTopics = data;
+          if (data && data.length > 0) return data;
+          return fetch(`./content/flashcards/topics-index.json?t=${Date.now()}`).then(res => res.json());
+        })
+        .then(data => {
+          flashcardTopics = data || [];
           startFlashcardTopic(topicId);
         })
         .catch(() => startFlashcardTopic(topicId));

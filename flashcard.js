@@ -43,9 +43,14 @@ async function openFlashcardTopicsPage() {
 
   try {
     if (flashcardTopics.length === 0) {
-      const res = await fetch(`./content/flashcards/topics-index.json?t=${Date.now()}`);
-      if (!res.ok) throw new Error();
-      flashcardTopics = await res.json();
+      if (typeof fetchFlashcardTopicsFromSupabase === 'function') {
+        flashcardTopics = await fetchFlashcardTopicsFromSupabase();
+      }
+      if (!flashcardTopics || flashcardTopics.length === 0) {
+        const res = await fetch(`./content/flashcards/topics-index.json?t=${Date.now()}`);
+        if (!res.ok) throw new Error();
+        flashcardTopics = await res.json();
+      }
     }
     renderFlashcardTopics();
   } catch (e) {
@@ -110,9 +115,14 @@ async function startFlashcardTopic(topicId) {
   if (fcVietnamese) fcVietnamese.textContent = 'Loading...';
 
   try {
-    const res = await fetch(`./content/flashcards/${topicId}.json?t=${Date.now()}`);
-    if (!res.ok) throw new Error();
-    currentFlashcards = await res.json();
+    if (typeof fetchFlashcardsFromSupabase === 'function') {
+      currentFlashcards = await fetchFlashcardsFromSupabase(topicId);
+    }
+    if (!currentFlashcards || currentFlashcards.length === 0) {
+      const res = await fetch(`./content/flashcards/${topicId}.json?t=${Date.now()}`);
+      if (!res.ok) throw new Error();
+      currentFlashcards = await res.json();
+    }
 
     if (currentFlashcards.length === 0) {
       if (fcEnglish) fcEnglish.textContent = 'Không có từ vựng';
@@ -577,4 +587,3 @@ async function syncFlashcardXP(xpEarned, modeName, topicTitle) {
     console.warn('Flashcard XP sync failed:', e);
   }
 }
-

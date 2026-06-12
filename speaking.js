@@ -102,9 +102,14 @@ async function openSpeakingTopicsPage() {
   try {
     if (SPK.topics.length === 0) {
       // ← Đây là nơi load file topics-index.json
-      const res = await fetch(`./content/speaking/topics-index.json?t=${Date.now()}`);
-      if (!res.ok) throw new Error('Không tìm thấy file');
-      SPK.topics = await res.json();
+      if (typeof fetchSpeakingTopicsFromSupabase === 'function') {
+        SPK.topics = await fetchSpeakingTopicsFromSupabase();
+      }
+      if (!SPK.topics || SPK.topics.length === 0) {
+        const res = await fetch(`./content/speaking/topics-index.json?t=${Date.now()}`);
+        if (!res.ok) throw new Error('Không tìm thấy file');
+        SPK.topics = await res.json();
+      }
     }
     renderSpeakingTopics();
   } catch (e) {
@@ -150,9 +155,14 @@ async function openSpeakingSubtopics(topicId) {
   try {
     // Nếu chưa load topic này, fetch từ JSON
     if (!SPK.currentTopic || SPK.currentTopic.id !== topicId) {
-      const res = await fetch(`./content/speaking/${topicId}.json?t=${Date.now()}`);
-      if (!res.ok) throw new Error();
-      SPK.currentTopic = await res.json();
+      if (typeof fetchSpeakingTopicFromSupabase === 'function') {
+        SPK.currentTopic = await fetchSpeakingTopicFromSupabase(topicId);
+      }
+      if (!SPK.currentTopic || !SPK.currentTopic.subtopics) {
+        const res = await fetch(`./content/speaking/${topicId}.json?t=${Date.now()}`);
+        if (!res.ok) throw new Error();
+        SPK.currentTopic = await res.json();
+      }
     }
     renderSpeakingSubtopics();
   } catch (e) {
