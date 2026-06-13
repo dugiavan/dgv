@@ -35,6 +35,9 @@ function startExam() {
   currentQIdx = 0;
   userAnswers = [];
   answered = false;
+  if (typeof isFinishingExam !== 'undefined') {
+    isFinishingExam = false;
+  }
 
   const navTitle = document.getElementById('ex-nav-title');
   if (navTitle && currentUnit) navTitle.textContent = currentUnit.title;
@@ -66,7 +69,11 @@ function renderQuestion() {
     btnC.style.display = '';
     btnC.disabled = true;
   }
-  if (btnN) btnN.style.display = 'none';
+  if (btnN) {
+    btnN.style.display = 'none';
+    btnN.disabled = false; // reset disabled state
+    btnN.textContent = 'Tiếp →';
+  }
 
   answered = false;
   selectedOptIdx = -1;
@@ -205,6 +212,11 @@ function checkAnswer() {
 
 function nextQuestion() {
   if (currentQIdx >= examQuestions.length - 1) {
+    const btnN = document.getElementById('btn-nxt');
+    if (btnN) {
+      btnN.disabled = true;
+      btnN.textContent = 'Đang xử lý...';
+    }
     if (typeof finishExam === 'function') finishExam();
   } else {
     currentQIdx++;

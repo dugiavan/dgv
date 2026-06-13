@@ -70,15 +70,8 @@ async function syncResultToSupabase({ score, total, pct, xpEarned }) {
   }
 }
 
-// Ghi đè hàm cũ trong result.js
-// (Hàm cũ gọi syncResultToSheets, ta thêm gọi Supabase vào sau)
-const _originalSyncToSheets = typeof syncResultToSheets === 'function' ? syncResultToSheets : null;
-
+// Ghi đè hàm cũ trong result.js để chuyển hướng sang lưu ở Supabase
 async function syncResultToSheets(params) {
-  // Vẫn gọi Sheets nếu có cấu hình (để không mất dữ liệu cũ)
-  if (_originalSyncToSheets && CONFIG.SHEETS_URL && !CONFIG.SHEETS_URL.includes('YOUR_SCRIPT_ID')) {
-    _originalSyncToSheets(params);
-  }
-  // Thêm: ghi vào Supabase
   await syncResultToSupabase(params);
 }
+
