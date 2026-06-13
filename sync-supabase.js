@@ -70,8 +70,6 @@ async function syncResultToSupabase({ score, total, pct, xpEarned }) {
   }
 }
 
-// Ghi đè hàm cũ trong result.js để chuyển hướng sang lưu ở Supabase
-async function syncResultToSheets(params) {
-  await syncResultToSupabase(params);
-}
+// Không cần override syncResultToSheets nữa vì result.js đã gọi trực tiếp syncResultToSupabase
+
 
