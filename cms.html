@@ -73,6 +73,8 @@
       const [categories, setCategories] = useState([]);
       const [units, setUnits] = useState([]);
       const [questions, setQuestions] = useState([]);
+      const [difficultyFilter, setDifficultyFilter] = useState('all');
+      const [questionSearch, setQuestionSearch] = useState('');
       const [selectedUnit, setSelectedUnit] = useState(null);
       const [selectedCategoryFilter, setSelectedCategoryFilter] = useState('all');
       const [selectedQIds, setSelectedQIds] = useState(new Set());
@@ -401,6 +403,8 @@
 
       // CRUD Questions
       const fetchQuestionsForUnit = async (unitId) => {
+        setDifficultyFilter('all');
+        setQuestionSearch('');
         setLoading(true);
         try {
           const { data, error } = await supabaseClient
@@ -559,6 +563,20 @@
         saveTheoryNow(newContent, selectedUnit.id);
       };
 
+      const filteredQuestions = questions
+        .filter(q => difficultyFilter === 'all' || q.difficulty === difficultyFilter)
+        .filter(q => {
+          const term = questionSearch.trim().toLowerCase();
+          if (!term) return true;
+          return [
+            q.question,
+            q.answer,
+            q.explanation,
+            q.script,
+            ...(Array.isArray(q.options) ? q.options : [])
+          ].some(value => String(value || '').toLowerCase().includes(term));
+        });
+
       if (!isAuthenticated) {
         return (
           <div class="flex items-center justify-center min-h-screen p-4">
@@ -642,6 +660,30 @@
               >
                 <span>📘</span> Bài Học (Units)
               </button>
+              <button 
+                onClick={() => setCurrentTab('flashcards')}
+                class={`w-full flex items-center gap-3 px-4 py-3 rounded-2xl font-bold transition ${currentTab === 'flashcards' ? 'bg-bg text-primary' : 'text-gray-500 hover:bg-gray-50'}`}
+              >
+                <span>📇</span> Flashcard
+              </button>
+              <button 
+                onClick={() => setCurrentTab('blog')}
+                class={`w-full flex items-center gap-3 px-4 py-3 rounded-2xl font-bold transition ${currentTab === 'blog' ? 'bg-bg text-primary' : 'text-gray-500 hover:bg-gray-50'}`}
+              >
+                <span>📝</span> Blog
+              </button>
+              <button 
+                onClick={() => setCurrentTab('speaking')}
+                class={`w-full flex items-center gap-3 px-4 py-3 rounded-2xl font-bold transition ${currentTab === 'speaking' ? 'bg-bg text-primary' : 'text-gray-500 hover:bg-gray-50'}`}
+              >
+                <span>🎙️</span> Speaking
+              </button>
+              <button 
+                onClick={() => setCurrentTab('users')}
+                class={`w-full flex items-center gap-3 px-4 py-3 rounded-2xl font-bold transition ${currentTab === 'users' ? 'bg-bg text-primary' : 'text-gray-500 hover:bg-gray-50'}`}
+              >
+                <span>👥</span> Người Dùng
+              </button>
             </nav>
 
             <div class="p-4 border-t border-emerald-50">
@@ -661,6 +703,10 @@
                   {currentTab === 'units' && 'Bài học & lý thuyết'}
                   {currentTab === 'questions' && `Quản lý câu hỏi: ${selectedUnit?.title}`}
                   {currentTab === 'theory' && `Lý thuyết bài: ${selectedUnit?.title}`}
+                  {currentTab === 'flashcards' && 'Quản lý Flashcard'}
+                  {currentTab === 'blog' && 'Quản lý Blog'}
+                  {currentTab === 'speaking' && 'Quản lý Speaking'}
+                  {currentTab === 'users' && 'Quản lý học sinh'}
                 </h2>
                 <button
                   onClick={() => setCommandPaletteOpen(true)}
@@ -978,14 +1024,57 @@
                     </div>
                   </div>
 
+                  <div class="flex flex-wrap items-center gap-3 bg-white p-3 rounded-3xl border border-emerald-50 shadow-sm">
+                    <div class="flex flex-wrap gap-2">
+                      {[
+                        { val: 'all', label: '📚 Tất cả' },
+                        { val: 'easy', label: '🌱 Dễ' },
+                        { val: 'medium', label: '🌿 Vừa' },
+                        { val: 'hard', label: '🌳 Khó' },
+                      ].map(d => (
+                        <button
+                          key={d.val}
+                          onClick={() => setDifficultyFilter(d.val)}
+                          class={`px-3 py-1.5 rounded-full text-xs font-bold transition ${
+                            difficultyFilter === d.val
+                              ? 'bg-primary text-white shadow-sm'
+                              : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
+                          }`}
+                        >
+                          {d.label}
+                          {d.val !== 'all' && (
+                            <span class="ml-1 opacity-70">
+                              ({questions.filter(q => q.difficulty === d.val).length})
+                            </span>
+                          )}
+                        </button>
+                      ))}
+                    </div>
+                    <input
+                      value={questionSearch}
+                      onChange={e => setQuestionSearch(e.target.value)}
+                      placeholder="🔍 Tìm nhanh câu hỏi, đáp án, giải thích..."
+                      class="flex-1 min-w-[240px] px-3 py-2 border border-gray-200 rounded-2xl text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-primary"
+                    />
+                    {(difficultyFilter !== 'all' || questionSearch.trim()) && (
+                      <div class="text-xs font-bold text-gray-400">
+                        Hiển thị {filteredQuestions.length}/{questions.length} câu
+                      </div>
+                    )}
+                  </div>
+
                   {/* Questions Grid */}
                   <div id="questions-sortable-list" class="space-y-4">
                     {questions.length === 0 ? (
                       <div class="bg-white p-12 rounded-3xl text-center text-gray-400 font-bold border border-emerald-50">
                         📭 Bài học này chưa có câu hỏi nào.
                       </div>
+                    ) : filteredQuestions.length === 0 ? (
+                      <div class="bg-white p-12 rounded-3xl text-center text-gray-400 font-bold border border-emerald-50">
+                        Không có câu hỏi nào khớp bộ lọc hiện tại.
+                      </div>
                     ) : (
-                      questions.map((q, idx) => {
+                      filteredQuestions.map((q, idx) => {
                         const isSelected = selectedQIds.has(q.id);
                         return (
                           <div key={q.id} data-id={q.id} class="bg-white p-5 rounded-3xl border border-emerald-50 shadow-sm flex items-start justify-between gap-4">
@@ -1152,6 +1241,22 @@
                     </div>
                   </div>
                 </div>
+              )}
+
+              {currentTab === 'flashcards' && !loading && (
+                <TabFlashcards supabaseClient={supabaseClient} showToast={showToast} />
+              )}
+
+              {currentTab === 'blog' && !loading && (
+                <TabBlog supabaseClient={supabaseClient} showToast={showToast} units={units} />
+              )}
+
+              {currentTab === 'speaking' && !loading && (
+                <TabSpeaking supabaseClient={supabaseClient} showToast={showToast} />
+              )}
+
+              {currentTab === 'users' && !loading && (
+                <UserManagementTab supabaseClient={supabaseClient} showToast={showToast} />
               )}
             </div>
           </main>
@@ -1561,6 +1666,634 @@
       );
     }
 
+    function slugifyText(value) {
+      return String(value || '')
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .toLowerCase()
+        .trim()
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-+|-+$/g, '');
+    }
+
+    function TabShellModal({ title, children, onClose }) {
+      return (
+        <div class="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50 overflow-y-auto">
+          <div class="bg-white rounded-3xl max-w-3xl w-full p-6 shadow-2xl my-8">
+            <div class="flex items-center justify-between mb-5">
+              <h3 class="text-lg font-extrabold text-gray-700">{title}</h3>
+              <button onClick={onClose} class="text-gray-400 hover:text-gray-600 text-xl font-bold">×</button>
+            </div>
+            {children}
+          </div>
+        </div>
+      );
+    }
+
+    function TabFlashcards({ supabaseClient, showToast }) {
+      const emptyTopic = { id: '', title: '', description: '', icon: '📇', sort_order: 0, is_published: true };
+      const emptyCard = { english: '', phonetic: '', vietnamese: '', type: 'vocabulary', sort_order: 0 };
+      const [topics, setTopics] = useState([]);
+      const [cards, setCards] = useState([]);
+      const [selectedTopic, setSelectedTopic] = useState(null);
+      const [loadingTab, setLoadingTab] = useState(false);
+      const [modal, setModal] = useState(null);
+      const [importText, setImportText] = useState('');
+
+      useEffect(() => { fetchTopics(); }, []);
+      useEffect(() => { if (selectedTopic) fetchCards(selectedTopic.id); }, [selectedTopic?.id]);
+
+      const fetchTopics = async () => {
+        setLoadingTab(true);
+        const { data, error } = await supabaseClient
+          .from('flashcard_topics')
+          .select('*')
+          .order('sort_order', { ascending: true });
+        setLoadingTab(false);
+        if (error) return showToast(error.message, 'error');
+        setTopics(data || []);
+      };
+
+      const fetchCards = async (topicId) => {
+        const { data, error } = await supabaseClient
+          .from('flashcards')
+          .select('*')
+          .eq('topic_id', topicId)
+          .order('sort_order', { ascending: true });
+        if (error) return showToast(error.message, 'error');
+        setCards(data || []);
+      };
+
+      const syncCardCount = async (topicId, nextCount) => {
+        await supabaseClient.from('flashcard_topics').update({ card_count: nextCount }).eq('id', topicId);
+        setTopics(prev => prev.map(t => t.id === topicId ? { ...t, card_count: nextCount } : t));
+        setSelectedTopic(prev => prev && prev.id === topicId ? { ...prev, card_count: nextCount } : prev);
+      };
+
+      const saveTopic = async (topic) => {
+        const row = {
+          ...topic,
+          id: topic.id.trim(),
+          title: topic.title.trim(),
+          sort_order: Number(topic.sort_order || 0),
+          card_count: Number(topic.card_count || 0)
+        };
+        const { error } = await supabaseClient.from('flashcard_topics').upsert(row);
+        if (error) return showToast(error.message, 'error');
+        showToast('Đã lưu topic flashcard');
+        setModal(null);
+        fetchTopics();
+      };
+
+      const saveCard = async (card) => {
+        const row = {
+          ...card,
+          topic_id: selectedTopic.id,
+          english: card.english.trim(),
+          vietnamese: card.vietnamese.trim(),
+          phonetic: card.phonetic || null,
+          sort_order: Number(card.sort_order || 0)
+        };
+        const { error } = await supabaseClient.from('flashcards').upsert(row);
+        if (error) return showToast(error.message, 'error');
+        showToast('Đã lưu thẻ');
+        setModal(null);
+        const next = await supabaseClient.from('flashcards').select('*', { count: 'exact', head: true }).eq('topic_id', selectedTopic.id);
+        await syncCardCount(selectedTopic.id, next.count || cards.length + 1);
+        fetchCards(selectedTopic.id);
+      };
+
+      const deleteTopic = async (topic) => {
+        if (!confirm(`Xóa topic "${topic.title}" và toàn bộ thẻ bên trong?`)) return;
+        const { error } = await supabaseClient.from('flashcard_topics').delete().eq('id', topic.id);
+        if (error) return showToast(error.message, 'error');
+        setSelectedTopic(null);
+        showToast('Đã xóa topic');
+        fetchTopics();
+      };
+
+      const deleteCard = async (cardId) => {
+        if (!confirm('Xóa thẻ này?')) return;
+        const { error } = await supabaseClient.from('flashcards').delete().eq('id', cardId);
+        if (error) return showToast(error.message, 'error');
+        const nextCount = Math.max(0, cards.length - 1);
+        await syncCardCount(selectedTopic.id, nextCount);
+        fetchCards(selectedTopic.id);
+      };
+
+      const importCards = async () => {
+        try {
+          let rows;
+          const trimmed = importText.trim();
+          if (!trimmed) return;
+          if (trimmed.startsWith('[')) {
+            rows = JSON.parse(trimmed);
+          } else {
+            const lines = trimmed.split(/\r?\n/).filter(Boolean);
+            rows = lines.map(line => {
+              const [english, phonetic, vietnamese, type] = line.split(',').map(x => x.trim());
+              return { english, phonetic, vietnamese, type: type || 'vocabulary' };
+            });
+          }
+          const payload = rows.map((card, index) => ({
+            topic_id: selectedTopic.id,
+            english: card.english,
+            phonetic: card.phonetic || null,
+            vietnamese: card.vietnamese,
+            type: card.type || 'vocabulary',
+            sort_order: Number(card.sort_order ?? cards.length + index + 1)
+          })).filter(card => card.english && card.vietnamese);
+          if (payload.length === 0) throw new Error('Không có thẻ hợp lệ để import');
+          const { error } = await supabaseClient.from('flashcards').insert(payload);
+          if (error) throw error;
+          await syncCardCount(selectedTopic.id, cards.length + payload.length);
+          setImportText('');
+          setModal(null);
+          showToast(`Đã import ${payload.length} thẻ`);
+          fetchCards(selectedTopic.id);
+        } catch (err) {
+          showToast(err.message, 'error');
+        }
+      };
+
+      const exportCards = () => {
+        const payload = cards.map(({ english, phonetic, vietnamese, type }) => ({ english, phonetic, vietnamese, type }));
+        const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `${selectedTopic.id}-flashcards.json`;
+        a.click();
+        URL.revokeObjectURL(url);
+      };
+
+      return (
+        <div class="grid grid-cols-[320px_1fr] gap-6">
+          <div class="bg-white rounded-3xl border border-emerald-50 shadow-sm p-4 h-[calc(100vh-170px)] overflow-y-auto custom-scrollbar">
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="font-extrabold text-gray-700">Topics</h3>
+              <button onClick={() => setModal({ type: 'topic', data: emptyTopic })} class="bg-primary text-white px-3 py-2 rounded-2xl text-xs font-bold">+ Topic</button>
+            </div>
+            {loadingTab ? <div class="text-sm text-gray-400 font-bold">Đang tải...</div> : topics.map(topic => (
+              <button key={topic.id} onClick={() => setSelectedTopic(topic)} class={`w-full text-left p-3 rounded-2xl mb-2 border transition ${selectedTopic?.id === topic.id ? 'bg-emerald-50 border-primary/30' : 'bg-gray-50 border-transparent hover:bg-gray-100'}`}>
+                <div class="flex items-center gap-2">
+                  <span class="text-2xl">{topic.icon || '📇'}</span>
+                  <div class="min-w-0">
+                    <div class="font-extrabold text-sm text-gray-700 truncate">{topic.title}</div>
+                    <div class="text-[11px] text-gray-400 font-bold">{topic.card_count || 0} thẻ · {topic.is_published ? 'Published' : 'Draft'}</div>
+                  </div>
+                </div>
+              </button>
+            ))}
+          </div>
+
+          <div class="space-y-4">
+            {!selectedTopic ? (
+              <div class="bg-white rounded-3xl border border-emerald-50 shadow-sm p-12 text-center text-gray-400 font-bold">Chọn một topic để quản lý thẻ.</div>
+            ) : (
+              <>
+                <div class="bg-white rounded-3xl border border-emerald-50 shadow-sm p-4 flex items-center justify-between">
+                  <div>
+                    <div class="text-xs font-bold text-gray-400">Topic đang chọn</div>
+                    <h3 class="text-xl font-extrabold text-gray-700">{selectedTopic.icon} {selectedTopic.title}</h3>
+                    <p class="text-xs text-gray-500">{selectedTopic.description}</p>
+                  </div>
+                  <div class="flex gap-2">
+                    <button onClick={() => setModal({ type: 'topic', data: selectedTopic })} class="bg-gray-100 px-4 py-2 rounded-2xl text-xs font-bold">Sửa topic</button>
+                    <button onClick={() => deleteTopic(selectedTopic)} class="bg-red-50 text-red-600 px-4 py-2 rounded-2xl text-xs font-bold">Xóa topic</button>
+                    <button onClick={() => setModal({ type: 'import' })} class="bg-blue-50 text-blue-600 px-4 py-2 rounded-2xl text-xs font-bold">Import</button>
+                    <button onClick={exportCards} class="bg-gray-100 px-4 py-2 rounded-2xl text-xs font-bold">Export JSON</button>
+                    <button onClick={() => setModal({ type: 'card', data: { ...emptyCard, sort_order: cards.length + 1 } })} class="bg-primary text-white px-4 py-2 rounded-2xl text-xs font-bold">+ Thẻ</button>
+                  </div>
+                </div>
+
+                <div class="bg-white rounded-3xl border border-emerald-50 shadow-sm overflow-hidden">
+                  <table class="w-full text-sm">
+                    <thead class="bg-gray-50 text-xs text-gray-400 uppercase">
+                      <tr><th class="text-left p-3">English</th><th class="text-left p-3">Phonetic</th><th class="text-left p-3">Vietnamese</th><th class="text-left p-3">Type</th><th class="p-3"></th></tr>
+                    </thead>
+                    <tbody>
+                      {cards.map(card => (
+                        <tr key={card.id} class="border-t border-gray-50">
+                          <td class="p-3 font-bold text-gray-700">{card.english}</td>
+                          <td class="p-3 text-gray-500">{card.phonetic}</td>
+                          <td class="p-3 text-gray-600">{card.vietnamese}</td>
+                          <td class="p-3"><span class="bg-emerald-50 text-primary px-2 py-1 rounded-full text-[10px] font-bold">{card.type}</span></td>
+                          <td class="p-3 text-right">
+                            <button onClick={() => setModal({ type: 'card', data: card })} class="text-blue-600 text-xs font-bold mr-3">Sửa</button>
+                            <button onClick={() => deleteCard(card.id)} class="text-red-600 text-xs font-bold">Xóa</button>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                  {cards.length === 0 && <div class="p-10 text-center text-gray-400 font-bold">Topic này chưa có thẻ.</div>}
+                </div>
+              </>
+            )}
+          </div>
+
+          {modal?.type === 'topic' && <FlashcardTopicModal data={modal.data} onClose={() => setModal(null)} onSave={saveTopic} />}
+          {modal?.type === 'card' && <FlashcardCardModal data={modal.data} onClose={() => setModal(null)} onSave={saveCard} />}
+          {modal?.type === 'import' && (
+            <TabShellModal title="Import Flashcards" onClose={() => setModal(null)}>
+              <textarea value={importText} onChange={e => setImportText(e.target.value)} class="w-full h-64 font-mono text-xs border border-gray-200 rounded-2xl p-4 focus:outline-none focus:ring-2 focus:ring-primary" placeholder='JSON array hoặc CSV: english,phonetic,vietnamese,type' />
+              <button onClick={importCards} class="mt-4 w-full bg-primary text-white font-bold py-3 rounded-2xl">Import</button>
+            </TabShellModal>
+          )}
+        </div>
+      );
+    }
+
+    function FlashcardTopicModal({ data, onClose, onSave }) {
+      const [form, setForm] = useState(data);
+      const set = (key, value) => setForm(prev => ({ ...prev, [key]: value }));
+      return (
+        <TabShellModal title="Topic Flashcard" onClose={onClose}>
+          <form onSubmit={e => { e.preventDefault(); onSave(form); }} class="space-y-4">
+            <div class="grid grid-cols-4 gap-3">
+              <input value={form.icon || ''} onChange={e => set('icon', e.target.value)} class="border rounded-2xl px-3 py-2 text-center" placeholder="Icon" />
+              <input value={form.id || ''} onChange={e => set('id', slugifyText(e.target.value))} class="col-span-3 border rounded-2xl px-3 py-2 font-mono text-sm" placeholder="topic-id" disabled={Boolean(data.id)} />
+            </div>
+            <input value={form.title || ''} onChange={e => set('title', e.target.value)} class="w-full border rounded-2xl px-3 py-2 font-bold" placeholder="Tên topic" />
+            <textarea value={form.description || ''} onChange={e => set('description', e.target.value)} class="w-full border rounded-2xl px-3 py-2 h-24" placeholder="Mô tả" />
+            <div class="flex items-center gap-4">
+              <input type="number" value={form.sort_order || 0} onChange={e => set('sort_order', e.target.value)} class="border rounded-2xl px-3 py-2 w-32" />
+              <label class="flex items-center gap-2 text-sm font-bold text-gray-600"><input type="checkbox" checked={Boolean(form.is_published)} onChange={e => set('is_published', e.target.checked)} /> Published</label>
+            </div>
+            <button class="w-full bg-primary text-white font-bold py-3 rounded-2xl">Lưu topic</button>
+          </form>
+        </TabShellModal>
+      );
+    }
+
+    function FlashcardCardModal({ data, onClose, onSave }) {
+      const [form, setForm] = useState(data);
+      const set = (key, value) => setForm(prev => ({ ...prev, [key]: value }));
+      return (
+        <TabShellModal title="Thẻ Flashcard" onClose={onClose}>
+          <form onSubmit={e => { e.preventDefault(); onSave(form); }} class="space-y-4">
+            <input value={form.english || ''} onChange={e => set('english', e.target.value)} class="w-full border rounded-2xl px-3 py-2 font-bold" placeholder="English" />
+            <input value={form.phonetic || ''} onChange={e => set('phonetic', e.target.value)} class="w-full border rounded-2xl px-3 py-2" placeholder="Phonetic (optional)" />
+            <textarea value={form.vietnamese || ''} onChange={e => set('vietnamese', e.target.value)} class="w-full border rounded-2xl px-3 py-2 h-28" placeholder="Vietnamese" />
+            <div class="grid grid-cols-2 gap-3">
+              <select value={form.type || 'vocabulary'} onChange={e => set('type', e.target.value)} class="border rounded-2xl px-3 py-2">
+                <option value="vocabulary">vocabulary</option>
+                <option value="example">example</option>
+              </select>
+              <input type="number" value={form.sort_order || 0} onChange={e => set('sort_order', e.target.value)} class="border rounded-2xl px-3 py-2" placeholder="Sort order" />
+            </div>
+            <button class="w-full bg-primary text-white font-bold py-3 rounded-2xl">Lưu thẻ</button>
+          </form>
+        </TabShellModal>
+      );
+    }
+
+    function TabBlog({ supabaseClient, showToast, units }) {
+      const emptyPost = {
+        id: '', slug: '', title: '', excerpt: '', content_markdown: '',
+        author: 'Du Gia Văn', author_avatar: '🧑‍🏫', category: 'grammar',
+        cover_emoji: '📝', cover_color: '#e8f5eb', difficulty: 'easy',
+        reading_time: 3, tags: [], linked_unit_id: '', linked_flashcard_id: '',
+        related_post_ids: [], is_featured: false, is_pinned: false,
+        status: 'draft', published_at: null
+      };
+      const [posts, setPosts] = useState([]);
+      const [activePost, setActivePost] = useState(null);
+      const [filters, setFilters] = useState({ status: 'all', category: 'all', search: '' });
+      const [saveStatus, setSaveStatus] = useState('saved');
+      const saveTimer = useRef(null);
+
+      useEffect(() => { fetchPosts(); return () => clearTimeout(saveTimer.current); }, []);
+
+      const fetchPosts = async () => {
+        const { data, error } = await supabaseClient
+          .from('blog_posts')
+          .select('*')
+          .order('created_at', { ascending: false });
+        if (error) return showToast(error.message, 'error');
+        setPosts(data || []);
+      };
+
+      const savePost = async (post, silent = false) => {
+        const row = {
+          ...post,
+          id: post.id || slugifyText(post.title),
+          slug: post.slug || slugifyText(post.title),
+          reading_time: Number(post.reading_time || 3),
+          tags: Array.isArray(post.tags) ? post.tags : String(post.tags || '').split(',').map(t => t.trim()).filter(Boolean),
+          related_post_ids: Array.isArray(post.related_post_ids) ? post.related_post_ids : String(post.related_post_ids || '').split(',').map(t => t.trim()).filter(Boolean),
+          linked_unit_id: post.linked_unit_id || null,
+          linked_flashcard_id: post.linked_flashcard_id || null
+        };
+        setSaveStatus('saving');
+        const { error } = await supabaseClient.from('blog_posts').upsert(row);
+        if (error) {
+          setSaveStatus('unsaved');
+          return showToast(error.message, 'error');
+        }
+        setSaveStatus('saved');
+        setActivePost(row);
+        if (!silent) showToast('Đã lưu bài viết');
+        fetchPosts();
+      };
+
+      const updatePost = (patch) => {
+        setActivePost(prev => {
+          const next = { ...prev, ...patch };
+          clearTimeout(saveTimer.current);
+          if (next.id) {
+            setSaveStatus('unsaved');
+            saveTimer.current = setTimeout(() => savePost(next, true), 1500);
+          }
+          return next;
+        });
+      };
+
+      const togglePublish = async () => {
+        if (!activePost) return;
+        const nextStatus = activePost.status === 'published' ? 'draft' : 'published';
+        await savePost({
+          ...activePost,
+          status: nextStatus,
+          published_at: nextStatus === 'published' ? new Date().toISOString() : activePost.published_at
+        });
+      };
+
+      const deletePost = async (post) => {
+        if (!confirm(`Xóa bài "${post.title}"?`)) return;
+        const { error } = await supabaseClient.from('blog_posts').delete().eq('id', post.id);
+        if (error) return showToast(error.message, 'error');
+        if (activePost?.id === post.id) setActivePost(null);
+        showToast('Đã xóa bài viết');
+        fetchPosts();
+      };
+
+      const visiblePosts = posts
+        .filter(p => filters.status === 'all' || p.status === filters.status)
+        .filter(p => filters.category === 'all' || p.category === filters.category)
+        .filter(p => !filters.search || `${p.title} ${p.excerpt}`.toLowerCase().includes(filters.search.toLowerCase()));
+
+      return (
+        <div class="grid grid-cols-[360px_1fr] gap-6">
+          <div class="bg-white rounded-3xl border border-emerald-50 shadow-sm p-4 h-[calc(100vh-170px)] overflow-y-auto custom-scrollbar">
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="font-extrabold text-gray-700">Bài viết</h3>
+              <button onClick={() => { setActivePost(emptyPost); setSaveStatus('unsaved'); }} class="bg-primary text-white px-3 py-2 rounded-2xl text-xs font-bold">+ Bài</button>
+            </div>
+            <div class="space-y-2 mb-4">
+              <input value={filters.search} onChange={e => setFilters({ ...filters, search: e.target.value })} class="w-full border rounded-2xl px-3 py-2 text-xs" placeholder="Tìm theo tiêu đề..." />
+              <div class="grid grid-cols-2 gap-2">
+                <select value={filters.status} onChange={e => setFilters({ ...filters, status: e.target.value })} class="border rounded-2xl px-3 py-2 text-xs">
+                  <option value="all">Tất cả</option><option value="draft">Draft</option><option value="published">Published</option>
+                </select>
+                <select value={filters.category} onChange={e => setFilters({ ...filters, category: e.target.value })} class="border rounded-2xl px-3 py-2 text-xs">
+                  <option value="all">Mọi category</option><option value="grammar">grammar</option><option value="vocabulary">vocabulary</option><option value="tips">tips</option>
+                </select>
+              </div>
+            </div>
+            {visiblePosts.map(post => (
+              <button key={post.id} onClick={() => setActivePost(post)} class={`w-full text-left p-3 rounded-2xl mb-2 border ${activePost?.id === post.id ? 'bg-emerald-50 border-primary/30' : 'bg-gray-50 border-transparent hover:bg-gray-100'}`}>
+                <div class="flex gap-2">
+                  <span class="text-2xl">{post.cover_emoji || '📝'}</span>
+                  <div class="min-w-0">
+                    <div class="font-extrabold text-sm text-gray-700 truncate">{post.title || 'Chưa có tiêu đề'}</div>
+                    <div class="text-[11px] text-gray-400 font-bold">{post.status} · {post.category} {post.is_featured ? '· ⭐' : ''} {post.is_pinned ? '· 📌' : ''}</div>
+                  </div>
+                </div>
+              </button>
+            ))}
+          </div>
+
+          {!activePost ? (
+            <div class="bg-white rounded-3xl border border-emerald-50 shadow-sm p-12 text-center text-gray-400 font-bold">Chọn hoặc tạo một bài viết.</div>
+          ) : (
+            <div class="space-y-4">
+              <div class="bg-white rounded-3xl border border-emerald-50 shadow-sm p-4 flex items-center justify-between">
+                <div>
+                  <div class={`text-xs font-bold ${saveStatus === 'saved' ? 'text-emerald-600' : 'text-yellow-600'}`}>{saveStatus === 'saved' ? 'Đã lưu' : saveStatus === 'saving' ? 'Đang lưu...' : 'Chưa lưu'}</div>
+                  <h3 class="font-extrabold text-gray-700">{activePost.title || 'Bài viết mới'}</h3>
+                </div>
+                <div class="flex gap-2">
+                  <button onClick={togglePublish} class="bg-blue-50 text-blue-600 px-4 py-2 rounded-2xl text-xs font-bold">{activePost.status === 'published' ? 'Chuyển Draft' : 'Publish'}</button>
+                  <button onClick={() => savePost(activePost)} class="bg-primary text-white px-4 py-2 rounded-2xl text-xs font-bold">Lưu ngay</button>
+                  {activePost.id && <button onClick={() => deletePost(activePost)} class="bg-red-50 text-red-600 px-4 py-2 rounded-2xl text-xs font-bold">Xóa</button>}
+                </div>
+              </div>
+              <div class="bg-white rounded-3xl border border-emerald-50 shadow-sm p-5 space-y-4">
+                <div class="grid grid-cols-2 gap-3">
+                  <input value={activePost.title || ''} onChange={e => updatePost({ title: e.target.value, id: activePost.id || slugifyText(e.target.value), slug: activePost.slug || slugifyText(e.target.value) })} class="border rounded-2xl px-3 py-2 font-bold" placeholder="Tiêu đề" />
+                  <input value={activePost.slug || ''} onChange={e => updatePost({ slug: slugifyText(e.target.value) })} class="border rounded-2xl px-3 py-2 font-mono text-sm" placeholder="slug" />
+                </div>
+                <textarea value={activePost.excerpt || ''} onChange={e => updatePost({ excerpt: e.target.value })} class="w-full border rounded-2xl px-3 py-2 h-20" placeholder="Tóm tắt bài viết" />
+                <div class="grid grid-cols-4 gap-3">
+                  <select value={activePost.category || 'grammar'} onChange={e => updatePost({ category: e.target.value })} class="border rounded-2xl px-3 py-2"><option value="grammar">grammar</option><option value="vocabulary">vocabulary</option><option value="tips">tips</option></select>
+                  <input value={activePost.cover_emoji || ''} onChange={e => updatePost({ cover_emoji: e.target.value })} class="border rounded-2xl px-3 py-2 text-center" placeholder="Emoji" />
+                  <input type="color" value={activePost.cover_color || '#e8f5eb'} onChange={e => updatePost({ cover_color: e.target.value })} class="border rounded-2xl px-3 py-2 h-11" />
+                  <input type="number" value={activePost.reading_time || 3} onChange={e => updatePost({ reading_time: e.target.value })} class="border rounded-2xl px-3 py-2" placeholder="Phút đọc" />
+                </div>
+                <div class="grid grid-cols-3 gap-3">
+                  <input value={activePost.author || ''} onChange={e => updatePost({ author: e.target.value })} class="border rounded-2xl px-3 py-2" placeholder="Tác giả" />
+                  <select value={activePost.linked_unit_id || ''} onChange={e => updatePost({ linked_unit_id: e.target.value })} class="border rounded-2xl px-3 py-2"><option value="">Không link unit</option>{units.map(u => <option key={u.id} value={u.id}>{u.title}</option>)}</select>
+                  <input value={activePost.linked_flashcard_id || ''} onChange={e => updatePost({ linked_flashcard_id: e.target.value })} class="border rounded-2xl px-3 py-2" placeholder="flashcard topic id" />
+                </div>
+                <input value={(activePost.tags || []).join ? activePost.tags.join(', ') : activePost.tags || ''} onChange={e => updatePost({ tags: e.target.value.split(',').map(t => t.trim()).filter(Boolean) })} class="w-full border rounded-2xl px-3 py-2" placeholder="tags, cách nhau bằng dấu phẩy" />
+                <div class="flex gap-6 text-sm font-bold text-gray-600">
+                  <label><input type="checkbox" checked={Boolean(activePost.is_featured)} onChange={e => updatePost({ is_featured: e.target.checked })} /> Featured</label>
+                  <label><input type="checkbox" checked={Boolean(activePost.is_pinned)} onChange={e => updatePost({ is_pinned: e.target.checked })} /> Pinned</label>
+                </div>
+              </div>
+              <div class="bg-white rounded-3xl border border-emerald-50 shadow-sm flex h-[520px] overflow-hidden">
+                <textarea value={activePost.content_markdown || ''} onChange={e => updatePost({ content_markdown: e.target.value })} class="w-1/2 p-5 font-mono text-sm bg-slate-50 border-r border-gray-100 focus:outline-none resize-none" placeholder="Markdown..." />
+                <div class="w-1/2 p-5 overflow-y-auto prose max-w-none" dangerouslySetInnerHTML={{ __html: activePost.content_markdown ? marked.parse(activePost.content_markdown) : '<p class="text-gray-400">Preview Markdown</p>' }} />
+              </div>
+            </div>
+          )}
+        </div>
+      );
+    }
+
+    function TabSpeaking({ supabaseClient, showToast }) {
+      const [topics, setTopics] = useState([]);
+      const [subtopics, setSubtopics] = useState([]);
+      const [sentences, setSentences] = useState([]);
+      const [topic, setTopic] = useState(null);
+      const [subtopic, setSubtopic] = useState(null);
+      const [modal, setModal] = useState(null);
+      const [importText, setImportText] = useState('');
+
+      useEffect(() => { fetchTopics(); }, []);
+      useEffect(() => { if (topic) fetchSubtopics(topic.id); }, [topic?.id]);
+      useEffect(() => { if (subtopic) fetchSentences(subtopic.id); }, [subtopic?.id]);
+
+      const fetchTopics = async () => {
+        const { data, error } = await supabaseClient.from('speaking_topics').select('*').order('sort_order', { ascending: true });
+        if (error) return showToast(error.message, 'error');
+        setTopics(data || []);
+      };
+      const fetchSubtopics = async (topicId) => {
+        const { data, error } = await supabaseClient.from('speaking_subtopics').select('*').eq('topic_id', topicId).order('sort_order', { ascending: true });
+        if (error) return showToast(error.message, 'error');
+        setSubtopics(data || []);
+        setSubtopic(null);
+        setSentences([]);
+      };
+      const fetchSentences = async (subtopicId) => {
+        const { data, error } = await supabaseClient.from('speaking_sentences').select('*').eq('subtopic_id', subtopicId).order('sort_order', { ascending: true });
+        if (error) return showToast(error.message, 'error');
+        setSentences(data || []);
+      };
+      const saveTopic = async (row) => {
+        const payload = { id: row.id, title: row.title, description: row.description || '', icon: row.icon || '🎙️', sort_order: Number(row.sort_order || 0) };
+        const { error } = await supabaseClient.from('speaking_topics').upsert(payload);
+        if (error) return showToast(error.message, 'error');
+        setModal(null); showToast('Đã lưu speaking topic'); fetchTopics();
+      };
+      const saveSubtopic = async (row) => {
+        const payload = { id: row.id, topic_id: topic.id, name: row.name, icon: row.icon || '🗣️', sort_order: Number(row.sort_order || 0) };
+        const { error } = await supabaseClient.from('speaking_subtopics').upsert(payload);
+        if (error) return showToast(error.message, 'error');
+        setModal(null); showToast('Đã lưu subtopic'); fetchSubtopics(topic.id);
+      };
+      const saveSentence = async (row) => {
+        const payload = { ...row, subtopic_id: subtopic.id, sort_order: Number(row.sort_order || 0) };
+        const { error } = await supabaseClient.from('speaking_sentences').upsert(payload);
+        if (error) return showToast(error.message, 'error');
+        setModal(null); showToast('Đã lưu câu'); fetchSentences(subtopic.id);
+      };
+      const deleteRow = async (table, id, after) => {
+        if (!confirm('Xóa mục này?')) return;
+        const { error } = await supabaseClient.from(table).delete().eq('id', id);
+        if (error) return showToast(error.message, 'error');
+        showToast('Đã xóa');
+        after();
+      };
+      const importSentences = async () => {
+        try {
+          const parsed = JSON.parse(importText);
+          const arr = Array.isArray(parsed) ? parsed : parsed.sentences || [];
+          const payload = arr.map((s, i) => ({
+            subtopic_id: subtopic.id,
+            text_en: s.text_en || s.text || '',
+            text_vi: s.text_vi || s.vi || '',
+            type: s.type || 'basic',
+            sort_order: Number(s.sort_order ?? sentences.length + i + 1)
+          })).filter(s => s.text_en && s.text_vi);
+          if (payload.length === 0) throw new Error('Không có câu hợp lệ');
+          const { error } = await supabaseClient.from('speaking_sentences').insert(payload);
+          if (error) throw error;
+          setImportText('');
+          setModal(null);
+          showToast(`Đã import ${payload.length} câu`);
+          fetchSentences(subtopic.id);
+        } catch (err) {
+          showToast(err.message, 'error');
+        }
+      };
+
+      return (
+        <div class="grid grid-cols-3 gap-5">
+          <SpeakingColumn title="Topics" action="+ Topic" onAction={() => setModal({ type: 'topic', data: { id: '', title: '', description: '', icon: '🎙️', sort_order: topics.length + 1 } })}>
+            {topics.map(item => (
+              <button key={item.id} onClick={() => setTopic(item)} class={`w-full text-left p-3 rounded-2xl mb-2 ${topic?.id === item.id ? 'bg-emerald-50 text-primary' : 'bg-white hover:bg-gray-50'} border border-emerald-50`}>
+                <div class="font-extrabold">{item.icon || '🎙️'} {item.title}</div>
+                <div class="text-xs text-gray-400">{item.description}</div>
+              </button>
+            ))}
+          </SpeakingColumn>
+          <SpeakingColumn title={topic ? `Subtopics: ${topic.title}` : 'Subtopics'} action="+ Subtopic" onAction={() => topic && setModal({ type: 'subtopic', data: { id: '', name: '', icon: '🗣️', sort_order: subtopics.length + 1 } })}>
+            {!topic && <div class="text-sm text-gray-400 font-bold">Chọn topic trước.</div>}
+            {subtopics.map(item => (
+              <button key={item.id} onClick={() => setSubtopic(item)} class={`w-full text-left p-3 rounded-2xl mb-2 ${subtopic?.id === item.id ? 'bg-emerald-50 text-primary' : 'bg-white hover:bg-gray-50'} border border-emerald-50`}>
+                <div class="font-extrabold">{item.icon || '🗣️'} {item.name}</div>
+              </button>
+            ))}
+          </SpeakingColumn>
+          <SpeakingColumn title={subtopic ? `Sentences: ${subtopic.name}` : 'Sentences'} action="+ Câu" onAction={() => subtopic && setModal({ type: 'sentence', data: { text_en: '', text_vi: '', type: 'basic', sort_order: sentences.length + 1 } })}>
+            {subtopic && <button onClick={() => setModal({ type: 'import' })} class="mb-3 w-full bg-blue-50 text-blue-600 py-2 rounded-2xl text-xs font-bold">Import JSON sentences</button>}
+            {!subtopic && <div class="text-sm text-gray-400 font-bold">Chọn subtopic trước.</div>}
+            {sentences.map(item => (
+              <div key={item.id} class="bg-white border border-emerald-50 rounded-2xl p-3 mb-2">
+                <div class="font-bold text-gray-700 text-sm">{item.text_en}</div>
+                <div class="text-xs text-gray-500 mt-1">{item.text_vi}</div>
+                <div class="flex gap-3 mt-2 text-xs font-bold">
+                  <button onClick={() => setModal({ type: 'sentence', data: item })} class="text-blue-600">Sửa</button>
+                  <button onClick={() => deleteRow('speaking_sentences', item.id, () => fetchSentences(subtopic.id))} class="text-red-600">Xóa</button>
+                </div>
+              </div>
+            ))}
+          </SpeakingColumn>
+
+          {modal?.type === 'topic' && <SpeakingTopicModal data={modal.data} onClose={() => setModal(null)} onSave={saveTopic} onDelete={modal.data.id ? () => deleteRow('speaking_topics', modal.data.id, fetchTopics) : null} />}
+          {modal?.type === 'subtopic' && <SpeakingSubtopicModal data={modal.data} onClose={() => setModal(null)} onSave={saveSubtopic} onDelete={modal.data.id ? () => deleteRow('speaking_subtopics', modal.data.id, () => fetchSubtopics(topic.id)) : null} />}
+          {modal?.type === 'sentence' && <SpeakingSentenceModal data={modal.data} onClose={() => setModal(null)} onSave={saveSentence} />}
+          {modal?.type === 'import' && (
+            <TabShellModal title="Import Speaking Sentences" onClose={() => setModal(null)}>
+              <textarea value={importText} onChange={e => setImportText(e.target.value)} class="w-full h-64 font-mono text-xs border rounded-2xl p-4" placeholder='[{"text":"Hello","vi":"Xin chào","type":"basic"}]' />
+              <button onClick={importSentences} class="mt-4 w-full bg-primary text-white font-bold py-3 rounded-2xl">Import</button>
+            </TabShellModal>
+          )}
+        </div>
+      );
+    }
+
+    function SpeakingColumn({ title, action, onAction, children }) {
+      return (
+        <div class="bg-white/70 rounded-3xl border border-emerald-50 shadow-sm p-4 h-[calc(100vh-170px)] overflow-y-auto custom-scrollbar">
+          <div class="flex items-center justify-between mb-4">
+            <h3 class="font-extrabold text-gray-700">{title}</h3>
+            <button onClick={onAction} class="bg-primary text-white px-3 py-2 rounded-2xl text-xs font-bold">{action}</button>
+          </div>
+          {children}
+        </div>
+      );
+    }
+
+    function SpeakingTopicModal({ data, onClose, onSave, onDelete }) {
+      const [form, setForm] = useState(data);
+      return (
+        <TabShellModal title="Speaking Topic" onClose={onClose}>
+          <form onSubmit={e => { e.preventDefault(); onSave(form); }} class="space-y-3">
+            <input value={form.id || ''} onChange={e => setForm({ ...form, id: slugifyText(e.target.value) })} disabled={Boolean(data.id)} class="w-full border rounded-2xl px-3 py-2 font-mono" placeholder="topic-id" />
+            <input value={form.title || ''} onChange={e => setForm({ ...form, title: e.target.value })} class="w-full border rounded-2xl px-3 py-2 font-bold" placeholder="Title" />
+            <textarea value={form.description || ''} onChange={e => setForm({ ...form, description: e.target.value })} class="w-full border rounded-2xl px-3 py-2 h-20" placeholder="Description" />
+            <div class="grid grid-cols-2 gap-3"><input value={form.icon || ''} onChange={e => setForm({ ...form, icon: e.target.value })} class="border rounded-2xl px-3 py-2" /><input type="number" value={form.sort_order || 0} onChange={e => setForm({ ...form, sort_order: e.target.value })} class="border rounded-2xl px-3 py-2" /></div>
+            <button class="w-full bg-primary text-white font-bold py-3 rounded-2xl">Lưu</button>
+            {onDelete && <button type="button" onClick={onDelete} class="w-full bg-red-50 text-red-600 font-bold py-3 rounded-2xl">Xóa</button>}
+          </form>
+        </TabShellModal>
+      );
+    }
+
+    function SpeakingSubtopicModal({ data, onClose, onSave, onDelete }) {
+      const [form, setForm] = useState(data);
+      return (
+        <TabShellModal title="Speaking Subtopic" onClose={onClose}>
+          <form onSubmit={e => { e.preventDefault(); onSave(form); }} class="space-y-3">
+            <input value={form.id || ''} onChange={e => setForm({ ...form, id: slugifyText(e.target.value) })} disabled={Boolean(data.id)} class="w-full border rounded-2xl px-3 py-2 font-mono" placeholder="subtopic-id" />
+            <input value={form.name || ''} onChange={e => setForm({ ...form, name: e.target.value })} class="w-full border rounded-2xl px-3 py-2 font-bold" placeholder="Name" />
+            <div class="grid grid-cols-2 gap-3"><input value={form.icon || ''} onChange={e => setForm({ ...form, icon: e.target.value })} class="border rounded-2xl px-3 py-2" /><input type="number" value={form.sort_order || 0} onChange={e => setForm({ ...form, sort_order: e.target.value })} class="border rounded-2xl px-3 py-2" /></div>
+            <button class="w-full bg-primary text-white font-bold py-3 rounded-2xl">Lưu</button>
+            {onDelete && <button type="button" onClick={onDelete} class="w-full bg-red-50 text-red-600 font-bold py-3 rounded-2xl">Xóa</button>}
+          </form>
+        </TabShellModal>
+      );
+    }
+
+    function SpeakingSentenceModal({ data, onClose, onSave }) {
+      const [form, setForm] = useState(data);
+      return (
+        <TabShellModal title="Speaking Sentence" onClose={onClose}>
+          <form onSubmit={e => { e.preventDefault(); onSave(form); }} class="space-y-3">
+            <textarea value={form.text_en || ''} onChange={e => setForm({ ...form, text_en: e.target.value })} class="w-full border rounded-2xl px-3 py-2 h-20 font-bold" placeholder="English sentence" />
+            <textarea value={form.text_vi || ''} onChange={e => setForm({ ...form, text_vi: e.target.value })} class="w-full border rounded-2xl px-3 py-2 h-20" placeholder="Vietnamese meaning" />
+            <div class="grid grid-cols-2 gap-3"><input value={form.type || 'basic'} onChange={e => setForm({ ...form, type: e.target.value })} class="border rounded-2xl px-3 py-2" /><input type="number" value={form.sort_order || 0} onChange={e => setForm({ ...form, sort_order: e.target.value })} class="border rounded-2xl px-3 py-2" /></div>
+            <button class="w-full bg-primary text-white font-bold py-3 rounded-2xl">Lưu</button>
+          </form>
+        </TabShellModal>
+      );
+    }
+
     // Component: Command Palette search overlay
     function CommandPalette({ units, categories, onClose, onNavigate }) {
       const [query, setQuery] = useState('');
@@ -1648,6 +2381,689 @@
               <span class="ml-auto">Ctrl+K để đóng/mở</span>
             </div>
           </div>
+        </div>
+      );
+    }
+
+    // --- USER MANAGEMENT COMPONENTS ---
+
+    function StatCard({ icon, value, label, color }) {
+      const colorClasses = {
+        blue: 'bg-blue-50 text-blue-600 border-blue-100',
+        green: 'bg-emerald-50 text-primary border-emerald-100',
+        purple: 'bg-purple-50 text-purple-600 border-purple-100'
+      };
+      const colorClass = colorClasses[color] || colorClasses.blue;
+      return (
+        <div class="bg-white p-6 rounded-3xl border border-emerald-50/50 shadow-sm flex items-center gap-4">
+          <span class="text-4xl">{icon}</span>
+          <div>
+            <div class="text-3xl font-extrabold text-gray-700">{value}</div>
+            <div class="text-xs font-semibold text-gray-400">{label}</div>
+          </div>
+        </div>
+      );
+    }
+
+    function AddUserForm({ departments, onSave }) {
+      const [email, setEmail] = useState('');
+      const [password, setPassword] = useState('');
+      const [fullName, setFullName] = useState('');
+      const [role, setRole] = useState('student');
+      const [departmentId, setDepartmentId] = useState('');
+
+      const handleSubmit = (e) => {
+        e.preventDefault();
+        if (!email || !password || !fullName) {
+          alert('Vui lòng điền đầy đủ thông tin bắt buộc');
+          return;
+        }
+        if (password.length < 6) {
+          alert('Mật khẩu phải có ít nhất 6 ký tự');
+          return;
+        }
+        onSave({ email, password, full_name: fullName, role, department_id: departmentId || null });
+      };
+
+      return (
+        <form onSubmit={handleSubmit} class="space-y-4">
+          <div class="grid grid-cols-2 gap-4">
+            <div class="col-span-2">
+              <label class="block text-xs font-bold text-gray-500 mb-1">Họ và tên *</label>
+              <input type="text" value={fullName} onChange={e => setFullName(e.target.value)}
+                placeholder="Nguyễn Văn A"
+                class="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-primary" />
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-gray-500 mb-1">Email *</label>
+              <input type="email" value={email} onChange={e => setEmail(e.target.value)}
+                placeholder="hocsinh@example.com"
+                class="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-primary" />
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-gray-500 mb-1">Mật khẩu *</label>
+              <input type="password" value={password} onChange={e => setPassword(e.target.value)}
+                placeholder="Tối thiểu 6 ký tự"
+                class="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-primary" />
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-gray-500 mb-1">Lớp / Khoa</label>
+              <select value={departmentId} onChange={e => setDepartmentId(e.target.value)}
+                class="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-primary bg-white">
+                <option value="">— Chưa xếp lớp —</option>
+                {departments.map(d => <option key={d.id} value={d.id}>{d.name}</option>)}
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-gray-500 mb-1">Vai trò</label>
+              <select value={role} onChange={e => setRole(e.target.value)}
+                class="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-primary bg-white">
+                <option value="student">🎓 Học sinh</option>
+                <option value="teacher">👨‍🏫 Giáo viên</option>
+                <option value="admin">🔑 Quản trị viên</option>
+              </select>
+            </div>
+          </div>
+          <div class="bg-yellow-50 border border-yellow-200 rounded-2xl p-3 text-xs text-yellow-700 font-medium">
+            ⚠️ Tài khoản sẽ được tạo trực tiếp và có thể đăng nhập ngay. Email xác thực bị bỏ qua.
+          </div>
+          <button type="submit"
+            class="w-full bg-primary hover:bg-primary-dark text-white font-bold py-3 rounded-2xl transition shadow-md">
+            ✅ Tạo tài khoản
+          </button>
+        </form>
+      );
+    }
+
+    function EditUserForm({ departments, user, onSave }) {
+      const [fullName, setFullName] = useState(user.profile?.full_name || '');
+      const [role, setRole] = useState(user.profile?.role || 'student');
+      const [departmentId, setDepartmentId] = useState(user.profile?.department_id || '');
+      const [newPassword, setNewPassword] = useState('');
+
+      const handleSubmit = (e) => {
+        e.preventDefault();
+        if (!fullName) {
+          alert('Vui lòng nhập Họ và tên');
+          return;
+        }
+        if (newPassword && newPassword.length < 6) {
+          alert('Mật khẩu mới phải từ 6 ký tự trở lên');
+          return;
+        }
+        onSave({ full_name: fullName, role, department_id: departmentId || null, newPassword });
+      };
+
+      return (
+        <form onSubmit={handleSubmit} class="space-y-4">
+          <div class="grid grid-cols-2 gap-4">
+            <div class="col-span-2">
+              <label class="block text-xs font-bold text-gray-500 mb-1">Họ và tên *</label>
+              <input type="text" value={fullName} onChange={e => setFullName(e.target.value)}
+                class="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-primary" />
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-gray-500 mb-1">Lớp / Khoa</label>
+              <select value={departmentId} onChange={e => setDepartmentId(e.target.value)}
+                class="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-primary bg-white">
+                <option value="">— Chưa xếp lớp —</option>
+                {departments.map(d => <option key={d.id} value={d.id}>{d.name}</option>)}
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-gray-500 mb-1">Vai trò</label>
+              <select value={role} onChange={e => setRole(e.target.value)}
+                class="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-primary bg-white">
+                <option value="student">🎓 Học sinh</option>
+                <option value="teacher">👨‍🏫 Giáo viên</option>
+                <option value="admin">🔑 Quản trị viên</option>
+              </select>
+            </div>
+            <div class="col-span-2">
+              <label class="block text-xs font-bold text-gray-500 mb-1">Mật khẩu mới (Bỏ trống nếu không muốn đổi)</label>
+              <input type="password" value={newPassword} onChange={e => setNewPassword(e.target.value)}
+                placeholder="Nhập mật khẩu mới từ 6 ký tự..."
+                class="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-primary" />
+            </div>
+          </div>
+          <button type="submit"
+            class="w-full bg-primary hover:bg-primary-dark text-white font-bold py-3 rounded-2xl transition shadow-md">
+            💾 Cập nhật
+          </button>
+        </form>
+      );
+    }
+
+    function ImportCSVForm({ onImport }) {
+      const [csvText, setCsvText] = useState('');
+
+      const handleSubmit = (e) => {
+        e.preventDefault();
+        onImport(csvText);
+      };
+
+      return (
+        <form onSubmit={handleSubmit} class="space-y-4">
+          <div>
+            <label class="block text-xs font-bold text-gray-500 mb-2">Định dạng file CSV mẫu:</label>
+            <pre class="bg-gray-50 p-3 rounded-xl text-xs font-mono border border-gray-100 select-all leading-tight">
+              full_name,email,password,department,role{"\n"}
+              Nguyễn Văn A,nva@school.edu.vn,mat_khau_123,Lớp 10A1,student{"\n"}
+              Trần Thị B,ttb@school.edu.vn,mat_khau_456,Lớp 10A2,student
+            </pre>
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-gray-500 mb-1">Dán nội dung CSV của bạn</label>
+            <textarea 
+              value={csvText}
+              onChange={e => setCsvText(e.target.value)}
+              placeholder="Dán nội dung CSV tại đây..."
+              class="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary text-xs font-mono h-48 custom-scrollbar"
+            />
+          </div>
+          <button type="submit" class="w-full bg-primary hover:bg-primary-dark text-white font-bold py-3 rounded-2xl transition">Import Dữ Liệu</button>
+        </form>
+      );
+    }
+
+    function UserDetailModal({ user, supabaseClient, departments, onClose }) {
+      const [results, setResults] = useState([]);
+      const [loading, setLoading] = useState(true);
+
+      useEffect(() => {
+        fetchUserResults();
+      }, []);
+
+      const fetchUserResults = async () => {
+        try {
+          const { data, error } = await supabaseClient
+            .from('results')
+            .select('unit, difficulty, score, total, pct, xp_earned, created_at')
+            .eq('student_id', user.id)
+            .order('created_at', { ascending: false })
+            .limit(20);
+          if (error) throw error;
+          setResults(data || []);
+        } catch (err) {
+          console.error(err);
+        } finally {
+          setLoading(false);
+        }
+      };
+
+      const totalXP = results.reduce((sum, r) => sum + (r.xp_earned || 0), 0);
+      const avgScore = results.length
+        ? Math.round(results.reduce((sum, r) => sum + r.pct, 0) / results.length)
+        : 0;
+
+      return (
+        <div>
+          {/* Header */}
+          <div class="flex items-center gap-4 mb-6">
+            <div class="w-16 h-16 rounded-full bg-emerald-100 flex items-center justify-center text-primary font-extrabold text-2xl">
+              {(user.profile?.full_name || user.email || '?')[0].toUpperCase()}
+            </div>
+            <div>
+              <div class="text-xl font-extrabold text-gray-700">{user.profile?.full_name || '—'}</div>
+              <div class="text-sm text-gray-400">{user.email}</div>
+            </div>
+          </div>
+
+          {/* Stats */}
+          <div class="grid grid-cols-3 gap-3 mb-5">
+            <div class="bg-emerald-50 rounded-2xl p-3 text-center">
+              <div class="text-2xl font-extrabold text-primary">{results.length}</div>
+              <div class="text-xs text-gray-500 font-bold">Bài đã làm</div>
+            </div>
+            <div class="bg-yellow-50 rounded-2xl p-3 text-center">
+              <div class="text-2xl font-extrabold text-yellow-700">{totalXP}</div>
+              <div class="text-xs text-gray-500 font-bold">Tổng XP</div>
+            </div>
+            <div class="bg-blue-50 rounded-2xl p-3 text-center">
+              <div class="text-2xl font-extrabold text-blue-700">{avgScore}%</div>
+              <div class="text-xs text-gray-500 font-bold">Điểm TB</div>
+            </div>
+          </div>
+
+          {/* Results Table */}
+          <div class="text-xs font-bold text-gray-500 mb-2 uppercase tracking-wider">20 bài làm gần nhất</div>
+          <div class="max-h-60 overflow-y-auto space-y-2 custom-scrollbar">
+            {loading && <div class="text-center py-4 text-gray-400">Đang tải...</div>}
+            {!loading && results.length === 0 && (
+              <div class="text-center py-4 text-gray-400 font-medium">Chưa có bài làm nào</div>
+            )}
+            {results.map((r, i) => (
+              <div key={i} class="flex items-center justify-between bg-gray-50 rounded-2xl px-4 py-2.5">
+                <div>
+                  <div class="text-sm font-bold text-gray-700">{r.unit}</div>
+                  <div class="text-xs text-gray-400">{new Date(r.created_at).toLocaleDateString('vi-VN')}</div>
+                </div>
+                <div class="flex items-center gap-3 text-xs font-bold">
+                  <span class={`px-2.5 py-1 rounded-full ${r.pct >= 80 ? 'bg-emerald-100 text-emerald-700' : r.pct >= 50 ? 'bg-yellow-100 text-yellow-700' : 'bg-red-100 text-red-700'}`}>
+                    {r.pct}%
+                  </span>
+                  <span class="text-gray-400">+{r.xp_earned || 0} XP</span>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <button onClick={onClose} class="w-full mt-5 bg-gray-100 hover:bg-gray-200 text-gray-600 font-bold py-3 rounded-2xl transition">
+            Đóng
+          </button>
+        </div>
+      );
+    }
+
+    function UserManagementTab({ supabaseClient, showToast }) {
+      const [users, setUsers] = useState([]);
+      const [departments, setDepartments] = useState([]);
+      const [loading, setLoading] = useState(false);
+      const [searchQuery, setSearchQuery] = useState('');
+      const [filterDept, setFilterDept] = useState('all');
+      const [filterRole, setFilterRole] = useState('all');
+      const [modal, setModal] = useState(null); // null | 'add' | { type: 'edit', user } | { type: 'detail', user } | 'import_csv'
+
+      useEffect(() => {
+        fetchUsers();
+        fetchDepartments();
+      }, []);
+
+      const fetchDepartments = async () => {
+        try {
+          const { data, error } = await supabaseClient
+            .from('departments')
+            .select('*')
+            .order('name');
+          if (error) throw error;
+          setDepartments(data || []);
+        } catch (err) {
+          console.error('Error fetching departments:', err);
+        }
+      };
+
+      const fetchUsers = async () => {
+        setLoading(true);
+        try {
+          const { data: { users: authUsers }, error } = await supabaseClient.auth.admin.listUsers({
+            page: 1,
+            perPage: 1000
+          });
+          if (error) throw error;
+
+          const { data: profiles, error: profileErr } = await supabaseClient
+            .from('profiles')
+            .select('id, full_name, role, department_id, updated_at');
+          if (profileErr) throw profileErr;
+
+          const profileMap = Object.fromEntries((profiles || []).map(p => [p.id, p]));
+          const merged = (authUsers || []).map(u => ({
+            ...u,
+            profile: profileMap[u.id] || null
+          }));
+
+          setUsers(merged);
+        } catch (err) {
+          showToast('Lỗi tải danh sách học sinh: ' + err.message, 'error');
+        } finally {
+          setLoading(false);
+        }
+      };
+
+      const handleCreateUser = async ({ email, password, full_name, role, department_id }) => {
+        setLoading(true);
+        try {
+          const { data, error: authErr } = await supabaseClient.auth.admin.createUser({
+            email,
+            password,
+            email_confirm: true,
+            user_metadata: { full_name }
+          });
+          if (authErr) throw authErr;
+
+          const userId = data.user.id;
+
+          const { error: profileErr } = await supabaseClient
+            .from('profiles')
+            .insert({
+              id: userId,
+              full_name,
+              role: role || 'student',
+              department_id: department_id || null
+            });
+          if (profileErr) {
+            await supabaseClient.auth.admin.deleteUser(userId);
+            throw profileErr;
+          }
+
+          showToast(`✅ Đã tạo tài khoản: ${email}`);
+          setModal(null);
+          fetchUsers();
+        } catch (err) {
+          showToast('Lỗi tạo tài khoản: ' + err.message, 'error');
+        } finally {
+          setLoading(false);
+        }
+      };
+
+      const handleDeleteUser = async (userId, displayName) => {
+        if (!confirm(`Xóa tài khoản "${displayName}"?\nThao tác này không thể hoàn tác.`)) return;
+
+        setLoading(true);
+        try {
+          const { error } = await supabaseClient.auth.admin.deleteUser(userId);
+          if (error) throw error;
+
+          await supabaseClient.from('profiles').delete().eq('id', userId);
+
+          showToast(`🗑️ Đã xóa tài khoản ${displayName}`);
+          fetchUsers();
+        } catch (err) {
+          showToast('Lỗi xóa tài khoản: ' + err.message, 'error');
+        } finally {
+          setLoading(false);
+        }
+      };
+
+      const handleUpdateUser = async (userId, { full_name, role, department_id, newPassword }) => {
+        setLoading(true);
+        try {
+          if (newPassword && newPassword.trim()) {
+            const { error } = await supabaseClient.auth.admin.updateUserById(userId, {
+              password: newPassword.trim()
+            });
+            if (error) throw error;
+          }
+
+          const { error: profileErr } = await supabaseClient
+            .from('profiles')
+            .upsert({ id: userId, full_name, role, department_id });
+          if (profileErr) throw profileErr;
+
+          showToast('✅ Cập nhật thông tin thành công');
+          setModal(null);
+          fetchUsers();
+        } catch (err) {
+          showToast('Lỗi cập nhật: ' + err.message, 'error');
+        } finally {
+          setLoading(false);
+        }
+      };
+
+      const handleImportCSV = async (csvText) => {
+        setLoading(true);
+        const lines = csvText.trim().split('\n').filter(Boolean);
+        if (lines.length <= 1) {
+          showToast('File CSV trống hoặc sai định dạng', 'error');
+          setLoading(false);
+          return;
+        }
+        
+        const header = lines[0].split(',').map(s => s.trim().toLowerCase());
+        const fullNameIdx = header.indexOf('full_name');
+        const emailIdx = header.indexOf('email');
+        const passwordIdx = header.indexOf('password');
+        const deptIdx = header.indexOf('department');
+        const roleIdx = header.indexOf('role');
+
+        if (fullNameIdx === -1 || emailIdx === -1 || passwordIdx === -1) {
+          showToast('Thiếu cột bắt buộc: full_name, email, password', 'error');
+          setLoading(false);
+          return;
+        }
+
+        const rows = lines.slice(1).map(line => {
+          const parts = line.split(',').map(s => s.trim());
+          return {
+            full_name: parts[fullNameIdx] || '',
+            email: parts[emailIdx] || '',
+            password: parts[passwordIdx] || '',
+            department: deptIdx !== -1 ? parts[deptIdx] : '',
+            role: roleIdx !== -1 ? parts[roleIdx] : 'student'
+          };
+        });
+
+        let successCount = 0;
+        let errorCount = 0;
+
+        for (const row of rows) {
+          if (!row.email || !row.password || !row.full_name) {
+            errorCount++;
+            continue;
+          }
+          try {
+            const deptObj = departments.find(d => d.name.toLowerCase() === row.department.toLowerCase());
+            
+            const { data, error: authErr } = await supabaseClient.auth.admin.createUser({
+              email: row.email,
+              password: row.password,
+              email_confirm: true,
+              user_metadata: { full_name: row.full_name }
+            });
+            if (authErr) throw authErr;
+
+            const userId = data.user.id;
+            const { error: profileErr } = await supabaseClient
+              .from('profiles')
+              .insert({
+                id: userId,
+                full_name: row.full_name,
+                role: row.role || 'student',
+                department_id: deptObj?.id || null
+              });
+            if (profileErr) {
+              await supabaseClient.auth.admin.deleteUser(userId);
+              throw profileErr;
+            }
+            successCount++;
+          } catch (err) {
+            console.error('Import row error:', err);
+            errorCount++;
+          }
+        }
+
+        showToast(`Import xong: ${successCount} thành công, ${errorCount} lỗi`);
+        setModal(null);
+        fetchUsers();
+        setLoading(false);
+      };
+
+      const handleExportCSV = () => {
+        const header = 'ID,Full Name,Email,Role,Department,Created At\n';
+        const rows = filteredUsers.map(u => {
+          const dept = departments.find(d => d.id == u.profile?.department_id);
+          return [
+            u.id,
+            `"${(u.profile?.full_name || '').replace(/"/g, '""')}"`,
+            u.email,
+            u.profile?.role || 'student',
+            `"${(dept?.name || '').replace(/"/g, '""')}"`,
+            u.created_at
+          ].join(',');
+        }).join('\n');
+
+        const blob = new Blob([header + rows], { type: 'text/csv;charset=utf-8;' });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.setAttribute('href', url);
+        link.setAttribute('download', 'student_list.csv');
+        link.style.visibility = 'hidden';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      };
+
+      const filteredUsers = users.filter(u => {
+        const name = u.profile?.full_name?.toLowerCase() || '';
+        const email = u.email?.toLowerCase() || '';
+        const matchSearch = name.includes(searchQuery.toLowerCase()) 
+                         || email.includes(searchQuery.toLowerCase());
+        const matchDept = filterDept === 'all' || u.profile?.department_id == filterDept;
+        const matchRole = filterRole === 'all' || u.profile?.role === filterRole;
+        return matchSearch && matchDept && matchRole;
+      });
+
+      return (
+        <div class="space-y-6">
+          {/* Stats Row */}
+          <div class="grid grid-cols-3 gap-6">
+            <StatCard icon="👥" value={users.length} label="Tổng người dùng" color="blue" />
+            <StatCard icon="🎓" value={users.filter(u => (u.profile?.role || 'student') === 'student').length} label="Tổng học sinh" color="green" />
+            <StatCard icon="🔑" value={users.filter(u => u.profile?.role === 'admin').length} label="Quản trị viên" color="purple" />
+          </div>
+
+          {/* Filter Bar */}
+          <div class="bg-white p-4 rounded-3xl border border-emerald-50 shadow-sm flex gap-3 items-center flex-wrap">
+            <input
+              type="text"
+              placeholder="🔍 Tìm tên hoặc email..."
+              value={searchQuery}
+              onChange={e => setSearchQuery(e.target.value)}
+              class="flex-1 min-w-[200px] px-4 py-2.5 rounded-xl border border-gray-200 text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-primary"
+            />
+            <select value={filterDept} onChange={e => setFilterDept(e.target.value)}
+              class="px-4 py-2.5 rounded-xl border border-gray-200 text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-primary bg-white">
+              <option value="all">📚 Tất cả lớp</option>
+              {departments.map(d => <option key={d.id} value={d.id}>{d.name}</option>)}
+            </select>
+            <select value={filterRole} onChange={e => setFilterRole(e.target.value)}
+              class="px-4 py-2.5 rounded-xl border border-gray-200 text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-primary bg-white">
+              <option value="all">🎭 Tất cả vai trò</option>
+              <option value="student">Học sinh</option>
+              <option value="teacher">Giáo viên</option>
+              <option value="admin">Quản trị</option>
+            </select>
+            <div class="flex gap-2">
+              <button
+                onClick={() => setModal('add')}
+                class="bg-primary hover:bg-primary-dark text-white font-bold px-4 py-2.5 rounded-2xl shadow-md text-sm transition flex items-center gap-1.5"
+              >
+                ➕ Thêm học sinh
+              </button>
+              <button
+                onClick={() => setModal('import_csv')}
+                class="bg-blue-50 text-blue-600 hover:bg-blue-100 font-bold px-4 py-2.5 rounded-2xl text-sm transition"
+              >
+                📥 Import CSV
+              </button>
+              <button
+                onClick={handleExportCSV}
+                class="bg-gray-100 text-gray-600 hover:bg-gray-200 font-bold px-4 py-2.5 rounded-2xl text-sm transition"
+              >
+                📤 Export CSV
+              </button>
+            </div>
+          </div>
+
+          {/* User Table */}
+          <div class="bg-white rounded-3xl border border-emerald-50 shadow-sm overflow-hidden">
+            <div class="overflow-x-auto">
+              <table class="w-full text-sm">
+                <thead class="bg-gray-50 border-b border-gray-100">
+                  <tr>
+                    <th class="text-left px-6 py-3 font-bold text-gray-500 text-xs uppercase">Người dùng</th>
+                    <th class="text-left px-6 py-3 font-bold text-gray-500 text-xs uppercase">Email</th>
+                    <th class="text-left px-6 py-3 font-bold text-gray-500 text-xs uppercase">Lớp</th>
+                    <th class="text-left px-6 py-3 font-bold text-gray-500 text-xs uppercase">Vai trò</th>
+                    <th class="text-left px-6 py-3 font-bold text-gray-500 text-xs uppercase">Đăng ký</th>
+                    <th class="text-left px-6 py-3 font-bold text-gray-500 text-xs uppercase">Hành động</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-50">
+                  {filteredUsers.length === 0 ? (
+                    <tr>
+                      <td colspan="6" class="px-6 py-10 text-center text-gray-400 font-bold">
+                        Không tìm thấy người dùng nào phù hợp.
+                      </td>
+                    </tr>
+                  ) : (
+                    filteredUsers.map(user => {
+                      const dept = departments.find(d => d.id == user.profile?.department_id);
+                      return (
+                        <tr key={user.id} class="hover:bg-gray-50/50 transition">
+                          <td class="px-6 py-4">
+                            <div class="flex items-center gap-3">
+                              <div class="w-9 h-9 rounded-full bg-emerald-100 flex items-center justify-center text-primary font-extrabold text-sm">
+                                {(user.profile?.full_name || user.email || '?')[0].toUpperCase()}
+                              </div>
+                              <div>
+                                <div class="font-bold text-gray-700">{user.profile?.full_name || '—'}</div>
+                                <div class="text-xs text-gray-400 font-mono">{user.id.slice(0, 8)}...</div>
+                              </div>
+                            </div>
+                          </td>
+                          <td class="px-6 py-4 text-gray-600 font-medium">{user.email}</td>
+                          <td class="px-6 py-4">
+                            <span class="bg-blue-50 text-blue-700 px-2.5 py-1 rounded-full text-xs font-bold">
+                              {dept?.name || '—'}
+                            </span>
+                          </td>
+                          <td class="px-6 py-4">
+                            <span class={`px-2.5 py-1 rounded-full text-xs font-bold
+                              ${user.profile?.role === 'admin' ? 'bg-red-100 text-red-700' :
+                                user.profile?.role === 'teacher' ? 'bg-purple-100 text-purple-700' :
+                                'bg-gray-100 text-gray-600'}`}>
+                              {user.profile?.role || 'student'}
+                            </span>
+                          </td>
+                          <td class="px-6 py-4 text-xs text-gray-400 font-medium">
+                            {new Date(user.created_at).toLocaleDateString('vi-VN')}
+                          </td>
+                          <td class="px-6 py-4">
+                            <div class="flex items-center gap-2">
+                              <button
+                                onClick={() => setModal({ type: 'detail', user })}
+                                class="text-xs bg-blue-50 text-blue-600 hover:bg-blue-100 font-bold px-3 py-1.5 rounded-xl transition"
+                              >
+                                📊 Chi tiết
+                              </button>
+                              <button
+                                onClick={() => setModal({ type: 'edit', user })}
+                                class="text-xs bg-gray-100 text-gray-600 hover:bg-gray-200 font-bold px-3 py-1.5 rounded-xl transition"
+                              >
+                                ✏️ Sửa
+                              </button>
+                              <button
+                                onClick={() => handleDeleteUser(user.id, user.profile?.full_name || user.email)}
+                                class="text-xs bg-red-50 text-red-600 hover:bg-red-100 font-bold px-3 py-1.5 rounded-xl transition"
+                              >
+                                🗑️ Xóa
+                              </button>
+                            </div>
+                          </td>
+                        </tr>
+                      );
+                    })
+                  )}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          {/* MODALS */}
+          {modal === 'add' && (
+            <TabShellModal title="➕ Tạo tài khoản người dùng" onClose={() => setModal(null)}>
+              <AddUserForm departments={departments} onSave={handleCreateUser} />
+            </TabShellModal>
+          )}
+
+          {modal?.type === 'edit' && (
+            <TabShellModal title="✏️ Chỉnh sửa thông tin người dùng" onClose={() => setModal(null)}>
+              <EditUserForm departments={departments} user={modal.user} onSave={(data) => handleUpdateUser(modal.user.id, data)} />
+            </TabShellModal>
+          )}
+
+          {modal?.type === 'detail' && (
+            <TabShellModal title="📊 Chi tiết kết quả học sinh" onClose={() => setModal(null)}>
+              <UserDetailModal user={modal.user} supabaseClient={supabaseClient} departments={departments} onClose={() => setModal(null)} />
+            </TabShellModal>
+          )}
+
+          {modal === 'import_csv' && (
+            <TabShellModal title="📥 Import Danh Sách Bằng CSV" onClose={() => setModal(null)}>
+              <ImportCSVForm onImport={handleImportCSV} />
+            </TabShellModal>
+          )}
         </div>
       );
     }
