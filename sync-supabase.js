@@ -30,7 +30,8 @@ async function syncResultToSupabase({ score, total, pct, xpEarned }) {
           question: a.q.question || a.q.q,
           userAnswer: a.userAns,
           correct: a.correct,
-          correctAnswer: a.q.answer || a.q.a
+          correctAnswer: a.q.answer || a.q.a,
+          type: a.q.type || 'multiple_choice'
         })) : []
       }
     };

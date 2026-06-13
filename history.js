@@ -146,7 +146,7 @@ function renderHistoryList(records, filterKeyword = '', filterLesson = 'all') {
       const col = isGood ? 'var(--c-success)' : isPass ? 'var(--c-warning)' : 'var(--c-danger)';
       const emoji = isGood ? '🏆' : isPass ? '👍' : '💪';
       return `
-      <div class="unit-card" style="margin-bottom:0; padding:1rem; cursor:pointer;" onclick="viewHistoryDetail(${index})">
+      <div class="unit-card" style="margin-bottom:0; padding:1rem; cursor:pointer;" onclick="viewHistoryDetail('${r.id}')">
         <div class="unit-icon" style="font-size:1.4rem; width:38px; height:38px; border-radius:10px;">${emoji}</div>
         <div class="unit-info">
           <div class="unit-title" style="font-size:.88rem; margin-bottom:.1rem;">📚 ${r.lessonName}</div>
@@ -186,11 +186,11 @@ function filterHistory() {
   renderHistoryList(filtered, keyword, lesson);
 }
 
-function viewHistoryDetail(index) {
+function viewHistoryDetail(id) {
   const container = document.getElementById('history-container');
   if (!container) return;
   const allData = container._historyData || [];
-  const record = allData[index];
+  const record = allData.find(r => String(r.id) === String(id));
   if (!record) return;
 
   // Lấy danh sách các lần làm bài khác của cùng học sinh và cùng bài học này để vẽ timeline tiến độ
